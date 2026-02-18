@@ -19,8 +19,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '4 bolsas STANDARD de roupa lavada e dobrada' : '4 STANDARD bags of washed & folded clothes',
       benefits: pt
-        ? ['1 recolha e entrega semanal', 'Bolsa STANDARD', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
-        : ['1 weekly pickup and delivery', 'STANDARD bag', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
+        ? ['Bolsa STANDARD', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
+        : ['STANDARD bag', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
     },
     {
       name: pt ? 'Plano Max' : 'Max Plan',
@@ -29,8 +29,8 @@ const Pricing = () => {
       highlight: true,
       desc: pt ? '4 bolsas GRANDE de roupa lavada e dobrada' : '4 MAX bags of washed & folded clothes',
       benefits: pt
-        ? ['1 recolha e entrega semanal', 'Bolsa GRANDE', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor']
-        : ['1 weekly pickup and delivery', 'MAX bag', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value'],
+        ? ['Bolsa GRANDE', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor']
+        : ['MAX bag', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value'],
     },
     {
       name: pt ? 'Plano Engomadoria' : 'Ironing Plan',
@@ -39,8 +39,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '24 peças apenas engomadas' : '24 pieces ironed only',
       benefits: pt
-        ? ['1 recolha e entrega semanal', '24 peças por mês', 'Engomadoria profissional', 'Camisas, calças, vestidos', 'Entregue em cabides']
-        : ['1 weekly pickup and delivery', '24 pieces per month', 'Professional ironing', 'Shirts, trousers, dresses', 'Delivered on hangers'],
+        ? ['24 peças por mês', '1 recolha e entrega semanal', 'Engomadoria profissional', 'Camisas, calças, vestidos', 'Entregue em cabides']
+        : ['24 pieces per month', '1 weekly pickup and delivery', 'Professional ironing', 'Shirts, trousers, dresses', 'Delivered on hangers'],
     },
     {
       name: pt ? 'Plano Lavar e Engomar' : 'Wash & Iron Plan',
@@ -49,8 +49,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '24 peças lavadas e engomadas' : '24 pieces washed & ironed',
       benefits: pt
-        ? ['1 recolha e entrega semanal', '24 peças por mês', 'Lavagem + engomadoria', 'Serviço completo', 'Entregue em cabides']
-        : ['1 weekly pickup and delivery', '24 pieces per month', 'Wash + ironing', 'Full service', 'Delivered on hangers'],
+        ? ['24 peças por mês', '1 recolha e entrega semanal', 'Lavagem + engomadoria', 'Serviço completo', 'Entregue em cabides']
+        : ['24 pieces per month', '1 weekly pickup and delivery', 'Wash + ironing', 'Full service', 'Delivered on hangers'],
     },
   ];
 
@@ -61,24 +61,24 @@ const Pricing = () => {
       title: '🧺 Lavar & Dobrar',
       subtitle: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar.',
       note: undefined,
-      items: [
-        { label: 'Bolsa STANDARD (~5-6 kg) — com subscrição', price: '14,90€' },
-        { label: 'Bolsa STANDARD (~5-6 kg) — sem subscrição', price: '18,00€' },
-        { label: 'Bolsa GRANDE (~8-10 kg) — com subscrição', price: '19,90€' },
-        { label: 'Bolsa GRANDE (~8-10 kg) — sem subscrição', price: '24,00€' },
-      ],
+        items: [
+          { label: 'Bolsa STANDARD (~5-6 kg) — com plano', price: '14,90€' },
+          { label: 'Bolsa STANDARD (~5-6 kg) — sem plano', price: '18,00€' },
+          { label: 'Bolsa GRANDE (~8-10 kg) — com plano', price: '19,90€' },
+          { label: 'Bolsa GRANDE (~8-10 kg) — sem plano', price: '24,00€' },
+        ],
     },
     {
       id: 'lavar-engomar',
       title: '👔 Lavar & Engomar',
       subtitle: 'Peças lavadas e engomadas — prontas a vestir.',
       note: undefined,
-      items: [
-        { label: '1 peça — com subscrição', price: '2,90€' },
-        { label: '1 peça — sem subscrição', price: '3,90€' },
-        { label: '1 peça — lavagem à mão', price: '8,50€' },
-        { label: 'Pack 5 camisas (de uma vez)', price: '16,00€' },
-      ],
+        items: [
+          { label: '1 peça — com plano', price: '2,90€' },
+          { label: '1 peça — sem plano', price: '3,90€' },
+          { label: '1 peça — lavagem à mão', price: '8,50€' },
+          { label: 'Pack 5 camisas (de uma vez)', price: '16,00€' },
+        ],
     },
     {
       id: 'engomar-apenas',
@@ -86,11 +86,11 @@ const Pricing = () => {
       subtitle: 'Já lavou em casa? Tratamos da engomadoria.',
       note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredão como 3 peças.',
       items: [
-        { label: 'Pack 5 camisas (1 mês)', price: '10,50€' },
-        { label: 'Pack 12 peças (1 mês)', price: '28,00€' },
-        { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
-        { label: '1 peça — com subscrição', price: '2,00€' },
-        { label: '1 peça — sem subscrição', price: '2,50€' },
+          { label: 'Pack 5 camisas (1 mês)', price: '10,50€' },
+          { label: 'Pack 12 peças (1 mês)', price: '28,00€' },
+          { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
+          { label: '1 peça — com plano', price: '2,00€' },
+          { label: '1 peça — sem plano', price: '2,50€' },
         { label: 'Capa edredão casal', price: '5,90€' },
         { label: 'Capa edredão solteiro', price: '4,80€' },
       ],
@@ -142,36 +142,36 @@ const Pricing = () => {
       title: '🧺 Wash & Fold',
       subtitle: 'Clothes washed with professional products, neatly folded and ready to store.',
       note: undefined,
-      items: [
-        { label: 'STANDARD bag (~5-6 kg) — with subscription', price: '€14.90' },
-        { label: 'STANDARD bag (~5-6 kg) — without subscription', price: '€18.00' },
-        { label: 'MAX bag (~8-10 kg) — with subscription', price: '€19.90' },
-        { label: 'MAX bag (~8-10 kg) — without subscription', price: '€24.00' },
-      ],
+        items: [
+          { label: 'STANDARD bag (~5-6 kg) — with plan', price: '€14.90' },
+          { label: 'STANDARD bag (~5-6 kg) — without plan', price: '€18.00' },
+          { label: 'MAX bag (~8-10 kg) — with plan', price: '€19.90' },
+          { label: 'MAX bag (~8-10 kg) — without plan', price: '€24.00' },
+        ],
     },
     {
       id: 'wash-iron',
       title: '👔 Wash & Iron',
       subtitle: 'Washed and ironed — ready to wear.',
       note: undefined,
-      items: [
-        { label: '1 item — with subscription', price: '€2.90' },
-        { label: '1 item — without subscription', price: '€3.90' },
-        { label: '1 item — hand wash', price: '€8.50' },
-        { label: 'Pack 5 shirts (at once)', price: '€16.00' },
-      ],
+        items: [
+          { label: '1 item — with plan', price: '€2.90' },
+          { label: '1 item — without plan', price: '€3.90' },
+          { label: '1 item — hand wash', price: '€8.50' },
+          { label: 'Pack 5 shirts (at once)', price: '€16.00' },
+        ],
     },
     {
       id: 'iron-only',
       title: '🌬️ Iron Only',
       subtitle: 'Already washed at home? We take care of the ironing.',
       note: 'Packs valid for 30 days. Shirts/blouses count as 2 items; duvet covers count as 3 items.',
-      items: [
-        { label: 'Pack 5 shirts (1 month)', price: '€10.50' },
-        { label: 'Pack 12 items (1 month)', price: '€28.00' },
-        { label: 'Pack 50 items (1 month)', price: '€80.00' },
-        { label: '1 item — with subscription', price: '€2.00' },
-        { label: '1 item — without subscription', price: '€2.50' },
+        items: [
+          { label: 'Pack 5 shirts (1 month)', price: '€10.50' },
+          { label: 'Pack 12 items (1 month)', price: '€28.00' },
+          { label: 'Pack 50 items (1 month)', price: '€80.00' },
+          { label: '1 item — with plan', price: '€2.00' },
+          { label: '1 item — without plan', price: '€2.50' },
         { label: 'Double duvet cover', price: '€5.90' },
         { label: 'Single duvet cover', price: '€4.80' },
       ],
@@ -237,7 +237,7 @@ const Pricing = () => {
       a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.',
     },
     {
-      q: 'Existe compromisso mínimo nas subscrições?',
+      q: 'Existe compromisso mínimo nos planos?',
       a: 'Não, não existe compromisso mínimo.',
     },
     {
@@ -274,7 +274,7 @@ const Pricing = () => {
       a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.',
     },
     {
-      q: 'Is there a minimum commitment for subscriptions?',
+      q: 'Is there a minimum commitment for plans?',
       a: 'No, there is no minimum commitment.',
     },
     {
@@ -301,7 +301,7 @@ const Pricing = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
-            title={pt ? 'Subscrições Mensais' : 'Monthly Subscriptions'}
+            title={pt ? 'Planos Mensais' : 'Monthly Plans'}
             subtitle={pt
               ? 'Escolha o plano que melhor se adapta ao seu dia-a-dia e poupe todos os meses.'
               : 'Choose the plan that best fits your routine and save every month.'}
@@ -415,11 +415,6 @@ const Pricing = () => {
             </Accordion>
           </motion.div>
 
-          <p className="text-xs text-muted-foreground text-center mt-6">
-            {pt
-              ? '* Os preços apresentados são valores de base e podem variar consoante o estado da peça.'
-              : '* Prices shown are base values and may vary depending on the condition of the item.'}
-          </p>
         </div>
       </section>
 

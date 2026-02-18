@@ -39,8 +39,8 @@ export const translations = {
     whyChoose: { pt: 'Porquê a GLOAT?', en: 'Why Choose GLOAT?' },
     speed: { pt: 'Rapidez', en: 'Speed' },
     speedDesc: {
-      pt: 'Entrega rápida, normalmente em 24-48 horas.',
-      en: 'Fast turnaround, usually within 24-48 hours.',
+      pt: 'Entrega rápida, normalmente em 48 horas.',
+      en: 'Fast turnaround, usually within 48 hours.',
     },
     quality: { pt: 'Qualidade Profissional', en: 'Professional Quality' },
     qualityDesc: {
@@ -88,7 +88,7 @@ export const translations = {
     itemCount: { pt: 'Quantidade', en: 'Item count' },
     serviceType: { pt: 'Tipo de serviço', en: 'Service type' },
     monthlyPrice: { pt: 'Preço mensal', en: 'Monthly price' },
-    customerStories: { pt: 'O que dizem os nossos subscritores', en: 'What our subscribers say' },
+    customerStories: { pt: 'O que dizem os nossos clientes', en: 'What our plan holders say' },
   },
   services: {
     title: { pt: 'Os Nossos Serviços', en: 'Our Services' },
