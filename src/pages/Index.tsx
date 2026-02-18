@@ -21,7 +21,7 @@ const Index = () => {
 
   const goToPlans = () => {
     navigate('/precos');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0);
   };
 
 
