@@ -7,15 +7,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import gloatLogo from '@/assets/gloat-logo.png';
 
 const navItems = [
-  { key: 'home', path: '/' },
-  { key: 'plans', path: '/planos' },
-  { key: 'services', path: '/servicos' },
-  { key: 'pricing', path: '/precos' },
-  { key: 'contact', path: '/contacto' },
-  { key: 'bookNow', path: '/reservar' },
-];
+{ key: 'home', path: '/' },
+{ key: 'plans', path: '/planos' },
+{ key: 'services', path: '/servicos' },
+{ key: 'pricing', path: '/precos' },
+{ key: 'contact', path: '/contacto' },
+{ key: 'bookNow', path: '/reservar' }];
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+
+export const Layout = ({ children }: {children: React.ReactNode;}) => {
   const { language, setLanguage, t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -28,28 +28,28 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
               <img
-                src={gloatLogo}
+
                 alt="GLOAT – The Greatest Laundry"
                 className="h-9 w-auto object-contain"
-                style={{ imageRendering: 'crisp-edges' }}
-              />
+                style={{ imageRendering: 'crisp-edges' }} src="/lovable-uploads/17fd049a-12dc-4e25-ad35-6092e41666ce.png" />
+
             </Link>
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.key}
-                  to={item.path}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname === item.path
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
-                >
+              {navItems.map((item) =>
+              <Link
+                key={item.key}
+                to={item.path}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                location.pathname === item.path ?
+                'bg-primary/10 text-primary' :
+                'text-muted-foreground hover:text-foreground hover:bg-muted'}`
+                }>
+
                   {t('nav', item.key)}
                 </Link>
-              ))}
+              )}
             </nav>
 
             <div className="flex items-center gap-2">
@@ -57,14 +57,14 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
-                className="gap-1.5 text-xs font-semibold tracking-wider"
-              >
+                className="gap-1.5 text-xs font-semibold tracking-wider">
+
                 <span className="text-xs font-bold">{language.toUpperCase()}</span>
               </Button>
               <button
                 className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-                onClick={() => setMobileOpen(!mobileOpen)}
-              >
+                onClick={() => setMobileOpen(!mobileOpen)}>
+
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
@@ -73,31 +73,31 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Mobile menu */}
         <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="md:hidden overflow-hidden border-t border-border/50"
-            >
+          {mobileOpen &&
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="md:hidden overflow-hidden border-t border-border/50">
+
               <nav className="px-4 py-3 flex flex-col gap-1">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.key}
-                    to={item.path}
-                    onClick={() => setMobileOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                      location.pathname === item.path
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                    }`}
-                  >
+                {navItems.map((item) =>
+              <Link
+                key={item.key}
+                to={item.path}
+                onClick={() => setMobileOpen(false)}
+                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                location.pathname === item.path ?
+                'bg-primary/10 text-primary' :
+                'text-muted-foreground hover:text-foreground hover:bg-muted'}`
+                }>
+
                     {t('nav', item.key)}
                   </Link>
-                ))}
+              )}
               </nav>
             </motion.div>
-          )}
+          }
         </AnimatePresence>
       </header>
 
@@ -113,23 +113,23 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                 <img
                   src={gloatLogo}
                   alt="GLOAT"
-                  className="h-8 w-auto object-contain brightness-0 invert"
-                />
+                  className="h-8 w-auto object-contain brightness-0 invert" />
+
               </div>
               <p className="text-sm opacity-70">{t('footer', 'tagline')}</p>
             </div>
             <div>
               <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-60">Links</h4>
               <div className="flex flex-col gap-2">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.key}
-                    to={item.path}
-                    className="text-sm opacity-70 hover:opacity-100 transition-opacity"
-                  >
+                {navItems.map((item) =>
+                <Link
+                  key={item.key}
+                  to={item.path}
+                  className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+
                     {t('nav', item.key)}
                   </Link>
-                ))}
+                )}
               </div>
             </div>
             <div>
@@ -147,6 +147,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>);
+
 };
