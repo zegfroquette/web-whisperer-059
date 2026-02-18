@@ -62,11 +62,10 @@ const Pricing = () => {
       subtitle: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar.',
       note: undefined,
       items: [
-        // Wash & fold is handled by the subscription bags; individual wash items go here if applicable.
-        // Per the pricing table, wash-only per piece is bundled in the bag plans.
-        // Shown here for reference as part of the Lite / Max bags.
-        { label: 'Bolsa STANDARD (~5-6 kg) — avulso', price: 'consultar' },
-        { label: 'Bolsa GRANDE (~8-10 kg) — avulso', price: 'consultar' },
+        { label: 'Bolsa STANDARD (~5-6 kg) — com subscrição', price: '14,90€' },
+        { label: 'Bolsa STANDARD (~5-6 kg) — sem subscrição', price: '18,00€' },
+        { label: 'Bolsa GRANDE (~8-10 kg) — com subscrição', price: '19,90€' },
+        { label: 'Bolsa GRANDE (~8-10 kg) — sem subscrição', price: '24,00€' },
       ],
     },
     {
@@ -75,10 +74,10 @@ const Pricing = () => {
       subtitle: 'Peças lavadas e engomadas — prontas a vestir.',
       note: undefined,
       items: [
-        { label: 'Peça lavada e engomada — com subscrição', price: '2,90€' },
-        { label: 'Peça lavada e engomada — sem subscrição', price: '3,90€' },
-        { label: 'Peça lavada e engomada — lavagem à mão', price: '8,50€' },
-        { label: '5 camisas lavadas e engomadas (de uma vez)', price: '16,00€' },
+        { label: '1 peça — com subscrição', price: '2,90€' },
+        { label: '1 peça — sem subscrição', price: '3,90€' },
+        { label: '1 peça — lavagem à mão', price: '8,50€' },
+        { label: 'Pack 5 camisas (de uma vez)', price: '16,00€' },
       ],
     },
     {
@@ -87,13 +86,13 @@ const Pricing = () => {
       subtitle: 'Já lavou em casa? Tratamos da engomadoria.',
       note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredão como 3 peças.',
       items: [
-        { label: 'Peça apenas engomada — com subscrição', price: '2,00€' },
-        { label: 'Peça apenas engomada — sem subscrição', price: '2,50€' },
-        { label: 'Capa edredão casal (engomar)', price: '5,90€' },
-        { label: 'Capa edredão solteiro (engomar)', price: '4,80€' },
-        { label: '5 camisas (de uma vez)', price: '10,50€' },
-        { label: 'Pack 12 peças (de uma vez)', price: '28,00€' },
+        { label: 'Pack 5 camisas', price: '10,50€' },
+        { label: 'Pack 12 peças', price: '28,00€' },
         { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
+        { label: '1 peça — com subscrição', price: '2,00€' },
+        { label: '1 peça — sem subscrição', price: '2,50€' },
+        { label: 'Capa edredão casal', price: '5,90€' },
+        { label: 'Capa edredão solteiro', price: '4,80€' },
       ],
     },
     {
@@ -144,8 +143,10 @@ const Pricing = () => {
       subtitle: 'Clothes washed with professional products, neatly folded and ready to store.',
       note: undefined,
       items: [
-        { label: 'STANDARD bag (~5-6 kg) — one-off', price: 'on request' },
-        { label: 'LARGE bag (~8-10 kg) — one-off', price: 'on request' },
+        { label: 'STANDARD bag (~5-6 kg) — with subscription', price: '€14.90' },
+        { label: 'STANDARD bag (~5-6 kg) — without subscription', price: '€18.00' },
+        { label: 'LARGE bag (~8-10 kg) — with subscription', price: '€19.90' },
+        { label: 'LARGE bag (~8-10 kg) — without subscription', price: '€24.00' },
       ],
     },
     {
@@ -154,10 +155,10 @@ const Pricing = () => {
       subtitle: 'Washed and ironed — ready to wear.',
       note: undefined,
       items: [
-        { label: 'Washed & ironed item — with subscription', price: '€2.90' },
-        { label: 'Washed & ironed item — without subscription', price: '€3.90' },
-        { label: 'Washed & ironed item — hand wash', price: '€8.50' },
-        { label: '5 shirts washed & ironed (at once)', price: '€16.00' },
+        { label: '1 item — with subscription', price: '€2.90' },
+        { label: '1 item — without subscription', price: '€3.90' },
+        { label: '1 item — hand wash', price: '€8.50' },
+        { label: 'Pack 5 shirts (at once)', price: '€16.00' },
       ],
     },
     {
@@ -166,13 +167,13 @@ const Pricing = () => {
       subtitle: 'Already washed at home? We take care of the ironing.',
       note: 'Packs valid for 30 days. Shirts/blouses count as 2 items; duvet covers count as 3 items.',
       items: [
-        { label: 'Ironing only — with subscription', price: '€2.00' },
-        { label: 'Ironing only — without subscription', price: '€2.50' },
-        { label: 'Double duvet cover (ironing)', price: '€5.90' },
-        { label: 'Single duvet cover (ironing)', price: '€4.80' },
-        { label: '5 shirts (at once)', price: '€10.50' },
-        { label: 'Pack 12 items (at once)', price: '€28.00' },
+        { label: 'Pack 5 shirts', price: '€10.50' },
+        { label: 'Pack 12 items', price: '€28.00' },
         { label: 'Pack 50 items (1 month)', price: '€80.00' },
+        { label: '1 item — with subscription', price: '€2.00' },
+        { label: '1 item — without subscription', price: '€2.50' },
+        { label: 'Double duvet cover', price: '€5.90' },
+        { label: 'Single duvet cover', price: '€4.80' },
       ],
     },
     {
@@ -329,15 +330,21 @@ const Pricing = () => {
                       <p className="text-xs text-muted-foreground mb-4 italic bg-muted/40 rounded-lg px-3 py-2">{cat.note}</p>
                     )}
                     <div className="space-y-1">
-                      {cat.items.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
-                        >
-                          <span className="text-sm text-foreground/80">{item.label}</span>
-                          <span className="text-sm font-semibold text-foreground shrink-0">{item.price}</span>
-                        </div>
-                      ))}
+                      {cat.items.map((item, idx) => {
+                        const withSub = item.label.includes('com subscrição') || item.label.includes('with subscription');
+                        const withoutSub = item.label.includes('sem subscrição') || item.label.includes('without subscription');
+                        return (
+                          <div
+                            key={idx}
+                            className={`flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0 ${withSub ? 'bg-accent/5 -mx-2 px-2 rounded-lg' : ''}`}
+                          >
+                            <span className={`text-sm ${withSub ? 'text-foreground font-medium' : withoutSub ? 'text-foreground/70' : 'text-foreground/80'}`}>
+                              {item.label}
+                            </span>
+                            <span className={`text-sm font-semibold shrink-0 ${withSub ? 'text-accent' : 'text-foreground'}`}>{item.price}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </AccordionContent>
                 </AccordionItem>
