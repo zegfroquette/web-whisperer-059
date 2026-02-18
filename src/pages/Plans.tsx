@@ -13,7 +13,7 @@ const Plans = () => {
   const plans = [
     {
       name: 'Plano Lite',
-      price: '39,99€',
+      price: '56,99€',
       highlight: false,
       desc: language === 'pt'
         ? '4 bolsas STANDARD de roupa lavada e dobrada'
@@ -24,7 +24,7 @@ const Plans = () => {
     },
     {
       name: 'Plano Max',
-      price: '54,99€',
+      price: '74,99€',
       highlight: true,
       desc: language === 'pt'
         ? '4 bolsas GRANDE de roupa lavada e dobrada'
@@ -35,7 +35,7 @@ const Plans = () => {
     },
     {
       name: 'Plano Engomadoria',
-      price: '41,99€',
+      price: '50,99€',
       highlight: false,
       desc: language === 'pt'
         ? '24 peças apenas engomadas'
@@ -46,7 +46,7 @@ const Plans = () => {
     },
     {
       name: 'Plano Lavar e Engomar',
-      price: '49,99€',
+      price: '69,99€',
       highlight: false,
       desc: language === 'pt'
         ? '24 peças lavadas e engomadas'
@@ -73,7 +73,7 @@ const Plans = () => {
     },
     {
       feature: t('plans', 'monthlyPrice'),
-      values: ['39,99€', '54,99€', '41,99€', '49,99€'],
+      values: ['56,99€', '74,99€', '50,99€', '69,99€'],
     },
   ];
 

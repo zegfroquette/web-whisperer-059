@@ -176,10 +176,10 @@ const Index = () => {
             </h2>
             <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold">
+              <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
                 <Link to="/planos">{t('home', 'viewPlans')}</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-white/30 text-white hover:bg-white/10">
+              <Button asChild size="lg" className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
                 <Link to="/contacto">{t('home', 'contactUs')}</Link>
               </Button>
             </div>
