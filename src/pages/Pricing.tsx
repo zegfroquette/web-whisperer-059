@@ -57,124 +57,161 @@ const Pricing = () => {
   // ─── Individual / One-off Pricing ────────────────────────────────────────────
   const categories = pt ? [
     {
-      id: 'engomadoria',
-      title: 'Engomadoria',
+      id: 'lavar-dobrar',
+      title: '🧺 Lavar & Dobrar',
+      subtitle: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar.',
+      note: undefined,
+      items: [
+        // Wash & fold is handled by the subscription bags; individual wash items go here if applicable.
+        // Per the pricing table, wash-only per piece is bundled in the bag plans.
+        // Shown here for reference as part of the Lite / Max bags.
+        { label: 'Bolsa STANDARD (~5-6 kg) — avulso', price: 'consultar' },
+        { label: 'Bolsa GRANDE (~8-10 kg) — avulso', price: 'consultar' },
+      ],
+    },
+    {
+      id: 'lavar-engomar',
+      title: '👔 Lavar & Engomar',
+      subtitle: 'Peças lavadas e engomadas — prontas a vestir.',
+      note: undefined,
       items: [
         { label: 'Peça lavada e engomada — com subscrição', price: '2,90€' },
         { label: 'Peça lavada e engomada — sem subscrição', price: '3,90€' },
         { label: 'Peça lavada e engomada — lavagem à mão', price: '8,50€' },
         { label: '5 camisas lavadas e engomadas (de uma vez)', price: '16,00€' },
+      ],
+    },
+    {
+      id: 'engomar-apenas',
+      title: '🌬️ Engomar Apenas',
+      subtitle: 'Já lavou em casa? Tratamos da engomadoria.',
+      note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredão como 3 peças.',
+      items: [
         { label: 'Peça apenas engomada — com subscrição', price: '2,00€' },
         { label: 'Peça apenas engomada — sem subscrição', price: '2,50€' },
         { label: 'Capa edredão casal (engomar)', price: '5,90€' },
         { label: 'Capa edredão solteiro (engomar)', price: '4,80€' },
-      ],
-    },
-    {
-      id: 'packs-engomadoria',
-      title: 'Packs Engomadoria',
-      note: pt ? 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredão como 3 peças.' : '',
-      items: [
         { label: '5 camisas (de uma vez)', price: '10,50€' },
-        { label: '12 peças (de uma vez)', price: '28,00€' },
-        { label: '50 peças (1 mês)', price: '80,00€' },
+        { label: 'Pack 12 peças (de uma vez)', price: '28,00€' },
+        { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
       ],
     },
     {
       id: 'limpeza-seco',
-      title: 'Limpeza a Seco',
+      title: '✨ Limpeza a Seco',
+      subtitle: 'Tratamento especializado para peças delicadas, fatos e artigos especiais.',
+      note: undefined,
       items: [
-        { label: 'Blazer', price: 'a partir de 16,00€' },
-        { label: 'Blusão', price: 'a partir de 17,90€' },
-        { label: 'Calças / Saia', price: 'a partir de 11,00€' },
         { label: 'Camisa / Blusa', price: '7,90€' },
         { label: 'Camisa / Blusa de Seda', price: '8,90€' },
+        { label: 'Gravata', price: '7,90€' },
+        { label: 'Calças / Saia', price: 'a partir de 11,00€' },
         { label: 'Camisola / Pullover', price: 'a partir de 11,60€' },
+        { label: 'Blazer', price: 'a partir de 16,00€' },
+        { label: 'Blusão', price: 'a partir de 17,90€' },
         { label: 'Casaco / Sobretudo', price: '21,90€' },
         { label: 'Fato (2 peças)', price: 'a partir de 20,90€' },
-        { label: 'Gravata', price: '7,90€' },
-        { label: 'Ténis de Tecido ou Sintético', price: '23,00€' },
         { label: 'Vestido Simples', price: 'a partir de 14,40€' },
         { label: 'Vestido Seda/Linho Curto', price: '20,30€' },
         { label: 'Vestido de Festa (Seda/Linho comprido)', price: 'a partir de 22,40€' },
+        { label: 'Ténis de Tecido ou Sintético', price: '23,00€' },
       ],
     },
     {
       id: 'casa',
-      title: 'Artigos de Casa',
+      title: '🛏️ Artigos de Casa',
+      subtitle: 'Edredões, cobertores, cortinas e artigos de grande dimensão.',
+      note: undefined,
       items: [
-        { label: 'Colcha Simples Solteiro', price: 'a partir de 15,90€' },
-        { label: 'Cortina', price: '17,90€/m' },
         { label: 'Edredão Solteiro', price: '22,40€' },
         { label: 'Edredão Solteiro de Penas/Acolchoado', price: '28,00€' },
         { label: 'Edredão Casal', price: '28,60€' },
         { label: 'Edredão Casal de Penas/Acolchoado', price: '33,60€' },
         { label: 'Capa Edredão Solteiro', price: '11,40€' },
         { label: 'Capa Edredão Casal', price: '12,60€' },
+        { label: 'Colcha Simples Solteiro', price: 'a partir de 15,90€' },
         { label: 'Resguardo Simples Solteiro', price: '10,30€' },
         { label: 'Almofada / Travesseiro Sintético', price: '12,90€' },
+        { label: 'Cortina', price: '17,90€/m' },
         { label: 'Tapete', price: '17,90€/m²' },
         { label: 'Toalha de Mesa', price: '13,90€/m²' },
       ],
     },
   ] : [
     {
-      id: 'ironing',
-      title: 'Ironing',
+      id: 'wash-fold',
+      title: '🧺 Wash & Fold',
+      subtitle: 'Clothes washed with professional products, neatly folded and ready to store.',
+      note: undefined,
       items: [
-        { label: 'Washed & ironed item — with subscription', price: '2,90€' },
-        { label: 'Washed & ironed item — without subscription', price: '3,90€' },
-        { label: 'Washed & ironed item — hand wash', price: '8,50€' },
-        { label: '5 shirts washed & ironed (at once)', price: '16,00€' },
-        { label: 'Ironing only — with subscription', price: '2,00€' },
-        { label: 'Ironing only — without subscription', price: '2,50€' },
-        { label: 'Double duvet cover (ironing)', price: '5,90€' },
-        { label: 'Single duvet cover (ironing)', price: '4,80€' },
+        { label: 'STANDARD bag (~5-6 kg) — one-off', price: 'on request' },
+        { label: 'LARGE bag (~8-10 kg) — one-off', price: 'on request' },
       ],
     },
     {
-      id: 'ironing-packs',
-      title: 'Ironing Packs',
+      id: 'wash-iron',
+      title: '👔 Wash & Iron',
+      subtitle: 'Washed and ironed — ready to wear.',
+      note: undefined,
+      items: [
+        { label: 'Washed & ironed item — with subscription', price: '€2.90' },
+        { label: 'Washed & ironed item — without subscription', price: '€3.90' },
+        { label: 'Washed & ironed item — hand wash', price: '€8.50' },
+        { label: '5 shirts washed & ironed (at once)', price: '€16.00' },
+      ],
+    },
+    {
+      id: 'iron-only',
+      title: '🌬️ Iron Only',
+      subtitle: 'Already washed at home? We take care of the ironing.',
       note: 'Packs valid for 30 days. Shirts/blouses count as 2 items; duvet covers count as 3 items.',
       items: [
-        { label: '5 shirts (at once)', price: '10,50€' },
-        { label: '12 items (at once)', price: '28,00€' },
-        { label: '50 items (1 month)', price: '80,00€' },
+        { label: 'Ironing only — with subscription', price: '€2.00' },
+        { label: 'Ironing only — without subscription', price: '€2.50' },
+        { label: 'Double duvet cover (ironing)', price: '€5.90' },
+        { label: 'Single duvet cover (ironing)', price: '€4.80' },
+        { label: '5 shirts (at once)', price: '€10.50' },
+        { label: 'Pack 12 items (at once)', price: '€28.00' },
+        { label: 'Pack 50 items (1 month)', price: '€80.00' },
       ],
     },
     {
       id: 'dry-cleaning',
-      title: 'Dry Cleaning',
+      title: '✨ Dry Cleaning',
+      subtitle: 'Specialized treatment for delicate fabrics, suits and special garments.',
+      note: undefined,
       items: [
-        { label: 'Blazer', price: 'From €16.00' },
-        { label: 'Jacket', price: 'From €17.90' },
-        { label: 'Pants / Skirt', price: 'From €11.00' },
         { label: 'Shirt / Blouse', price: '€7.90' },
         { label: 'Silk Shirt / Blouse', price: '€8.90' },
+        { label: 'Tie', price: '€7.90' },
+        { label: 'Pants / Skirt', price: 'From €11.00' },
         { label: 'Sweater / Pullover', price: 'From €11.60' },
+        { label: 'Blazer', price: 'From €16.00' },
+        { label: 'Jacket', price: 'From €17.90' },
         { label: 'Coat / Overcoat', price: '€21.90' },
         { label: 'Suit (2 pieces)', price: 'From €20.90' },
-        { label: 'Tie', price: '€7.90' },
-        { label: 'Fabric or Synthetic Sneakers', price: '€23.00' },
         { label: 'Simple Dress', price: 'From €14.40' },
         { label: 'Short Silk / Linen Dress', price: '€20.30' },
         { label: 'Long Silk / Linen Evening Dress', price: 'From €22.40' },
+        { label: 'Fabric or Synthetic Sneakers', price: '€23.00' },
       ],
     },
     {
       id: 'household',
-      title: 'Household Items',
+      title: '🛏️ Household Items',
+      subtitle: 'Duvets, blankets, curtains and large household items.',
+      note: undefined,
       items: [
-        { label: 'Simple Single Bedspread', price: 'From €15.90' },
-        { label: 'Curtain', price: '€17.90/m' },
         { label: 'Single Duvet', price: '€22.40' },
         { label: 'Feather/Quilted Single Duvet', price: '€28.00' },
         { label: 'Double Duvet', price: '€28.60' },
         { label: 'Feather/Quilted Double Duvet', price: '€33.60' },
         { label: 'Single Duvet Cover', price: '€11.40' },
         { label: 'Double Duvet Cover', price: '€12.60' },
+        { label: 'Simple Single Bedspread', price: 'From €15.90' },
         { label: 'Simple Single Mattress Protector', price: '€10.30' },
         { label: 'Synthetic Pillow', price: '€12.90' },
+        { label: 'Curtain', price: '€17.90/m' },
         { label: 'Rug', price: '€17.90/m²' },
         { label: 'Tablecloth', price: '€13.90/m²' },
       ],
@@ -279,18 +316,23 @@ const Pricing = () => {
                   value={cat.id}
                   className="bg-card rounded-2xl border border-border/50 px-6 shadow-sm"
                 >
-                  <AccordionTrigger className="text-left font-semibold text-base py-5">
-                    {cat.title}
+                  <AccordionTrigger className="text-left py-5 hover:no-underline">
+                    <div>
+                      <div className="font-semibold text-base text-foreground">{cat.title}</div>
+                      {cat.subtitle && (
+                        <div className="text-xs text-muted-foreground mt-0.5 font-normal">{cat.subtitle}</div>
+                      )}
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-5">
                     {cat.note && (
-                      <p className="text-xs text-muted-foreground mb-4 italic">{cat.note}</p>
+                      <p className="text-xs text-muted-foreground mb-4 italic bg-muted/40 rounded-lg px-3 py-2">{cat.note}</p>
                     )}
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       {cat.items.map((item, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center justify-between gap-4 py-2 border-b border-border/30 last:border-0"
+                          className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
                         >
                           <span className="text-sm text-foreground/80">{item.label}</span>
                           <span className="text-sm font-semibold text-foreground shrink-0">{item.price}</span>
