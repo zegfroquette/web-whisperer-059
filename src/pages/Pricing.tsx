@@ -219,11 +219,80 @@ const Pricing = () => {
     },
   ];
 
-  const faqs = [
-    { q: t('pricing', 'faqDeliveryQ'), a: t('pricing', 'faqDeliveryA') },
-    { q: t('pricing', 'faqBagQ'), a: t('pricing', 'faqBagA') },
-    { q: t('pricing', 'faqPaymentQ'), a: t('pricing', 'faqPaymentA') },
-    { q: t('pricing', 'faqHoursQ'), a: t('pricing', 'faqHoursA') },
+  const faqs = pt ? [
+    {
+      q: 'Como funciona o serviço de recolha e entrega?',
+      a: 'Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.',
+    },
+    {
+      q: 'Com quanto tempo de antecedência devo fazer a reserva?',
+      a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.',
+    },
+    {
+      q: 'Que zonas servem?',
+      a: 'Servimos Lisboa e algumas zonas circundantes selecionadas. Pode confirmar a disponibilidade durante o processo de reserva.',
+    },
+    {
+      q: 'Posso reagendar ou cancelar a minha reserva?',
+      a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.',
+    },
+    {
+      q: 'Existe compromisso mínimo nas subscrições?',
+      a: 'Não, não existe compromisso mínimo.',
+    },
+    {
+      q: 'Quanto tempo demora o serviço?',
+      a: 'A lavagem, dobragem e engomadoria demora aproximadamente 48 horas. A limpeza a seco pode demorar um pouco mais, dependendo da peça.',
+    },
+    {
+      q: 'Qual é o horário de entregas?',
+      a: 'As entregas são realizadas entre as 9h00 e as 15h00.',
+    },
+    {
+      q: 'Oferecem serviço expresso?',
+      a: 'Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.',
+    },
+    {
+      q: 'Qual é a forma mais rápida de contactar o suporte?',
+      a: 'Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.',
+    },
+  ] : [
+    {
+      q: 'How does the pickup and delivery service work?',
+      a: 'Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.',
+    },
+    {
+      q: 'How far in advance should I book?',
+      a: 'We recommend booking at least 24 hours in advance to secure your preferred time slot.',
+    },
+    {
+      q: 'What areas do you serve?',
+      a: 'We serve Lisbon and selected surrounding areas. You can confirm availability during the booking process.',
+    },
+    {
+      q: 'Can I reschedule or cancel my booking?',
+      a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.',
+    },
+    {
+      q: 'Is there a minimum commitment for subscriptions?',
+      a: 'No, there is no minimum commitment.',
+    },
+    {
+      q: 'How long does the service take?',
+      a: 'Washing, folding, and ironing takes approximately 48 hours. Dry cleaning may take slightly longer depending on the item.',
+    },
+    {
+      q: 'What are your delivery hours?',
+      a: 'Deliveries are made between 9:00 AM and 3:00 PM.',
+    },
+    {
+      q: 'Do you offer express service?',
+      a: 'Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.',
+    },
+    {
+      q: 'What is the fastest way to reach support?',
+      a: 'We recommend calling us or contacting us on WhatsApp for the quickest response.',
+    },
   ];
 
   return (
