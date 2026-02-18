@@ -27,9 +27,9 @@ const Pricing = () => {
       price: '85,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: true,
-      desc: pt ? '4 bolsas MAX de roupa lavada e dobrada' : '4 MAX bags of washed & folded clothes',
+      desc: pt ? '4 bolsas GRANDE de roupa lavada e dobrada' : '4 MAX bags of washed & folded clothes',
       benefits: pt
-        ? ['Bolsa MAX (~8-10 kg)', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor por kg']
+        ? ['Bolsa GRANDE (~8-10 kg)', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor por kg']
         : ['MAX bag (~8-10 kg)', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value per kg'],
     },
     {
@@ -64,8 +64,8 @@ const Pricing = () => {
       items: [
         { label: 'Bolsa STANDARD (~5-6 kg) — com subscrição', price: '14,90€' },
         { label: 'Bolsa STANDARD (~5-6 kg) — sem subscrição', price: '18,00€' },
-        { label: 'Bolsa MAX (~8-10 kg) — com subscrição', price: '19,90€' },
-        { label: 'Bolsa MAX (~8-10 kg) — sem subscrição', price: '24,00€' },
+        { label: 'Bolsa GRANDE (~8-10 kg) — com subscrição', price: '19,90€' },
+        { label: 'Bolsa GRANDE (~8-10 kg) — sem subscrição', price: '24,00€' },
       ],
     },
     {

@@ -27,10 +27,10 @@ const Plans = () => {
       price: '74,99€',
       highlight: true,
       desc: language === 'pt'
-        ? '4 bolsas MAX de roupa lavada e dobrada'
+        ? '4 bolsas GRANDE de roupa lavada e dobrada'
         : '4 MAX bags of washed & folded laundry',
       benefits: language === 'pt'
-        ? ['Bolsa MAX (8-10 kg)', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h', 'Melhor valor por kg']
+        ? ['Bolsa GRANDE (8-10 kg)', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h', 'Melhor valor por kg']
         : ['MAX bag (8-10 kg)', 'Professional wash', 'Folded clothes', 'Delivery in 48h', 'Best value per kg'],
     },
     {
