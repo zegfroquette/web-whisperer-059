@@ -84,7 +84,7 @@ export const translations = {
     ironed: { pt: 'Engomada', en: 'Ironed' },
     washedIroned: { pt: 'Lavada e engomada', en: 'Washed & ironed' },
     standardBag: { pt: 'Bolsa STANDARD', en: 'STANDARD bag' },
-    largeBag: { pt: 'Bolsa MAX', en: 'MAX bag' },
+    largeBag: { pt: 'Bolsa GRANDE', en: 'MAX bag' },
     itemCount: { pt: 'Quantidade', en: 'Item count' },
     serviceType: { pt: 'Tipo de serviço', en: 'Service type' },
     monthlyPrice: { pt: 'Preço mensal', en: 'Monthly price' },
@@ -143,7 +143,7 @@ export const translations = {
     },
     faqBagQ: { pt: 'Qual é a capacidade das bolsas?', en: 'What is the bag capacity?' },
     faqBagA: {
-      pt: 'A bolsa STANDARD comporta cerca de 5-6 kg de roupa. A bolsa MAX cerca de 8-10 kg.',
+      pt: 'A bolsa STANDARD comporta cerca de 5-6 kg de roupa. A bolsa GRANDE cerca de 8-10 kg.',
       en: 'The STANDARD bag holds about 5-6 kg of laundry. The LARGE bag about 8-10 kg.',
     },
     faqPaymentQ: { pt: 'Quais são os métodos de pagamento?', en: 'What payment methods do you accept?' },
