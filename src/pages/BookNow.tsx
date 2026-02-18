@@ -57,62 +57,6 @@ const BookNow = () => {
         />
       </div>
 
-      {/* Hero header */}
-      <section className="relative z-10 pt-16 pb-10 px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          {language === 'pt' ? 'Rápido · Simples · Profissional' : 'Fast · Simple · Professional'}
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight"
-          style={{ fontFamily: 'Plus Jakarta Sans' }}
-        >
-          {language === 'pt' ? (
-            <>
-              Agende a sua{' '}
-              <span className="text-gradient">recolha de roupa</span>
-            </>
-          ) : (
-            <>
-              Schedule Your{' '}
-              <span className="text-gradient">Laundry Pickup</span>
-            </>
-          )}
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
-        >
-          {language === 'pt'
-            ? 'Rápido, simples e profissional. O serviço de lavandaria ao seu alcance.'
-            : 'Fast, simple, and professional laundry service at your fingertips.'}
-        </motion.p>
-
-        {/* Decorative dots */}
-        <div className="flex justify-center gap-2 mt-8">
-          {[0, 1, 2].map((i) => (
-            <motion.div
-              key={i}
-              animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
-              className="w-2 h-2 rounded-full bg-primary"
-            />
-          ))}
-        </div>
-      </section>
-
       {/* CleanCloud embed */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
