@@ -111,9 +111,9 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img
-                  src={gloatLogo}
+
                   alt="GLOAT"
-                  className="h-8 w-auto object-contain brightness-0 invert" />
+                  className="h-8 w-auto object-contain brightness-0 invert" src="/lovable-uploads/7bce9ded-b8ab-4fd5-9a4e-effcb5e4c80e.png" />
 
               </div>
               <p className="text-sm opacity-70">{t('footer', 'tagline')}</p>
