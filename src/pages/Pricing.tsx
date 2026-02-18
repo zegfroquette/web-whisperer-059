@@ -86,8 +86,8 @@ const Pricing = () => {
       subtitle: 'Já lavou em casa? Tratamos da engomadoria.',
       note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredão como 3 peças.',
       items: [
-        { label: 'Pack 5 camisas', price: '10,50€' },
-        { label: 'Pack 12 peças', price: '28,00€' },
+        { label: 'Pack 5 camisas (1 mês)', price: '10,50€' },
+        { label: 'Pack 12 peças (1 mês)', price: '28,00€' },
         { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
         { label: '1 peça — com subscrição', price: '2,00€' },
         { label: '1 peça — sem subscrição', price: '2,50€' },
@@ -167,8 +167,8 @@ const Pricing = () => {
       subtitle: 'Already washed at home? We take care of the ironing.',
       note: 'Packs valid for 30 days. Shirts/blouses count as 2 items; duvet covers count as 3 items.',
       items: [
-        { label: 'Pack 5 shirts', price: '€10.50' },
-        { label: 'Pack 12 items', price: '€28.00' },
+        { label: 'Pack 5 shirts (1 month)', price: '€10.50' },
+        { label: 'Pack 12 items (1 month)', price: '€28.00' },
         { label: 'Pack 50 items (1 month)', price: '€80.00' },
         { label: '1 item — with subscription', price: '€2.00' },
         { label: '1 item — without subscription', price: '€2.50' },
@@ -330,21 +330,15 @@ const Pricing = () => {
                       <p className="text-xs text-muted-foreground mb-4 italic bg-muted/40 rounded-lg px-3 py-2">{cat.note}</p>
                     )}
                     <div className="space-y-1">
-                      {cat.items.map((item, idx) => {
-                        const withSub = item.label.includes('com subscrição') || item.label.includes('with subscription');
-                        const withoutSub = item.label.includes('sem subscrição') || item.label.includes('without subscription');
-                        return (
-                          <div
-                            key={idx}
-                            className={`flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0 ${withSub ? 'bg-accent/5 -mx-2 px-2 rounded-lg' : ''}`}
-                          >
-                            <span className={`text-sm ${withSub ? 'text-foreground font-medium' : withoutSub ? 'text-foreground/70' : 'text-foreground/80'}`}>
-                              {item.label}
-                            </span>
-                            <span className={`text-sm font-semibold shrink-0 ${withSub ? 'text-accent' : 'text-foreground'}`}>{item.price}</span>
-                          </div>
-                        );
-                      })}
+                      {cat.items.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
+                        >
+                          <span className="text-sm text-foreground/80">{item.label}</span>
+                          <span className="text-sm font-semibold text-foreground shrink-0">{item.price}</span>
+                        </div>
+                      ))}
                     </div>
                   </AccordionContent>
                 </AccordionItem>
