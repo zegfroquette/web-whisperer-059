@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
+import gloatLogo from '@/assets/gloat-logo.png';
 
 const navItems = [
   { key: 'home', path: '/' },
@@ -11,6 +12,7 @@ const navItems = [
   { key: 'services', path: '/servicos' },
   { key: 'pricing', path: '/precos' },
   { key: 'contact', path: '/contacto' },
+  { key: 'bookNow', path: '/reservar' },
 ];
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -24,13 +26,13 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-xl gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-sm" style={{ fontFamily: 'Plus Jakarta Sans' }}>G</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight" style={{ fontFamily: 'Plus Jakarta Sans' }}>
-                GLOAT
-              </span>
+            <Link to="/" className="flex items-center">
+              <img
+                src={gloatLogo}
+                alt="GLOAT – The Greatest Laundry"
+                className="h-9 w-auto object-contain"
+                style={{ imageRendering: 'crisp-edges' }}
+              />
             </Link>
 
             {/* Desktop nav */}
@@ -55,10 +57,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
-                className="gap-1.5 text-xs font-medium"
+                className="gap-1.5 text-xs font-semibold tracking-wider"
               >
-                <Globe className="w-4 h-4" />
-                {language === 'pt' ? 'EN' : 'PT'}
+                <span className="text-xs font-bold">{language.toUpperCase()}</span>
               </Button>
               <button
                 className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
@@ -109,10 +110,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-xl gradient-primary flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">G</span>
-                </div>
-                <span className="font-bold text-lg">GLOAT</span>
+                <img
+                  src={gloatLogo}
+                  alt="GLOAT"
+                  className="h-8 w-auto object-contain brightness-0 invert"
+                />
               </div>
               <p className="text-sm opacity-70">{t('footer', 'tagline')}</p>
             </div>
@@ -133,7 +135,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-60">{t('contact', 'title')}</h4>
               <div className="flex flex-col gap-2 text-sm opacity-70">
-                <p>Rua de Artilharia 1, n.1</p>
+                <p>Rua Artilharia 1, Nº 1</p>
                 <p>1250-036 Lisboa, Portugal</p>
                 <p>(+351) 935 479 900</p>
                 <p>filipa.gferreira@outlook.com</p>

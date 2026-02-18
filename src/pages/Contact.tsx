@@ -104,7 +104,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm mb-1">{t('contact', 'address')}</h4>
-                  <p className="text-sm text-muted-foreground">Rua de Artilharia 1, n.1<br />1250-036 Lisboa, Portugal</p>
+                  <p className="text-sm text-muted-foreground">Rua Artilharia 1, Nº 1<br />1250-036 Lisboa, Portugal</p>
                 </div>
               </div>
 
@@ -133,7 +133,7 @@ const Contact = () => {
             <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm">
               <h4 className="font-semibold text-sm p-4 pb-0">{t('contact', 'findUs')}</h4>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.0!2d-9.155!3d38.725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19339e1234567%3A0x1234567890!2sRua+de+Artilharia+1%2C+1250-036+Lisboa!5e0!3m2!1spt-PT!2spt!4v1690000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.5!2d-9.1572!3d38.7224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a3e4bbf7c3%3A0x0!2sRua+Artilharia+Um+N%C2%BA+1%2C+1250-036+Lisboa!5e0!3m2!1spt-PT!2spt!4v1690000000001"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
