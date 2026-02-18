@@ -118,20 +118,13 @@ const BookNow = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        className="relative z-10 px-4 pb-20"
+        className="relative z-10 w-full"
       >
-        <div className="max-w-5xl mx-auto">
-          <div
-            className="rounded-3xl overflow-hidden border border-border/50 shadow-2xl bg-card"
-            style={{ minHeight: '700px' }}
-          >
-            <div
-              id="myStoreContainer"
-              ref={containerRef}
-              style={{ width: '100%', minHeight: '700px' }}
-            />
-          </div>
-        </div>
+        <div
+          id="myStoreContainer"
+          ref={containerRef}
+          style={{ width: '100%', minHeight: '100vh' }}
+        />
       </motion.section>
     </div>
   );
