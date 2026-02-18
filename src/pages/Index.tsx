@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
-import { TestimonialCard } from '@/components/TestimonialCard';
+
+import { TestimonialsCarousel } from '@/components/TestimonialsCarousel';
 import { Button } from '@/components/ui/button';
 import { Zap, Award, Tag, ShieldCheck, Package, Sparkles, Truck } from 'lucide-react';
 
@@ -15,7 +16,7 @@ const fadeUp = {
 };
 
 const Index = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const steps = [
   { icon: Package, title: t('home', 'step1Title'), desc: t('home', 'step1Desc') },
@@ -30,14 +31,6 @@ const Index = () => {
   { icon: ShieldCheck, title: t('home', 'reliable'), desc: t('home', 'reliableDesc') }];
 
 
-  const testimonials = language === 'pt' ? [
-  { name: 'Ana Silva', role: 'Estudante universitária', text: 'A GLOAT salvou-me a vida! Não tenho máquina de lavar e o serviço deles é rápido e barato. Recomendo a todos os estudantes.', rating: 5 },
-  { name: 'Miguel Santos', role: 'Profissional de TI', text: 'Uso o plano mensal e é fantástico. A roupa vem sempre impecável e poupa-me horas todas as semanas.', rating: 5 },
-  { name: 'Família Rodrigues', role: 'Família com 3 filhos', text: 'Com três crianças, a roupa nunca acaba. A GLOAT trata de tudo com qualidade e a preços acessíveis. São os melhores!', rating: 5 }] :
-  [
-  { name: 'Ana Silva', role: 'University student', text: 'GLOAT saved my life! I don\'t have a washing machine and their service is fast and affordable. I recommend it to all students.', rating: 5 },
-  { name: 'Miguel Santos', role: 'IT Professional', text: 'I use the monthly plan and it\'s fantastic. Clothes always come back perfect and it saves me hours every week.', rating: 5 },
-  { name: 'Rodrigues Family', role: 'Family with 3 kids', text: 'With three kids, the laundry never ends. GLOAT handles everything with quality and affordable prices. They\'re the best!', rating: 5 }];
 
 
   return (
@@ -150,16 +143,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="max-w-5xl mx-auto">
-          <SectionHeader title={t('home', 'testimonials')} />
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((test, i) =>
-            <TestimonialCard key={i} {...test} index={i} />
-            )}
-          </div>
-        </div>
-      </section>
+      <TestimonialsCarousel />
 
       {/* CTA */}
       <section className="py-20 px-4">
