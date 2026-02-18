@@ -31,6 +31,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (!context) throw new Error('useLanguage must be used within LanguageProvider');
+  if (!context) {
+    // Return safe defaults during HMR transitions
+    return {
+      language: 'pt' as Language,
+      setLanguage: (_lang: Language) => {},
+      t: (_section: string, key: string) => key,
+    };
+  }
   return context;
 };
