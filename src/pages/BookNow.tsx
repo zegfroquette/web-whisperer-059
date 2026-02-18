@@ -123,7 +123,7 @@ const BookNow = () => {
         <div
           id="myStoreContainer"
           ref={containerRef}
-          style={{ width: '100%', minHeight: '100vh' }}
+          style={{ width: '100%', height: 'auto', minHeight: '1600px', overflow: 'visible' }}
         />
       </motion.section>
     </div>
