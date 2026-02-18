@@ -143,7 +143,7 @@ export const translations = {
     },
     faqBagQ: { pt: 'Qual é a capacidade das bolsas?', en: 'What is the bag capacity?' },
     faqBagA: {
-      pt: 'A bolsa STANDARD comporta cerca de 5-6 kg de roupa. A bolsa GRANDE cerca de 8-10 kg.',
+      pt: 'A bolsa STANDARD comporta cerca de 5-6 kg de roupa. A bolsa MAX cerca de 8-10 kg.',
       en: 'The STANDARD bag holds about 5-6 kg of laundry. The LARGE bag about 8-10 kg.',
     },
     faqPaymentQ: { pt: 'Quais são os métodos de pagamento?', en: 'What payment methods do you accept?' },
