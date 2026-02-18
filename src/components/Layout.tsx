@@ -29,7 +29,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               <img
                 src={gloatLogo}
                 alt="GLOAT – The Greatest Laundry"
-                className="h-20 w-auto object-contain"
+                className="h-16 w-auto object-contain"
                 style={{ imageRendering: 'crisp-edges' }} />
 
             </Link>
