@@ -4,7 +4,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Menu, X, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import gloatLogo from '@/assets/gloat-logo.png';
+import gloatLogo from '@/assets/gloat-logo-hd.png';
 
 const navItems = [
 { key: 'home', path: '/' },
@@ -27,9 +27,10 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
               <img
+                src={gloatLogo}
                 alt="GLOAT – The Greatest Laundry"
-                className="h-14 w-auto object-contain"
-                style={{ imageRendering: 'crisp-edges' }} src="/lovable-uploads/17fd049a-12dc-4e25-ad35-6092e41666ce.png" />
+                className="h-20 w-auto object-contain"
+                style={{ imageRendering: 'crisp-edges' }} />
 
             </Link>
 
