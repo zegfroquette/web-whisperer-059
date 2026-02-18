@@ -32,7 +32,7 @@ const BookNow = () => {
       `}
       style={{
         width: "100%",
-        height: "2000px" /* adjust as needed */,
+        height: "2000px",
         border: "none",
       }}
     />
