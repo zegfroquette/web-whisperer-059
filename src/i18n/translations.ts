@@ -84,7 +84,7 @@ export const translations = {
     ironed: { pt: 'Engomada', en: 'Ironed' },
     washedIroned: { pt: 'Lavada e engomada', en: 'Washed & ironed' },
     standardBag: { pt: 'Bolsa STANDARD', en: 'STANDARD bag' },
-    largeBag: { pt: 'Bolsa GRANDE', en: 'LARGE bag' },
+    largeBag: { pt: 'Bolsa MAX', en: 'MAX bag' },
     itemCount: { pt: 'Quantidade', en: 'Item count' },
     serviceType: { pt: 'Tipo de serviço', en: 'Service type' },
     monthlyPrice: { pt: 'Preço mensal', en: 'Monthly price' },
