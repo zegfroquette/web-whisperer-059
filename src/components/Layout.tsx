@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import gloatLogo from '@/assets/gloat-logo.png';
@@ -27,9 +27,8 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
               <img
-
                 alt="GLOAT – The Greatest Laundry"
-                className="h-9 w-auto object-contain"
+                className="h-14 w-auto object-contain"
                 style={{ imageRendering: 'crisp-edges' }} src="/lovable-uploads/17fd049a-12dc-4e25-ad35-6092e41666ce.png" />
 
             </Link>
@@ -122,8 +121,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img
-
+              <img
                   alt="GLOAT"
                   className="h-8 w-auto object-contain brightness-0 invert" src="/lovable-uploads/7bce9ded-b8ab-4fd5-9a4e-effcb5e4c80e.png" />
 
@@ -154,8 +152,17 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               </div>
             </div>
           </div>
-          <div className="border-t border-background/10 mt-8 pt-8 text-center text-sm opacity-50">
-            © {new Date().getFullYear()} GLOAT — The Greatest Laundry. {t('footer', 'rights')}
+          <div className="border-t border-background/10 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm opacity-50">
+            <span>© {new Date().getFullYear()} GLOAT — The Greatest Laundry. {t('footer', 'rights')}</span>
+            <a
+              href="https://www.instagram.com/gloat.thegreatestlaundry/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-100 transition-opacity"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </footer>

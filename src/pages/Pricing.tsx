@@ -19,8 +19,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '4 bolsas STANDARD de roupa lavada e dobrada' : '4 STANDARD bags of washed & folded clothes',
       benefits: pt
-        ? ['Bolsa STANDARD (~5-6 kg)', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
-        : ['STANDARD bag (~5-6 kg)', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
+        ? ['1 recolha e entrega semanal', 'Bolsa STANDARD', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
+        : ['1 weekly pickup and delivery', 'STANDARD bag', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
     },
     {
       name: pt ? 'Plano Max' : 'Max Plan',
@@ -29,8 +29,8 @@ const Pricing = () => {
       highlight: true,
       desc: pt ? '4 bolsas GRANDE de roupa lavada e dobrada' : '4 MAX bags of washed & folded clothes',
       benefits: pt
-        ? ['Bolsa GRANDE (~8-10 kg)', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor por kg']
-        : ['MAX bag (~8-10 kg)', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value per kg'],
+        ? ['1 recolha e entrega semanal', 'Bolsa GRANDE', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor']
+        : ['1 weekly pickup and delivery', 'MAX bag', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value'],
     },
     {
       name: pt ? 'Plano Engomadoria' : 'Ironing Plan',
@@ -39,8 +39,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '24 peças apenas engomadas' : '24 pieces ironed only',
       benefits: pt
-        ? ['24 peças por mês', 'Engomadoria profissional', 'Camisas, calças, vestidos', 'Entregue em cabides']
-        : ['24 pieces per month', 'Professional ironing', 'Shirts, trousers, dresses', 'Delivered on hangers'],
+        ? ['1 recolha e entrega semanal', '24 peças por mês', 'Engomadoria profissional', 'Camisas, calças, vestidos', 'Entregue em cabides']
+        : ['1 weekly pickup and delivery', '24 pieces per month', 'Professional ironing', 'Shirts, trousers, dresses', 'Delivered on hangers'],
     },
     {
       name: pt ? 'Plano Lavar e Engomar' : 'Wash & Iron Plan',
@@ -49,8 +49,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '24 peças lavadas e engomadas' : '24 pieces washed & ironed',
       benefits: pt
-        ? ['24 peças por mês', 'Lavagem + engomadoria', 'Serviço completo', 'Entregue em cabides']
-        : ['24 pieces per month', 'Wash + ironing', 'Full service', 'Delivered on hangers'],
+        ? ['1 recolha e entrega semanal', '24 peças por mês', 'Lavagem + engomadoria', 'Serviço completo', 'Entregue em cabides']
+        : ['1 weekly pickup and delivery', '24 pieces per month', 'Wash + ironing', 'Full service', 'Delivered on hangers'],
     },
   ];
 
@@ -242,7 +242,7 @@ const Pricing = () => {
     },
     {
       q: 'Quanto tempo demora o serviço?',
-      a: 'A lavagem, dobragem e engomadoria demora aproximadamente 48 horas. A limpeza a seco pode demorar um pouco mais, dependendo da peça.',
+      a: 'A lavagem e engomadoria demora aproximadamente 48 horas. A limpeza a seco pode demorar um pouco mais, dependendo da peça.',
     },
     {
       q: 'Qual é o horário de entregas?',
@@ -279,7 +279,7 @@ const Pricing = () => {
     },
     {
       q: 'How long does the service take?',
-      a: 'Washing, folding, and ironing takes approximately 48 hours. Dry cleaning may take slightly longer depending on the item.',
+      a: 'Washing and ironing takes approximately 48 hours. Dry cleaning may take slightly longer depending on the item.',
     },
     {
       q: 'What are your delivery hours?',
