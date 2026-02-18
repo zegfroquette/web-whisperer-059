@@ -150,7 +150,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                 <p>Rua Artilharia 1, Nº 1</p>
                 <p>1250-036 Lisboa, Portugal</p>
                 <p>(+351) 935 479 900</p>
-                <p>filipa.gferreira@outlook.com</p>
+                <a href="mailto:gloatlaundry@gmail.com" className="hover:opacity-100 transition-opacity">gloatlaundry@gmail.com</a>
               </div>
             </div>
           </div>
