@@ -27,11 +27,11 @@ const Plans = () => {
       price: '74,99€',
       highlight: true,
       desc: language === 'pt'
-        ? '4 bolsas GRANDE de roupa lavada e dobrada'
-        : '4 LARGE bags of washed & folded laundry',
+        ? '4 bolsas MAX de roupa lavada e dobrada'
+        : '4 MAX bags of washed & folded laundry',
       benefits: language === 'pt'
-        ? ['Bolsa grande (8-10 kg)', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h', 'Melhor valor por kg']
-        : ['Large bag (8-10 kg)', 'Professional wash', 'Folded clothes', 'Delivery in 48h', 'Best value per kg'],
+        ? ['Bolsa MAX (8-10 kg)', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h', 'Melhor valor por kg']
+        : ['MAX bag (8-10 kg)', 'Professional wash', 'Folded clothes', 'Delivery in 48h', 'Best value per kg'],
     },
     {
       name: 'Plano Engomadoria',
@@ -62,7 +62,7 @@ const Plans = () => {
       feature: t('plans', 'itemCount'),
       values: [
         `4 ${t('plans', 'bags')} (STANDARD)`,
-        `4 ${t('plans', 'bags')} (GRANDE)`,
+        `4 ${t('plans', 'bags')} (MAX)`,
         `24 ${t('plans', 'pieces')}`,
         `24 ${t('plans', 'pieces')}`,
       ],

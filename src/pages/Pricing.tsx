@@ -27,10 +27,10 @@ const Pricing = () => {
       price: '85,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: true,
-      desc: pt ? '4 bolsas GRANDE de roupa lavada e dobrada' : '4 LARGE bags of washed & folded clothes',
+      desc: pt ? '4 bolsas MAX de roupa lavada e dobrada' : '4 MAX bags of washed & folded clothes',
       benefits: pt
-        ? ['Bolsa GRANDE (~8-10 kg)', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor por kg']
-        : ['LARGE bag (~8-10 kg)', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value per kg'],
+        ? ['Bolsa MAX (~8-10 kg)', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor por kg']
+        : ['MAX bag (~8-10 kg)', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value per kg'],
     },
     {
       name: pt ? 'Plano Engomadoria' : 'Ironing Plan',
@@ -64,8 +64,8 @@ const Pricing = () => {
       items: [
         { label: 'Bolsa STANDARD (~5-6 kg) — com subscrição', price: '14,90€' },
         { label: 'Bolsa STANDARD (~5-6 kg) — sem subscrição', price: '18,00€' },
-        { label: 'Bolsa GRANDE (~8-10 kg) — com subscrição', price: '19,90€' },
-        { label: 'Bolsa GRANDE (~8-10 kg) — sem subscrição', price: '24,00€' },
+        { label: 'Bolsa MAX (~8-10 kg) — com subscrição', price: '19,90€' },
+        { label: 'Bolsa MAX (~8-10 kg) — sem subscrição', price: '24,00€' },
       ],
     },
     {
@@ -145,8 +145,8 @@ const Pricing = () => {
       items: [
         { label: 'STANDARD bag (~5-6 kg) — with subscription', price: '€14.90' },
         { label: 'STANDARD bag (~5-6 kg) — without subscription', price: '€18.00' },
-        { label: 'LARGE bag (~8-10 kg) — with subscription', price: '€19.90' },
-        { label: 'LARGE bag (~8-10 kg) — without subscription', price: '€24.00' },
+        { label: 'MAX bag (~8-10 kg) — with subscription', price: '€19.90' },
+        { label: 'MAX bag (~8-10 kg) — without subscription', price: '€24.00' },
       ],
     },
     {
