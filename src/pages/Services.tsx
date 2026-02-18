@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Shirt, Wind, Droplets, Gem, Zap, Truck } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -12,7 +13,8 @@ const fadeUp = {
 };
 
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const pt = language === 'pt';
 
   const services = [
     { icon: Shirt, title: t('services', 'washFold'), desc: t('services', 'washFoldDesc'), color: 'bg-blue-500/10 text-blue-600' },
@@ -23,32 +25,123 @@ const Services = () => {
     { icon: Truck, title: t('services', 'delivery'), desc: t('services', 'deliveryDesc'), color: 'bg-green-500/10 text-green-600' },
   ];
 
+  const faqs = pt ? [
+    {
+      q: 'Como funciona o serviço de recolha e entrega?',
+      a: 'Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.',
+    },
+    {
+      q: 'Com quanto tempo de antecedência devo fazer a reserva?',
+      a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.',
+    },
+    {
+      q: 'Que zonas servem?',
+      a: 'Servimos Lisboa e algumas zonas circundantes selecionadas. Pode confirmar a disponibilidade durante o processo de reserva.',
+    },
+    {
+      q: 'Posso reagendar ou cancelar a minha reserva?',
+      a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.',
+    },
+    {
+      q: 'Quanto tempo demora o serviço?',
+      a: 'A lavagem e engomadoria demora aproximadamente 48 horas. A limpeza a seco pode demorar um pouco mais, dependendo da peça.',
+    },
+    {
+      q: 'Qual é o horário de entregas?',
+      a: 'As entregas são realizadas entre as 9h00 e as 15h00.',
+    },
+    {
+      q: 'Oferecem serviço expresso?',
+      a: 'Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.',
+    },
+    {
+      q: 'Qual é a forma mais rápida de contactar o suporte?',
+      a: 'Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.',
+    },
+  ] : [
+    {
+      q: 'How does the pickup and delivery service work?',
+      a: 'Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.',
+    },
+    {
+      q: 'How far in advance should I book?',
+      a: 'We recommend booking at least 24 hours in advance to secure your preferred time slot.',
+    },
+    {
+      q: 'What areas do you serve?',
+      a: 'We serve Lisbon and selected surrounding areas. You can confirm availability during the booking process.',
+    },
+    {
+      q: 'Can I reschedule or cancel my booking?',
+      a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.',
+    },
+    {
+      q: 'How long does the service take?',
+      a: 'Washing and ironing takes approximately 48 hours. Dry cleaning may take slightly longer depending on the item.',
+    },
+    {
+      q: 'What are your delivery hours?',
+      a: 'Deliveries are made between 9:00 AM and 3:00 PM.',
+    },
+    {
+      q: 'Do you offer express service?',
+      a: 'Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.',
+    },
+    {
+      q: 'What is the fastest way to reach support?',
+      a: 'We recommend calling us or contacting us on WhatsApp for the quickest response.',
+    },
+  ];
+
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-5xl mx-auto">
-        <SectionHeader title={t('services', 'title')} subtitle={t('services', 'subtitle')} />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              whileHover={{ y: -4 }}
-              className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-all"
-            >
-              <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4`}>
-                <s.icon className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">{s.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-            </motion.div>
-          ))}
+    <>
+      <section className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader title={t('services', 'title')} subtitle={t('services', 'subtitle')} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                whileHover={{ y: -4 }}
+                className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-all"
+              >
+                <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4`}>
+                  <s.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold text-center mb-8">
+            {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
+          </h3>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="bg-card rounded-xl border border-border/50 px-6"
+              >
+                <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+    </>
   );
 };
 

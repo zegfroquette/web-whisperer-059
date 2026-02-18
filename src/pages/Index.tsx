@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
@@ -17,6 +17,13 @@ const fadeUp = {
 
 const Index = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+
+  const goToPlans = () => {
+    navigate('/precos');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
 
   const steps = [
   { icon: Package, title: t('home', 'step1Title'), desc: t('home', 'step1Desc') },
@@ -79,8 +86,8 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center">
 
-            <Button asChild size="lg" className="rounded-full px-8 text-base gradient-primary border-0 hover:opacity-90 transition-opacity">
-              <Link to="/planos">{t('home', 'viewPlans')}</Link>
+            <Button size="lg" onClick={goToPlans} className="rounded-full px-8 text-base gradient-primary border-0 hover:opacity-90 transition-opacity">
+              {t('home', 'viewPlans')}
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base">
               <Link to="/servicos">{t('home', 'viewServices')}</Link>
@@ -160,8 +167,8 @@ const Index = () => {
             </h2>
             <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
-                <Link to="/planos">{t('home', 'viewPlans')}</Link>
+              <Button size="lg" onClick={goToPlans} className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
+                {t('home', 'viewPlans')}
               </Button>
               <Button asChild size="lg" className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
                 <Link to="/contacto">{t('home', 'contactUs')}</Link>
