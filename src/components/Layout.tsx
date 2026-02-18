@@ -8,7 +8,6 @@ import gloatLogo from '@/assets/gloat-logo.png';
 
 const navItems = [
 { key: 'home', path: '/' },
-{ key: 'plans', path: '/planos' },
 { key: 'services', path: '/servicos' },
 { key: 'pricing', path: '/precos' },
 { key: 'contact', path: '/contacto' },
