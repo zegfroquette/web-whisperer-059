@@ -14,7 +14,7 @@ const reviews: Review[] = [
   {
     name: 'Carol Anne Bisoni',
     city: 'Lisboa',
-    text: 'Gloat offers a great efficient laundry service, they\'re punctual, and laundry is returned in tip top condition. The employees are very friendly and go out of their way to help. Highly recommended service in Lisbon!',
+    text: "Gloat offers a great efficient laundry service, they're punctual, and laundry is returned in tip top condition. The employees are very friendly and go out of their way to help. Highly recommended service in Lisbon!",
     lang: 'en',
   },
   {
@@ -24,7 +24,7 @@ const reviews: Review[] = [
   },
   {
     name: 'Lee Lessack',
-    text: 'We have been using GLOAT (formerly JEFF) since moving from Los Angeles to Lisbon about 18 months ago. Their service is always prompt and well done. Mostly we used them for dry cleaning and they do a very good job. Recently we started a weekly service and they pick up our bedding and wash/press everything and it\'s really excellent. Communication is always quick and easy. Miguel always texts if he is running late (which is rare) to let us know what time he will arrive etc. I highly recommend GLOAT!',
+    text: "We have been using GLOAT (formerly JEFF) since moving from Los Angeles to Lisbon about 18 months ago. Their service is always prompt and well done. Mostly we used them for dry cleaning and they do a very good job. Recently we started a weekly service and they pick up our bedding and wash/press everything and it's really excellent. Communication is always quick and easy. Miguel always texts if he is running late (which is rare) to let us know what time he will arrive etc. I highly recommend GLOAT!",
     lang: 'en',
   },
   {
@@ -44,6 +44,8 @@ const reviews: Review[] = [
   },
 ];
 
+const PAGE_SIZE = 3;
+
 const StarRating = () => (
   <div className="flex gap-1 mb-4">
     {Array.from({ length: 5 }).map((_, i) => (
@@ -52,10 +54,8 @@ const StarRating = () => (
   </div>
 );
 
-const VISIBLE = 3;
-
 export const TestimonialsCarousel = () => {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
 
   // Sort: primary language first, secondary after
   const sorted = [
@@ -63,29 +63,26 @@ export const TestimonialsCarousel = () => {
     ...reviews.filter((r) => r.lang !== language),
   ];
 
-  const [index, setIndex] = useState(0);
+  const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+  const [page, setPage] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
 
-  // Reset index when language changes
+  // Reset page when language changes
   useEffect(() => {
-    setIndex(0);
+    setPage(0);
   }, [language]);
-
-  const total = sorted.length;
-  const maxIndex = total - VISIBLE;
 
   const prev = useCallback(() => {
     setDirection(-1);
-    setIndex((i) => Math.max(0, i - 1));
+    setPage((p) => Math.max(0, p - 1));
   }, []);
 
   const next = useCallback(() => {
     setDirection(1);
-    setIndex((i) => Math.min(maxIndex, i + 1));
-  }, [maxIndex]);
+    setPage((p) => Math.min(totalPages - 1, p + 1));
+  }, [totalPages]);
 
-  const visible = sorted.slice(index, index + VISIBLE);
-
+  const visible = sorted.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
   const sectionTitle = language === 'pt' ? 'O Que Os Nossos Clientes Dizem' : 'What Our Clients Say';
 
   return (
@@ -105,44 +102,43 @@ export const TestimonialsCarousel = () => {
         </motion.div>
 
         {/* Carousel */}
-        <div className="relative">
-          {/* Cards */}
-          <div className="overflow-hidden">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: direction * 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction * -40 }}
-                transition={{ duration: 0.35, ease: 'easeInOut' }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-6"
-              >
-                {visible.map((review, i) => (
-                  <div
-                    key={review.name}
-                    className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm flex flex-col"
-                  >
-                    <StarRating />
-                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-5">
-                      "{review.text}"
-                    </p>
-                    <div>
-                      <p className="font-semibold text-sm">{review.name}</p>
-                      {review.city && (
-                        <p className="text-xs text-muted-foreground mt-0.5">{review.city}</p>
-                      )}
-                    </div>
+        <div className="relative overflow-hidden">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={page}
+              initial={{ opacity: 0, x: direction * 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction * -50 }}
+              transition={{ duration: 0.38, ease: 'easeInOut' }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            >
+              {visible.map((review) => (
+                <div
+                  key={review.name}
+                  className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm flex flex-col"
+                >
+                  <StarRating />
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-5">
+                    "{review.text}"
+                  </p>
+                  <div>
+                    <p className="font-semibold text-sm">{review.name}</p>
+                    {review.city && (
+                      <p className="text-xs text-muted-foreground mt-0.5">{review.city}</p>
+                    )}
                   </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-          {/* Navigation */}
+        {/* Navigation */}
+        {totalPages > 1 && (
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              disabled={index === 0}
+              disabled={page === 0}
               className="w-10 h-10 rounded-full border border-border/60 bg-card flex items-center justify-center shadow-sm hover:shadow-md transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="Previous reviews"
             >
@@ -151,28 +147,28 @@ export const TestimonialsCarousel = () => {
 
             {/* Dots */}
             <div className="flex gap-2">
-              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+              {Array.from({ length: totalPages }).map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    i === index ? 'bg-primary w-5' : 'bg-border'
+                  onClick={() => { setDirection(i > page ? 1 : -1); setPage(i); }}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === page ? 'bg-primary w-5' : 'bg-border w-2'
                   }`}
-                  aria-label={`Go to slide ${i + 1}`}
+                  aria-label={`Go to page ${i + 1}`}
                 />
               ))}
             </div>
 
             <button
               onClick={next}
-              disabled={index >= maxIndex}
+              disabled={page >= totalPages - 1}
               className="w-10 h-10 rounded-full border border-border/60 bg-card flex items-center justify-center shadow-sm hover:shadow-md transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="Next reviews"
             >
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
