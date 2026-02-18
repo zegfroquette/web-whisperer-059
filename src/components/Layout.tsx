@@ -36,7 +36,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1">
-              {navItems.map((item) =>
+              {navItems.filter(i => i.key !== 'bookNow').map((item) =>
               <Link
                 key={item.key}
                 to={item.path}
@@ -45,10 +45,16 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                 'bg-primary/10 text-primary' :
                 'text-muted-foreground hover:text-foreground hover:bg-muted'}`
                 }>
-
                   {t('nav', item.key)}
                 </Link>
               )}
+              <Link
+                to="/reservar"
+                className="ml-2 px-4 py-2 rounded-full text-sm font-semibold text-white shadow-md transition-all hover:opacity-90 hover:shadow-lg hover:scale-105 gradient-primary"
+                style={{ boxShadow: '0 2px 16px 0 hsl(204 85% 47% / 0.35)' }}
+              >
+                {t('nav', 'bookNow')}
+              </Link>
             </nav>
 
             <div className="flex items-center gap-2">
@@ -80,7 +86,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
             className="md:hidden overflow-hidden border-t border-border/50">
 
               <nav className="px-4 py-3 flex flex-col gap-1">
-                {navItems.map((item) =>
+                {navItems.filter(i => i.key !== 'bookNow').map((item) =>
               <Link
                 key={item.key}
                 to={item.path}
@@ -90,10 +96,17 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                 'bg-primary/10 text-primary' :
                 'text-muted-foreground hover:text-foreground hover:bg-muted'}`
                 }>
-
                     {t('nav', item.key)}
                   </Link>
               )}
+              <Link
+                to="/reservar"
+                onClick={() => setMobileOpen(false)}
+                className="mt-1 px-4 py-3 rounded-full text-sm font-semibold text-white text-center gradient-primary shadow-md"
+                style={{ boxShadow: '0 2px 16px 0 hsl(204 85% 47% / 0.35)' }}
+              >
+                {t('nav', 'bookNow')}
+              </Link>
               </nav>
             </motion.div>
           }
