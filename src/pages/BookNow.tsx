@@ -18,8 +18,8 @@ const BookNow = () => {
     script.id = scriptId;
     script.src = "https://cleancloudapp.com/webapp/public/webapp/cleancloud.js";
     script.onload = () => {
-      if (window.CleanCloudWebApp) {
-        window.CleanCloudWebApp("#myStoreContainer", 27111, {
+      if ((window as any).CleanCloudWebApp) {
+        (window as any).CleanCloudWebApp("#myStoreContainer", 27111, {
           width: "auto",
           height: 700,
           welcomeMessage: true,
