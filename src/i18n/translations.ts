@@ -7,7 +7,7 @@ export const translations = {
     services: { pt: 'Serviços', en: 'Services' },
     pricing: { pt: 'Preços', en: 'Pricing' },
     contact: { pt: 'Contacto', en: 'Contact' },
-    bookNow: { pt: 'Reservar', en: 'Book Now' },
+    bookNow: { pt: 'Agendar Recolha', en: 'Schedule Pickup' },
   },
   home: {
     heroTitle: {
