@@ -40,11 +40,13 @@ const BookNow = () => {
       wrapperRef.current.appendChild(container);
     }
 
-    (window as any).CleanCloudWebApp("#myStoreContainer", 27111, {
-      width: "auto",
-      height: 700,
-      welcomeMessage: true,
-    });
+    const initApp = () => {
+      (window as any).CleanCloudWebApp("#myStoreContainer", 27111, {
+        width: "auto",
+        height: 700,
+        welcomeMessage: true,
+      });
+    };
 
     if (!document.getElementById(linkId)) {
       const link = document.createElement("link");
