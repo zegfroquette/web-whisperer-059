@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Button } from "@/components/ui/button";
 
+// Module-level flag — survives React StrictMode double-invoke
+let cleanCloudInitialized = false;
+
 const BookNow = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
@@ -27,20 +30,21 @@ const BookNow = () => {
   };
 
   useEffect(() => {
+    if (cleanCloudInitialized) return;
+    cleanCloudInitialized = true;
+
     const scriptId = "cleancloud-script";
     const linkId = "cleancloud-link";
 
-    // Prevent duplicate widgets (React StrictMode runs effects twice)
-    if (document.getElementById("myStoreContainer")) return;
-
-    const container = document.createElement("div");
-    container.id = "myStoreContainer";
-    container.style.width = "100%";
-    container.style.minHeight = "700px";
-    container.style.background = "#ffffff";
-
-    if (wrapperRef.current) {
-      wrapperRef.current.appendChild(container);
+    // Ensure container exists in DOM
+    let container = document.getElementById("myStoreContainer");
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "myStoreContainer";
+      container.style.width = "100%";
+      container.style.minHeight = "700px";
+      container.style.background = "#ffffff";
+      wrapperRef.current?.appendChild(container);
     }
 
     const initApp = () => {
@@ -73,12 +77,6 @@ const BookNow = () => {
       script.onload = initApp;
       document.body.appendChild(script);
     }
-
-    return () => {
-      if (wrapperRef.current && container.parentNode === wrapperRef.current) {
-        wrapperRef.current.removeChild(container);
-      }
-    };
   }, []);
 
   return (
