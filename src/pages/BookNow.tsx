@@ -11,13 +11,13 @@ const BookNow = () => {
     en: {
       title: "Book Your Laundry Service",
       subtitle: "Convenient, reliable, and professional — schedule a pickup or drop off at a time that suits you.",
-      cta: "Start Booking",
+      cta: "Start Booking"
     },
     pt: {
       title: "Agende o Seu Serviço de Lavandaria",
       subtitle: "Conveniente, fiável e profissional — agende uma recolha ou entrega no horário que mais lhe convir.",
-      cta: "Começar Agendamento",
-    },
+      cta: "Começar Agendamento"
+    }
   };
 
   const c = content[language] ?? content.en;
@@ -52,9 +52,9 @@ const BookNow = () => {
           auth: {
             backgroundColor: "#dddddd",
             color: "#ddddd",
-            logo: "default",
-          },
-        },
+            logo: "default"
+          }
+        }
       });
     };
 
@@ -94,28 +94,28 @@ const BookNow = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
             className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight"
-            style={{ fontFamily: "Plus Jakarta Sans" }}
-          >
+            style={{ fontFamily: "Plus Jakarta Sans" }}>
+
             {c.title}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.15 }}
-            className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto"
-          >
+            className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+
             {c.subtitle}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.28 }}
-          >
+            transition={{ duration: 0.55, delay: 0.28 }}>
+
             <Button
               size="lg"
               onClick={scrollToBooking}
-              className="rounded-full px-8 text-base gradient-primary border-0 hover:opacity-90 transition-opacity shadow-md"
-            >
+              className="rounded-full px-8 text-base gradient-primary border-0 hover:opacity-90 transition-opacity shadow-md">
+
               {c.cta}
             </Button>
           </motion.div>
@@ -123,9 +123,9 @@ const BookNow = () => {
       </section>
 
       {/* Booking widget */}
-      <div ref={wrapperRef} style={{ width: "100%", background: "#ffffff" }} className="px-4 pb-16 max-w-5xl mx-auto" />
-    </>
-  );
+      <div ref={wrapperRef} style={{ width: "100%", background: "#ffffff" }} className="px-4 pb-16 max-w-5xl mx-auto border-primary bg-[#dedede]" />
+    </>);
+
 };
 
 export default BookNow;
