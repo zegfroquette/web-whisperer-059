@@ -52,9 +52,9 @@ const BookNow = () => {
         width: "auto",
         height: 700,
         welcomeMessage: true,
-        theme: {
+      theme: {
           auth: {
-            logo: "none",
+            logo: "https://web-whisperer-059.lovable.app/gloat-logo-hd.png",
           },
         },
       });
