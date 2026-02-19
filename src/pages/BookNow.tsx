@@ -44,19 +44,17 @@ const BookNow = () => {
     }
 
     const initApp = () => {
- (window as any).CleanCloudWebApp("#myStoreContainer", 27111, {
-  width: "auto",
-  height: 700,
-  welcomeMessage: true,
-
-  theme: {
-    auth: {
-      logo: "none"
-    }
-  }
-
-});
-
+      (window as any).CleanCloudWebApp("#myStoreContainer", 27111, {
+        width: "auto",
+        height: 700,
+        welcomeMessage: true,
+        theme: {
+          auth: {
+            logo: "none",
+          },
+        },
+      });
+    };
 
     if (!document.getElementById(linkId)) {
       const link = document.createElement("link");
