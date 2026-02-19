@@ -34,6 +34,7 @@ const BookNow = () => {
     container.id = "myStoreContainer";
     container.style.width = "100%";
     container.style.minHeight = "700px";
+    container.style.background = "#ffffff";
 
     if (wrapperRef.current) {
       wrapperRef.current.appendChild(container);
@@ -114,7 +115,7 @@ const BookNow = () => {
       </section>
 
       {/* Booking widget */}
-      <div ref={wrapperRef} style={{ width: "100%" }} className="px-4 pb-16 max-w-5xl mx-auto" />
+      <div ref={wrapperRef} style={{ width: "100%", background: "#ffffff" }} className="px-4 pb-16 max-w-5xl mx-auto" />
     </>
   );
 };
