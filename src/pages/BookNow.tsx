@@ -46,6 +46,14 @@ const BookNow = () => {
           width: "auto",
           height: 700,
           welcomeMessage: true,
+
+          theme: {
+            border: {
+              visible: true,
+              color: "##FFFFFF",
+              width: 1,
+            },
+          },
         });
       }
     };
