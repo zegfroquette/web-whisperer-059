@@ -30,6 +30,9 @@ const BookNow = () => {
     const scriptId = "cleancloud-script";
     const linkId = "cleancloud-link";
 
+    // Prevent duplicate widgets (React StrictMode runs effects twice)
+    if (document.getElementById("myStoreContainer")) return;
+
     const container = document.createElement("div");
     container.id = "myStoreContainer";
     container.style.width = "100%";
