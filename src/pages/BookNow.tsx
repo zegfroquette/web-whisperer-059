@@ -51,7 +51,7 @@ const BookNow = () => {
         theme: {
           border: {
             visible: true,
-            color: "#FFFFFF",
+            color: "#ddddd",
             width: 2,
           },
         },
