@@ -54,7 +54,7 @@ const BookNow = () => {
         welcomeMessage: true,
       theme: {
           auth: {
-            logo: "https://web-whisperer-059.lovable.app/gloat-logo-hd.png",
+            logo: `${window.location.origin}/gloat-logo-hd.png`,
           },
         },
       });
