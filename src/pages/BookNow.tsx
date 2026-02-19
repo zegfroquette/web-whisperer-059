@@ -123,7 +123,7 @@ const BookNow = () => {
       </section>
 
       {/* Booking widget */}
-      <div ref={wrapperRef} style={{ width: "100%", background: "#ffffff" }} className="px-4 pb-16 max-w-5xl mx-auto border-primary bg-[#dedede]" />
+      <div ref={wrapperRef} style={{ width: "100%", background: "#ffffff" }} className="px-4 pb-16 max-w-5xl mx-auto bg-[#dedede]" />
     </>);
 
 };
