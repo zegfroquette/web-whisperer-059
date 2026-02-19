@@ -88,7 +88,7 @@ const BookNow = () => {
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.3 }}
             className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight"
             style={{ fontFamily: "Plus Jakarta Sans" }}>
             {c.title}
@@ -96,14 +96,14 @@ const BookNow = () => {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.15 }}
+            transition={{ duration: 0.3, delay: 0.08 }}
             className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
             {c.subtitle}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.28 }}>
+            transition={{ duration: 0.3, delay: 0.15 }}>
             <Button
               size="lg"
               onClick={scrollToBooking}
