@@ -36,16 +36,16 @@ const BookNow = () => {
     const scriptId = "cleancloud-script";
     const linkId = "cleancloud-link";
 
-    // Ensure container exists in DOM
-    let container = document.getElementById("myStoreContainer");
-    if (!container) {
-      container = document.createElement("div");
-      container.id = "myStoreContainer";
-      container.style.width = "100%";
-      container.style.minHeight = "700px";
-      container.style.background = "#ffffff";
-      wrapperRef.current?.appendChild(container);
-    }
+    // Destroy any existing container so we never get duplicates
+    const existing = document.getElementById("myStoreContainer");
+    if (existing) existing.remove();
+
+    const container = document.createElement("div");
+    container.id = "myStoreContainer";
+    container.style.width = "100%";
+    container.style.minHeight = "700px";
+    container.style.background = "#ffffff";
+    wrapperRef.current?.appendChild(container);
 
     const initApp = () => {
       (window as any).CleanCloudWebApp("#myStoreContainer", 27111, {
@@ -91,7 +91,6 @@ const BookNow = () => {
             transition={{ duration: 0.55 }}
             className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight"
             style={{ fontFamily: "Plus Jakarta Sans" }}>
-
             {c.title}
           </motion.h1>
           <motion.p
@@ -99,19 +98,16 @@ const BookNow = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.15 }}
             className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-
             {c.subtitle}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.28 }}>
-
             <Button
               size="lg"
               onClick={scrollToBooking}
               className="rounded-full px-8 text-base gradient-primary border-0 hover:opacity-90 transition-opacity shadow-md">
-
               {c.cta}
             </Button>
           </motion.div>
@@ -119,9 +115,9 @@ const BookNow = () => {
       </section>
 
       {/* Booking widget */}
-      <div ref={wrapperRef} style={{ width: "100%", background: "#ffffff" }} className="px-4 pb-16 max-w-5xl mx-auto bg-[#dedede]" />
-    </>);
-
+      <div ref={wrapperRef} style={{ width: "100%", background: "#ffffff" }} className="px-4 pb-16 max-w-5xl mx-auto" />
+    </>
+  );
 };
 
 export default BookNow;
