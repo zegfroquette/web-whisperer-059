@@ -51,7 +51,7 @@ const BookNow = () => {
         theme: {
           auth: {
             backgroundColor: "#dddddd",
-            color: "#ffffff",
+            color: "#ddddd",
             logo: "default",
           },
         },
