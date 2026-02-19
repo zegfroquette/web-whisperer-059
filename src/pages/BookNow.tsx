@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Button } from "@/components/ui/button";
 
-// Module-level flag — survives React StrictMode double-invoke
+// Module-level flag — survives React StrictMode double-invoke but is reset on unmount
 let cleanCloudInitialized = false;
 
 const BookNow = () => {
@@ -40,14 +40,21 @@ const BookNow = () => {
     const existing = document.getElementById("myStoreContainer");
     if (existing) existing.remove();
 
+    const wrapper = wrapperRef.current;
+    if (!wrapper) {
+      cleanCloudInitialized = false;
+      return;
+    }
+
     const container = document.createElement("div");
     container.id = "myStoreContainer";
     container.style.width = "100%";
     container.style.minHeight = "700px";
     container.style.background = "#ffffff";
-    wrapperRef.current?.appendChild(container);
+    wrapper.appendChild(container);
 
     const initApp = () => {
+      if (!document.getElementById("myStoreContainer")) return;
       (window as any).CleanCloudWebApp("#myStoreContainer", 27111, {
         width: "auto",
         height: 700,
@@ -77,6 +84,11 @@ const BookNow = () => {
       script.onload = initApp;
       document.body.appendChild(script);
     }
+
+    // Reset flag on unmount so re-navigation re-initialises the widget correctly
+    return () => {
+      cleanCloudInitialized = false;
+    };
   }, []);
 
   return (
