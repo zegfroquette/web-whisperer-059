@@ -54,3 +54,11 @@
 #__cc_bookingTool * {
   overflow: visible !important;
 }
+/* ===== CleanCloud Auth Background Override ===== */
+
+#myStoreContainer,
+#myStoreContainer .cc-auth-wrapper,
+#myStoreContainer .cc-container,
+#myStoreContainer .cc-wrapper {
+  background-color: #ffffff !important;
+}
