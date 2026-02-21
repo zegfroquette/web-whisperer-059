@@ -4,7 +4,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Menu, X, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import gloatLogo from '@/assets/gloat-logo-new.jpg';
+import gloatLogo from '@/assets/gloat-logo-new.png';
 
 const navItems = [
 { key: 'home', path: '/' },
