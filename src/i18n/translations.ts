@@ -11,12 +11,12 @@ export const translations = {
   },
   home: {
     heroTitle: {
-      pt: 'A sua roupa merece o melhor tratamento',
-      en: 'Your clothes deserve the best care',
+      pt: 'TRATAMOS DE TODA A SUA ROUPA!',
+      en: 'WE TAKE CARE OF ALL YOUR LAUNDRY!',
     },
     heroSubtitle: {
-      pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos — com qualidade profissional e a preços justos.',
-      en: 'Save time and trust GLOAT. We wash, iron and deliver — with professional quality at fair prices.',
+      pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos — Com cuidado profissional e preços justos.',
+      en: 'Save time and trust GLOAT. We wash, iron and deliver — With professional care at fair prices.',
     },
     viewPlans: { pt: 'Ver Planos', en: 'View Plans' },
     viewServices: { pt: 'Ver Serviços', en: 'View Services' },
@@ -28,13 +28,13 @@ export const translations = {
     },
     step2Title: { pt: 'Lavamos e tratamos', en: 'We wash & care' },
     step2Desc: {
-      pt: 'Tratamos da sua roupa com produtos profissionais e máximo cuidado.',
-      en: 'We handle your clothes with professional products and maximum care.',
+      pt: 'Tratamos a sua roupa com produtos profissionais e todo o cuidado.',
+      en: 'We handle your clothes with professional products and the utmost care.',
     },
-    step3Title: { pt: 'Levanta fresca e pronta', en: 'Pick up fresh & ready' },
+    step3Title: { pt: 'Roupa impecável e pronta.', en: 'Flawless & ready.' },
     step3Desc: {
-      pt: 'A sua roupa fica pronta, dobrada ou engomada, no prazo combinado.',
-      en: 'Your laundry is ready, folded or ironed, on the agreed schedule.',
+      pt: 'A sua roupa fica pronta, engomada ou só dobrada conforme escolhido.',
+      en: 'Your laundry is ready, ironed or just folded as you choose.',
     },
     whyChoose: { pt: 'Porquê a GLOAT?', en: 'Why Choose GLOAT?' },
     speed: { pt: 'Rapidez', en: 'Speed' },
@@ -71,8 +71,8 @@ export const translations = {
   plans: {
     title: { pt: 'Planos Mensais', en: 'Monthly Plans' },
     subtitle: {
-      pt: 'Escolha o plano que melhor se adapta ao seu dia-a-dia e poupe todos os meses.',
-      en: 'Choose the plan that best fits your routine and save every month.',
+      pt: 'Escolha o plano que melhor se adapta ao seu dia-a-dia e poupe todos os meses. Items adicionais ao plano a preços reduzidos. Delivery incluído.',
+      en: 'Choose the plan that best fits your routine and save every month. Additional items at reduced prices. Delivery included.',
     },
     choosePlan: { pt: 'Escolher Plano', en: 'Choose Plan' },
     bestValue: { pt: 'Melhor Valor', en: 'Best Value' },
@@ -83,8 +83,8 @@ export const translations = {
     washed: { pt: 'Lavada e dobrada', en: 'Washed & folded' },
     ironed: { pt: 'Engomada', en: 'Ironed' },
     washedIroned: { pt: 'Lavada e engomada', en: 'Washed & ironed' },
-    standardBag: { pt: 'Bolsa STANDARD', en: 'STANDARD bag' },
-    largeBag: { pt: 'Bolsa GRANDE', en: 'MAX bag' },
+    standardBag: { pt: '4 Bolsas STANDARD por mês', en: '4 STANDARD bags per month' },
+    largeBag: { pt: '4 Bolsas GRANDE por mês', en: '4 MAX bags per month' },
     itemCount: { pt: 'Quantidade', en: 'Item count' },
     serviceType: { pt: 'Tipo de serviço', en: 'Service type' },
     monthlyPrice: { pt: 'Preço mensal', en: 'Monthly price' },
@@ -113,7 +113,7 @@ export const translations = {
     },
     specialItems: { pt: 'Artigos Especiais', en: 'Special Items' },
     specialItemsDesc: {
-      pt: 'Edredões, cobertores, cortinas e outros artigos de grande dimensão.',
+      pt: 'Edredons, cobertores, cortinas e outros artigos de grande dimensão.',
       en: 'Duvets, blankets, curtains and other large items.',
     },
     expressService: { pt: 'Serviço Expresso', en: 'Express Service' },

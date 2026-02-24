@@ -19,18 +19,18 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '4 bolsas STANDARD de roupa lavada e dobrada' : '4 STANDARD bags of washed & folded clothes',
       benefits: pt
-        ? ['Bolsa STANDARD', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
-        : ['STANDARD bag', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
+        ? ['4 Bolsas STANDARD por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
+        : ['4 STANDARD bags per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
     },
     {
       name: pt ? 'Plano Max' : 'Max Plan',
       price: '85,00€',
       period: pt ? '4 semanas' : '4 weeks',
-      highlight: true,
+      highlight: false,
       desc: pt ? '4 bolsas GRANDE de roupa lavada e dobrada' : '4 MAX bags of washed & folded clothes',
       benefits: pt
-        ? ['Bolsa GRANDE', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h', 'Melhor valor']
-        : ['MAX bag', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h', 'Best value'],
+        ? ['4 Bolsas GRANDE por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
+        : ['4 MAX bags per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
     },
     {
       name: pt ? 'Plano Engomadoria' : 'Ironing Plan',
@@ -39,8 +39,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '24 peças apenas engomadas' : '24 pieces ironed only',
       benefits: pt
-        ? ['24 peças por mês', '1 recolha e entrega semanal', 'Engomadoria profissional', 'Camisas, calças, vestidos', 'Entregue em cabides']
-        : ['24 pieces per month', '1 weekly pickup and delivery', 'Professional ironing', 'Shirts, trousers, dresses', 'Delivered on hangers'],
+        ? ['24 peças por mês', '1 recolha e entrega semanal', 'Engomadoria profissional', 'Entregue em cabides', 'Entregue em 48 horas']
+        : ['24 pieces per month', '1 weekly pickup and delivery', 'Professional ironing', 'Delivered on hangers', 'Delivered in 48 hours'],
     },
     {
       name: pt ? 'Plano Lavar e Engomar' : 'Wash & Iron Plan',
@@ -49,8 +49,8 @@ const Pricing = () => {
       highlight: false,
       desc: pt ? '24 peças lavadas e engomadas' : '24 pieces washed & ironed',
       benefits: pt
-        ? ['24 peças por mês', '1 recolha e entrega semanal', 'Lavagem + engomadoria', 'Serviço completo', 'Entregue em cabides']
-        : ['24 pieces per month', '1 weekly pickup and delivery', 'Wash + ironing', 'Full service', 'Delivered on hangers'],
+        ? ['24 peças por mês', '1 recolha e entrega semanal', 'Lavagem + engomadoria', 'Serviço completo', 'Entregue em cabides', 'Entregue em 48 horas']
+        : ['24 pieces per month', '1 weekly pickup and delivery', 'Wash + ironing', 'Full service', 'Delivered on hangers', 'Delivered in 48 hours'],
     },
   ];
 
@@ -62,10 +62,10 @@ const Pricing = () => {
       subtitle: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar.',
       note: undefined,
         items: [
-          { label: 'Bolsa STANDARD (~5-6 kg) — com plano', price: '14,90€' },
-          { label: 'Bolsa STANDARD (~5-6 kg) — sem plano', price: '18,00€' },
-          { label: 'Bolsa GRANDE (~8-10 kg) — com plano', price: '19,90€' },
-          { label: 'Bolsa GRANDE (~8-10 kg) — sem plano', price: '24,00€' },
+          { label: 'Bolsa STANDARD (~5-6 kg) — com plano', price: '15,00€' },
+          { label: 'Bolsa STANDARD (~5-6 kg) — sem plano', price: '19,00€' },
+          { label: 'Bolsa GRANDE (~8-10 kg) — com plano', price: '20,00€' },
+          { label: 'Bolsa GRANDE (~8-10 kg) — sem plano', price: '26,00€' },
         ],
     },
     {
@@ -84,51 +84,51 @@ const Pricing = () => {
       id: 'engomar-apenas',
       title: '🌬️ Engomar Apenas',
       subtitle: 'Já lavou em casa? Tratamos da engomadoria.',
-      note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredão como 3 peças.',
+      note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredon como 3 peças.',
       items: [
           { label: 'Pack 5 camisas (1 mês)', price: '10,50€' },
           { label: 'Pack 12 peças (1 mês)', price: '28,00€' },
           { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
           { label: '1 peça — com plano', price: '2,00€' },
           { label: '1 peça — sem plano', price: '2,50€' },
-        { label: 'Capa edredão casal', price: '5,90€' },
-        { label: 'Capa edredão solteiro', price: '4,80€' },
+        { label: 'Capa edredon casal', price: '5,90€' },
+        { label: 'Capa edredon solteiro', price: '4,80€' },
       ],
     },
     {
       id: 'limpeza-seco',
       title: '✨ Limpeza a Seco',
       subtitle: 'Tratamento especializado para peças delicadas, fatos e artigos especiais.',
-      note: undefined,
+      note: 'Os preços indicados podem sofrer acréscimo em casos especiais. O cliente será consultado antes de avançar.',
       items: [
         { label: 'Camisa / Blusa', price: '7,90€' },
         { label: 'Camisa / Blusa de Seda', price: '8,90€' },
         { label: 'Gravata', price: '7,90€' },
-        { label: 'Calças / Saia', price: 'a partir de 11,00€' },
-        { label: 'Camisola / Pullover', price: 'a partir de 11,60€' },
-        { label: 'Blazer', price: 'a partir de 16,00€' },
-        { label: 'Blusão', price: 'a partir de 17,90€' },
+        { label: 'Calças / Saia', price: '11,00€' },
+        { label: 'Camisola / Pullover', price: '11,60€' },
+        { label: 'Blazer', price: '16,00€' },
+        { label: 'Blusão', price: '17,90€' },
         { label: 'Casaco / Sobretudo', price: '21,90€' },
-        { label: 'Fato (2 peças)', price: 'a partir de 20,90€' },
-        { label: 'Vestido Simples', price: 'a partir de 14,40€' },
+        { label: 'Fato (2 peças)', price: '20,90€' },
+        { label: 'Vestido Simples', price: '14,40€' },
         { label: 'Vestido Seda/Linho Curto', price: '20,30€' },
-        { label: 'Vestido de Festa (Seda/Linho comprido)', price: 'a partir de 22,40€' },
+        { label: 'Vestido de Festa (Seda/Linho comprido)', price: '22,40€' },
         { label: 'Ténis de Tecido ou Sintético', price: '23,00€' },
       ],
     },
     {
       id: 'casa',
       title: '🛏️ Artigos de Casa',
-      subtitle: 'Edredões, cobertores, cortinas e artigos de grande dimensão.',
-      note: undefined,
+      subtitle: 'Edredons, cobertores, cortinas e artigos de grande dimensão.',
+      note: 'Os preços indicados podem sofrer acréscimo em casos especiais. O cliente será consultado antes de avançar.',
       items: [
-        { label: 'Edredão Solteiro', price: '22,40€' },
-        { label: 'Edredão Solteiro de Penas/Acolchoado', price: '28,00€' },
-        { label: 'Edredão Casal', price: '28,60€' },
-        { label: 'Edredão Casal de Penas/Acolchoado', price: '33,60€' },
-        { label: 'Capa Edredão Solteiro', price: '11,40€' },
-        { label: 'Capa Edredão Casal', price: '12,60€' },
-        { label: 'Colcha Simples Solteiro', price: 'a partir de 15,90€' },
+        { label: 'Edredon Solteiro', price: '22,40€' },
+        { label: 'Edredon Solteiro de Penas/Acolchoado', price: '28,00€' },
+        { label: 'Edredon Casal', price: '28,60€' },
+        { label: 'Edredon Casal de Penas/Acolchoado', price: '33,60€' },
+        { label: 'Capa Edredon Solteiro', price: '11,40€' },
+        { label: 'Capa Edredon Casal', price: '12,60€' },
+        { label: 'Colcha Simples Solteiro', price: '15,90€' },
         { label: 'Resguardo Simples Solteiro', price: '10,30€' },
         { label: 'Almofada / Travesseiro Sintético', price: '12,90€' },
         { label: 'Cortina', price: '17,90€/m' },
@@ -143,10 +143,10 @@ const Pricing = () => {
       subtitle: 'Clothes washed with professional products, neatly folded and ready to store.',
       note: undefined,
         items: [
-          { label: 'STANDARD bag (~5-6 kg) — with plan', price: '€14.90' },
-          { label: 'STANDARD bag (~5-6 kg) — without plan', price: '€18.00' },
-          { label: 'MAX bag (~8-10 kg) — with plan', price: '€19.90' },
-          { label: 'MAX bag (~8-10 kg) — without plan', price: '€24.00' },
+          { label: 'STANDARD bag (~5-6 kg) — with plan', price: '€15.00' },
+          { label: 'STANDARD bag (~5-6 kg) — without plan', price: '€19.00' },
+          { label: 'MAX bag (~8-10 kg) — with plan', price: '€20.00' },
+          { label: 'MAX bag (~8-10 kg) — without plan', price: '€26.00' },
         ],
     },
     {
@@ -180,20 +180,20 @@ const Pricing = () => {
       id: 'dry-cleaning',
       title: '✨ Dry Cleaning',
       subtitle: 'Specialized treatment for delicate fabrics, suits and special garments.',
-      note: undefined,
+      note: 'Prices shown may increase in special cases. The customer will be consulted before proceeding.',
       items: [
         { label: 'Shirt / Blouse', price: '€7.90' },
         { label: 'Silk Shirt / Blouse', price: '€8.90' },
         { label: 'Tie', price: '€7.90' },
-        { label: 'Pants / Skirt', price: 'From €11.00' },
-        { label: 'Sweater / Pullover', price: 'From €11.60' },
-        { label: 'Blazer', price: 'From €16.00' },
-        { label: 'Jacket', price: 'From €17.90' },
+        { label: 'Pants / Skirt', price: '€11.00' },
+        { label: 'Sweater / Pullover', price: '€11.60' },
+        { label: 'Blazer', price: '€16.00' },
+        { label: 'Jacket', price: '€17.90' },
         { label: 'Coat / Overcoat', price: '€21.90' },
-        { label: 'Suit (2 pieces)', price: 'From €20.90' },
-        { label: 'Simple Dress', price: 'From €14.40' },
+        { label: 'Suit (2 pieces)', price: '€20.90' },
+        { label: 'Simple Dress', price: '€14.40' },
         { label: 'Short Silk / Linen Dress', price: '€20.30' },
-        { label: 'Long Silk / Linen Evening Dress', price: 'From €22.40' },
+        { label: 'Long Silk / Linen Evening Dress', price: '€22.40' },
         { label: 'Fabric or Synthetic Sneakers', price: '€23.00' },
       ],
     },
@@ -201,7 +201,7 @@ const Pricing = () => {
       id: 'household',
       title: '🛏️ Household Items',
       subtitle: 'Duvets, blankets, curtains and large household items.',
-      note: undefined,
+      note: 'Prices shown may increase in special cases. The customer will be consulted before proceeding.',
       items: [
         { label: 'Single Duvet', price: '€22.40' },
         { label: 'Feather/Quilted Single Duvet', price: '€28.00' },
@@ -209,7 +209,7 @@ const Pricing = () => {
         { label: 'Feather/Quilted Double Duvet', price: '€33.60' },
         { label: 'Single Duvet Cover', price: '€11.40' },
         { label: 'Double Duvet Cover', price: '€12.60' },
-        { label: 'Simple Single Bedspread', price: 'From €15.90' },
+        { label: 'Simple Single Bedspread', price: '€15.90' },
         { label: 'Simple Single Mattress Protector', price: '€10.30' },
         { label: 'Synthetic Pillow', price: '€12.90' },
         { label: 'Curtain', price: '€17.90/m' },
@@ -303,8 +303,8 @@ const Pricing = () => {
           <SectionHeader
             title={pt ? 'Planos Mensais' : 'Monthly Plans'}
             subtitle={pt
-              ? 'Escolha o plano que melhor se adapta ao seu dia-a-dia e poupe todos os meses.'
-              : 'Choose the plan that best fits your routine and save every month.'}
+              ? 'Escolha o plano que melhor se adapta ao seu dia-a-dia e poupe todos os meses. Items adicionais ao plano a preços reduzidos. Delivery incluído.'
+              : 'Choose the plan that best fits your routine and save every month. Additional items at reduced prices. Delivery included.'}
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -322,11 +322,7 @@ const Pricing = () => {
                     : 'border-border/50 bg-card shadow-sm hover:shadow-md'
                 }`}
               >
-                {plan.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 gradient-primary rounded-full text-white text-xs font-bold whitespace-nowrap">
-                    {pt ? 'Melhor Valor' : 'Best Value'}
-                  </div>
-                )}
+                {/* No highlight badge */}
 
                 <div className="mb-5">
                   <h3 className="text-base font-bold mb-3 text-foreground">{plan.name}</h3>
