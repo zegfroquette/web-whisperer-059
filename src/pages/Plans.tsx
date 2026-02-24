@@ -13,47 +13,47 @@ const Plans = () => {
   const plans = [
     {
       name: 'Plano Lite',
-      price: '56,99€',
+      price: '65,00€',
       highlight: false,
       desc: language === 'pt'
         ? '4 bolsas STANDARD de roupa lavada e dobrada'
         : '4 STANDARD bags of washed & folded laundry',
       benefits: language === 'pt'
-        ? ['Bolsa standard (5-6 kg)', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h']
-        : ['Standard bag (5-6 kg)', 'Professional wash', 'Folded clothes', 'Delivery in 48h'],
+        ? ['4 Bolsas STANDARD por mês', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h']
+        : ['4 STANDARD bags per month', 'Professional wash', 'Folded clothes', 'Delivery in 48h'],
     },
     {
       name: 'Plano Max',
-      price: '74,99€',
-      highlight: true,
+      price: '85,00€',
+      highlight: false,
       desc: language === 'pt'
         ? '4 bolsas GRANDE de roupa lavada e dobrada'
         : '4 MAX bags of washed & folded laundry',
       benefits: language === 'pt'
-        ? ['Bolsa GRANDE (8-10 kg)', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h', 'Melhor valor por kg']
-        : ['MAX bag (8-10 kg)', 'Professional wash', 'Folded clothes', 'Delivery in 48h', 'Best value per kg'],
+        ? ['4 Bolsas GRANDE por mês', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h']
+        : ['4 MAX bags per month', 'Professional wash', 'Folded clothes', 'Delivery in 48h'],
     },
     {
       name: 'Plano Engomadoria',
-      price: '50,99€',
+      price: '60,00€',
       highlight: false,
       desc: language === 'pt'
         ? '24 peças apenas engomadas'
         : '24 pieces ironed only',
       benefits: language === 'pt'
-        ? ['24 peças por mês', 'Engomadoria profissional', 'Camisas, calças, vestidos', 'Entrega em cabides']
-        : ['24 pieces per month', 'Professional ironing', 'Shirts, trousers, dresses', 'Delivered on hangers'],
+        ? ['24 peças por mês', 'Engomadoria profissional', 'Entrega em cabides', 'Entregue em 48 horas']
+        : ['24 pieces per month', 'Professional ironing', 'Delivered on hangers', 'Delivered in 48 hours'],
     },
     {
       name: 'Plano Lavar e Engomar',
-      price: '69,99€',
+      price: '80,00€',
       highlight: false,
       desc: language === 'pt'
         ? '24 peças lavadas e engomadas'
         : '24 pieces washed & ironed',
       benefits: language === 'pt'
-        ? ['24 peças por mês', 'Lavagem + engomadoria', 'Serviço completo', 'Entrega em cabides']
-        : ['24 pieces per month', 'Wash + ironing', 'Full service', 'Delivered on hangers'],
+        ? ['24 peças por mês', 'Lavagem + engomadoria', 'Serviço completo', 'Entrega em cabides', 'Entregue em 48 horas']
+        : ['24 pieces per month', 'Wash + ironing', 'Full service', 'Delivered on hangers', 'Delivered in 48 hours'],
     },
   ];
 
@@ -73,7 +73,7 @@ const Plans = () => {
     },
     {
       feature: t('plans', 'monthlyPrice'),
-      values: ['56,99€', '74,99€', '50,99€', '69,99€'],
+      values: ['65,00€', '85,00€', '60,00€', '80,00€'],
     },
   ];
 
