@@ -17,20 +17,20 @@ const Pricing = () => {
       price: '65,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: false,
-      desc: pt ? '4 bolsas STANDARD de roupa lavada e dobrada' : '4 STANDARD bags of washed & folded clothes',
+      desc: pt ? '4 bolsas STANDARD (aprox. 5kg) de roupa lavada e dobrada' : '4 STANDARD bags (approx. 5kg) of washed & folded clothes',
       benefits: pt
-        ? ['4 Bolsas STANDARD por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
-        : ['4 STANDARD bags per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
+        ? ['4 Bolsas STANDARD (aprox. 5kg) por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
+        : ['4 STANDARD bags (approx. 5kg) per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
     },
     {
       name: pt ? 'Plano Max' : 'Max Plan',
       price: '85,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: false,
-      desc: pt ? '4 bolsas GRANDE de roupa lavada e dobrada' : '4 MAX bags of washed & folded clothes',
+      desc: pt ? '4 bolsas GRANDE (aprox. 10kg) de roupa lavada e dobrada' : '4 MAX bags (approx. 10kg) of washed & folded clothes',
       benefits: pt
-        ? ['4 Bolsas GRANDE por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
-        : ['4 MAX bags per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
+        ? ['4 Bolsas GRANDE (aprox. 10kg) por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
+        : ['4 MAX bags (approx. 10kg) per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
     },
     {
       name: pt ? 'Plano Engomadoria' : 'Ironing Plan',
@@ -62,10 +62,10 @@ const Pricing = () => {
       subtitle: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar.',
       note: undefined,
         items: [
-          { label: 'Bolsa STANDARD (~5-6 kg) — com plano', price: '15,00€' },
-          { label: 'Bolsa STANDARD (~5-6 kg) — sem plano', price: '19,00€' },
-          { label: 'Bolsa GRANDE (~8-10 kg) — com plano', price: '20,00€' },
-          { label: 'Bolsa GRANDE (~8-10 kg) — sem plano', price: '26,00€' },
+          { label: 'Bolsa STANDARD (aprox. 5kg) — com plano', price: '15,00€' },
+          { label: 'Bolsa STANDARD (aprox. 5kg) — sem plano', price: '19,00€' },
+          { label: 'Bolsa GRANDE (aprox. 10kg) — com plano', price: '20,00€' },
+          { label: 'Bolsa GRANDE (aprox. 10kg) — sem plano', price: '26,00€' },
         ],
     },
     {
@@ -86,9 +86,9 @@ const Pricing = () => {
       subtitle: 'Já lavou em casa? Tratamos da engomadoria.',
       note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredon como 3 peças.',
       items: [
-          { label: 'Pack 5 camisas (1 mês)', price: '10,50€' },
-          { label: 'Pack 12 peças (1 mês)', price: '28,00€' },
           { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
+          { label: '5 camisas (de uma vez)', price: '10,50€' },
+          { label: '12 peças (de uma vez)', price: '28,00€' },
           { label: '1 peça — com plano', price: '2,00€' },
           { label: '1 peça — sem plano', price: '2,50€' },
         { label: 'Capa edredon casal', price: '5,90€' },
@@ -143,10 +143,10 @@ const Pricing = () => {
       subtitle: 'Clothes washed with professional products, neatly folded and ready to store.',
       note: undefined,
         items: [
-          { label: 'STANDARD bag (~5-6 kg) — with plan', price: '€15.00' },
-          { label: 'STANDARD bag (~5-6 kg) — without plan', price: '€19.00' },
-          { label: 'MAX bag (~8-10 kg) — with plan', price: '€20.00' },
-          { label: 'MAX bag (~8-10 kg) — without plan', price: '€26.00' },
+          { label: 'STANDARD bag (approx. 5kg) — with plan', price: '€15.00' },
+          { label: 'STANDARD bag (approx. 5kg) — without plan', price: '€19.00' },
+          { label: 'MAX bag (approx. 10kg) — with plan', price: '€20.00' },
+          { label: 'MAX bag (approx. 10kg) — without plan', price: '€26.00' },
         ],
     },
     {
@@ -167,9 +167,9 @@ const Pricing = () => {
       subtitle: 'Already washed at home? We take care of the ironing.',
       note: 'Packs valid for 30 days. Shirts/blouses count as 2 items; duvet covers count as 3 items.',
         items: [
-          { label: 'Pack 5 shirts (1 month)', price: '€10.50' },
-          { label: 'Pack 12 items (1 month)', price: '€28.00' },
           { label: 'Pack 50 items (1 month)', price: '€80.00' },
+          { label: '5 shirts (at once)', price: '€10.50' },
+          { label: '12 items (at once)', price: '€28.00' },
           { label: '1 item — with plan', price: '€2.00' },
           { label: '1 item — without plan', price: '€2.50' },
         { label: 'Double duvet cover', price: '€5.90' },
