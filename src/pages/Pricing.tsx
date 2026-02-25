@@ -229,10 +229,6 @@ const Pricing = () => {
       a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.',
     },
     {
-      q: 'Que zonas servem?',
-      a: 'Servimos Lisboa e algumas zonas circundantes selecionadas. Pode confirmar a disponibilidade durante o processo de reserva.',
-    },
-    {
       q: 'Posso reagendar ou cancelar a minha reserva?',
       a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.',
     },
@@ -242,7 +238,7 @@ const Pricing = () => {
     },
     {
       q: 'Quanto tempo demora o serviço?',
-      a: 'A lavagem e engomadoria demora aproximadamente 48 horas. A limpeza a seco pode demorar um pouco mais, dependendo da peça.',
+      a: 'A lavagem e engomadoria demora aproximadamente 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.',
     },
     {
       q: 'Qual é o horário de entregas?',
@@ -266,10 +262,6 @@ const Pricing = () => {
       a: 'We recommend booking at least 24 hours in advance to secure your preferred time slot.',
     },
     {
-      q: 'What areas do you serve?',
-      a: 'We serve Lisbon and selected surrounding areas. You can confirm availability during the booking process.',
-    },
-    {
       q: 'Can I reschedule or cancel my booking?',
       a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.',
     },
@@ -279,7 +271,7 @@ const Pricing = () => {
     },
     {
       q: 'How long does the service take?',
-      a: 'Washing and ironing takes approximately 48 hours. Dry cleaning may take slightly longer depending on the item.',
+      a: 'Washing and ironing takes approximately 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.',
     },
     {
       q: 'What are your delivery hours?',
