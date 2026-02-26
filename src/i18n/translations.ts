@@ -103,23 +103,23 @@ export const translations = {
     },
     ironing: { pt: 'Engomadoria', en: 'Ironing' },
     ironingDesc: {
-      pt: 'Engomadoria profissional para camisas, calças, vestidos e muito mais.',
-      en: 'Professional ironing for shirts, trousers, dresses and much more.',
+      pt: 'Engomadoria profissional para camisas, fatos, lençóis e muito mais.',
+      en: 'Professional ironing for shirts, suits, bed sheets and much more.',
     },
     dryCleaning: { pt: 'Limpeza a Seco', en: 'Dry Cleaning' },
     dryCleaningDesc: {
-      pt: 'Tratamento especializado para tecidos delicados, fatos, casacos e peças especiais.',
-      en: 'Specialized treatment for delicate fabrics, suits, coats and special garments.',
+      pt: 'Tratamento especializado para tecidos delicados e peças especiais.',
+      en: 'Specialized treatment for delicate fabrics and special garments.',
     },
     specialItems: { pt: 'Artigos Especiais', en: 'Special Items' },
     specialItemsDesc: {
-      pt: 'Edredons, cobertores, cortinas e outros artigos de grande dimensão.',
-      en: 'Duvets, blankets, curtains and other large items.',
+      pt: 'Tapetes, cortinados, sofás e artigos em pele, edredons, cobertores, e muito mais.',
+      en: 'Rugs, curtains, sofas and leather items, duvets, blankets, and much more.',
     },
     expressService: { pt: 'Serviço Expresso', en: 'Express Service' },
     expressServiceDesc: {
-      pt: 'Precisa com urgência? Entregamos no mesmo dia ou no dia seguinte.',
-      en: 'Need it urgently? We deliver same-day or next-day.',
+      pt: 'Precisa com urgência? Entregamos no dia seguinte.',
+      en: 'Need it urgently? We deliver next-day.',
     },
     delivery: { pt: 'Recolha e Entrega', en: 'Pickup & Delivery' },
     deliveryDesc: {

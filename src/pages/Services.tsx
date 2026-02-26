@@ -43,7 +43,7 @@ const Services = () => {
       a: 'A lavagem e engomadoria demora 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.',
     },
     {
-      q: 'Qual é o horário de entregas?',
+      q: 'Qual é o horário de recolhas e entregas?',
       a: 'As entregas são realizadas entre as 9h00 e as 15h00.',
     },
     {
@@ -72,7 +72,7 @@ const Services = () => {
       a: 'Washing and ironing takes 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.',
     },
     {
-      q: 'What are your delivery hours?',
+      q: 'What are your pickup and delivery hours?',
       a: 'Deliveries are made between 9:00 AM and 3:00 PM.',
     },
     {
