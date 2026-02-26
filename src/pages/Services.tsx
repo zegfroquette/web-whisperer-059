@@ -44,7 +44,7 @@ const Services = () => {
     },
     {
       q: 'Qual é o horário de recolhas e entregas?',
-      a: 'As entregas são realizadas entre as 9h00 e as 15h00.',
+      a: 'As recolhas e entregas são realizadas entre as 9h00 e as 15h00.',
     },
     {
       q: 'Oferecem serviço expresso?',
@@ -73,7 +73,7 @@ const Services = () => {
     },
     {
       q: 'What are your pickup and delivery hours?',
-      a: 'Deliveries are made between 9:00 AM and 3:00 PM.',
+      a: 'Pickups and deliveries are made between 9:00 AM and 3:00 PM.',
     },
     {
       q: 'Do you offer express service?',
