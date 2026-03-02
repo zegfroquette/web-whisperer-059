@@ -1,71 +1,52 @@
-## Privacy Policy and Terms & Conditions
 
-### What We'll Build
 
-Two new bilingual pages (Portuguese and English) accessible from the footer:
+## Save Contact Form Submissions to Database
 
-- **Privacy Policy** (`/politica-de-privacidade`)
-- **Terms and Conditions** (`/termos-e-condicoes`)
+### Overview
 
-### Legal Compliance
+When someone submits the contact form, their information (name, email, phone, message) will be saved to a database table. Only you and anyone with access to this Lovable project can view the submissions — website visitors cannot see any data.
 
-Both documents will comply with:
+### What Changes
 
-- **GDPR** (EU General Data Protection Regulation)
-- **Portuguese Data Protection Law** (Lei n.o 58/2019)
-- **Portuguese e-Commerce Law** (DL 7/2004)
-- **Consumer Rights Directive** (Directive 2011/83/EU)
-- **Cookie Law** (ePrivacy Directive 2002/58/EC)
+1. **Create a `contact_submissions` database table** with columns for name, email, phone, message, and timestamp
+   - RLS enabled with no public SELECT policy — visitors can only INSERT, never read data
+   - An INSERT policy allows anonymous submissions (no login required for the contact form)
 
-### Company Details Used
+2. **Update the contact form (`src/pages/Contact.tsx`)** to save the data to the database instead of just showing a toast
+   - Add loading state on the submit button
+   - Show success/error feedback
 
-- Legal name: Filipa Roquette Unipessoal Limitada
-- NIF: 515700622
-- Address: Rua Rodrigo da Fonseca, No 135, 1070-240 Lisboa, Portugal
-- Contact: [gloatlaundry@gmail.com](mailto:gloatlaundry@gmail.com) / (+351) 935 479 900
-- Data controller email: [gloatlaundry@gmail.com](mailto:gloatlaundry@gmail.com)
+### Technical Details
 
-### Privacy Policy Content
+**Database migration:**
+```sql
+CREATE TABLE public.contact_submissions (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  email text NOT NULL,
+  phone text,
+  message text NOT NULL,
+  created_at timestamptz DEFAULT now()
+);
 
-Covers:
+ALTER TABLE public.contact_submissions ENABLE ROW LEVEL SECURITY;
 
-- Identity of data controller (company name, NIF, address)
-- What personal data is collected (name, email, message via contact form)
-- Purpose and legal basis for processing (legitimate interest / consent)
-- No cookies or tracking beyond essential platform cookies
-- Data retention periods
-- Data subject rights (access, rectification, erasure, portability, objection)
-- Right to lodge complaint with CNPD (Portuguese DPA)
-- No international data transfers or third-party sharing beyond hosting
-- Contact information for privacy requests
+-- Allow anyone to submit (no login required)
+CREATE POLICY "Anyone can submit contact form"
+  ON public.contact_submissions
+  FOR INSERT
+  WITH CHECK (true);
 
-### Terms and Conditions Content
+-- No SELECT/UPDATE/DELETE policies = no public read access
+```
 
-Covers:
+**Edit `src/pages/Contact.tsx`:**
+- Import the database client
+- Replace the current no-op `handleSubmit` with an actual insert into `contact_submissions`
+- Add a loading/disabled state while submitting
+- Show appropriate success or error toast messages
 
-- Service description (laundry services)
-- Company identification (as required by Portuguese law)
-- User obligations
-- Liability limitations
-- Intellectual property
-- Governing law (Portuguese law, Lisbon courts)
-- Complaints book reference (Livro de Reclamacoes)
-- Changes to terms
-- Contact information
+### Viewing Submissions
 
-### Technical Implementation
+You can view all submissions by opening the backend panel in Lovable Cloud and browsing the `contact_submissions` table directly.
 
-1. **Create `src/pages/PrivacyPolicy.tsx**` -- Full bilingual page with all privacy policy content, using `useLanguage()` hook to toggle PT/EN
-2. **Create `src/pages/TermsConditions.tsx**` -- Full bilingual page with all terms content, same bilingual pattern
-3. **Edit `src/App.tsx**` -- Add two new routes: `/politica-de-privacidade` and `/termos-e-condicoes`
-4. **Edit `src/components/Layout.tsx**` -- Add "Privacy Policy" and "Terms & Conditions" links to the footer, below the existing content, styled consistently with the current footer design
-5. **Edit `src/i18n/translations.ts**` -- Add footer link labels (`privacyPolicy` and `termsConditions`) in both languages
-
-### Footer Changes
-
-A new row will be added in the footer bottom bar (next to the copyright line) with two links:
-
-- "Politica de Privacidade" / "Privacy Policy"
-- "Termos e Condicoes" / "Terms & Conditions"
-
-No changes to layout, spacing, typography, or design system.
