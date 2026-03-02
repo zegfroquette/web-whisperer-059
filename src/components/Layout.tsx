@@ -138,17 +138,28 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               </div>
             </div>
           </div>
-          <div className="border-t border-background/10 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm opacity-50">
-            <span>© {new Date().getFullYear()} GLOAT — The Greatest Laundry. {t('footer', 'rights')}</span>
-            <a
-              href="https://www.instagram.com/gloat.thegreatestlaundry/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-100 transition-opacity"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
+          <div className="border-t border-background/10 mt-8 pt-8 flex flex-col items-center gap-4 text-sm opacity-50">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span>© {new Date().getFullYear()} GLOAT — The Greatest Laundry. {t('footer', 'rights')}</span>
+              <a
+                href="https://www.instagram.com/gloat.thegreatestlaundry/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-100 transition-opacity"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <Link to="/politica-de-privacidade" className="hover:opacity-100 transition-opacity">
+                {t('footer', 'privacyPolicy')}
+              </Link>
+              <span>·</span>
+              <Link to="/termos-e-condicoes" className="hover:opacity-100 transition-opacity">
+                {t('footer', 'termsConditions')}
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
