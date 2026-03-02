@@ -126,7 +126,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <SectionHeader title={t('home', 'whyChoose')} />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 [&>*:last-child:nth-child(odd)]:sm:col-span-2 [&>*:last-child:nth-child(odd)]:sm:max-w-sm [&>*:last-child:nth-child(odd)]:sm:mx-auto lg:[&>*:last-child]:col-span-1 lg:[&>*:last-child]:max-w-none">
             {reasons.map((r, i) =>
             <motion.div
               key={i}
