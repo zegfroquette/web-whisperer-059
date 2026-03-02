@@ -9,7 +9,8 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,7 +29,8 @@ const App = () => (
               <Route path="/precos" element={<Pricing />} />
               <Route path="/planos" element={<Pricing />} />
               <Route path="/contacto" element={<Contact />} />
-              
+              <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
+              <Route path="/termos-e-condicoes" element={<TermsConditions />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

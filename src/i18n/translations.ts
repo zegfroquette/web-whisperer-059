@@ -180,6 +180,8 @@ export const translations = {
   footer: {
     rights: { pt: 'Todos os direitos reservados.', en: 'All rights reserved.' },
     tagline: { pt: 'The Greatest Laundry', en: 'The Greatest Laundry' },
+    privacyPolicy: { pt: 'Política de Privacidade', en: 'Privacy Policy' },
+    termsConditions: { pt: 'Termos e Condições', en: 'Terms & Conditions' },
   },
 } as const;
 
