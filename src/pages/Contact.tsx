@@ -7,15 +7,32 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Phone, Clock, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t('contact', 'name') === 'Nome' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!');
-    setForm({ name: '', email: '', phone: '', message: '' });
+    setLoading(true);
+    const isPt = t('contact', 'name') === 'Nome';
+
+    const { error } = await supabase.from('contact_submissions').insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim() || null,
+      message: form.message.trim(),
+    });
+
+    setLoading(false);
+    if (error) {
+      toast.error(isPt ? 'Erro ao enviar mensagem. Tente novamente.' : 'Failed to send message. Please try again.');
+    } else {
+      toast.success(isPt ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!');
+      setForm({ name: '', email: '', phone: '', message: '' });
+    }
   };
 
   return (
@@ -73,8 +90,8 @@ const Contact = () => {
                   maxLength={1000}
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full rounded-full gradient-primary border-0 text-white hover:opacity-90">
-                {t('contact', 'send')}
+              <Button type="submit" size="lg" disabled={loading} className="w-full rounded-full gradient-primary border-0 text-white hover:opacity-90">
+                {loading ? (t('contact', 'name') === 'Nome' ? 'A enviar...' : 'Sending...') : t('contact', 'send')}
               </Button>
             </form>
 
