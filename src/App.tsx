@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import BookNow from "./pages/BookNow";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,7 +28,7 @@ const App = () => (
               <Route path="/precos" element={<Pricing />} />
               <Route path="/planos" element={<Pricing />} />
               <Route path="/contacto" element={<Contact />} />
-              <Route path="/reservar" element={<BookNow />} />
+              
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
