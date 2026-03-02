@@ -1,48 +1,71 @@
+## Privacy Policy and Terms & Conditions
 
-## Improve CleanCloud Widget Loading Speed
+### What We'll Build
 
-### Root Cause
+Two new bilingual pages (Portuguese and English) accessible from the footer:
 
-Right now, the CleanCloud script (`cleancloud.js`) and stylesheet (`cleancloud.css`) are loaded **on demand** — only when the user lands on the `/reservar` page. This means the browser has to:
+- **Privacy Policy** (`/politica-de-privacidade`)
+- **Terms and Conditions** (`/termos-e-condicoes`)
 
-1. Parse React, render the page
-2. Run `useEffect` (which only fires after the first render)
-3. Then start downloading ~the CleanCloud script from an external server
-4. Only after it finishes does the widget appear
+### Legal Compliance
 
-This creates a noticeable loading gap.
+Both documents will comply with:
 
-### The Fix: Preload the Resources in `index.html`
+- **GDPR** (EU General Data Protection Regulation)
+- **Portuguese Data Protection Law** (Lei n.o 58/2019)
+- **Portuguese e-Commerce Law** (DL 7/2004)
+- **Consumer Rights Directive** (Directive 2011/83/EU)
+- **Cookie Law** (ePrivacy Directive 2002/58/EC)
 
-The fastest improvement with zero risk is to add **resource hints** directly to `index.html`. These tell the browser to start fetching CleanCloud's assets in parallel with everything else, the moment the page loads — regardless of which route the user is on.
+### Company Details Used
 
-Two tags to add to the `<head>`:
+- Legal name: Filipa Roquette Unipessoal Limitada
+- NIF: 515700622
+- Address: Rua Rodrigo da Fonseca, No 135, 1070-240 Lisboa, Portugal
+- Contact: [gloatlaundry@gmail.com](mailto:gloatlaundry@gmail.com) / (+351) 935 479 900
+- Data controller email: [gloatlaundry@gmail.com](mailto:gloatlaundry@gmail.com)
 
-```html
-<!-- Preload CleanCloud script so it's ready when the user hits /reservar -->
-<link rel="preload" href="https://cleancloudapp.com/webapp/public/webapp/cleancloud.js" as="script" crossorigin />
+### Privacy Policy Content
 
-<!-- Prefetch the stylesheet -->
-<link rel="preload" href="https://cleancloudapp.com/webapp/public/webapp/cleancloud.css" as="style" crossorigin />
-```
+Covers:
 
-### Additional Improvement: Remove the Hero Animation Delay
+- Identity of data controller (company name, NIF, address)
+- What personal data is collected (name, email, message via contact form)
+- Purpose and legal basis for processing (legitimate interest / consent)
+- No cookies or tracking beyond essential platform cookies
+- Data retention periods
+- Data subject rights (access, rectification, erasure, portability, objection)
+- Right to lodge complaint with CNPD (Portuguese DPA)
+- No international data transfers or third-party sharing beyond hosting
+- Contact information for privacy requests
 
-The "Start Booking" button only appears after a `0.28s` staggered animation. Since the widget is below the fold, this delay doesn't add perceived value and slightly delays user interaction. Reducing or removing the animation delays on the hero section will make the page feel snappier.
+### Terms and Conditions Content
 
-### What Will Change
+Covers:
 
-| File | Change |
-|---|---|
-| `index.html` | Add 2 `<link rel="preload">` tags for CleanCloud JS and CSS |
-| `src/pages/BookNow.tsx` | Reduce hero motion animation delays from `0.55s / 0.15s / 0.28s` to `0.3s / 0.08s / 0.15s` |
+- Service description (laundry services)
+- Company identification (as required by Portuguese law)
+- User obligations
+- Liability limitations
+- Intellectual property
+- Governing law (Portuguese law, Lisbon courts)
+- Complaints book reference (Livro de Reclamacoes)
+- Changes to terms
+- Contact information
 
-### What This Does NOT Change
+### Technical Implementation
 
-- The widget initialization logic stays exactly the same — no risk of re-introducing the duplicate widget bug
-- The logo setup is untouched
-- The `cleanCloudInitialized` guard remains in place
+1. **Create `src/pages/PrivacyPolicy.tsx**` -- Full bilingual page with all privacy policy content, using `useLanguage()` hook to toggle PT/EN
+2. **Create `src/pages/TermsConditions.tsx**` -- Full bilingual page with all terms content, same bilingual pattern
+3. **Edit `src/App.tsx**` -- Add two new routes: `/politica-de-privacidade` and `/termos-e-condicoes`
+4. **Edit `src/components/Layout.tsx**` -- Add "Privacy Policy" and "Terms & Conditions" links to the footer, below the existing content, styled consistently with the current footer design
+5. **Edit `src/i18n/translations.ts**` -- Add footer link labels (`privacyPolicy` and `termsConditions`) in both languages
 
-### Expected Result
+### Footer Changes
 
-The browser begins downloading the CleanCloud script the moment the user opens the site (on any page). By the time they click "Reservar" and navigate to `/reservar`, the script is likely already cached — the widget will appear significantly faster.
+A new row will be added in the footer bottom bar (next to the copyright line) with two links:
+
+- "Politica de Privacidade" / "Privacy Policy"
+- "Termos e Condicoes" / "Terms & Conditions"
+
+No changes to layout, spacing, typography, or design system.
