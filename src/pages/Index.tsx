@@ -34,7 +34,6 @@ const Index = () => {
   const reasons = [
   { icon: Zap, title: t('home', 'speed'), desc: t('home', 'speedDesc') },
   { icon: Award, title: t('home', 'quality'), desc: t('home', 'qualityDesc') },
-  { icon: Tag, title: t('home', 'clearPricing'), desc: t('home', 'clearPricingDesc') },
   { icon: ShieldCheck, title: t('home', 'reliable'), desc: t('home', 'reliableDesc') }];
 
 
@@ -127,7 +126,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <SectionHeader title={t('home', 'whyChoose')} />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reasons.map((r, i) =>
             <motion.div
               key={i}
