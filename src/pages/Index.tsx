@@ -66,8 +66,8 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-black mb-6 leading-tight"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
+            style={{ fontFamily: 'Plus Jakarta Sans' }}>
 
             <span className="block" style={{ letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine1')}</span>
             <span className="block" style={{ letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine2')}</span>
