@@ -51,14 +51,22 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
             </nav>
 
             <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
-                className="gap-1.5 text-xs font-semibold tracking-wider">
-
-                <span className="text-xs font-bold">{language.toUpperCase()}</span>
-              </Button>
+              <div className="flex items-center gap-0.5">
+                <Button
+                  variant={language === 'pt' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('pt')}
+                  className="text-xs font-semibold tracking-wider px-2 h-7">
+                  PT
+                </Button>
+                <Button
+                  variant={language === 'en' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('en')}
+                  className="text-xs font-semibold tracking-wider px-2 h-7">
+                  EN
+                </Button>
+              </div>
               <button
                 className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
                 onClick={() => setMobileOpen(!mobileOpen)}>

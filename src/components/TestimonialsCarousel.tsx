@@ -12,7 +12,7 @@ interface Review {
 
 const reviews: Review[] = [
   {
-    name: 'Carol Anne B.',
+    name: 'Carol B.',
     city: 'Lisboa',
     text: "Gloat offers a great efficient laundry service, they're punctual, and laundry is returned in tip top condition. The employees are very friendly and go out of their way to help. Highly recommended service in Lisbon!",
     lang: 'en',
