@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
+import { Button } from '@/components/ui/button';
 import { Shirt, Wind, Droplets, Gem, Zap, Truck } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
@@ -14,7 +16,13 @@ const fadeUp = {
 
 const Services = () => {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
   const pt = language === 'pt';
+
+  const goToPlans = () => {
+    navigate('/precos');
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0);
+  };
 
   const services = [
     { icon: Shirt, title: t('services', 'washFold'), desc: t('services', 'washFoldDesc'), color: 'bg-blue-500/10 text-blue-600' },
@@ -110,6 +118,31 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="gradient-primary rounded-3xl p-10 md:p-16">
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Plus Jakarta Sans' }}>
+              {t('home', 'ctaTitle')}
+            </h2>
+            <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitle')}</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" onClick={goToPlans} className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
+                {t('home', 'viewPlans')}
+              </Button>
+              <Button size="lg" onClick={() => { navigate('/contacto'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0); }} className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
+                {t('home', 'contactUs')}
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
