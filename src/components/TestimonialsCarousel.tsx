@@ -83,7 +83,7 @@ export const TestimonialsCarousel = () => {
   }, [totalPages]);
 
   const visible = sorted.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
-  const sectionTitle = language === 'pt' ? 'O Que Os Nossos Clientes Dizem' : 'What Our Clients Say';
+  const sectionTitle = language === 'pt' ? 'O que os nossos Clientes dizem' : 'What our Clients say';
 
   return (
     <section className="py-20 px-4 bg-muted/30">
