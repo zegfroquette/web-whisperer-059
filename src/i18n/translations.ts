@@ -10,9 +10,13 @@ export const translations = {
     bookNow: { pt: 'Agendar Recolha', en: 'Schedule Pickup' },
   },
   home: {
-    heroTitle: {
-      pt: 'TRATAMOS DE TODA A SUA ROUPA!',
-      en: 'WE TAKE CARE OF ALL YOUR LAUNDRY!',
+    heroTitleLine1: {
+      pt: 'TRATAMOS DE TODA',
+      en: 'WE TAKE CARE OF',
+    },
+    heroTitleLine2: {
+      pt: 'A SUA ROUPA!',
+      en: 'ALL YOUR LAUNDRY!',
     },
     heroSubtitle: {
       pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos — Com cuidado profissional e preços justos.',

@@ -69,7 +69,8 @@ const Index = () => {
             className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
             style={{ fontFamily: 'Plus Jakarta Sans' }}>
 
-            {t('home', 'heroTitle')}
+            <span className="block" style={{ letterSpacing: '-0.04em' }}>{t('home', 'heroTitleLine1')}</span>
+            <span className="block" style={{ letterSpacing: '-0.04em' }}>{t('home', 'heroTitleLine2')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
