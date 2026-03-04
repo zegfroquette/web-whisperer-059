@@ -61,7 +61,7 @@ export const translations = {
       pt: 'Conte connosco semana após semana, sempre com a mesma qualidade.',
       en: 'Count on us week after week, always with the same quality.',
     },
-    testimonials: { pt: 'O que dizem os nossos clientes', en: 'What our customers say' },
+    testimonials: { pt: 'O que os nossos Clientes dizem', en: 'What our customers say' },
     ctaTitle: {
       pt: 'Pronto para experimentar a GLOAT?',
       en: 'Ready to try GLOAT?',
@@ -92,7 +92,7 @@ export const translations = {
     itemCount: { pt: 'Quantidade', en: 'Item count' },
     serviceType: { pt: 'Tipo de serviço', en: 'Service type' },
     monthlyPrice: { pt: 'Preço mensal', en: 'Monthly price' },
-    customerStories: { pt: 'O que dizem os nossos clientes', en: 'What our plan holders say' },
+    customerStories: { pt: 'O que os nossos Clientes dizem', en: 'What our plan holders say' },
   },
   services: {
     title: { pt: 'Os Nossos Serviços', en: 'Our Services' },
