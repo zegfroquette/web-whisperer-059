@@ -12,33 +12,33 @@ interface Review {
 
 const reviews: Review[] = [
   {
-    name: 'Carol Anne',
+    name: 'Carol Anne Bisoni',
     city: 'Lisboa',
     text: "Gloat offers a great efficient laundry service, they're punctual, and laundry is returned in tip top condition. The employees are very friendly and go out of their way to help. Highly recommended service in Lisbon!",
     lang: 'en',
   },
   {
-    name: 'David',
+    name: 'David Charlton',
     text: 'Traveler. Took a load of laundry to wash and fold. Done on time. Reasonably priced. Would go back to this location, any time. Staff was super helpful.',
     lang: 'en',
   },
   {
-    name: 'Lee',
+    name: 'Lee Lessack',
     text: "We have been using GLOAT (formerly JEFF) since moving from Los Angeles to Lisbon about 18 months ago. Their service is always prompt and well done. Mostly we used them for dry cleaning and they do a very good job. Recently we started a weekly service and they pick up our bedding and wash/press everything and it's really excellent. Communication is always quick and easy. Miguel always texts if he is running late (which is rare) to let us know what time he will arrive etc. I highly recommend GLOAT!",
     lang: 'en',
   },
   {
-    name: 'Mariana',
+    name: 'Mariana Guedes de Sousa',
     text: 'Se pudesse dava 10 estrelas. A atenção, a prontidão, o serviço. Tudo muito bom. Mas o melhor é a Carolina uma profissional de mão cheia e muito, muito atenta e sempre com um sorriso na cara.',
     lang: 'pt',
   },
   {
-    name: 'Afonso',
+    name: 'Afonso Castro Nunes',
     text: 'Gloat agora (antes MR Jeff) é sem dúvida alguma o sítio a quem confiar a roupa. Único sítio que resolveu todos os meus problemas relacionados à roupa e que há um vasto tipo de procedimentos que não só lavar, todos eles excecionais. Muito rápido e eficaz nas entregas e o staff é todo impecável e preocupado com o cliente.',
     lang: 'pt',
   },
   {
-    name: 'Patrícia',
+    name: 'Patrícia Guimarães',
     text: 'A melhor lavandaria de Lisboa.',
     lang: 'pt',
   },
