@@ -19,8 +19,8 @@ export const translations = {
       en: 'ALL YOUR LAUNDRY!',
     },
     heroSubtitle: {
-      pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos — Com cuidado profissional e preços justos.',
-      en: 'Save time and trust GLOAT. We wash, iron and deliver — With professional care at fair prices.',
+      pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos. Com cuidado profissional e preços justos.',
+      en: 'Save time and trust GLOAT. We wash, iron and deliver. With professional care at fair prices.',
     },
     viewPlans: { pt: 'Ver Planos', en: 'View Plans' },
     viewServices: { pt: 'Ver Serviços', en: 'View Services' },
@@ -37,8 +37,8 @@ export const translations = {
     },
     step3Title: { pt: 'Roupa impecável e pronta.', en: 'Flawless & ready.' },
     step3Desc: {
-      pt: 'A sua roupa fica pronta, engomada ou só dobrada conforme escolhido.',
-      en: 'Your laundry is ready, ironed or just folded as you choose.',
+      pt: 'A sua roupa fica pronta, engomada ou só dobrada, conforme escolhido.',
+      en: 'Your laundry is ready, ironed or just folded, as you choose.',
     },
     whyChoose: { pt: 'Porquê a GLOAT?', en: 'Why Choose GLOAT?' },
     speed: { pt: 'Rapidez', en: 'Speed' },
@@ -48,8 +48,8 @@ export const translations = {
     },
     quality: { pt: 'Qualidade Profissional', en: 'Professional Quality' },
     qualityDesc: {
-      pt: 'Equipamento industrial e produtos de alta qualidade.',
-      en: 'Industrial equipment and high-quality products.',
+      pt: 'Tratamento especializado da roupa com processos e produtos profissionais.',
+      en: 'Specialized garment care with professional processes and products.',
     },
     clearPricing: { pt: 'Preços Claros', en: 'Clear Pricing' },
     clearPricingDesc: {
