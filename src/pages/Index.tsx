@@ -66,11 +66,10 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-medium mb-6 leading-tight"
-            style={{ fontFamily: 'Plus Jakarta Sans' }}>
+            className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
 
-            <span className="block" style={{ fontFamily: "'Placard Next Wide', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine1')}</span>
-            <span className="block" style={{ fontFamily: "'Placard Next Wide', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine2')}</span>
+            <span className="block" style={{ fontFamily: "'Montserrat', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine1')}</span>
+            <span className="block" style={{ fontFamily: "'Montserrat', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine2')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
