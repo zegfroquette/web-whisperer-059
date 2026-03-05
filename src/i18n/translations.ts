@@ -18,9 +18,13 @@ export const translations = {
       pt: 'A SUA ROUPA!',
       en: 'ALL YOUR LAUNDRY!',
     },
-    heroSubtitle: {
-      pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos. Com cuidado profissional e preços justos.',
-      en: 'Save time and trust GLOAT. We wash, iron and deliver. With professional care at fair prices.',
+    heroSubtitleLine1: {
+      pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos.',
+      en: 'Save time and trust GLOAT. We wash, iron and deliver.',
+    },
+    heroSubtitleLine2: {
+      pt: 'Com cuidado profissional e preços justos.',
+      en: 'With professional care at fair prices.',
     },
     viewPlans: { pt: 'Ver Planos', en: 'View Plans' },
     viewServices: { pt: 'Ver Serviços', en: 'View Services' },
