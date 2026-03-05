@@ -77,7 +77,8 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
 
-            {t('home', 'heroSubtitle')}
+            {t('home', 'heroSubtitleLine1')}<br />
+            {t('home', 'heroSubtitleLine2')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
