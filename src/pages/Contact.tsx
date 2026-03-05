@@ -19,12 +19,17 @@ const Contact = () => {
     setLoading(true);
     const isPt = t('contact', 'name') === 'Nome';
 
-    const { error } = await supabase.from('contact_submissions').insert({
+    const trimmed = {
       name: form.name.trim(),
       email: form.email.trim(),
       phone: form.phone.trim() || null,
       message: form.message.trim(),
-    });
+    };
+
+    const { error } = await supabase.from('contact_submissions').insert(trimmed);
+
+    // Fire-and-forget email notification
+    supabase.functions.invoke('send-contact-email', { body: trimmed }).catch(console.error);
 
     setLoading(false);
     if (error) {
