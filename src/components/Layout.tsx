@@ -5,6 +5,7 @@ import { Menu, X, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import gloatLogo from '@/assets/gloat-logo-new.png';
+import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 
 const navItems = [
 { key: 'home', path: '/' },
@@ -171,6 +172,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
           </div>
         </div>
       </footer>
+      <WhatsAppWidget />
     </div>);
 
 };
