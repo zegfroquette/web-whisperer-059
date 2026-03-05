@@ -8,11 +8,25 @@ import gloatLogo from '@/assets/gloat-logo-new.png';
 import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 
 const navItems = [
-{ key: 'home', path: '/' },
-{ key: 'services', path: '/servicos' },
-{ key: 'pricing', path: '/precos' },
-{ key: 'contact', path: '/contacto' },
+  { key: 'home', path: { pt: '/', en: '/' } },
+  { key: 'services', path: { pt: '/servicos', en: '/services' } },
+  { key: 'pricing', path: { pt: '/precos', en: '/pricing' } },
+  { key: 'contact', path: { pt: '/contacto', en: '/contact' } },
 ];
+
+const pathGroups: string[][] = [
+  ['/servicos', '/services'],
+  ['/precos', '/pricing', '/planos'],
+  ['/contacto', '/contact'],
+  ['/politica-de-privacidade', '/privacy-policy'],
+  ['/termos-e-condicoes', '/terms-and-conditions'],
+];
+
+const isSamePage = (pathname: string, itemPath: string) => {
+  if (pathname === itemPath) return true;
+  const group = pathGroups.find(g => g.includes(itemPath));
+  return group ? group.includes(pathname) : false;
+};
 
 
 export const Layout = ({ children }: {children: React.ReactNode;}) => {
@@ -40,9 +54,9 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               {navItems.map((item) =>
               <Link
                 key={item.key}
-                to={item.path}
+                to={item.path[language]}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                location.pathname === item.path ?
+                isSamePage(location.pathname, item.path[language]) ?
                 'bg-primary/10 text-primary' :
                 'text-muted-foreground hover:text-foreground hover:bg-muted'}`
                 }>
@@ -88,13 +102,13 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
             className="md:hidden overflow-hidden border-t border-border/50">
 
               <nav className="px-4 py-3 flex flex-col gap-1">
-                {navItems.map((item) =>
+              {navItems.map((item) =>
               <Link
                 key={item.key}
-                to={item.path}
+                to={item.path[language]}
                 onClick={() => setMobileOpen(false)}
                 className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                location.pathname === item.path ?
+                isSamePage(location.pathname, item.path[language]) ?
                 'bg-primary/10 text-primary' :
                 'text-muted-foreground hover:text-foreground hover:bg-muted'}`
                 }>
@@ -129,7 +143,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                 {navItems.map((item) =>
                 <Link
                   key={item.key}
-                  to={item.path}
+                  to={item.path[language]}
                   className="text-sm opacity-70 hover:opacity-100 transition-opacity">
 
                     {t('nav', item.key)}
@@ -161,11 +175,11 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <Link to="/politica-de-privacidade" className="hover:opacity-100 transition-opacity">
+              <Link to={language === 'en' ? '/privacy-policy' : '/politica-de-privacidade'} className="hover:opacity-100 transition-opacity">
                 {t('footer', 'privacyPolicy')}
               </Link>
               <span>·</span>
-              <Link to="/termos-e-condicoes" className="hover:opacity-100 transition-opacity">
+              <Link to={language === 'en' ? '/terms-and-conditions' : '/termos-e-condicoes'} className="hover:opacity-100 transition-opacity">
                 {t('footer', 'termsConditions')}
               </Link>
             </div>

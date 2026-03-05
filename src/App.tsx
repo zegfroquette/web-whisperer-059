@@ -26,11 +26,16 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/servicos" element={<Services />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/precos" element={<Pricing />} />
+              <Route path="/pricing" element={<Pricing />} />
               <Route path="/planos" element={<Pricing />} />
               <Route path="/contacto" element={<Contact />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/termos-e-condicoes" element={<TermsConditions />} />
+              <Route path="/terms-and-conditions" element={<TermsConditions />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
