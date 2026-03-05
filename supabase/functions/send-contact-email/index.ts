@@ -22,7 +22,7 @@ Deno.serve(async (req) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'GLOAT Contact Form <onboarding@resend.dev>',
+        from: 'GLOAT Contact Form <noreply@contactform.gloatlaundry.com>',
         to: ['gloatlaundry@gmail.com'],
         subject: `Nova mensagem de contacto de ${name}`,
         html: `
