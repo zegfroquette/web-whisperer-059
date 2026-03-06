@@ -1,27 +1,18 @@
 
 
-## Bilingual URL Routes
+## Scroll to Top on Route Change
 
-### What gets built
-Each page will be accessible via both its Portuguese and English URL. Both paths render the same component.
+### Problem
+When navigating between pages, the browser keeps the previous scroll position instead of jumping to the top.
 
-### Current routes → New routes
+### Solution
+Add a small `ScrollToTop` component that listens to route changes via `useLocation()` and calls `window.scrollTo(0, 0)` on every path change.
 
-| Page | Current | Added |
-|------|---------|-------|
-| Services | `/servicos` | `/services` |
-| Pricing | `/precos` | `/pricing` |
-| Contact | `/contacto` | `/contact` |
-| Privacy | `/politica-de-privacidade` | `/privacy-policy` |
-| Terms | `/termos-e-condicoes` | `/terms-and-conditions` |
+### Changes
 
-### Technical approach
+1. **Create `src/components/ScrollToTop.tsx`** — A component that uses `useEffect` + `useLocation` to scroll to top on every route change.
 
-1. **`src/App.tsx`** — Add duplicate `<Route>` entries for each English path pointing to the same component. Simple and no redirects needed.
+2. **`src/App.tsx`** — Place `<ScrollToTop />` inside `<BrowserRouter>` so it has access to the router context.
 
-2. **`src/components/Layout.tsx`** — Update `navItems` to use language-aware paths so links switch between `/servicos` ↔ `/services` etc. based on selected language. Also update the `location.pathname` active-state check to match both variants.
-
-3. **Footer links** — Same treatment for Privacy Policy and Terms links: use the correct language path.
-
-No database or backend changes needed.
+No other files need changes. This covers all navigation methods (links, CTAs, footer links, browser back/forward).
 
