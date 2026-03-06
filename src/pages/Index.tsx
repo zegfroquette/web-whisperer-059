@@ -68,8 +68,8 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
 
-            <span className="block" style={{ fontFamily: "'Barlow', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine1')}</span>
-            <span className="block" style={{ fontFamily: "'Barlow', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine2')}</span>
+            <span className="block" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine1')}</span>
+            <span className="block" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine2')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -162,7 +162,7 @@ const Index = () => {
             transition={{ duration: 0.5 }}
             className="gradient-primary rounded-3xl p-10 md:p-16">
 
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Plus Jakarta Sans' }}>
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {t('home', 'ctaTitle')}
             </h2>
             <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitle')}</p>
