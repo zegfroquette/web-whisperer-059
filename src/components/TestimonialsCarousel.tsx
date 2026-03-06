@@ -96,7 +96,7 @@ export const TestimonialsCarousel = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Plus Jakarta Sans' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {sectionTitle}
           </h2>
         </motion.div>
