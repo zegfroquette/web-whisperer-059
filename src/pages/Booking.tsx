@@ -466,6 +466,39 @@ const Booking = () => {
 
       if (error) throw error;
 
+      // === EMAIL NOTIFICATION (uncomment to activate) ===
+      // try {
+      //   await supabase.functions.invoke('send-booking-notification', {
+      //     body: {
+      //       firstName: form.firstName.trim(),
+      //       lastName: form.lastName.trim(),
+      //       email: form.email.trim(),
+      //       phone: `${form.countryCode} ${form.phone.trim()}`,
+      //       preferredContact: form.preferredContact,
+      //       returningCustomer: form.returningCustomer,
+      //       pickupAddress: form.pickupAddress.trim(),
+      //       pickupPostcode: form.pickupPostcode.trim(),
+      //       pickupFloor: form.pickupFloor.trim() || undefined,
+      //       pickupDate: format(form.pickupDate!, 'yyyy-MM-dd'),
+      //       pickupSlot: form.pickupSlot,
+      //       sameDeliveryAddress: form.sameDeliveryAddress,
+      //       deliveryAddress: form.sameDeliveryAddress ? form.pickupAddress.trim() : form.deliveryAddress.trim(),
+      //       deliveryPostcode: form.sameDeliveryAddress ? form.pickupPostcode.trim() : form.deliveryPostcode.trim(),
+      //       deliveryFloor: form.sameDeliveryAddress ? (form.pickupFloor.trim() || undefined) : (form.deliveryFloor.trim() || undefined),
+      //       deliveryDate: format(form.deliveryDate!, 'yyyy-MM-dd'),
+      //       deliverySlot: form.deliverySlot,
+      //       services: servicesPayload,
+      //       antiAllergic: form.antiAllergic,
+      //       contactBeforeProceed: form.contactBeforeProceed,
+      //       notes: form.notes.trim() || undefined,
+      //       nif: form.nif?.trim() || undefined,
+      //     },
+      //   });
+      // } catch (emailErr) {
+      //   console.warn('Booking notification email failed (non-blocking):', emailErr);
+      // }
+      // === END EMAIL NOTIFICATION ===
+
       setDirection(1);
       setStep(8);
     } catch (err: any) {
