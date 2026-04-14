@@ -124,6 +124,9 @@ const TermsConditions = () => {
         <title>Termos e Condições | GLOAT Laundry</title>
         <meta name="description" content="Termos e condições de utilização do website da GLOAT — lavandaria profissional em Lisboa." />
         <link rel="canonical" href="https://gloatlaundry.com/termos-e-condicoes" />
+        <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/termos-e-condicoes" />
+        <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/terms-and-conditions" />
+        <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/termos-e-condicoes" />
       </Helmet>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-3xl font-bold mb-2">{c.title}</h1>
