@@ -47,6 +47,9 @@ const Contact = () => {
         <title>Contacto | GLOAT Laundry Lisboa</title>
         <meta name="description" content="Contacte a GLOAT — lavandaria em Lisboa. Envie-nos uma mensagem, ligue ou visite-nos na Rua Artilharia 1." />
         <link rel="canonical" href="https://gloatlaundry.com/contacto" />
+        <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/contacto" />
+        <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/contact" />
+        <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/contacto" />
         <meta property="og:title" content="Contacto | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Contacte a GLOAT — lavandaria em Lisboa. Envie-nos uma mensagem, ligue ou visite-nos." />
         <meta property="og:url" content="https://gloatlaundry.com/contacto" />

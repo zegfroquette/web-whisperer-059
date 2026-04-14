@@ -100,9 +100,39 @@ const Services = () => {
         <title>Serviços | GLOAT Laundry Lisboa</title>
         <meta name="description" content="Conheça os serviços da GLOAT: lavar e dobrar, engomar, limpeza a seco, tratamento de nódoas e recolha ao domicílio em Lisboa." />
         <link rel="canonical" href="https://gloatlaundry.com/servicos" />
+        <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/servicos" />
+        <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/services" />
+        <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/servicos" />
         <meta property="og:title" content="Serviços | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Conheça os serviços da GLOAT: lavar e dobrar, engomar, limpeza a seco, tratamento de nódoas e recolha ao domicílio em Lisboa." />
         <meta property="og:url" content="https://gloatlaundry.com/servicos" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "itemListElement": services.map((s, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "item": {
+              "@type": "Service",
+              "name": s.title,
+              "description": s.desc,
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "GLOAT — The Greatest Laundry",
+                "url": "https://gloatlaundry.com"
+              }
+            }
+          }))
+        })}</script>
       </Helmet>
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
