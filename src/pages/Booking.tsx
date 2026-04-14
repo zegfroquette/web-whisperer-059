@@ -264,9 +264,13 @@ const Booking = () => {
   const [submitting, setSubmitting] = useState(false);
   const [direction, setDirection] = useState(1);
   const formTopRef = useRef<HTMLDivElement>(null);
+  const hasInteracted = useRef(false);
 
   useEffect(() => {
-    formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (hasInteracted.current) {
+      formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    hasInteracted.current = true;
   }, [step]);
 
   const b = (key: string) => {
