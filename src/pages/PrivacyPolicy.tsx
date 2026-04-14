@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const content = {
