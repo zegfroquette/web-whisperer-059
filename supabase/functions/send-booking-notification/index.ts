@@ -33,9 +33,10 @@ interface BookingData {
 function buildServicesList(services: Record<string, unknown>): string {
   const lines: string[] = [];
 
-  const wf = services.washFold as { standardBags?: number; largeBags?: number } | undefined;
+  const wf = services.washFold as { standardBags?: number; maxBags?: number; pieces?: number } | undefined;
   if (wf?.standardBags) lines.push(`Lavar & Dobrar – ${wf.standardBags} bolsa(s) Standard`);
-  if (wf?.largeBags) lines.push(`Lavar & Dobrar – ${wf.largeBags} bolsa(s) Grande`);
+  if (wf?.maxBags) lines.push(`Lavar & Dobrar – ${wf.maxBags} bolsa(s) Max`);
+  if (wf?.pieces) lines.push(`Lavar & Dobrar – ${wf.pieces} peça(s)`);
 
   const wi = services.washIron as { pieces?: number } | undefined;
   if (wi?.pieces) lines.push(`Lavar & Engomar – ${wi.pieces} peça(s)`);
