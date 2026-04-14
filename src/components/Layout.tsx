@@ -59,9 +59,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                 to={item.path[language]}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 item.highlight
-                  ? isSamePage(location.pathname, item.path[language])
-                    ? 'bg-primary text-primary-foreground shadow-md'
-                    : 'bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-md'
+                  ? 'bg-primary text-primary-foreground shadow-md'
                   : isSamePage(location.pathname, item.path[language])
                     ? 'bg-primary/10 text-primary'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'}`
