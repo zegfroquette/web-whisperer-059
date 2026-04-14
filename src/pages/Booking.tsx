@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -984,10 +985,10 @@ const Booking = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
           <h3 className="text-2xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
+            {language === 'pt' ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
           </h3>
           <Accordion type="single" collapsible className="space-y-3">
-            {(pt ? [
+            {(language === 'pt' ? [
               { q: 'Como funciona o serviço de recolha e entrega?', a: 'Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.' },
               { q: 'Com quanto tempo de antecedência devo fazer a reserva?', a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.' },
               { q: 'Posso reagendar ou cancelar a minha reserva?', a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.' },
