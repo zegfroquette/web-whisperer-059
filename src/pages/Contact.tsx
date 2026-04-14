@@ -42,7 +42,16 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-4">
+    <>
+      <Helmet>
+        <title>Contacto | GLOAT Laundry Lisboa</title>
+        <meta name="description" content="Contacte a GLOAT — lavandaria em Lisboa. Envie-nos uma mensagem, ligue ou visite-nos na Rua Artilharia 1." />
+        <link rel="canonical" href="https://gloatlaundry.com/contacto" />
+        <meta property="og:title" content="Contacto | GLOAT Laundry Lisboa" />
+        <meta property="og:description" content="Contacte a GLOAT — lavandaria em Lisboa. Envie-nos uma mensagem, ligue ou visite-nos." />
+        <meta property="og:url" content="https://gloatlaundry.com/contacto" />
+      </Helmet>
+      <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <SectionHeader title={t('contact', 'title')} subtitle={t('contact', 'subtitle')} />
 
