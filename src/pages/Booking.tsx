@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -263,9 +263,9 @@ const Booking = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [direction, setDirection] = useState(1);
-  const formTopRef = React.useRef<HTMLDivElement>(null);
+  const formTopRef = useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [step]);
 
