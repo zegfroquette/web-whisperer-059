@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
@@ -289,6 +290,14 @@ const Pricing = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Preços e Planos | GLOAT Laundry Lisboa</title>
+        <meta name="description" content="Conheça os planos mensais e preços por peça da GLOAT. Lavandaria acessível em Lisboa com planos a partir de 29,90€/mês." />
+        <link rel="canonical" href="https://gloatlaundry.com/precos" />
+        <meta property="og:title" content="Preços e Planos | GLOAT Laundry Lisboa" />
+        <meta property="og:description" content="Conheça os planos mensais e preços por peça da GLOAT. Lavandaria acessível em Lisboa com planos a partir de 29,90€/mês." />
+        <meta property="og:url" content="https://gloatlaundry.com/precos" />
+      </Helmet>
       {/* ── Section 1: Monthly Subscriptions ── */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">

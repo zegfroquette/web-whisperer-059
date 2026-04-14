@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 
@@ -41,6 +42,14 @@ const Index = () => {
 
   return (
     <>
+      <Helmet>
+        <title>GLOAT — The Greatest Laundry | Lavandaria em Lisboa</title>
+        <meta name="description" content="GLOAT — Lavandaria profissional em Lisboa. Serviços de lavar, dobrar, engomar e limpeza a seco com recolha e entrega ao domicílio." />
+        <link rel="canonical" href="https://gloatlaundry.com/" />
+        <meta property="og:title" content="GLOAT — The Greatest Laundry | Lavandaria em Lisboa" />
+        <meta property="og:description" content="GLOAT — Lavandaria profissional em Lisboa. Serviços de lavar, dobrar, engomar e limpeza a seco com recolha e entrega ao domicílio." />
+        <meta property="og:url" content="https://gloatlaundry.com/" />
+      </Helmet>
       {/* Hero */}
       <section className="relative overflow-hidden py-20 md:py-32 px-4">
         <div className="absolute inset-0 gradient-primary opacity-[0.03] my-0" />

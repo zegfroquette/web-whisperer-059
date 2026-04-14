@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
@@ -95,6 +96,14 @@ const Services = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Serviços | GLOAT Laundry Lisboa</title>
+        <meta name="description" content="Conheça os serviços da GLOAT: lavar e dobrar, engomar, limpeza a seco, tratamento de nódoas e recolha ao domicílio em Lisboa." />
+        <link rel="canonical" href="https://gloatlaundry.com/servicos" />
+        <meta property="og:title" content="Serviços | GLOAT Laundry Lisboa" />
+        <meta property="og:description" content="Conheça os serviços da GLOAT: lavar e dobrar, engomar, limpeza a seco, tratamento de nódoas e recolha ao domicílio em Lisboa." />
+        <meta property="og:url" content="https://gloatlaundry.com/servicos" />
+      </Helmet>
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <SectionHeader title={t('services', 'title')} subtitle={t('services', 'subtitle')} />

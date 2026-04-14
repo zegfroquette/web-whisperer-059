@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const content = {
@@ -126,7 +127,13 @@ const PrivacyPolicy = () => {
   const c = content[language];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <>
+      <Helmet>
+        <title>Política de Privacidade | GLOAT Laundry</title>
+        <meta name="description" content="Política de privacidade da GLOAT — saiba como tratamos os seus dados pessoais de acordo com o RGPD." />
+        <link rel="canonical" href="https://gloatlaundry.com/politica-de-privacidade" />
+      </Helmet>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-3xl font-bold mb-2">{c.title}</h1>
       <p className="text-sm text-muted-foreground mb-10">{c.lastUpdated}</p>
       {c.sections.map((section, i) => (
@@ -138,6 +145,7 @@ const PrivacyPolicy = () => {
         </section>
       ))}
     </div>
+    </>
   );
 };
 

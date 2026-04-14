@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -966,6 +967,14 @@ const Booking = () => {
 
   return (
     <div className="min-h-[80vh] py-12 px-4">
+      <Helmet>
+        <title>Reservar Recolha | GLOAT Laundry Lisboa</title>
+        <meta name="description" content="Agende a recolha e entrega da sua roupa ao domicílio em Lisboa. Serviço rápido e conveniente da GLOAT." />
+        <link rel="canonical" href="https://gloatlaundry.com/reserva" />
+        <meta property="og:title" content="Reservar Recolha | GLOAT Laundry Lisboa" />
+        <meta property="og:description" content="Agende a recolha e entrega da sua roupa ao domicílio em Lisboa." />
+        <meta property="og:url" content="https://gloatlaundry.com/reserva" />
+      </Helmet>
       <div className="max-w-xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
