@@ -28,7 +28,7 @@ interface BookingData {
   nif?: string;
 }
 
-function buildServicesSummary(services: Record<string, unknown>): string {
+function buildServicesList(services: Record<string, unknown>): string {
   const lines: string[] = [];
 
   const wf = services.washFold as { standardBags?: number; largeBags?: number } | undefined;
@@ -48,9 +48,15 @@ function buildServicesSummary(services: Record<string, unknown>): string {
   if (othersText) lines.push(`Outros: ${othersText}`);
 
   const serviceNotes = services.serviceNotes as string | undefined;
-  if (serviceNotes) lines.push(`Notas serviços: ${serviceNotes}`);
+  if (serviceNotes) lines.push(`Notas: ${serviceNotes}`);
 
-  return lines.length > 0 ? lines.join('<br/>') : 'Nenhum serviço selecionado';
+  return lines.map(l => `<p style="margin:2px 0;">${l}</p>`).join('');
+}
+
+function formatPickupDate(dateStr: string): string {
+  const months = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return `${day} de ${months[month - 1]} de ${year}`;
 }
 
 Deno.serve(async (req) => {
@@ -66,49 +72,53 @@ Deno.serve(async (req) => {
       throw new Error('RESEND_API_KEY not configured');
     }
 
-    const servicesSummary = buildServicesSummary(booking.services || {});
+    const servicesList = buildServicesList(booking.services || {});
+    const pickupDateFormatted = formatPickupDate(booking.pickupDate);
+    const deliveryDateFormatted = formatPickupDate(booking.deliveryDate);
+
+    const pickupSlotParts = booking.pickupSlot.split('–').map(s => s.trim());
+    const subjectSlot = pickupSlotParts.length === 2
+      ? `entre as ${pickupSlotParts[0]} e as ${pickupSlotParts[1]}`
+      : booking.pickupSlot;
+
+    const subject = `Nova Reserva (Recolha no dia ${pickupDateFormatted} ${subjectSlot})`;
+
+    const deliveryAddress = booking.sameDeliveryAddress
+      ? `${booking.pickupAddress}, ${booking.pickupPostcode}${booking.pickupFloor ? ` – ${booking.pickupFloor}` : ''}`
+      : `${booking.deliveryAddress}, ${booking.deliveryPostcode}${booking.deliveryFloor ? ` – ${booking.deliveryFloor}` : ''}`;
+
+    const pickupAddress = `${booking.pickupAddress}, ${booking.pickupPostcode}${booking.pickupFloor ? ` – ${booking.pickupFloor}` : ''}`;
 
     const html = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #2563eb;">🧺 Nova Reserva GLOAT</h2>
-        
-        <h3 style="border-bottom: 1px solid #e5e7eb; padding-bottom: 8px;">👤 Dados do Cliente</h3>
-        <p><strong>Nome:</strong> ${booking.firstName} ${booking.lastName}</p>
-        <p><strong>Email:</strong> ${booking.email}</p>
-        <p><strong>Telefone:</strong> ${booking.phone}</p>
-        <p><strong>Contacto preferido:</strong> ${booking.preferredContact}</p>
-        <p><strong>Cliente habitual:</strong> ${booking.returningCustomer ? 'Sim' : 'Não'}</p>
-        ${booking.nif ? `<p><strong>NIF:</strong> ${booking.nif}</p>` : ''}
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #222;">
 
-        <h3 style="border-bottom: 1px solid #e5e7eb; padding-bottom: 8px;">📦 Serviços</h3>
-        <p>${servicesSummary}</p>
+        <h3 style="margin-bottom:4px;">DADOS DO CLIENTE</h3>
+        <p style="margin:2px 0;"><strong>Cliente GLOAT?:</strong> ${booking.returningCustomer ? 'Sim' : 'Não'}</p>
+        <p style="margin:2px 0;"><strong>Nome:</strong> ${booking.firstName} ${booking.lastName}</p>
+        <p style="margin:2px 0;"><strong>Telefone:</strong> ${booking.phone}</p>
+        <p style="margin:2px 0;"><strong>Método de contacto preferido:</strong> ${booking.preferredContact}</p>
+        ${booking.nif ? `<p style="margin:2px 0;"><strong>NIF:</strong> ${booking.nif}</p>` : ''}
 
-        <h3 style="border-bottom: 1px solid #e5e7eb; padding-bottom: 8px;">⚙️ Preferências</h3>
-        <p><strong>Anti-alérgico:</strong> ${booking.antiAllergic ? 'Sim' : 'Não'}</p>
-        <p><strong>Contactar antes (preço):</strong> ${booking.contactBeforeProceed ? 'Sim' : 'Não'}</p>
+        <h3 style="margin-top:20px; margin-bottom:4px;">SERVIÇOS</h3>
+        ${servicesList}
 
-        <h3 style="border-bottom: 1px solid #e5e7eb; padding-bottom: 8px;">🚐 Recolha</h3>
-        <p><strong>Morada:</strong> ${booking.pickupAddress}, ${booking.pickupPostcode}</p>
-        ${booking.pickupFloor ? `<p><strong>Andar:</strong> ${booking.pickupFloor}</p>` : ''}
-        <p><strong>Data:</strong> ${booking.pickupDate}</p>
-        <p><strong>Horário:</strong> ${booking.pickupSlot}</p>
+        <h3 style="margin-top:20px; margin-bottom:4px;">PREFERÊNCIAS</h3>
+        <p style="margin:2px 0;"><strong>Detergente anti-alérgico?</strong> ${booking.antiAllergic ? 'Sim' : 'Não'}</p>
+        <p style="margin:2px 0;"><strong>Contactar com preço final antes de prosseguir?</strong> ${booking.contactBeforeProceed ? 'Sim' : 'Não'}</p>
 
-        <h3 style="border-bottom: 1px solid #e5e7eb; padding-bottom: 8px;">📬 Entrega</h3>
-        ${booking.sameDeliveryAddress 
-          ? '<p><em>Mesmo endereço da recolha</em></p>' 
-          : `<p><strong>Morada:</strong> ${booking.deliveryAddress}, ${booking.deliveryPostcode}</p>
-             ${booking.deliveryFloor ? `<p><strong>Andar:</strong> ${booking.deliveryFloor}</p>` : ''}`
-        }
-        <p><strong>Data:</strong> ${booking.deliveryDate}</p>
-        <p><strong>Horário:</strong> ${booking.deliverySlot}</p>
+        <h3 style="margin-top:20px; margin-bottom:4px;">DADOS DA RECOLHA</h3>
+        <p style="margin:2px 0;"><strong>Morada:</strong> ${pickupAddress}</p>
+        <p style="margin:2px 0;"><strong>Data e hora:</strong> ${pickupDateFormatted}, ${booking.pickupSlot}</p>
+
+        <h3 style="margin-top:20px; margin-bottom:4px;">DADOS DA ENTREGA</h3>
+        <p style="margin:2px 0;"><strong>Morada:</strong> ${deliveryAddress}</p>
+        <p style="margin:2px 0;"><strong>Data e hora:</strong> ${deliveryDateFormatted}, ${booking.deliverySlot}</p>
 
         ${booking.notes ? `
-        <h3 style="border-bottom: 1px solid #e5e7eb; padding-bottom: 8px;">📝 Notas</h3>
-        <p>${booking.notes}</p>
+        <h3 style="margin-top:20px; margin-bottom:4px;">NOTAS</h3>
+        <p style="margin:2px 0;">${booking.notes}</p>
         ` : ''}
 
-        <hr style="margin-top: 24px;" />
-        <p style="color: #6b7280; font-size: 12px;">Este email foi gerado automaticamente pelo site GLOAT.</p>
       </div>
     `;
 
@@ -121,7 +131,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         from: 'GLOAT Reservas <noreply@contactform.gloatlaundry.com>',
         to: ['gloatlaundry@gmail.com', 'gloatcarol@gmail.com'],
-        subject: `Nova Reserva – ${booking.firstName} ${booking.lastName} – ${booking.pickupDate}`,
+        subject,
         html,
       }),
     });
