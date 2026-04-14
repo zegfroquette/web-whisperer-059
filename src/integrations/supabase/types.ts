@@ -14,6 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
+      bookings: {
+        Row: {
+          anti_allergic: boolean
+          consent_accepted: boolean
+          contact_before_proceed: boolean
+          created_at: string
+          delivery_address: string
+          delivery_date: string
+          delivery_floor: string | null
+          delivery_instructions: string | null
+          delivery_postcode: string
+          delivery_slot: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          nif: string | null
+          notes: string | null
+          phone: string
+          pickup_address: string
+          pickup_date: string
+          pickup_floor: string | null
+          pickup_instructions: string | null
+          pickup_postcode: string
+          pickup_slot: string
+          preferred_contact: string
+          returning_customer: boolean
+          same_delivery_address: boolean
+          services: Json
+        }
+        Insert: {
+          anti_allergic?: boolean
+          consent_accepted?: boolean
+          contact_before_proceed?: boolean
+          created_at?: string
+          delivery_address: string
+          delivery_date: string
+          delivery_floor?: string | null
+          delivery_instructions?: string | null
+          delivery_postcode: string
+          delivery_slot: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          nif?: string | null
+          notes?: string | null
+          phone: string
+          pickup_address: string
+          pickup_date: string
+          pickup_floor?: string | null
+          pickup_instructions?: string | null
+          pickup_postcode: string
+          pickup_slot: string
+          preferred_contact: string
+          returning_customer: boolean
+          same_delivery_address?: boolean
+          services?: Json
+        }
+        Update: {
+          anti_allergic?: boolean
+          consent_accepted?: boolean
+          contact_before_proceed?: boolean
+          created_at?: string
+          delivery_address?: string
+          delivery_date?: string
+          delivery_floor?: string | null
+          delivery_instructions?: string | null
+          delivery_postcode?: string
+          delivery_slot?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          nif?: string | null
+          notes?: string | null
+          phone?: string
+          pickup_address?: string
+          pickup_date?: string
+          pickup_floor?: string | null
+          pickup_instructions?: string | null
+          pickup_postcode?: string
+          pickup_slot?: string
+          preferred_contact?: string
+          returning_customer?: boolean
+          same_delivery_address?: boolean
+          services?: Json
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           created_at: string | null
