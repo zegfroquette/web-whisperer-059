@@ -137,6 +137,7 @@ const TermsConditions = () => {
         </section>
       ))}
     </div>
+    </>
   );
 };
 
