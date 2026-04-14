@@ -315,9 +315,9 @@ const Booking = () => {
         en: 'I understand that pickup and delivery are available within municipal Lisbon, subject to item capacity, and that final pricing may depend on the items received. Payment is due at delivery.',
       },
       thankYou: { pt: 'Obrigado!', en: 'Thank you!' },
-      confirmationMsg: { pt: 'Recebemos a sua reserva e o nosso motorista passará em', en: 'We received your booking and our driver will come by on' },
+      confirmationMsg: { pt: 'Recebemos a sua reserva e o nosso motorista passará dia', en: 'We received your booking and our driver will come by on' },
       between: { pt: 'entre as', en: 'between' },
-      confirmationNote: { pt: 'Entraremos em contacto em breve para confirmar os detalhes.', en: 'We\'ll be in touch shortly to confirm the details.' },
+      confirmationNote: { pt: 'Caso seja necessário esclarecer algum detalhe, entraremos em contacto consigo.', en: 'If we need to clarify any details, we\'ll get in touch with you.' },
       back: { pt: 'Voltar', en: 'Back' },
       next: { pt: 'Seguinte', en: 'Next' },
       submit: { pt: 'Confirmar Reserva', en: 'Confirm Booking' },
@@ -902,7 +902,7 @@ const Booking = () => {
             </div>
             <h2 className="text-2xl font-bold">{b('thankYou')}</h2>
             <p className="text-muted-foreground max-w-md mx-auto">
-              {b('confirmationMsg')} <strong>{form.pickupDate ? format(form.pickupDate, 'PPP') : ''}</strong> {b('between')} <strong>{form.pickupSlot}</strong>.
+              {b('confirmationMsg')}{' '}<strong>{form.pickupDate ? (language === 'pt' ? form.pickupDate.toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric' }) : format(form.pickupDate, 'PPP')) : ''}</strong> {b('between')} <strong>{form.pickupSlot}</strong>.
             </p>
             <p className="text-sm text-muted-foreground">{b('confirmationNote')}</p>
             <Button onClick={() => { setForm({ ...initial }); setStep(0); }} variant="outline" className="mt-4">
