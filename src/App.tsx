@@ -11,6 +11,7 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import Booking from "./pages/Booking";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -34,6 +35,8 @@ const App = () => (
               <Route path="/planos" element={<Pricing />} />
               <Route path="/contacto" element={<Contact />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/reserva" element={<Booking />} />
+              <Route path="/booking" element={<Booking />} />
               <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/termos-e-condicoes" element={<TermsConditions />} />
