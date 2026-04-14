@@ -438,7 +438,8 @@ const Booking = () => {
         washIron: form.washIron,
         ironingOnly: form.ironingOnly,
         dryCleaning: form.dryCleaning,
-        others: form.othersText,
+        othersText: form.othersText,
+        serviceNotes: form.serviceNotes,
       };
 
       const { error } = await supabase.from('bookings').insert({
