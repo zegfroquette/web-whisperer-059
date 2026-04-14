@@ -97,6 +97,7 @@ Deno.serve(async (req) => {
         <h3 style="margin-bottom:4px;">DADOS DO CLIENTE</h3>
         <p style="margin:2px 0;"><strong>Cliente GLOAT?:</strong> ${booking.returningCustomer ? 'Sim' : 'Não'}</p>
         <p style="margin:2px 0;"><strong>Nome:</strong> ${booking.firstName} ${booking.lastName}</p>
+        <p style="margin:2px 0;"><strong>Email:</strong> ${booking.email}</p>
         <p style="margin:2px 0;"><strong>Telefone:</strong> ${booking.phone}</p>
         <p style="margin:2px 0;"><strong>Método de contacto preferido:</strong> ${booking.preferredContact}</p>
         ${booking.nif ? `<p style="margin:2px 0;"><strong>NIF:</strong> ${booking.nif}</p>` : ''}
@@ -110,10 +111,12 @@ Deno.serve(async (req) => {
 
         <h3 style="margin-top:20px; margin-bottom:4px;">DADOS DA RECOLHA</h3>
         <p style="margin:2px 0;"><strong>Morada:</strong> ${pickupAddress}</p>
+        ${booking.pickupInstructions ? `<p style="margin:2px 0;"><strong>Instruções:</strong> ${booking.pickupInstructions}</p>` : ''}
         <p style="margin:2px 0;"><strong>Data e hora:</strong> ${pickupDateFormatted}, ${booking.pickupSlot}</p>
 
         <h3 style="margin-top:20px; margin-bottom:4px;">DADOS DA ENTREGA</h3>
         <p style="margin:2px 0;"><strong>Morada:</strong> ${deliveryAddress}</p>
+        ${booking.deliveryInstructions ? `<p style="margin:2px 0;"><strong>Instruções:</strong> ${booking.deliveryInstructions}</p>` : ''}
         <p style="margin:2px 0;"><strong>Data e hora:</strong> ${deliveryDateFormatted}, ${booking.deliverySlot}</p>
 
         ${booking.notes ? `
