@@ -337,7 +337,7 @@ const Booking = () => {
       selectService: { pt: 'Selecione pelo menos um serviço', en: 'Please select at least one service' },
       acceptConsent: { pt: 'Deve aceitar para continuar', en: 'You must accept to continue' },
       pageTitle: { pt: 'Agendar Recolha e Entrega', en: 'Book a Pickup & Delivery' },
-      pageSubtitle: { pt: 'Rápido, simples e sem compromisso. Preencha o formulário abaixo e tratamos de tudo.', en: 'Quick, simple, and commitment-free. Fill in the form below and we\'ll handle the rest.' },
+      pageSubtitle: { pt: 'Rápido e simples. Preencha o formulário abaixo e tratamos de tudo.', en: 'Quick and simple. Fill in the form below and we\'ll handle the rest.' },
       paymentInfo: { pt: 'O pagamento é feito por cartão no momento da entrega. O nosso motorista leva sempre terminal de pagamento.', en: 'Payment is made by card at delivery. Our driver always carries a card machine.' },
       dryCleaningNote: { pt: 'A limpeza a seco demora entre 4 a 5 dias úteis — a data mínima de entrega foi ajustada.', en: 'Dry cleaning takes 4–5 business days — the minimum delivery date has been adjusted.' },
     };
