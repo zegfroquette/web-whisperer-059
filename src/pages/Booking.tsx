@@ -495,6 +495,8 @@ const Booking = () => {
             services: servicesPayload,
             antiAllergic: form.antiAllergic,
             contactBeforeProceed: form.contactBeforeProceed,
+            pickupInstructions: form.pickupInstructions.trim() || undefined,
+            deliveryInstructions: form.sameDeliveryAddress ? (form.pickupInstructions.trim() || undefined) : (form.deliveryInstructions.trim() || undefined),
             notes: form.notes.trim() || undefined,
             nif: form.nif?.trim() || undefined,
           },
