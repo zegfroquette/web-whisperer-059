@@ -11,8 +11,8 @@ const navItems = [
   { key: 'home', path: { pt: '/', en: '/' } },
   { key: 'services', path: { pt: '/servicos', en: '/services' } },
   { key: 'pricing', path: { pt: '/precos', en: '/pricing' } },
-  { key: 'booking', path: { pt: '/reserva', en: '/booking' } },
   { key: 'contact', path: { pt: '/contacto', en: '/contact' } },
+  { key: 'booking', path: { pt: '/reserva', en: '/booking' }, highlight: true },
 ];
 
 const pathGroups: string[][] = [
