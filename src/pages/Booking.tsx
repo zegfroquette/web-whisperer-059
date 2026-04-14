@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -979,6 +980,43 @@ const Booking = () => {
       <Suspense fallback={<div className="h-96" />}>
         <ServiceAreaMap />
       </Suspense>
+
+      {/* ── FAQs ── */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            {language === 'pt' ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
+          </h3>
+          <Accordion type="single" collapsible className="space-y-3">
+            {(language === 'pt' ? [
+              { q: 'Como funciona o serviço de recolha e entrega?', a: 'Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.' },
+              { q: 'Com quanto tempo de antecedência devo fazer a reserva?', a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.' },
+              { q: 'Posso reagendar ou cancelar a minha reserva?', a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.' },
+              { q: 'Quanto tempo demora o serviço?', a: 'Lavar e/ou engomar demora aproximadamente 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.' },
+              { q: 'Qual é o horário de recolhas e entregas?', a: 'As recolhas e entregas são realizadas entre as 9h00 e as 15h00.' },
+              { q: 'Oferecem serviço expresso?', a: 'Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.' },
+              { q: 'Qual é a forma mais rápida de contactar o suporte?', a: 'Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.' },
+            ] : [
+              { q: 'How does the pickup and delivery service work?', a: 'Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.' },
+              { q: 'How far in advance should I book?', a: 'We recommend booking at least 24 hours in advance to secure your preferred time slot.' },
+              { q: 'Can I reschedule or cancel my booking?', a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.' },
+              { q: 'How long does the service take?', a: 'Washing and/or ironing takes approximately 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.' },
+              { q: 'What are your pickup and delivery hours?', a: 'Pickups and deliveries are made between 9:00 AM and 3:00 PM.' },
+              { q: 'Do you offer express service?', a: 'Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.' },
+              { q: 'What is the fastest way to reach support?', a: 'We recommend calling us or contacting us on WhatsApp for the quickest response.' },
+            ]).map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="bg-card rounded-xl border border-border/50 px-6"
+              >
+                <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
     </div>
   );
 };
