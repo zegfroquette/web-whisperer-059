@@ -13,11 +13,13 @@ interface BookingData {
   pickupAddress: string;
   pickupPostcode: string;
   pickupFloor?: string;
+  pickupInstructions?: string;
   pickupDate: string;
   pickupSlot: string;
   deliveryAddress: string;
   deliveryPostcode: string;
   deliveryFloor?: string;
+  deliveryInstructions?: string;
   deliveryDate: string;
   deliverySlot: string;
   sameDeliveryAddress: boolean;
