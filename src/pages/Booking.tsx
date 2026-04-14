@@ -937,6 +937,7 @@ const Booking = () => {
           </div>
         </motion.div>
 
+        <div ref={formTopRef} className="scroll-mt-24" />
         {step < 8 && (
           <div className="mb-8">
             <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
