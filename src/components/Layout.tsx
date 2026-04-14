@@ -11,12 +11,14 @@ const navItems = [
   { key: 'home', path: { pt: '/', en: '/' } },
   { key: 'services', path: { pt: '/servicos', en: '/services' } },
   { key: 'pricing', path: { pt: '/precos', en: '/pricing' } },
+  { key: 'booking', path: { pt: '/reserva', en: '/booking' } },
   { key: 'contact', path: { pt: '/contacto', en: '/contact' } },
 ];
 
 const pathGroups: string[][] = [
   ['/servicos', '/services'],
   ['/precos', '/pricing', '/planos'],
+  ['/reserva', '/booking'],
   ['/contacto', '/contact'],
   ['/politica-de-privacidade', '/privacy-policy'],
   ['/termos-e-condicoes', '/terms-and-conditions'],
