@@ -515,9 +515,10 @@ const Booking = () => {
     }
   };
 
-  const disabledDays = (date: Date) => isWeekend(date) || isBefore(date, startOfDay(new Date()));
+  const tomorrow = addDays(startOfDay(new Date()), 1);
+  const disabledDays = (date: Date) => isWeekend(date) || isBefore(date, tomorrow);
   const disabledDeliveryDays = (date: Date) => {
-    if (isWeekend(date) || isBefore(date, startOfDay(new Date()))) return true;
+    if (isWeekend(date) || isBefore(date, tomorrow)) return true;
     if (form.pickupDate) {
       const minDays = hasDryCleaning() ? 4 : 2;
       const minDelivery = addBusinessDays(form.pickupDate, minDays);
