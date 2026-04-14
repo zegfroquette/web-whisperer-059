@@ -263,6 +263,11 @@ const Booking = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [direction, setDirection] = useState(1);
+  const formTopRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [step]);
 
   const b = (key: string) => {
     const map: Record<string, { pt: string; en: string }> = {
