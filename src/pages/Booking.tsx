@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -263,6 +263,11 @@ const Booking = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [direction, setDirection] = useState(1);
+  const formTopRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [step]);
 
   const b = (key: string) => {
     const map: Record<string, { pt: string; en: string }> = {
@@ -932,6 +937,7 @@ const Booking = () => {
           </div>
         </motion.div>
 
+        <div ref={formTopRef} className="scroll-mt-24" />
         {step < 8 && (
           <div className="mb-8">
             <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
