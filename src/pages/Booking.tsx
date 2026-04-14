@@ -971,6 +971,9 @@ const Booking = () => {
         <title>Reservar Recolha | GLOAT Laundry Lisboa</title>
         <meta name="description" content="Agende a recolha e entrega da sua roupa ao domicílio em Lisboa. Serviço rápido e conveniente da GLOAT." />
         <link rel="canonical" href="https://gloatlaundry.com/reserva" />
+        <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/reserva" />
+        <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/booking" />
+        <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/reserva" />
         <meta property="og:title" content="Reservar Recolha | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Agende a recolha e entrega da sua roupa ao domicílio em Lisboa." />
         <meta property="og:url" content="https://gloatlaundry.com/reserva" />
