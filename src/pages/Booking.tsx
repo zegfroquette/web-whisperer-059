@@ -340,7 +340,7 @@ const Booking = () => {
       pageTitle: { pt: 'Agendar Recolha e Entrega', en: 'Book a Pickup & Delivery' },
       pageSubtitle: { pt: 'Rápido e simples. Preencha o formulário abaixo e tratamos de tudo.', en: 'Quick and simple. Fill in the form below and we\'ll handle the rest.' },
       paymentInfo: { pt: 'O pagamento é feito por cartão no momento da entrega. O nosso motorista leva sempre terminal de pagamento.', en: 'Payment is made by card at delivery. Our driver always carries a card machine.' },
-      dryCleaningNote: { pt: 'Como o seu pedido inclui limpeza a seco, o prazo de entrega passa de 48 horas para 5 dias úteis.', en: 'Since your order includes dry cleaning, delivery time changes from 48 hours to 5 business days.' },
+      dryCleaningNote: { pt: 'Como o seu pedido inclui limpeza a seco, o prazo de entrega passa de 2 para 5 dias úteis.', en: 'Since your order includes dry cleaning, delivery time changes from 2 to 5 business days.' },
     };
     return map[key]?.[language] ?? key;
   };
