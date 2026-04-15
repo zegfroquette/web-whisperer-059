@@ -544,8 +544,15 @@ const Booking = () => {
   const stepIcons = [Check, Phone, Package, Settings2, MapPin, MapPin, FileText, ShieldCheck, PartyPopper];
 
   const stepTitles = [
-    b('stepReturning'), b('stepContact'), b('stepServices'), b('stepPreferences'),
-    b('stepPickup'), b('stepDelivery'), b('stepNotes'), b('stepReview'), b('stepConfirmation'),
+    language === 'pt' ? 'Início' : 'Start',
+    language === 'pt' ? 'Dados' : 'Details',
+    language === 'pt' ? 'Serviços' : 'Services',
+    language === 'pt' ? 'Preferências' : 'Preferences',
+    language === 'pt' ? 'Recolha' : 'Pickup',
+    language === 'pt' ? 'Entrega' : 'Delivery',
+    language === 'pt' ? 'Notas' : 'Notes',
+    language === 'pt' ? 'Revisão' : 'Review',
+    b('stepConfirmation'),
   ];
 
   const renderStep = () => {
@@ -994,7 +1001,7 @@ const Booking = () => {
         {step < 8 && (
           <div className="mb-8">
             {/* Step indicator - all 8 steps */}
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center w-full">
               {Array.from({ length: TOTAL_STEPS - 1 }).map((_, i) => {
                 const isCompleted = i < step;
                 const isCurrent = i === step;
@@ -1007,9 +1014,9 @@ const Booking = () => {
                         isCompleted ? 'bg-primary' : 'bg-border'
                       )} />
                     )}
-                    <div className="flex flex-col items-center gap-1.5 relative group">
+                    <div className="flex flex-col items-center">
                       <div className={cn(
-                        'w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-all duration-300 border-2',
+                        'w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 border-2',
                         isCompleted && 'bg-primary border-primary text-primary-foreground',
                         isCurrent && 'border-primary bg-primary/10 text-primary shadow-md shadow-primary/20',
                         !isCompleted && !isCurrent && 'border-border bg-muted/50 text-muted-foreground',
@@ -1021,7 +1028,7 @@ const Booking = () => {
                         )}
                       </div>
                       <span className={cn(
-                        'text-[10px] sm:text-xs text-center leading-tight max-w-[60px] sm:max-w-[72px] hidden sm:block',
+                        'text-[10px] sm:text-xs text-center leading-tight mt-1.5 hidden sm:block',
                         isCurrent ? 'text-primary font-semibold' : isCompleted ? 'text-foreground/70' : 'text-muted-foreground'
                       )}>
                         {stepTitles[i]}
