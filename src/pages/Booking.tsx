@@ -313,8 +313,10 @@ const Booking = () => {
       ironingOnly: { pt: 'Só Engomar', en: 'Ironing Only' },
       dryCleaning: { pt: 'Limpeza a Seco', en: 'Dry Cleaning' },
       others: { pt: 'Outros (especificar)', en: 'Others (specify)' },
-      standardBag: { pt: 'Bolsa STANDARD', en: 'STANDARD Bag' },
-      maxBag: { pt: 'Bolsa MAX', en: 'MAX Bag' },
+      standardBag: { pt: 'Bolsa STANDARD (aprox. 5kg)', en: 'STANDARD Bag (approx. 5kg)' },
+      maxBag: { pt: 'Bolsa MAX (aprox. 10kg)', en: 'MAX Bag (approx. 10kg)' },
+      standardBagShort: { pt: 'Bolsa STANDARD', en: 'STANDARD Bag' },
+      maxBagShort: { pt: 'Bolsa MAX', en: 'MAX Bag' },
       pieces: { pt: 'Peças', en: 'Pieces' },
       antiAllergic: { pt: 'Detergente anti-alérgico (+4,90\u202F€)', en: 'Anti-allergic detergent (+€4.90)' },
       contactPrice: { pt: 'Deseja ser contactado com o preço final antes de prosseguirmos?', en: 'Would you like to be contacted with the final price before we proceed?' },
@@ -531,8 +533,8 @@ const Booking = () => {
   const serviceLines = () => {
     const lines: string[] = [];
     const { washFold, washIron, ironingOnly, dryCleaning, othersText } = form;
-    if (washFold.standardBags) lines.push(`${b('washFold')}: ${washFold.standardBags} ${b('standardBag')}`);
-    if (washFold.maxBags) lines.push(`${b('washFold')}: ${washFold.maxBags} ${b('maxBag')}`);
+    if (washFold.standardBags) lines.push(`${b('washFold')}: ${washFold.standardBags} ${b('standardBagShort')}`);
+    if (washFold.maxBags) lines.push(`${b('washFold')}: ${washFold.maxBags} ${b('maxBagShort')}`);
     if (washFold.pieces) lines.push(`${b('washFold')}: ${washFold.pieces} ${b('pieces')}`);
     if (washIron.pieces) lines.push(`${b('washIron')}: ${washIron.pieces} ${b('pieces')}`);
     if (ironingOnly.pieces) lines.push(`${b('ironingOnly')}: ${ironingOnly.pieces} ${b('pieces')}`);
