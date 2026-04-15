@@ -177,8 +177,8 @@ const Services = () => {
               <Button size="lg" onClick={goToPlans} className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
                 {t('home', 'viewPlans')}
               </Button>
-              <Button size="lg" onClick={() => { navigate('/contacto'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0); }} className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
-                {t('home', 'contactUs')}
+              <Button size="lg" onClick={() => { navigate('/reserva'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0); }} className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
+                {t('home', 'bookPickup')}
               </Button>
             </div>
           </motion.div>
