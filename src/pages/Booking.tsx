@@ -533,8 +533,8 @@ const Booking = () => {
   const serviceLines = () => {
     const lines: string[] = [];
     const { washFold, washIron, ironingOnly, dryCleaning, othersText } = form;
-    if (washFold.standardBags) lines.push(`${b('washFold')}: ${washFold.standardBags} ${b('standardBag')}`);
-    if (washFold.maxBags) lines.push(`${b('washFold')}: ${washFold.maxBags} ${b('maxBag')}`);
+    if (washFold.standardBags) lines.push(`${b('washFold')}: ${washFold.standardBags} ${b('standardBagShort')}`);
+    if (washFold.maxBags) lines.push(`${b('washFold')}: ${washFold.maxBags} ${b('maxBagShort')}`);
     if (washFold.pieces) lines.push(`${b('washFold')}: ${washFold.pieces} ${b('pieces')}`);
     if (washIron.pieces) lines.push(`${b('washIron')}: ${washIron.pieces} ${b('pieces')}`);
     if (ironingOnly.pieces) lines.push(`${b('ironingOnly')}: ${ironingOnly.pieces} ${b('pieces')}`);
