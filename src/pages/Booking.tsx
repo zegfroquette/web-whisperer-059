@@ -993,11 +993,48 @@ const Booking = () => {
         <div ref={formTopRef} className="scroll-mt-24" />
         {step < 8 && (
           <div className="mb-8">
-            <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
-              <span>{stepTitles[step]}</span>
-              <span>{step + 1} {b('stepOf')} {TOTAL_STEPS - 1}</span>
+            {/* Step indicator - all 8 steps */}
+            <div className="flex items-center justify-between w-full">
+              {Array.from({ length: TOTAL_STEPS - 1 }).map((_, i) => {
+                const isCompleted = i < step;
+                const isCurrent = i === step;
+                const Icon = stepIcons[i];
+                return (
+                  <React.Fragment key={i}>
+                    {i > 0 && (
+                      <div className={cn(
+                        'flex-1 h-0.5 transition-colors duration-300',
+                        isCompleted ? 'bg-primary' : 'bg-border'
+                      )} />
+                    )}
+                    <div className="flex flex-col items-center gap-1.5 relative group">
+                      <div className={cn(
+                        'w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-all duration-300 border-2',
+                        isCompleted && 'bg-primary border-primary text-primary-foreground',
+                        isCurrent && 'border-primary bg-primary/10 text-primary shadow-md shadow-primary/20',
+                        !isCompleted && !isCurrent && 'border-border bg-muted/50 text-muted-foreground',
+                      )}>
+                        {isCompleted ? (
+                          <Check className="w-4 h-4" />
+                        ) : (
+                          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        )}
+                      </div>
+                      <span className={cn(
+                        'text-[10px] sm:text-xs text-center leading-tight max-w-[60px] sm:max-w-[72px] hidden sm:block',
+                        isCurrent ? 'text-primary font-semibold' : isCompleted ? 'text-foreground/70' : 'text-muted-foreground'
+                      )}>
+                        {stepTitles[i]}
+                      </span>
+                    </div>
+                  </React.Fragment>
+                );
+              })}
             </div>
-            <Progress value={progressPercent} className="h-1.5" />
+            {/* Mobile: current step label */}
+            <p className="text-center text-xs text-primary font-medium mt-3 sm:hidden">
+              {step + 1}/{TOTAL_STEPS - 1} — {stepTitles[step]}
+            </p>
           </div>
         )}
 
