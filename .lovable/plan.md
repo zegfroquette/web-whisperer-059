@@ -1,49 +1,38 @@
 
 
-## Plan: SEO Improvements (No UX Impact)
+## Plan: Add Static Prerendering for SEO
 
-### What's already done
-- Per-page `<Helmet>` with title, description, canonical, and OG tags
-- `sitemap.xml` and `robots.txt` with sitemap reference
-- LocalBusiness JSON-LD schema in `index.html`
-- FAQ content on Services page (good for FAQ schema)
+**Goal:** Make your site's content visible to Google crawlers while keeping the visitor experience identical.
 
-### What I'll add
+**The problem today:** When Google visits your site, it sees an empty `<div id="root"></div>`. All your text, headings, and meta tags only appear after JavaScript runs.
 
-**1. `hreflang` tags on every page**
-Link PT and EN route variants so Google treats them as language alternates instead of duplicates. Added via `<Helmet>` on each page.
+**The solution:** Generate a separate `.html` file for each page during the build process. Each file contains the full page content baked into the HTML. Lovable's hosting already serves real files when they exist, so crawlers will get the pre-rendered version. Visitors see no difference — the React app boots and takes over as usual.
 
-**2. FAQ structured data (JSON-LD) on Services page**
-The FAQs already exist in the component. I'll add a `<script type="application/ld+json">` FAQPage schema so Google can show them as rich results.
+---
 
-**3. Service structured data on Services page**
-Add JSON-LD `Service` schema entries for each service (wash & fold, ironing, dry cleaning, etc.) to enable rich results.
+### What changes
 
-**4. Enhance LocalBusiness schema in `index.html`**
-Add `image`, `logo`, `sameAs` (Instagram link), and `geo` coordinates to the existing schema for richer Google knowledge panel results.
+1. **Install `vite-plugin-prerender`** — a build-time plugin that renders each route to static HTML using a headless browser during `vite build`
 
-**5. Semantic HTML improvements**
-- Use `<h1>` consistently as the main heading on each page (verify current usage)
-- Ensure proper heading hierarchy (h1 → h2 → h3)
-- No visual changes — only tag-level adjustments where needed
+2. **Update `vite.config.ts`** — add the prerender plugin with all 13 routes:
+   `/`, `/servicos`, `/services`, `/precos`, `/pricing`, `/planos`, `/contacto`, `/contact`, `/reserva`, `/booking`, `/politica-de-privacidade`, `/privacy-policy`, `/termos-e-condicoes`, `/terms-and-conditions`
 
-**6. Add `loading="lazy"` to below-fold images**
-The Leaflet map and any non-critical images get lazy loading for better Core Web Vitals scores.
+3. **No other files change** — your pages, components, styles, backend, emails, booking system all stay exactly the same
 
-### Files changed
-- `index.html` — enhanced LocalBusiness JSON-LD
-- `src/pages/Index.tsx` — add hreflang tags
-- `src/pages/Services.tsx` — add hreflang + FAQPage + Service JSON-LD
-- `src/pages/Pricing.tsx` — add hreflang
-- `src/pages/Booking.tsx` — add hreflang
-- `src/pages/Contact.tsx` — add hreflang
-- `src/pages/PrivacyPolicy.tsx` — add hreflang
-- `src/pages/TermsConditions.tsx` — add hreflang
-- `src/pages/NotFound.tsx` — minor meta tweaks
-- `src/components/ServiceAreaMap.tsx` — lazy loading if applicable
+### What stays the same for visitors
 
-### What this does NOT change
-- No visual or layout changes
-- No new pages or navigation changes
-- No impact on existing user flows
+- The website looks and behaves identically
+- All animations, language switching, forms work as before
+- Contact form emails and booking notifications keep working
+- WhatsApp widget, maps, everything unchanged
+
+### What improves
+
+- Google sees full HTML content (headings, text, meta tags) on every page
+- SEO indexing should improve within days of deployment
+- Page load may feel slightly faster (HTML content appears before JS finishes loading)
+
+### Risk & fallback
+
+If the prerender plugin has issues in Lovable's build environment (it needs a headless browser), I'll fall back to a simpler approach: a custom Vite plugin that generates static HTML files with your SEO-critical content (meta tags, headings, key text) without needing a browser. Same result for crawlers, guaranteed to work.
 
