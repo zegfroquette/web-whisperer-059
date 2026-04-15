@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import L from 'leaflet';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
@@ -164,19 +165,10 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Google Maps */}
+            {/* Leaflet Map */}
             <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm">
               <h3 className="font-semibold text-sm p-4 pb-0">{t('contact', 'findUs')}</h3>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.5!2d-9.1572!3d38.7224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a3e4bbf7c3%3A0x0!2sRua+Artilharia+Um+N%C2%BA+1%2C+1250-036+Lisboa!5e0!3m2!1spt-PT!2spt!4v1690000000001"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="GLOAT Location"
-              />
+              <ContactMap />
             </div>
           </motion.div>
         </div>
