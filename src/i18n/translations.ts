@@ -27,7 +27,7 @@ export const translations = {
       pt: 'Com cuidado profissional e preços justos.',
       en: 'With professional care at fair prices.',
     },
-    viewPlans: { pt: 'Ver Planos', en: 'View Plans' },
+    viewPlans: { pt: 'Ver Planos/Preços', en: 'View Plans/Pricing' },
     viewServices: { pt: 'Ver Serviços', en: 'View Services' },
     howItWorks: { pt: 'Como Funciona', en: 'How It Works' },
     step1Title: { pt: 'Entrega a roupa', en: 'Drop off your laundry' },
