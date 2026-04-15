@@ -305,6 +305,7 @@ const Pricing = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
+            as="h1"
             title={pt ? 'Planos Mensais' : 'Monthly Plans'}
             subtitle={pt
               ? 'Escolha o plano que melhor se adapta ao seu dia-a-dia e poupe todos os meses. Items adicionais ao plano a preços reduzidos. Delivery incluído.'
@@ -421,7 +422,7 @@ const Pricing = () => {
       {/* ── Section 3: FAQs ── */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">{t('pricing', 'faq')}</h3>
+          <h2 className="text-2xl font-bold text-center mb-8">{t('pricing', 'faq')}</h2>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, i) => (
               <AccordionItem

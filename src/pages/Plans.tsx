@@ -91,7 +91,7 @@ const Plans = () => {
     <>
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader title={t('plans', 'title')} subtitle={t('plans', 'subtitle')} />
+          <SectionHeader as="h1" title={t('plans', 'title')} subtitle={t('plans', 'subtitle')} />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {plans.map((plan, i) => (

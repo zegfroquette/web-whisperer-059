@@ -136,7 +136,7 @@ const Services = () => {
       </Helmet>
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <SectionHeader title={t('services', 'title')} subtitle={t('services', 'subtitle')} />
+          <SectionHeader as="h1" title={t('services', 'title')} subtitle={t('services', 'subtitle')} />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <motion.div
@@ -188,7 +188,7 @@ const Services = () => {
       {/* FAQ Section */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">
+          <h2 className="text-2xl font-bold text-center mb-8">
             {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
           </h3>
           <Accordion type="single" collapsible className="space-y-3">
