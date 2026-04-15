@@ -190,7 +190,7 @@ const Services = () => {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
             {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
-          </h3>
+          </h2>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, i) => (
               <AccordionItem
