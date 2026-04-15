@@ -184,28 +184,36 @@ const routes: RouteConfig[] = [
 ];
 
 export function seoPrerender(): Plugin {
+  let resolvedOutDir = 'dist';
+
   return {
     name: 'vite-seo-prerender',
     apply: 'build',
     enforce: 'post',
-    closeBundle() {
-      const distDir = path.resolve(process.cwd(), 'dist');
-      const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
+    configResolved(config) {
+      resolvedOutDir = config.build.outDir || 'dist';
+    },
+    writeBundle() {
+      const distDir = path.resolve(process.cwd(), resolvedOutDir);
+      const indexPath = path.join(distDir, 'index.html');
+
+      if (!fs.existsSync(indexPath)) {
+        console.warn(`[seo-prerender] index.html not found at ${indexPath}, skipping.`);
+        return;
+      }
+
+      const indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
       for (const route of routes) {
-        // Skip root — index.html already handles it
         if (route.path === '/') {
-          // Update index.html in place with SEO content
           const enhanced = injectSeoContent(indexHtml, route);
-          fs.writeFileSync(path.join(distDir, 'index.html'), enhanced, 'utf-8');
+          fs.writeFileSync(indexPath, enhanced, 'utf-8');
           continue;
         }
 
-        // Create directory for the route (e.g., dist/servicos/)
         const routeDir = path.join(distDir, route.path.slice(1));
         fs.mkdirSync(routeDir, { recursive: true });
 
-        // Write index.html inside the route directory
         const enhanced = injectSeoContent(indexHtml, route);
         fs.writeFileSync(path.join(routeDir, 'index.html'), enhanced, 'utf-8');
       }
