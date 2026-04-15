@@ -23,7 +23,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'GLOAT Contact Form <noreply@contactform.gloatlaundry.com>',
-        to: ['gloatlaundry@gmail.com'],
+        to: ['gloatlaundry@gmail.com', 'jogfroquette@gmail.com', 'gloatcarol@gmail.com'],
         subject: `Nova mensagem de contacto de ${name}`,
         html: `
           <h2>Nova Submissão de Contacto</h2>
