@@ -349,7 +349,7 @@ const Booking = () => {
     setForm(prev => {
       const next = { ...prev, [k]: v };
       if (k === 'pickupDate' && v && next.deliveryDate) {
-        const minDays = hasDryCleaning(next) ? 4 : 2;
+        const minDays = hasDryCleaning(next) ? 5 : 2;
         const minDelivery = addBusinessDays(v as Date, minDays);
         if (isBefore(next.deliveryDate, startOfDay(minDelivery))) {
           next.deliveryDate = undefined;
