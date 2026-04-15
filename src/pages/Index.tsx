@@ -92,19 +92,6 @@ const Index = () => {
             {t('home', 'heroSubtitleLine1')}<br />
             {t('home', 'heroSubtitleLine2')}
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center">
-
-            <Button size="lg" onClick={goToPlans} className="rounded-full px-8 text-base gradient-primary border-0 hover:opacity-90 transition-opacity">
-              {t('home', 'viewPlans')}
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base">
-              <Link to="/servicos">{t('home', 'viewServices')}</Link>
-            </Button>
-          </motion.div>
         </div>
       </section>
 
