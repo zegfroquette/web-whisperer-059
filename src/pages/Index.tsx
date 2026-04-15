@@ -54,7 +54,7 @@ const Index = () => {
         <meta property="og:url" content="https://gloatlaundry.com/" />
       </Helmet>
       {/* Hero */}
-      <section className="relative overflow-hidden py-20 md:py-32 px-4">
+      <section className="relative overflow-hidden py-14 md:py-20 px-4">
         <div className="absolute inset-0 gradient-primary opacity-[0.03] my-0" />
         {/* Floating shapes */}
         <motion.div
@@ -87,7 +87,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            className="text-lg md:text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
 
             {t('home', 'heroSubtitleLine1')}<br />
             {t('home', 'heroSubtitleLine2')}
@@ -96,7 +96,7 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-14 px-4 bg-muted/30">
         <div className="max-w-5xl mx-auto">
           <SectionHeader title={t('home', 'howItWorks')} />
           <div className="grid md:grid-cols-3 gap-8">
