@@ -192,6 +192,9 @@ export const translations = {
     tagline: { pt: 'The Greatest Laundry', en: 'The Greatest Laundry' },
     privacyPolicy: { pt: 'Política de Privacidade', en: 'Privacy Policy' },
     termsConditions: { pt: 'Termos e Condições', en: 'Terms & Conditions' },
+    hours: { pt: 'Horário', en: 'Business Hours' },
+    hoursWeekday: { pt: 'Seg–Sex: 9h – 18h', en: 'Mon–Fri: 9am – 6pm' },
+    hoursSaturday: { pt: 'Sáb: 10h – 13h', en: 'Sat: 10am – 1pm' },
   },
 } as const;
 

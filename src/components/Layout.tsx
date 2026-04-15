@@ -163,6 +163,11 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                 <p>(+351) 935 479 900</p>
                 <a href="mailto:gloatlaundry@gmail.com" className="hover:opacity-100 transition-opacity">gloatlaundry@gmail.com</a>
               </div>
+              <h4 className="font-semibold mt-6 mb-3 text-sm uppercase tracking-wider opacity-60">{t('footer', 'hours')}</h4>
+              <div className="flex flex-col gap-1 text-sm opacity-70">
+                <p>{t('footer', 'hoursWeekday')}</p>
+                <p>{t('footer', 'hoursSaturday')}</p>
+              </div>
             </div>
           </div>
           <div className="border-t border-background/10 mt-8 pt-8 flex flex-col items-center gap-4 text-sm opacity-50">
