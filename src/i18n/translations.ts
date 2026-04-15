@@ -75,7 +75,7 @@ export const translations = {
       pt: 'Descubra os nossos planos mensais e preços ou reserve uma recolha em 60 segundos.',
       en: 'Discover our monthly plans and pricing or book a pickup in 60 seconds.',
     },
-    bookPickup: { pt: 'Reservar Recolha', en: 'Book a Pickup' },
+    bookPickup: { pt: 'Agendar Recolha', en: 'Book a Pickup' },
     contactUs: { pt: 'Contacte-nos', en: 'Contact Us' },
   },
   plans: {
