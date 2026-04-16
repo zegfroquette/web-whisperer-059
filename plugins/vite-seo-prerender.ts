@@ -194,9 +194,21 @@ export function seoPrerender(): Plugin {
 
       let generated = 0;
       for (const route of routes) {
+        if (route.path === '/servicos') {
+          console.log(
+            '[seo-prerender][debug:/servicos] template contains <div id="root">:',
+            indexHtml.includes('<div id="root">')
+          );
+        }
+
         // Always start from the pristine template so per-route replacements
         // don't accumulate across iterations.
         const enhanced = injectSeoContent(indexHtml, route);
+
+        if (route.path === '/servicos') {
+          console.log('[seo-prerender][debug:/servicos] final HTML written to disk:');
+          console.log(enhanced);
+        }
 
         if (route.path === '/') {
           fs.writeFileSync(path.join(distDir, 'index.html'), enhanced, 'utf-8');
