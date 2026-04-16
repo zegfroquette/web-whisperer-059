@@ -437,13 +437,23 @@ const Pricing = () => {
                       <p className="text-xs text-muted-foreground mb-4 italic bg-muted/40 rounded-lg px-3 py-2">{cat.note}</p>
                     )}
                     <div className="space-y-1">
-                      {cat.items.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
-                        >
-                          <span className="text-sm text-foreground/80">{item.label}</span>
-                          <span className="text-sm font-semibold text-foreground shrink-0">{item.price}</span>
+                      {cat.items.map((item, idx) => {
+                        const showPlanInfo = (cat.id === 'lavar-dobrar' || cat.id === 'wash-fold') &&
+                          (item.label.includes('com plano') || item.label.includes('sem plano') ||
+                           item.label.includes('with plan') || item.label.includes('without plan'));
+                        return (
+                          <div
+                            key={idx}
+                            className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
+                          >
+                            <span className="text-sm text-foreground/80 inline-flex items-center">
+                              {item.label}
+                              {showPlanInfo && <PlanInfoIcon pt={pt} />}
+                            </span>
+                            <span className="text-sm font-semibold text-foreground shrink-0">{item.price}</span>
+                          </div>
+                        );
+                      })}
                         </div>
                       ))}
                     </div>
