@@ -104,11 +104,6 @@
   }
 }
 
-/* CleanCloud widget – force white background */
-#myStoreContainer,
-#myStoreContainer * {
-  background-color: #ffffff !important;
-}
 
 @layer utilities {
   .gradient-primary {
