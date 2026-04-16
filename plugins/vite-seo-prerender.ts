@@ -214,52 +214,70 @@ export function seoPrerender(): Plugin {
   };
 }
 
+function escapeAttr(value: string): string {
+  return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+}
+
 function injectSeoContent(template: string, route: RouteConfig): string {
   let html = template;
+  const title = escapeAttr(route.title);
+  const description = escapeAttr(route.description);
+  const canonical = escapeAttr(route.canonical);
 
-  // Replace <title>
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${route.title}</title>`);
+  // <title>
+  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${route.title}</title>`);
 
-  // Replace meta description
+  // <meta name="description" ...>
   html = html.replace(
-    /<meta name="description" content="[^"]*">/,
-    `<meta name="description" content="${route.description}">`
+    /<meta\s+name=["']description["'][^>]*>/i,
+    `<meta name="description" content="${description}">`
   );
 
-  // Replace canonical
+  // <link rel="canonical" ...>
   html = html.replace(
-    /<link rel="canonical" href="[^"]*" \/>/,
-    `<link rel="canonical" href="${route.canonical}" />`
+    /<link\s+rel=["']canonical["'][^>]*>/i,
+    `<link rel="canonical" href="${canonical}" />`
   );
 
-  // Replace OG tags
-  html = html.replace(
-    /<meta property="og:title" content="[^"]*">/,
-    `<meta property="og:title" content="${route.title}">`
+  // OG / Twitter tags — flexible matching, replace if present otherwise inject before </head>
+  const replaceOrInject = (regex: RegExp, replacement: string) => {
+    if (regex.test(html)) {
+      html = html.replace(regex, replacement);
+    } else {
+      html = html.replace('</head>', `    ${replacement}\n  </head>`);
+    }
+  };
+
+  replaceOrInject(
+    /<meta\s+property=["']og:title["'][^>]*>/i,
+    `<meta property="og:title" content="${title}">`
   );
-  html = html.replace(
-    /<meta property="og:description" content="[^"]*">/,
-    `<meta property="og:description" content="${route.description}">`
+  replaceOrInject(
+    /<meta\s+property=["']og:description["'][^>]*>/i,
+    `<meta property="og:description" content="${description}">`
   );
-  html = html.replace(
-    /<meta name="twitter:title" content="[^"]*">/,
-    `<meta name="twitter:title" content="${route.title}">`
+  replaceOrInject(
+    /<meta\s+property=["']og:url["'][^>]*>/i,
+    `<meta property="og:url" content="${canonical}">`
   );
-  html = html.replace(
-    /<meta name="twitter:description" content="[^"]*">/,
-    `<meta name="twitter:description" content="${route.description}">`
+  replaceOrInject(
+    /<meta\s+name=["']twitter:title["'][^>]*>/i,
+    `<meta name="twitter:title" content="${title}">`
+  );
+  replaceOrInject(
+    /<meta\s+name=["']twitter:description["'][^>]*>/i,
+    `<meta name="twitter:description" content="${description}">`
   );
 
-  // Add hreflang tags before </head>
-  const hreflangTags = `
-    <link rel="alternate" hreflang="pt" href="${route.hreflangPt}" />
-    <link rel="alternate" hreflang="en" href="${route.hreflangEn}" />
-    <link rel="alternate" hreflang="x-default" href="${route.hreflangPt}" />`;
-  html = html.replace('</head>', `${hreflangTags}\n</head>`);
+  // hreflang tags before </head>
+  const hreflangTags = `    <link rel="alternate" hreflang="pt" href="${escapeAttr(route.hreflangPt)}" />
+    <link rel="alternate" hreflang="en" href="${escapeAttr(route.hreflangEn)}" />
+    <link rel="alternate" hreflang="x-default" href="${escapeAttr(route.hreflangPt)}" />`;
+  html = html.replace('</head>', `${hreflangTags}\n  </head>`);
 
-  // Inject visible SEO content inside <div id="root"> so crawlers see it
-  // React will replace this when it mounts (hydration-like behavior)
-  const seoBlock = `<div id="root"><div id="seo-prerender" style="position:absolute;left:-9999px;overflow:hidden"><h1>${route.h1}</h1>${route.content}</div>`;
+  // Inject visible SEO content inside <div id="root"> so crawlers see it.
+  // React will replace this on hydration.
+  const seoBlock = `<div id="root"><div id="seo-prerender"><h1>${route.h1}</h1>${route.content}</div>`;
   html = html.replace('<div id="root"></div>', `${seoBlock}</div>`);
 
   return html;
