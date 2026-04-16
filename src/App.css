@@ -40,26 +40,4 @@
 .read-the-docs {
   color: #888;
 }
-/* ===== CleanCloud Scroll Fix ===== */
-
-#__cc_bookingTool,
-#__cc_bookingTool > div,
-#__cc_bookingTool iframe {
-  height: auto !important;
-  min-height: 1600px !important; /* adjust if needed */
-  overflow: visible !important;
-}
-
-/* Force inner containers to stop clipping */
-#__cc_bookingTool * {
-  overflow: visible !important;
-}
-/* ===== CleanCloud Auth Background Override ===== */
-
-#myStoreContainer,
-#myStoreContainer .cc-auth-wrapper,
-#myStoreContainer .cc-container,
-#myStoreContainer .cc-wrapper {
-  background-color: #ffffff !important;
-}
 
