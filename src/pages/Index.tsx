@@ -161,10 +161,10 @@ const Index = () => {
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {t('home', 'ctaTitle')}
             </h2>
-            <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitle')}</p>
+            <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitleHome')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" onClick={goToPlans} className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
-                {t('home', 'viewPlans')}
+              <Button size="lg" onClick={() => { navigate('/servicos'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0); }} className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
+                {t('home', 'viewServices')}
               </Button>
               <Button size="lg" onClick={() => { navigate('/reserva'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0); }} className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
                 {t('home', 'bookPickup')}

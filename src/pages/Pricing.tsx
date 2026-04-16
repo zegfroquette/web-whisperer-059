@@ -4,8 +4,45 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
+import { Check, Info } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import React, { useState } from 'react';
+
+function PlanInfoIcon({ pt }: { pt: boolean }) {
+  const [open, setOpen] = useState(false);
+  const text = pt
+    ? '"Com plano" aplica-se a clientes que pretendem lavar e dobrar bolsas E têm um plano mensal ativo. "Sem plano" aplica-se a clientes que não têm plano ativo.'
+    : '"With plan" applies to clients who want wash & fold bags AND have an active monthly plan. "Without plan" applies to clients who don\'t have an active plan.';
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <TooltipProvider delayDuration={200}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <PopoverTrigger asChild>
+              <button
+                type="button"
+                onClick={() => setOpen(!open)}
+                className="inline-flex items-center justify-center ml-1 text-muted-foreground hover:text-primary transition-colors"
+                aria-label={pt ? 'Informação sobre plano' : 'Plan info'}
+              >
+                <Info className="w-3.5 h-3.5" />
+              </button>
+            </PopoverTrigger>
+          </TooltipTrigger>
+          <TooltipContent side="top" className="max-w-[240px] text-xs">
+            {text}
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+      <PopoverContent side="top" className="max-w-[280px] text-xs text-muted-foreground p-3">
+        {text}
+      </PopoverContent>
+    </Popover>
+  );
+}
 
 const Pricing = () => {
   const { t, language } = useLanguage();
@@ -18,7 +55,7 @@ const Pricing = () => {
       price: '65,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: false,
-      desc: pt ? '4 bolsas STANDARD (aprox. 5kg) de roupa lavada e dobrada' : '4 STANDARD bags (approx. 5kg) of washed & folded clothes',
+      desc: pt ? '4 bolsas STANDARD (aprox. 5kg) de roupa do dia-a-dia lavada e dobrada' : '4 STANDARD bags (approx. 5kg) of washed & folded everyday clothes',
       benefits: pt
         ? ['4 Bolsas STANDARD (aprox. 5kg) por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
         : ['4 STANDARD bags (approx. 5kg) per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
@@ -28,7 +65,7 @@ const Pricing = () => {
       price: '85,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: false,
-      desc: pt ? '4 bolsas GRANDE (aprox. 10kg) de roupa lavada e dobrada' : '4 MAX bags (approx. 10kg) of washed & folded clothes',
+      desc: pt ? '4 bolsas GRANDE (aprox. 10kg) de roupa do dia-a-dia lavada e dobrada' : '4 MAX bags (approx. 10kg) of washed & folded everyday clothes',
       benefits: pt
         ? ['4 Bolsas GRANDE (aprox. 10kg) por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
         : ['4 MAX bags (approx. 10kg) per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
@@ -400,15 +437,23 @@ const Pricing = () => {
                       <p className="text-xs text-muted-foreground mb-4 italic bg-muted/40 rounded-lg px-3 py-2">{cat.note}</p>
                     )}
                     <div className="space-y-1">
-                      {cat.items.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
-                        >
-                          <span className="text-sm text-foreground/80">{item.label}</span>
-                          <span className="text-sm font-semibold text-foreground shrink-0">{item.price}</span>
-                        </div>
-                      ))}
+                      {cat.items.map((item, idx) => {
+                        const showPlanInfo = (cat.id === 'lavar-dobrar' || cat.id === 'wash-fold') &&
+                          (item.label.includes('com plano') || item.label.includes('sem plano') ||
+                           item.label.includes('with plan') || item.label.includes('without plan'));
+                        return (
+                          <div
+                            key={idx}
+                            className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
+                          >
+                            <span className="text-sm text-foreground/80 inline-flex items-center">
+                              {item.label}
+                              {showPlanInfo && <PlanInfoIcon pt={pt} />}
+                            </span>
+                            <span className="text-sm font-semibold text-foreground shrink-0">{item.price}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </AccordionContent>
                 </AccordionItem>

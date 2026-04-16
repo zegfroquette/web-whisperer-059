@@ -16,8 +16,8 @@ const Plans = () => {
       price: '65,00€',
       highlight: false,
       desc: language === 'pt'
-        ? '4 bolsas STANDARD (aprox. 5kg) de roupa lavada e dobrada'
-        : '4 STANDARD bags (approx. 5kg) of washed & folded laundry',
+        ? '4 bolsas STANDARD (aprox. 5kg) de roupa do dia-a-dia lavada e dobrada'
+        : '4 STANDARD bags (approx. 5kg) of washed & folded everyday clothes',
       benefits: language === 'pt'
         ? ['4 Bolsas STANDARD (aprox. 5kg) por mês', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h']
         : ['4 STANDARD bags (approx. 5kg) per month', 'Professional wash', 'Folded clothes', 'Delivery in 48h'],
@@ -27,8 +27,8 @@ const Plans = () => {
       price: '85,00€',
       highlight: false,
       desc: language === 'pt'
-        ? '4 bolsas GRANDE (aprox. 10kg) de roupa lavada e dobrada'
-        : '4 MAX bags (approx. 10kg) of washed & folded laundry',
+        ? '4 bolsas GRANDE (aprox. 10kg) de roupa do dia-a-dia lavada e dobrada'
+        : '4 MAX bags (approx. 10kg) of washed & folded everyday clothes',
       benefits: language === 'pt'
         ? ['4 Bolsas GRANDE (aprox. 10kg) por mês', 'Lavagem profissional', 'Roupa dobrada', 'Entrega em 48h']
         : ['4 MAX bags (approx. 10kg) per month', 'Professional wash', 'Folded clothes', 'Delivery in 48h'],
