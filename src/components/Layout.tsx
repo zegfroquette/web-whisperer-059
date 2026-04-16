@@ -77,21 +77,23 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                   variant={language === 'pt' ? 'default' : 'ghost'}
                   size="sm"
                   onClick={() => setLanguage('pt')}
-                  className="text-xs font-semibold tracking-wider px-2 h-7">
+                  aria-label="Mudar para Português"
+                  className="text-xs font-semibold tracking-wider min-w-[44px] min-h-[44px] px-2">
                   PT
                 </Button>
                 <Button
                   variant={language === 'en' ? 'default' : 'ghost'}
                   size="sm"
                   onClick={() => setLanguage('en')}
-                  className="text-xs font-semibold tracking-wider px-2 h-7">
+                  aria-label="Switch to English"
+                  className="text-xs font-semibold tracking-wider min-w-[44px] min-h-[44px] px-2">
                   EN
                 </Button>
               </div>
               <button
-                className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-                onClick={() => setMobileOpen(!mobileOpen)}>
-
+                className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}>
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
@@ -140,13 +142,15 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                   alt="GLOAT"
                   width={84}
                   height={56}
-                  className="h-8 w-auto object-contain brightness-0 invert" src="/lovable-uploads/7bce9ded-b8ab-4fd5-9a4e-effcb5e4c80e.png" />
+                  className="h-8 w-auto object-contain brightness-0 invert"
+                  src="/lovable-uploads/gloat-footer-logo.webp"
+                  loading="lazy" />
 
               </div>
-              <p className="text-sm opacity-70">{t('footer', 'tagline')}</p>
+              <p className="text-sm opacity-80">{t('footer', 'tagline')}</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-60">Links</h4>
+              <p className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-80">Links</p>
               <div className="flex flex-col gap-2">
                 {navItems.map((item) =>
                 <Link
@@ -160,15 +164,15 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-60">{t('contact', 'title')}</h4>
-              <div className="flex flex-col gap-2 text-sm opacity-70">
+              <p className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-80">{t('contact', 'title')}</p>
+                <div className="flex flex-col gap-2 text-sm opacity-80">
                 <p>Rua Artilharia 1, Nº 1</p>
                 <p>1250-036 Lisboa, Portugal</p>
                 <p>(+351) 935 479 900</p>
                 <a href="mailto:gloatlaundry@gmail.com" className="hover:opacity-100 transition-opacity">gloatlaundry@gmail.com</a>
               </div>
-              <h4 className="font-semibold mt-6 mb-3 text-sm uppercase tracking-wider opacity-60">{t('footer', 'hours')}</h4>
-              <div className="flex flex-col gap-1 text-sm opacity-70">
+              <p className="font-semibold mt-6 mb-3 text-sm uppercase tracking-wider opacity-80">{t('footer', 'hours')}</p>
+              <div className="flex flex-col gap-1 text-sm opacity-80">
                 <p>{t('footer', 'hoursWeekday')}</p>
                 <p>{t('footer', 'hoursSaturday')}</p>
               </div>
