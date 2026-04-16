@@ -10,6 +10,40 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import React, { useState } from 'react';
 
+function PlanInfoIcon({ pt }: { pt: boolean }) {
+  const [open, setOpen] = useState(false);
+  const text = pt
+    ? '"Com plano" aplica-se a clientes que pretendem lavar e dobrar bolsas E têm um plano mensal ativo. "Sem plano" aplica-se a clientes que não têm plano ativo.'
+    : '"With plan" applies to clients who want wash & fold bags AND have an active monthly plan. "Without plan" applies to clients who don\'t have an active plan.';
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <TooltipProvider delayDuration={200}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <PopoverTrigger asChild>
+              <button
+                type="button"
+                onClick={() => setOpen(!open)}
+                className="inline-flex items-center justify-center ml-1 text-muted-foreground hover:text-primary transition-colors"
+                aria-label={pt ? 'Informação sobre plano' : 'Plan info'}
+              >
+                <Info className="w-3.5 h-3.5" />
+              </button>
+            </PopoverTrigger>
+          </TooltipTrigger>
+          <TooltipContent side="top" className="max-w-[240px] text-xs">
+            {text}
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+      <PopoverContent side="top" className="max-w-[280px] text-xs text-muted-foreground p-3">
+        {text}
+      </PopoverContent>
+    </Popover>
+  );
+}
+
 const Pricing = () => {
   const { t, language } = useLanguage();
   const pt = language === 'pt';
