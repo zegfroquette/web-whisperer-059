@@ -46,6 +46,8 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               <img
                 src={gloatLogo}
                 alt="GLOAT – The Greatest Laundry"
+                width={149}
+                height={70}
                 className="h-10 w-auto object-contain"
                 style={{ imageRendering: 'crisp-edges' }} />
 
@@ -136,6 +138,8 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               <div className="flex items-center gap-2 mb-4">
               <img
                   alt="GLOAT"
+                  width={84}
+                  height={56}
                   className="h-8 w-auto object-contain brightness-0 invert" src="/lovable-uploads/7bce9ded-b8ab-4fd5-9a4e-effcb5e4c80e.png" />
 
               </div>

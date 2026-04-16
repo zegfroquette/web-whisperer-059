@@ -1,11 +1,12 @@
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
-
-import { TestimonialsCarousel } from '@/components/TestimonialsCarousel';
 import { Button } from '@/components/ui/button';
+
+const TestimonialsCarousel = lazy(() => import('@/components/TestimonialsCarousel').then(m => ({ default: m.TestimonialsCarousel })));
 import { Zap, Award, Tag, ShieldCheck, Package, Sparkles, Truck } from 'lucide-react';
 
 const fadeUp = {
@@ -170,7 +171,9 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <TestimonialsCarousel />
+      <Suspense fallback={<div className="py-20" />}>
+        <TestimonialsCarousel />
+      </Suspense>
     </>);
 
 };
