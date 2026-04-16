@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -17,13 +17,7 @@ const fadeUp = {
 
 const Services = () => {
   const { t, language } = useLanguage();
-  const navigate = useNavigate();
   const pt = language === 'pt';
-
-  const goToPlans = () => {
-    navigate('/precos');
-    setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0);
-  };
 
   const services = [
     { icon: Shirt, title: t('services', 'washFold'), desc: t('services', 'washFoldDesc'), color: 'bg-blue-500/10 text-blue-600' },
@@ -174,11 +168,11 @@ const Services = () => {
             </h2>
             <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" onClick={goToPlans} className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
-                {t('home', 'viewPlans')}
+              <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
+                <Link to="/precos">{t('home', 'viewPlans')}</Link>
               </Button>
-              <Button size="lg" onClick={() => { navigate('/reserva'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0); }} className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
-                {t('home', 'bookPickup')}
+              <Button asChild size="lg" className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
+                <Link to="/reserva">{t('home', 'bookPickup')}</Link>
               </Button>
             </div>
           </motion.div>
