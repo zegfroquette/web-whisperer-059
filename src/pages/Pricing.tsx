@@ -454,8 +454,6 @@ const Pricing = () => {
                           </div>
                         );
                       })}
-                        </div>
-                      ))}
                     </div>
                   </AccordionContent>
                 </AccordionItem>
