@@ -1,18 +1,18 @@
 
 
-## Remove All CleanCloud References
+## Fix: Convert CTA Buttons to Real Links
 
-CleanCloud is no longer used. Four files contain remnants to clean up:
+### Problem
+The CTA buttons in the blue gradient boxes on the homepage and services page use `onClick={() => navigate('/path')}` on `<Button>` elements. These render as `<button>` tags without `href`, which Google's crawler cannot follow.
 
 ### Changes
 
-1. **Delete `public/booking.html`** — entire file is a standalone CleanCloud widget page, no longer needed.
+**1. `src/pages/Index.tsx`** — Replace the two CTA `<Button onClick={navigate}>` with `<Link>` components styled as buttons (using `asChild` or direct className styling). The "Ver Serviços" button links to `/servicos` and "Agendar Recolha" links to `/reserva`.
 
-2. **`index.html`** — Remove the comment on line 33 (`<!-- CleanCloud resources loaded on-demand by Booking page only -->`).
+**2. `src/pages/Services.tsx`** — Same treatment for the two CTA buttons in the blue box (one links to `/precos`, the other to `/reserva`).
 
-3. **`src/App.css`** — Remove lines 43–65 (CleanCloud Scroll Fix and Auth Background Override CSS blocks).
+The `ScrollToTop` component already handles scroll-to-top on route changes, so the `setTimeout(() => window.scrollTo(...))` calls can be removed.
 
-4. **`src/index.css`** — Remove lines 107–111 (CleanCloud white background override).
-
-No functional or visual impact — these styles only targeted CleanCloud elements that no longer exist.
+### No visual change
+The buttons will look and behave identically — same classes, same destinations. The only difference is they render as `<a href>` instead of `<button>`.
 
