@@ -3,28 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7LLL67HE8"></script>
+    <!-- Defer analytics until after page is interactive -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-M7LLL67HE8');
-    </script>
-    <script>
-      var ahrefs_analytics_script = document.createElement('script');
-      ahrefs_analytics_script.async = true;
-      ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
-      ahrefs_analytics_script.setAttribute('data-key', 'R531RH63u5nKKDryiuu9zA');
-      document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+      window.addEventListener('load', function() {
+        // Google Analytics
+        var gs = document.createElement('script');
+        gs.async = true;
+        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-M7LLL67HE8';
+        document.head.appendChild(gs);
+        gs.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M7LLL67HE8');
+        };
+        // Ahrefs Analytics
+        var ahrefs_analytics_script = document.createElement('script');
+        ahrefs_analytics_script.async = true;
+        ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+        ahrefs_analytics_script.setAttribute('data-key', 'R531RH63u5nKKDryiuu9zA');
+        document.head.appendChild(ahrefs_analytics_script);
+      });
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /></noscript>
-    <link rel="preload" href="https://cleancloudapp.com/webapp/public/webapp/cleancloud.js" as="script" crossorigin />
-    <link rel="preload" href="https://cleancloudapp.com/webapp/public/webapp/cleancloud.css" as="style" crossorigin />
+    <!-- CleanCloud resources loaded on-demand by Booking page only -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@700&family=Montserrat:wght@800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@700&family=Montserrat:wght@800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
     <title>GLOAT | The Greatest Laundry | Lavandaria em Lisboa</title>
