@@ -18,7 +18,7 @@ const Pricing = () => {
       price: '65,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: false,
-      desc: pt ? '4 bolsas STANDARD (aprox. 5kg) de roupa lavada e dobrada' : '4 STANDARD bags (approx. 5kg) of washed & folded clothes',
+      desc: pt ? '4 bolsas STANDARD (aprox. 5kg) de roupa do dia-a-dia lavada e dobrada' : '4 STANDARD bags (approx. 5kg) of washed & folded everyday clothes',
       benefits: pt
         ? ['4 Bolsas STANDARD (aprox. 5kg) por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
         : ['4 STANDARD bags (approx. 5kg) per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],
@@ -28,7 +28,7 @@ const Pricing = () => {
       price: '85,00€',
       period: pt ? '4 semanas' : '4 weeks',
       highlight: false,
-      desc: pt ? '4 bolsas GRANDE (aprox. 10kg) de roupa lavada e dobrada' : '4 MAX bags (approx. 10kg) of washed & folded clothes',
+      desc: pt ? '4 bolsas GRANDE (aprox. 10kg) de roupa do dia-a-dia lavada e dobrada' : '4 MAX bags (approx. 10kg) of washed & folded everyday clothes',
       benefits: pt
         ? ['4 Bolsas GRANDE (aprox. 10kg) por mês', '1 recolha e entrega semanal', 'Lavagem profissional', 'Roupa dobrada e pronta a guardar', 'Entrega em 48h']
         : ['4 MAX bags (approx. 10kg) per month', '1 weekly pickup and delivery', 'Professional wash', 'Neatly folded & ready to store', 'Delivery in 48h'],

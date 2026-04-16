@@ -323,8 +323,8 @@ const Booking = () => {
       notesPlaceholder: { pt: 'Instruções especiais, detalhes de peças, artigos delicados, notas de acesso...', en: 'Special instructions, item details, delicate items, access notes...' },
       edit: { pt: 'Editar', en: 'Edit' },
       consentText: {
-        pt: 'Compreendo que a recolha e entrega estão disponíveis no concelho de Lisboa, sujeitas à capacidade, e que o preço final pode depender dos artigos recebidos. O pagamento é feito na entrega.',
-        en: 'I understand that pickup and delivery are available within municipal Lisbon, subject to item capacity, and that final pricing may depend on the items received. Payment is due at delivery.',
+        pt: 'Compreendo que a recolha e entrega estão disponíveis no concelho de Lisboa, sujeitas à capacidade, e que o preço final pode depender dos artigos recebidos. O pagamento é feito por cartão ou dinheiro na entrega.',
+        en: 'I understand that pickup and delivery are available within municipal Lisbon, subject to item capacity, and that final pricing may depend on the items received. Payment is made by card or cash at delivery.',
       },
       thankYou: { pt: 'Obrigado!', en: 'Thank you!' },
       confirmationMsg: { pt: 'Recebemos a sua reserva e o nosso motorista passará dia', en: 'We received your booking and our driver will come by on' },
@@ -341,7 +341,7 @@ const Booking = () => {
       acceptConsent: { pt: 'Deve aceitar para continuar', en: 'You must accept to continue' },
       pageTitle: { pt: 'Agendar Recolha e Entrega', en: 'Book a Pickup & Delivery' },
       pageSubtitle: { pt: 'Rápido e simples. Preencha o formulário abaixo e tratamos de tudo.', en: 'Quick and simple. Fill in the form below and we\'ll handle the rest.' },
-      paymentInfo: { pt: 'O pagamento é feito por cartão no momento da entrega. O nosso motorista leva sempre terminal de pagamento.', en: 'Payment is made by card at delivery. Our driver always carries a card machine.' },
+      paymentInfo: { pt: 'O pagamento é feito por cartão ou dinheiro no momento da entrega. O nosso motorista leva sempre terminal de pagamento.', en: 'Payment is made by card or cash at delivery. Our driver always carries a card machine.' },
       dryCleaningNote: { pt: 'Como o seu pedido inclui limpeza a seco, o prazo de entrega passa de 2 para 5 dias úteis.', en: 'Since your order includes dry cleaning, delivery time changes from 2 to 5 business days.' },
     };
     return map[key]?.[language] ?? key;
