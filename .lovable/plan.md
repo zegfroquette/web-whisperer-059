@@ -1,24 +1,18 @@
 
 
-## Fix Heading Hierarchy Without Visual Changes
+## Remove All CleanCloud References
 
-Yes — this is straightforward. The fix is purely semantic (changing HTML tags) while keeping all existing CSS classes and styles intact.
+CleanCloud is no longer used. Four files contain remnants to clean up:
 
-### What's wrong today
-- `SectionHeader` always renders `<h2>`. Pages like Services, Pricing, Plans, Booking, and Contact use it for their main title, so they have **no `<h1>`**.
-- Contact page jumps from `<h2>` to `<h4>` (skips `<h3>`).
-- Services FAQ section uses `<h3>` when it should be `<h2>`.
+### Changes
 
-### The fix
+1. **Delete `public/booking.html`** — entire file is a standalone CleanCloud widget page, no longer needed.
 
-1. **`SectionHeader.tsx`** — Add an optional `as` prop (default `"h2"`). Render the chosen tag with the exact same classes and inline styles. Zero visual difference.
+2. **`index.html`** — Remove the comment on line 33 (`<!-- CleanCloud resources loaded on-demand by Booking page only -->`).
 
-2. **Pages using SectionHeader as their main title** — Pass `as="h1"` on these pages:
-   - Services, Pricing, Plans, Booking, Contact
+3. **`src/App.css`** — Remove lines 43–65 (CleanCloud Scroll Fix and Auth Background Override CSS blocks).
 
-3. **Contact page** — Change the `<h4>` elements to `<h3>` (same classes kept).
+4. **`src/index.css`** — Remove lines 107–111 (CleanCloud white background override).
 
-4. **Services page** — Change the FAQ `<h3>` to `<h2>` (same classes kept).
-
-All changes are tag-only swaps with identical styling — the site will look exactly the same.
+No functional or visual impact — these styles only targeted CleanCloud elements that no longer exist.
 
