@@ -3,38 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Defer analytics until after page is interactive -->
-    <script>
-      window.addEventListener('load', function() {
-        // Leaflet CSS (deferred)
-        var lf = document.createElement('link');
-        lf.rel = 'stylesheet';
-        lf.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-        document.head.appendChild(lf);
-        // Google Fonts (deferred)
-        var gf = document.createElement('link');
-        gf.rel = 'stylesheet';
-        gf.href = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@700&family=Montserrat:wght@800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap';
-        document.head.appendChild(gf);
-        // Google Analytics
-        var gs = document.createElement('script');
-        gs.async = true;
-        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-M7LLL67HE8';
-        document.head.appendChild(gs);
-        gs.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-M7LLL67HE8');
-        };
-        // Ahrefs Analytics
-        var ahrefs_analytics_script = document.createElement('script');
-        ahrefs_analytics_script.async = true;
-        ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
-        ahrefs_analytics_script.setAttribute('data-key', 'R531RH63u5nKKDryiuu9zA');
-        document.head.appendChild(ahrefs_analytics_script);
-      });
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" />
@@ -43,13 +11,40 @@
     <meta name="author" content="GLOAT" />
     <link rel="canonical" href="https://gloatlaundry.com" />
 
-    
-    
-    <meta property="og:type" content="website" />
-    
+    <!-- Critical font-face declarations to prevent FOIT -->
+    <style>
+      @font-face {
+        font-family: 'Barlow Condensed';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local('Barlow Condensed Bold');
+      }
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Plus Jakarta Sans');
+      }
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('Plus Jakarta Sans SemiBold');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Inter');
+      }
+    </style>
 
+    <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    
 
     <script type="application/ld+json">
     {
@@ -94,30 +89,43 @@
       "priceRange": "€€"
     }
     </script>
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="GLOAT | The Greatest Laundry | Lavandaria em Lisboa">
-  <meta name="twitter:title" content="GLOAT | The Greatest Laundry | Lavandaria em Lisboa">
-  <meta property="og:description" content="Lavandaria em Lisboa com recolha e entrega. Engomadoria e limpeza a seco profissional. Serviço rápido e acessível.">
-  <meta name="twitter:description" content="Lavandaria em Lisboa com recolha e entrega. Engomadoria e limpeza a seco profissional. Serviço rápido e acessível.">
-</head>
+
+    <meta property="og:title" content="GLOAT | The Greatest Laundry | Lavandaria em Lisboa">
+    <meta name="twitter:title" content="GLOAT | The Greatest Laundry | Lavandaria em Lisboa">
+    <meta property="og:description" content="Lavandaria em Lisboa com recolha e entrega. Engomadoria e limpeza a seco profissional. Serviço rápido e acessível.">
+    <meta name="twitter:description" content="Lavandaria em Lisboa com recolha e entrega. Engomadoria e limpeza a seco profissional. Serviço rápido e acessível.">
+  </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Deferred: analytics, fonts, and Leaflet CSS loaded after page is interactive -->
+    <script>
+      window.addEventListener('load', function() {
+        var lf = document.createElement('link');
+        lf.rel = 'stylesheet';
+        lf.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(lf);
+        var gf = document.createElement('link');
+        gf.rel = 'stylesheet';
+        gf.href = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@700&family=Montserrat:wght@800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap';
+        document.head.appendChild(gf);
+        var gs = document.createElement('script');
+        gs.async = true;
+        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-M7LLL67HE8';
+        document.head.appendChild(gs);
+        gs.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M7LLL67HE8');
+        };
+        var ahrefs_analytics_script = document.createElement('script');
+        ahrefs_analytics_script.async = true;
+        ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+        ahrefs_analytics_script.setAttribute('data-key', 'R531RH63u5nKKDryiuu9zA');
+        document.head.appendChild(ahrefs_analytics_script);
+      });
+    </script>
   </body>
 </html>
