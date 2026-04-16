@@ -192,25 +192,24 @@ export function seoPrerender(): Plugin {
       const distDir = path.resolve(process.cwd(), 'dist');
       const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
 
+      let generated = 0;
       for (const route of routes) {
-        // Skip root — index.html already handles it
-        if (route.path === '/') {
-          // Update index.html in place with SEO content
-          const enhanced = injectSeoContent(indexHtml, route);
-          fs.writeFileSync(path.join(distDir, 'index.html'), enhanced, 'utf-8');
-          continue;
-        }
-
-        // Create directory for the route (e.g., dist/servicos/)
-        const routeDir = path.join(distDir, route.path.slice(1));
-        fs.mkdirSync(routeDir, { recursive: true });
-
-        // Write index.html inside the route directory
+        // Always start from the pristine template so per-route replacements
+        // don't accumulate across iterations.
         const enhanced = injectSeoContent(indexHtml, route);
-        fs.writeFileSync(path.join(routeDir, 'index.html'), enhanced, 'utf-8');
+
+        if (route.path === '/') {
+          fs.writeFileSync(path.join(distDir, 'index.html'), enhanced, 'utf-8');
+        } else {
+          // Support nested paths like /foo/bar — create the full directory tree.
+          const routeDir = path.join(distDir, ...route.path.split('/').filter(Boolean));
+          fs.mkdirSync(routeDir, { recursive: true });
+          fs.writeFileSync(path.join(routeDir, 'index.html'), enhanced, 'utf-8');
+        }
+        generated++;
       }
 
-      console.log(`[seo-prerender] Generated static HTML for ${routes.length} routes`);
+      console.log(`[seo-prerender] Generated static HTML for ${generated} routes`);
     },
   };
 }
