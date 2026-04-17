@@ -112,18 +112,18 @@ export const translations = {
     },
     washFold: { pt: 'Lavar & Dobrar', en: 'Wash & Fold' },
     washFoldDesc: {
-      pt: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar.',
-      en: 'Clothes washed with professional products and carefully folded, ready to store.',
+      pt: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar. Entregue em 48 horas.',
+      en: 'Clothes washed with professional products and carefully folded, ready to store. Delivered within 48 hours.',
     },
     ironing: { pt: 'Engomadoria', en: 'Ironing' },
     ironingDesc: {
-      pt: 'Engomadoria profissional para camisas, fatos, lençóis e muito mais.',
-      en: 'Professional ironing for shirts, suits, bed sheets and much more.',
+      pt: 'Engomadoria profissional para camisas, fatos, lençóis e muito mais. Entregue em 48 horas.',
+      en: 'Professional ironing for shirts, suits, bed sheets and much more. Delivered within 48 hours.',
     },
     dryCleaning: { pt: 'Limpeza a Seco', en: 'Dry Cleaning' },
     dryCleaningDesc: {
-      pt: 'Tratamento especializado para tecidos delicados e peças especiais.',
-      en: 'Specialized treatment for delicate fabrics and special garments.',
+      pt: 'Tratamento especializado de limpeza a seco, para tecidos delicados e peças especiais.',
+      en: 'Specialized dry cleaning treatment for delicate fabrics and special garments.',
     },
     specialItems: { pt: 'Artigos Especiais', en: 'Special Items' },
     specialItemsDesc: {
@@ -132,13 +132,13 @@ export const translations = {
     },
     expressService: { pt: 'Serviço Expresso', en: 'Express Service' },
     expressServiceDesc: {
-      pt: 'Precisa com urgência? Entregamos no dia seguinte.',
-      en: 'Need it urgently? We deliver next-day.',
+      pt: 'Precisa com urgência? Entregamos em 24 horas.',
+      en: 'Need it urgently? We deliver within 24 hours.',
     },
     delivery: { pt: 'Recolha e Entrega', en: 'Pickup & Delivery' },
     deliveryDesc: {
-      pt: 'Serviço de recolha e entrega ao domicílio para sua conveniência.',
-      en: 'Home pickup and delivery service for your convenience.',
+      pt: 'Serviço de recolha e entrega ao domicílio em Lisboa e arredores.',
+      en: 'Home pickup and delivery service in Lisbon and surrounding areas.',
     },
   },
   pricing: {
