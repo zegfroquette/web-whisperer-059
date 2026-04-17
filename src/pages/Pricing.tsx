@@ -311,7 +311,7 @@ const Pricing = () => {
                 {/* No highlight badge */}
 
                 <div className="mb-5">
-                  <h3 className="text-base font-bold mb-3 text-foreground">{plan.name}</h3>
+                  <h2 className="text-base font-bold mb-3 text-foreground">{plan.name}</h2>
                   <div className="text-3xl font-extrabold text-gradient leading-none">{plan.price}</div>
                   <p className="text-xs text-muted-foreground mt-1">/ {plan.period}</p>
                   <p className="text-sm text-muted-foreground mt-3 leading-snug">{plan.desc}</p>
