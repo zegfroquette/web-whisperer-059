@@ -53,8 +53,8 @@ export const translations = {
     },
     quality: { pt: 'Qualidade Profissional', en: 'Professional Quality' },
     qualityDesc: {
-      pt: 'Tratamento especializado da roupa com processos e produtos profissionais.',
-      en: 'Specialized garment care with professional processes and products.',
+      pt: 'Tratamento especializado com processos e produtos profissionais. Detergente antialérgico disponível.',
+      en: 'Specialized garment care with professional processes and products. Antiallergic detergent available.',
     },
     clearPricing: { pt: 'Preços Claros', en: 'Clear Pricing' },
     clearPricingDesc: {
@@ -63,8 +63,8 @@ export const translations = {
     },
     reliable: { pt: 'Serviço Fiável', en: 'Reliable Service' },
     reliableDesc: {
-      pt: 'Conte connosco semana após semana, sempre com a mesma qualidade.',
-      en: 'Count on us week after week, always with the same quality.',
+      pt: 'Mais de 170 reviews com 4.7/5 estrelas. Conte connosco semana após semana, sempre com a mesma qualidade.',
+      en: 'Over 170 reviews, 4.7/5 stars. Count on us week after week, always with the same quality.',
     },
     testimonials: { pt: 'O que os nossos Clientes dizem', en: 'What our customers say' },
     ctaTitle: {
