@@ -48,8 +48,8 @@ export const translations = {
     whyChoose: { pt: 'Porquê a GLOAT?', en: 'Why Choose GLOAT?' },
     speed: { pt: 'Rapidez', en: 'Speed' },
     speedDesc: {
-      pt: 'Entrega rápida, normalmente em 48 horas.',
-      en: 'Fast turnaround, usually within 48 hours.',
+      pt: 'Entrega rápida, normalmente em 48 horas. Serviço express (24 horas) disponível por Whatsaap ou na loja',
+      en: 'Fast turnaround, usually within 48 hours. Express service (24 hours) available via WhatsApp or in-store.',
     },
     quality: { pt: 'Qualidade Profissional', en: 'Professional Quality' },
     qualityDesc: {
