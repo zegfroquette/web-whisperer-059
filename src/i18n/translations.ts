@@ -20,12 +20,12 @@ export const translations = {
       en: 'ALL YOUR LAUNDRY!',
     },
     heroSubtitleLine1: {
-      pt: 'Poupe tempo e confie na GLOAT. Lavamos, engomamos e entregamos.',
-      en: 'Save time and trust GLOAT. We wash, iron and deliver.',
+      pt: 'Poupe tempo e confie na GLOAT. Lavandaria profissional em Lisboa com recolha e entrega em casa em 48 horas.',
+      en: 'Save time and trust GLOAT. Professional laundry in Lisbon with pickup and delivery to your door in 48 hours.',
     },
     heroSubtitleLine2: {
-      pt: 'Com cuidado profissional e preços justos.',
-      en: 'With professional care at fair prices.',
+      pt: 'Agende em menos de 60 segundos.',
+      en: 'Book in under 60 seconds.',
     },
     viewPlans: { pt: 'Ver Planos/Preços', en: 'View Plans/Pricing' },
     viewServices: { pt: 'Ver Serviços', en: 'View Services' },
