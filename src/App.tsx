@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { HelmetProvider } from "react-helmet-async";
 import { Layout } from "@/components/Layout";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import Services from "./pages/Services";
@@ -25,6 +26,7 @@ const App = () => (
       <LanguageProvider>
         <Toaster />
         <Sonner />
+        <Analytics />
         <BrowserRouter>
           <ScrollToTop />
           <Layout>
