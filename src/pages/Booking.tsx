@@ -1094,21 +1094,15 @@ const Booking = () => {
           </h3>
           <Accordion type="single" collapsible className="space-y-3">
             {(language === 'pt' ? [
-              { q: 'Como funciona o serviço de recolha e entrega?', a: 'Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.' },
-              { q: 'Com quanto tempo de antecedência devo fazer a reserva?', a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.' },
-              { q: 'Posso reagendar ou cancelar a minha reserva?', a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.' },
-              { q: 'Quanto tempo demora o serviço?', a: 'Lavar e/ou engomar demora aproximadamente 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.' },
-              { q: 'Qual é o horário de recolhas e entregas?', a: 'As recolhas e entregas são realizadas entre as 9h00 e as 15h00.' },
-              { q: 'Oferecem serviço expresso?', a: 'Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.' },
-              { q: 'Qual é a forma mais rápida de contactar o suporte?', a: 'Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.' },
+              { q: 'Com quanto tempo de antecedência devo agendar?', a: 'Pode agendar uma recolha pelo nosso site com pelo menos 24 horas de antecedência. Se precisar com urgência, contacte a nossa equipa pelo WhatsApp ou por telefone.' },
+              { q: 'Posso alterar ou cancelar um agendamento?', a: 'Sim, se precisar de alterar ou cancelar um agendamento contacte-nos por telefone ou WhatsApp.' },
+              { q: 'Posso escolher um horário específico para a recolha?', a: 'Sim, pode escolher o horário disponível que melhor se adapta a si.' },
+              { q: 'Onde fazem recolha e entrega?', a: 'Fazemos recolha e entrega em Lisboa e arredores: Belém, Ajuda, Alcântara, Estrela, Campo de Ourique, Santo António, Misericórdia, Santa Maria Maior, São Vicente, Penha de França, Arroios, Beato, Parque das Nações, Areeiro, Alvalade, Avenidas Novas, Campolide, Benfica e São Domingos de Benfica.' },
             ] : [
-              { q: 'How does the pickup and delivery service work?', a: 'Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.' },
-              { q: 'How far in advance should I book?', a: 'We recommend booking at least 24 hours in advance to secure your preferred time slot.' },
-              { q: 'Can I reschedule or cancel my booking?', a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.' },
-              { q: 'How long does the service take?', a: 'Washing and/or ironing takes approximately 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.' },
-              { q: 'What are your pickup and delivery hours?', a: 'Pickups and deliveries are made between 9:00 AM and 3:00 PM.' },
-              { q: 'Do you offer express service?', a: 'Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.' },
-              { q: 'What is the fastest way to reach support?', a: 'We recommend calling us or contacting us on WhatsApp for the quickest response.' },
+              { q: 'How far in advance do I need to book?', a: 'You can book a pickup through our website at least 24 hours in advance. If you need it urgently please contact our team through WhatsApp or call and we\u2019ll be happy to help.' },
+              { q: 'Can I change or cancel a booking?', a: 'Yes, if you need to change or cancel a booking please call us or contact us on WhatsApp.' },
+              { q: 'Can I request a specific pickup time?', a: 'Yes, you can choose whichever time slot available best suits you.' },
+              { q: 'Where do you pickup and deliver?', a: 'We do pickup and delivery in Lisbon and surrounding areas: Belém, Ajuda, Alcântara, Estrela, Campo de Ourique, Santo António, Misericórdia, Santa Maria Maior, São Vicente, Penha de França, Arroios, Beato, Parque das Nações, Areeiro, Alvalade, Avenidas Novas, Campolide, Benfica, São Domingos de Benfica.' },
             ]).map((faq, i) => (
               <AccordionItem
                 key={i}

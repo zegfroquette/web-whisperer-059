@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const TestimonialsCarousel = lazy(() => import('@/components/TestimonialsCarousel').then(m => ({ default: m.TestimonialsCarousel })));
 import { Zap, Award, Tag, ShieldCheck, Package, Sparkles, Truck } from 'lucide-react';
@@ -18,7 +19,26 @@ const fadeUp = {
 };
 
 const Index = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const pt = language === 'pt';
+
+  const faqs = pt ? [
+    { q: 'Posso entregar sem agendar?', a: 'Sim, pode entregar diretamente na nossa loja na Rua de Artilharia 1 em Lisboa durante o horário de funcionamento. Não é necessário agendar para entregas na loja.' },
+    { q: 'Qual é o horário de funcionamento?', a: 'A GLOAT está aberta de segunda a sexta das 9h às 18h, e ao sábado das 10h às 13h.' },
+    { q: 'Só operam em Lisboa?', a: 'Sim, a GLOAT está localizada em Lisboa, perto do Jardim das Amoreiras. Fazemos recolha e entrega em vários bairros de Lisboa, incluindo Campo de Ourique, Estrela, Chiado e muito mais.' },
+    { q: 'A GLOAT é uma lavandaria self-service?', a: 'Não. A GLOAT é uma lavandaria de serviço completo. Entrega na loja ou nós recolhemos, e tratamos de tudo.' },
+    { q: 'Falam inglês?', a: 'Sim, a nossa equipa fala Inglês.' },
+    { q: 'Oferecem serviço expresso?', a: 'Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.' },
+    { q: 'Qual é a forma mais rápida de contactar o suporte?', a: 'Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.' },
+  ] : [
+    { q: 'Can I drop off without booking?', a: 'Yes, you can drop off directly at our store on Rua de Artilharia 1 in Lisboa during opening hours. No booking needed for drop-offs.' },
+    { q: 'What are your opening hours?', a: 'GLOAT is opened Monday through Friday from 9am to 6pm, and on Saturday from 10am to 1pm.' },
+    { q: 'Are you only in Lisbon?', a: 'Yes, GLOAT is based in Lisbon, near Jardim das Amoreiras. We offer pickup and delivery across several Lisbon neighbourhoods including Campo de Ourique, Estrela, Chiado and much more.' },
+    { q: 'Is GLOAT a self-service laundromat?', a: 'No. GLOAT is a full-service laundry. You drop off or we collect, and we take care of everything.' },
+    { q: 'Do you speak English?', a: 'Yes, we\u2019re fully bilingual in Portuguese and English.' },
+    { q: 'Do you offer express service?', a: 'Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.' },
+    { q: 'What is the fastest way to reach support?', a: 'We recommend calling us or contacting us on WhatsApp for the quickest response.' },
+  ];
 
 
 
@@ -160,6 +180,23 @@ const Index = () => {
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-8">
+            {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
+          </h2>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border/50 px-6">
+                <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

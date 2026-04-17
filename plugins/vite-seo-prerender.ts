@@ -16,6 +16,70 @@ interface RouteConfig {
 
 const DOMAIN = 'https://gloatlaundry.com';
 
+const SERVICES_FAQ_PT = `
+<h2>Perguntas Frequentes</h2>
+<h3>Lavam sapatos?</h3><p>Sim. Agende uma recolha ou traga-os à loja. Tratamos do resto.</p>
+<h3>A roupa é devolvida em cabides ou dobrada?</h3><p>As peças engomadas são devolvidas em cabides. As peças do serviço lavar e dobrar são devolvidas cuidadosamente dobradas.</p>
+<h3>Fazem lavagem à mão para peças delicadas?</h3><p>Sim, a lavagem à mão está disponível para peças delicadas.</p>
+<h3>Posso engomar apenas algumas peças?</h3><p>Sim, pode pedir o serviço de engomadoria sem subscrição. Peças individuais a partir de 2,50€ por peça.</p>
+<h3>Como funciona a limpeza a seco?</h3><p>Entregue as suas peças na loja ou agende uma recolha. Tratamos com processos especializados de limpeza a seco e devolvemos em 5 dias.</p>`;
+
+const SERVICES_FAQ_EN = `
+<h2>Frequently Asked Questions</h2>
+<h3>Do you wash shoes?</h3><p>Yes, absolutely. Schedule a pickup or bring them to the store. We handle the rest.</p>
+<h3>Is clothing returned on hangers or folded?</h3><p>Ironed items are returned on hangers. Wash &amp; fold items are returned neatly folded.</p>
+<h3>Do you hand wash delicate items?</h3><p>Yes, hand washing is available for delicate items.</p>
+<h3>Can you iron just a few items (shirts, pants, etc)?</h3><p>Yes, you can order ironing without a subscription. Individual items start from €2.50 per piece.</p>
+<h3>How does dry cleaning work?</h3><p>Drop off your items or schedule a pickup. We treat them with specialist dry cleaning processes and return them within 5 days.</p>`;
+
+const HOME_FAQ_PT = `
+<h2>Perguntas Frequentes</h2>
+<h3>Posso entregar sem agendar?</h3><p>Sim, pode entregar diretamente na nossa loja na Rua de Artilharia 1 em Lisboa durante o horário de funcionamento. Não é necessário agendar para entregas na loja.</p>
+<h3>Qual é o horário de funcionamento?</h3><p>A GLOAT está aberta de segunda a sexta das 9h às 18h, e ao sábado das 10h às 13h.</p>
+<h3>Só operam em Lisboa?</h3><p>Sim, a GLOAT está localizada em Lisboa, perto do Jardim das Amoreiras. Fazemos recolha e entrega em vários bairros de Lisboa, incluindo Campo de Ourique, Estrela, Chiado e muito mais.</p>
+<h3>A GLOAT é uma lavandaria self-service?</h3><p>Não. A GLOAT é uma lavandaria de serviço completo. Entrega na loja ou nós recolhemos, e tratamos de tudo.</p>
+<h3>Falam inglês?</h3><p>Sim, a nossa equipa fala Inglês.</p>
+<h3>Oferecem serviço expresso?</h3><p>Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.</p>
+<h3>Qual é a forma mais rápida de contactar o suporte?</h3><p>Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.</p>`;
+
+const HOME_FAQ_EN = `
+<h2>Frequently Asked Questions</h2>
+<h3>Can I drop off without booking?</h3><p>Yes, you can drop off directly at our store on Rua de Artilharia 1 in Lisboa during opening hours. No booking needed for drop-offs.</p>
+<h3>What are your opening hours?</h3><p>GLOAT is opened Monday through Friday from 9am to 6pm, and on Saturday from 10am to 1pm.</p>
+<h3>Are you only in Lisbon?</h3><p>Yes, GLOAT is based in Lisbon, near Jardim das Amoreiras. We offer pickup and delivery across several Lisbon neighbourhoods including Campo de Ourique, Estrela, Chiado and much more.</p>
+<h3>Is GLOAT a self-service laundromat?</h3><p>No. GLOAT is a full-service laundry. You drop off or we collect, and we take care of everything.</p>
+<h3>Do you speak English?</h3><p>Yes, we&rsquo;re fully bilingual in Portuguese and English.</p>
+<h3>Do you offer express service?</h3><p>Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.</p>
+<h3>What is the fastest way to reach support?</h3><p>We recommend calling us or contacting us on WhatsApp for the quickest response.</p>`;
+
+const PRICING_FAQ_PT = `
+<h2>Perguntas Frequentes</h2>
+<h3>Posso cancelar a minha subscrição?</h3><p>Sim, claro. Não existe compromisso mínimo nos nossos planos mensais.</p>
+<h3>Os preços variam consoante o tamanho ou peso?</h3><p>Alguns artigos têm preço por dimensão, como tapetes (por m²) e cortinados (por m). A maioria das peças tem preço fixo.</p>
+<h3>A entrega está sempre incluída?</h3><p>A entrega está incluída em todos os planos mensais. Para pedidos pontuais sem subscrição, a recolha e entrega não está incluída. Consulte os preços de entrega na nossa página de Agendamento.</p>
+<h3>Posso adicionar peças extra ao meu plano?</h3><p>Sim. Os subscritores podem adicionar peças extra a preços reduzidos.</p>`;
+
+const PRICING_FAQ_EN = `
+<h2>Frequently Asked Questions</h2>
+<h3>Can I pause or cancel my subscription?</h3><p>Yes, of course. There is no minimum commitment for our monthly subscriptions.</p>
+<h3>Do prices vary by item size or weight?</h3><p>Some items are priced by size or dimension, such as rugs (per m²) and curtains (per m). Most garments have fixed prices.</p>
+<h3>Is delivery always included?</h3><p>Delivery is included in all monthly plans. For one-off orders without a subscription, pickup and delivery is not included. Check the delivery prices on our Booking page.</p>
+<h3>Can I add extra items outside my plan?</h3><p>Yes. Subscribers can add extra items at reduced subscriber prices.</p>`;
+
+const BOOKING_FAQ_PT = `
+<h2>Perguntas Frequentes</h2>
+<h3>Com quanto tempo de antecedência devo agendar?</h3><p>Pode agendar uma recolha pelo nosso site com pelo menos 24 horas de antecedência. Se precisar com urgência, contacte a nossa equipa pelo WhatsApp ou por telefone.</p>
+<h3>Posso alterar ou cancelar um agendamento?</h3><p>Sim, se precisar de alterar ou cancelar um agendamento contacte-nos por telefone ou WhatsApp.</p>
+<h3>Posso escolher um horário específico para a recolha?</h3><p>Sim, pode escolher o horário disponível que melhor se adapta a si.</p>
+<h3>Onde fazem recolha e entrega?</h3><p>Fazemos recolha e entrega em Lisboa e arredores: Belém, Ajuda, Alcântara, Estrela, Campo de Ourique, Santo António, Misericórdia, Santa Maria Maior, São Vicente, Penha de França, Arroios, Beato, Parque das Nações, Areeiro, Alvalade, Avenidas Novas, Campolide, Benfica e São Domingos de Benfica.</p>`;
+
+const BOOKING_FAQ_EN = `
+<h2>Frequently Asked Questions</h2>
+<h3>How far in advance do I need to book?</h3><p>You can book a pickup through our website at least 24 hours in advance. If you need it urgently please contact our team through WhatsApp or call and we&rsquo;ll be happy to help.</p>
+<h3>Can I change or cancel a booking?</h3><p>Yes, if you need to change or cancel a booking please call us or contact us on WhatsApp.</p>
+<h3>Can I request a specific pickup time?</h3><p>Yes, you can choose whichever time slot available best suits you.</p>
+<h3>Where do you pickup and deliver?</h3><p>We do pickup and delivery in Lisbon and surrounding areas: Belém, Ajuda, Alcântara, Estrela, Campo de Ourique, Santo António, Misericórdia, Santa Maria Maior, São Vicente, Penha de França, Arroios, Beato, Parque das Nações, Areeiro, Alvalade, Avenidas Novas, Campolide, Benfica, São Domingos de Benfica.</p>`;
+
 const SERVICES_PT = `
 <h2>Lavar &amp; Dobrar</h2>
 <p>Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar. Entregue em 48 horas.</p>
@@ -28,7 +92,8 @@ const SERVICES_PT = `
 <h2>Serviço Expresso</h2>
 <p>Precisa com urgência? Entregamos em 24 horas. Disponível por WhatsApp ou na loja.</p>
 <h2>Recolha e Entrega</h2>
-<p>Serviço de recolha e entrega ao domicílio em Lisboa e arredores.</p>`;
+<p>Serviço de recolha e entrega ao domicílio em Lisboa e arredores.</p>
+${SERVICES_FAQ_PT}`;
 
 const SERVICES_EN = `
 <h2>Wash &amp; Fold</h2>
@@ -42,7 +107,8 @@ const SERVICES_EN = `
 <h2>Express Service</h2>
 <p>Need it urgently? We deliver within 24 hours. Available via WhatsApp or in-store.</p>
 <h2>Pickup &amp; Delivery</h2>
-<p>Home pickup and delivery service in Lisbon and surrounding areas.</p>`;
+<p>Home pickup and delivery service in Lisbon and surrounding areas.</p>
+${SERVICES_FAQ_EN}`;
 
 const PRICING_PT = `
 <p>Preços transparentes sem surpresas. Planos mensais e preços por peça para lavar, engomar, limpeza a seco e artigos de casa em Lisboa.</p>
@@ -72,17 +138,7 @@ const PRICING_PT = `
 <h2>Artigos de Casa</h2>
 <p>Edredon Solteiro: 22,40€ | Edredon Solteiro de Penas: 28,00€ | Edredon Casal: 28,60€ | Edredon Casal de Penas: 33,60€ | Capa Edredon Solteiro: 11,40€ | Capa Edredon Casal: 12,60€ | Colcha Simples Solteiro: 15,90€ | Resguardo Simples Solteiro: 10,30€ | Almofada/Travesseiro Sintético: 12,90€ | Cortina: 17,90€/m | Tapete: 17,90€/m² | Toalha de Mesa: 13,90€/m².</p>
 
-<h2>Perguntas Frequentes</h2>
-<h3>Como funciona o serviço de recolha e entrega?</h3>
-<p>Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.</p>
-<h3>Quanto tempo demora o serviço?</h3>
-<p>Lavar e/ou engomar demora aproximadamente 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.</p>
-<h3>Oferecem serviço expresso?</h3>
-<p>Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.</p>
-<h3>Existe compromisso mínimo nos planos?</h3>
-<p>Não, não existe compromisso mínimo.</p>
-<h3>Qual é o horário de recolhas e entregas?</h3>
-<p>As recolhas e entregas são realizadas entre as 9h00 e as 15h00.</p>`;
+${PRICING_FAQ_PT}`;
 
 const PRICING_EN = `
 <p>Transparent pricing with no surprises. Monthly plans and per-item pricing for washing, ironing, dry cleaning and household items in Lisbon.</p>
@@ -112,17 +168,7 @@ const PRICING_EN = `
 <h2>Household Items</h2>
 <p>Single Duvet: €22.40 | Feather/Quilted Single Duvet: €28.00 | Double Duvet: €28.60 | Feather/Quilted Double Duvet: €33.60 | Single Duvet Cover: €11.40 | Double Duvet Cover: €12.60 | Simple Single Bedspread: €15.90 | Simple Single Mattress Protector: €10.30 | Synthetic Pillow: €12.90 | Curtain: €17.90/m | Rug: €17.90/m² | Tablecloth: €13.90/m².</p>
 
-<h2>Frequently Asked Questions</h2>
-<h3>How does the pickup and delivery service work?</h3>
-<p>Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.</p>
-<h3>How long does the service take?</h3>
-<p>Washing and/or ironing takes approximately 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.</p>
-<h3>Do you offer express service?</h3>
-<p>Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.</p>
-<h3>Is there a minimum commitment for plans?</h3>
-<p>No, there is no minimum commitment.</p>
-<h3>What are your pickup and delivery hours?</h3>
-<p>Pickups and deliveries are made between 9:00 AM and 3:00 PM.</p>`;
+${PRICING_FAQ_EN}`;
 
 const HOME_PT = `
 <p>Poupe tempo e confie na GLOAT. Lavandaria profissional em Lisboa com recolha e entrega em casa em 48 horas.</p>
@@ -135,7 +181,8 @@ const HOME_PT = `
 <p><strong>Qualidade Profissional</strong> — Tratamento especializado com processos e produtos profissionais. Detergente antialérgico disponível.</p>
 <p><strong>Preços Claros</strong> — Sem surpresas. Sabe sempre quanto vai pagar.</p>
 <p><strong>Serviço Fiável</strong> — Mais de 170 reviews com 4.7/5 estrelas. Conte connosco semana após semana, sempre com a mesma qualidade.</p>
-${SERVICES_PT}`;
+${SERVICES_PT}
+${HOME_FAQ_PT}`;
 
 const HOME_EN = `
 <p>Save time and trust GLOAT. Professional laundry in Lisbon with pickup and delivery to your door in 48 hours.</p>
@@ -148,7 +195,8 @@ const HOME_EN = `
 <p><strong>Professional Quality</strong> — Specialized garment care with professional processes and products. Antiallergic detergent available.</p>
 <p><strong>Clear Pricing</strong> — No surprises. You always know what you'll pay.</p>
 <p><strong>Reliable Service</strong> — Over 170 reviews, 4.7/5 stars. Count on us week after week, always with the same quality.</p>
-${SERVICES_EN}`;
+${SERVICES_EN}
+${HOME_FAQ_EN}`;
 
 const CONTACT_PT = `
 <p>Envie-nos uma mensagem, ligue ou visite a nossa loja em Lisboa. Estamos aqui para ajudar.</p>
@@ -171,7 +219,8 @@ const BOOKING_PT = `
 <h2>Área de Cobertura</h2>
 <p>Servimos Lisboa e arredores. Recolhas e entregas entre as 9h00 e as 15h00.</p>
 <h2>Serviços Disponíveis</h2>
-<p>Lavar &amp; Dobrar, Lavar &amp; Engomar, Apenas Engomar, Limpeza a Seco e Artigos de Casa.</p>`;
+<p>Lavar &amp; Dobrar, Lavar &amp; Engomar, Apenas Engomar, Limpeza a Seco e Artigos de Casa.</p>
+${BOOKING_FAQ_PT}`;
 
 const BOOKING_EN = `
 <p>Schedule a home laundry pickup in Lisbon. We collect, wash and deliver your laundry professionally, usually within 48 hours.</p>
@@ -180,7 +229,8 @@ const BOOKING_EN = `
 <h2>Service Area</h2>
 <p>We serve Lisbon and surrounding areas. Pickups and deliveries between 9:00 AM and 3:00 PM.</p>
 <h2>Available Services</h2>
-<p>Wash &amp; Fold, Wash &amp; Iron, Iron Only, Dry Cleaning and Household Items.</p>`;
+<p>Wash &amp; Fold, Wash &amp; Iron, Iron Only, Dry Cleaning and Household Items.</p>
+${BOOKING_FAQ_EN}`;
 
 const routes: RouteConfig[] = [
   {
