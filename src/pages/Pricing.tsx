@@ -408,6 +408,31 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* ── CTA ── */}
+      <section className="py-20 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="gradient-primary rounded-3xl p-10 md:p-16"
+          >
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              {pt ? 'Pronto para experimentar a GLOAT?' : 'Ready to try GLOAT?'}
+            </h2>
+            <p className="text-white/80 mb-8 text-lg">
+              {pt ? 'Agende uma recolha em 60 segundos.' : 'Book a pickup in 60 seconds.'}
+            </p>
+            <div className="flex justify-center">
+              <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
+                <Link to={pt ? '/reserva' : '/booking'}>{pt ? 'Agendar Recolha' : 'Book a Pickup'}</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Section 3: FAQs ── */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
