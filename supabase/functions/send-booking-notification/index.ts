@@ -182,7 +182,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'GLOAT Reservas <noreply@contactform.gloatlaundry.com>',
-        to: ['gloatlaundry@gmail.com', 'jogfroquette@gmail.com', 'gloatcarol@gmail.com'],
+        to: ['jogfroquette@gmail.com'],
         subject,
         html,
       }),
