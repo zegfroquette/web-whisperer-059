@@ -189,7 +189,7 @@ const Index = () => {
           <h2 className="text-2xl font-bold text-center mb-8">
             {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
           </h2>
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="space-y-3">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border/50 px-6">
                 <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>

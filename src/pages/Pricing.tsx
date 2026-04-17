@@ -412,7 +412,7 @@ const Pricing = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">{t('pricing', 'faq')}</h2>
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="space-y-3">
             {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
