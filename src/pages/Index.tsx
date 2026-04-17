@@ -183,6 +183,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-8">
+            {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
+          </h2>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border/50 px-6">
+                <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <Suspense fallback={<div className="py-20" />}>
         <TestimonialsCarousel />
