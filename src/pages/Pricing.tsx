@@ -417,7 +417,7 @@ const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Accordion type="single" collapsible className="space-y-3">
+            <Accordion type="multiple" defaultValue={categories.map((cat) => cat.id)} className="space-y-3">
               {categories.map((cat) => (
                 <AccordionItem
                   key={cat.id}
