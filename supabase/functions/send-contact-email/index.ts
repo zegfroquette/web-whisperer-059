@@ -71,7 +71,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'GLOAT Contact Form <noreply@contactform.gloatlaundry.com>',
-        to: ['jogfroquette@gmail.com'],
+        to: ['gloatlaundry@gmail.com', 'jogfroquette@gmail.com'],
         subject: `Nova mensagem de contacto de ${esc(name)}`,
         html: `
           <h2>Nova Submissão de Contacto</h2>
