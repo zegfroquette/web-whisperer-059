@@ -79,8 +79,7 @@ const Index = () => {
           <p
             className="text-lg md:text-xl text-muted-foreground mb-2 max-w-2xl mx-auto animate-[fadeSlideUp_0.6s_ease-out_0.2s_both]">
 
-            {t('home', 'heroSubtitleLine1')}<br />
-            {t('home', 'heroSubtitleLine2')}
+            {t('home', 'heroSubtitleLine1')}
           </p>
         </div>
       </section>
