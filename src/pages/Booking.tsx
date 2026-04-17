@@ -1089,9 +1089,9 @@ const Booking = () => {
       {/* ── FAQs ── */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {language === 'pt' ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
-          </h3>
+          </h2>
           <Accordion type="multiple" defaultValue={["faq-0","faq-1","faq-2","faq-3"]} className="space-y-3">
             {(language === 'pt' ? [
               { q: 'Com quanto tempo de antecedência devo agendar?', a: 'Pode agendar uma recolha pelo nosso site com pelo menos 24 horas de antecedência. Se precisar com urgência, contacte a nossa equipa pelo WhatsApp ou por telefone.' },
