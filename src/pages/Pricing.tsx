@@ -329,13 +329,13 @@ const Pricing = () => {
     <>
       <Helmet>
         <title>Preços e Planos | GLOAT Laundry Lisboa</title>
-        <meta name="description" content="Conheça os planos mensais e preços por peça da GLOAT. Lavandaria acessível em Lisboa com planos a partir de 29,90€/mês." />
+        <meta name="description" content="Conheça os planos mensais e preços por peça da GLOAT. Lavandaria acessível em Lisboa com planos a partir de 65€ por 4 semanas." />
         <link rel="canonical" href="https://gloatlaundry.com/precos" />
         <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/precos" />
         <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/pricing" />
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/precos" />
         <meta property="og:title" content="Preços e Planos | GLOAT Laundry Lisboa" />
-        <meta property="og:description" content="Conheça os planos mensais e preços por peça da GLOAT. Lavandaria acessível em Lisboa com planos a partir de 29,90€/mês." />
+        <meta property="og:description" content="Conheça os planos mensais e preços por peça da GLOAT. Lavandaria acessível em Lisboa com planos a partir de 65€ por 4 semanas." />
         <meta property="og:url" content="https://gloatlaundry.com/precos" />
       </Helmet>
       {/* ── Section 1: Monthly Subscriptions ── */}
