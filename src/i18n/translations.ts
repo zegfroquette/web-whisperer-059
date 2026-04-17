@@ -72,7 +72,7 @@ export const translations = {
       en: 'Ready to try GLOAT?',
     },
     ctaSubtitle: {
-      pt: 'Descubra os nossos planos mensais e preços ou reserve uma recolha em 60 segundos.',
+      pt: 'Descubra os nossos planos mensais e preços ou agende uma recolha em 60 segundos.',
       en: 'Discover our monthly plans and pricing or book a pickup in 60 seconds.',
     },
     ctaSubtitleHome: {
