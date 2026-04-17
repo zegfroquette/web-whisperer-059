@@ -107,8 +107,8 @@ export const translations = {
   services: {
     title: { pt: 'Os Nossos Serviços', en: 'Our Services' },
     subtitle: {
-      pt: 'Oferecemos uma gama completa de serviços de lavandaria e engomadoria para todas as necessidades.',
-      en: 'We offer a full range of laundry and ironing services for all needs.',
+      pt: 'Oferecemos uma gama completa de serviços de lavandaria, engomadoria e limpeza a seco para todas as necessidades.',
+      en: 'We offer a full range of laundry, ironing and dry cleaning services for all needs.',
     },
     washFold: { pt: 'Lavar & Dobrar', en: 'Wash & Fold' },
     washFoldDesc: {
