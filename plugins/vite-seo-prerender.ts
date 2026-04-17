@@ -194,21 +194,9 @@ export function seoPrerender(): Plugin {
 
       let generated = 0;
       for (const route of routes) {
-        if (route.path === '/servicos') {
-          console.log(
-            '[seo-prerender][debug:/servicos] template contains <div id="root">:',
-            indexHtml.includes('<div id="root">')
-          );
-        }
-
         // Always start from the pristine template so per-route replacements
         // don't accumulate across iterations.
         const enhanced = injectSeoContent(indexHtml, route);
-
-        if (route.path === '/servicos') {
-          console.log('[seo-prerender][debug:/servicos] final HTML written to disk:');
-          console.log(enhanced);
-        }
 
         if (route.path === '/') {
           fs.writeFileSync(path.join(distDir, 'index.html'), enhanced, 'utf-8');
@@ -231,7 +219,9 @@ function escapeAttr(value: string): string {
 }
 
 function injectSeoContent(template: string, route: RouteConfig): string {
-  let html = template;
+  // Defensive: explicitly create a fresh string copy per call so no caller
+  // can ever share or mutate this working buffer across routes.
+  let html = String(template);
   const title = escapeAttr(route.title);
   const description = escapeAttr(route.description);
   const canonical = escapeAttr(route.canonical);
