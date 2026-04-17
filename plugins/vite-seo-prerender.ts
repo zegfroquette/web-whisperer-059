@@ -138,17 +138,7 @@ const PRICING_PT = `
 <h2>Artigos de Casa</h2>
 <p>Edredon Solteiro: 22,40€ | Edredon Solteiro de Penas: 28,00€ | Edredon Casal: 28,60€ | Edredon Casal de Penas: 33,60€ | Capa Edredon Solteiro: 11,40€ | Capa Edredon Casal: 12,60€ | Colcha Simples Solteiro: 15,90€ | Resguardo Simples Solteiro: 10,30€ | Almofada/Travesseiro Sintético: 12,90€ | Cortina: 17,90€/m | Tapete: 17,90€/m² | Toalha de Mesa: 13,90€/m².</p>
 
-<h2>Perguntas Frequentes</h2>
-<h3>Como funciona o serviço de recolha e entrega?</h3>
-<p>Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.</p>
-<h3>Quanto tempo demora o serviço?</h3>
-<p>Lavar e/ou engomar demora aproximadamente 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.</p>
-<h3>Oferecem serviço expresso?</h3>
-<p>Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.</p>
-<h3>Existe compromisso mínimo nos planos?</h3>
-<p>Não, não existe compromisso mínimo.</p>
-<h3>Qual é o horário de recolhas e entregas?</h3>
-<p>As recolhas e entregas são realizadas entre as 9h00 e as 15h00.</p>`;
+${PRICING_FAQ_PT}`;
 
 const PRICING_EN = `
 <p>Transparent pricing with no surprises. Monthly plans and per-item pricing for washing, ironing, dry cleaning and household items in Lisbon.</p>
@@ -178,17 +168,7 @@ const PRICING_EN = `
 <h2>Household Items</h2>
 <p>Single Duvet: €22.40 | Feather/Quilted Single Duvet: €28.00 | Double Duvet: €28.60 | Feather/Quilted Double Duvet: €33.60 | Single Duvet Cover: €11.40 | Double Duvet Cover: €12.60 | Simple Single Bedspread: €15.90 | Simple Single Mattress Protector: €10.30 | Synthetic Pillow: €12.90 | Curtain: €17.90/m | Rug: €17.90/m² | Tablecloth: €13.90/m².</p>
 
-<h2>Frequently Asked Questions</h2>
-<h3>How does the pickup and delivery service work?</h3>
-<p>Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.</p>
-<h3>How long does the service take?</h3>
-<p>Washing and/or ironing takes approximately 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.</p>
-<h3>Do you offer express service?</h3>
-<p>Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.</p>
-<h3>Is there a minimum commitment for plans?</h3>
-<p>No, there is no minimum commitment.</p>
-<h3>What are your pickup and delivery hours?</h3>
-<p>Pickups and deliveries are made between 9:00 AM and 3:00 PM.</p>`;
+${PRICING_FAQ_EN}`;
 
 const HOME_PT = `
 <p>Poupe tempo e confie na GLOAT. Lavandaria profissional em Lisboa com recolha e entrega em casa em 48 horas.</p>
@@ -201,7 +181,8 @@ const HOME_PT = `
 <p><strong>Qualidade Profissional</strong> — Tratamento especializado com processos e produtos profissionais. Detergente antialérgico disponível.</p>
 <p><strong>Preços Claros</strong> — Sem surpresas. Sabe sempre quanto vai pagar.</p>
 <p><strong>Serviço Fiável</strong> — Mais de 170 reviews com 4.7/5 estrelas. Conte connosco semana após semana, sempre com a mesma qualidade.</p>
-${SERVICES_PT}`;
+${SERVICES_PT}
+${HOME_FAQ_PT}`;
 
 const HOME_EN = `
 <p>Save time and trust GLOAT. Professional laundry in Lisbon with pickup and delivery to your door in 48 hours.</p>
@@ -214,7 +195,8 @@ const HOME_EN = `
 <p><strong>Professional Quality</strong> — Specialized garment care with professional processes and products. Antiallergic detergent available.</p>
 <p><strong>Clear Pricing</strong> — No surprises. You always know what you'll pay.</p>
 <p><strong>Reliable Service</strong> — Over 170 reviews, 4.7/5 stars. Count on us week after week, always with the same quality.</p>
-${SERVICES_EN}`;
+${SERVICES_EN}
+${HOME_FAQ_EN}`;
 
 const CONTACT_PT = `
 <p>Envie-nos uma mensagem, ligue ou visite a nossa loja em Lisboa. Estamos aqui para ajudar.</p>
@@ -237,7 +219,8 @@ const BOOKING_PT = `
 <h2>Área de Cobertura</h2>
 <p>Servimos Lisboa e arredores. Recolhas e entregas entre as 9h00 e as 15h00.</p>
 <h2>Serviços Disponíveis</h2>
-<p>Lavar &amp; Dobrar, Lavar &amp; Engomar, Apenas Engomar, Limpeza a Seco e Artigos de Casa.</p>`;
+<p>Lavar &amp; Dobrar, Lavar &amp; Engomar, Apenas Engomar, Limpeza a Seco e Artigos de Casa.</p>
+${BOOKING_FAQ_PT}`;
 
 const BOOKING_EN = `
 <p>Schedule a home laundry pickup in Lisbon. We collect, wash and deliver your laundry professionally, usually within 48 hours.</p>
@@ -246,7 +229,8 @@ const BOOKING_EN = `
 <h2>Service Area</h2>
 <p>We serve Lisbon and surrounding areas. Pickups and deliveries between 9:00 AM and 3:00 PM.</p>
 <h2>Available Services</h2>
-<p>Wash &amp; Fold, Wash &amp; Iron, Iron Only, Dry Cleaning and Household Items.</p>`;
+<p>Wash &amp; Fold, Wash &amp; Iron, Iron Only, Dry Cleaning and Household Items.</p>
+${BOOKING_FAQ_EN}`;
 
 const routes: RouteConfig[] = [
   {
