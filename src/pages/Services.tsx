@@ -100,7 +100,7 @@ const Services = () => {
                 <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4`}>
                   <s.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                <h2 className="text-lg font-bold mb-2">{s.title}</h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
