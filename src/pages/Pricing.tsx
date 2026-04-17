@@ -258,71 +258,15 @@ const Pricing = () => {
   ];
 
   const faqs = pt ? [
-    {
-      q: 'Como funciona o serviço de recolha e entrega?',
-      a: 'Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.',
-    },
-    {
-      q: 'Com quanto tempo de antecedência devo fazer a reserva?',
-      a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.',
-    },
-    {
-      q: 'Posso reagendar ou cancelar a minha reserva?',
-      a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.',
-    },
-    {
-      q: 'Existe compromisso mínimo nos planos?',
-      a: 'Não, não existe compromisso mínimo.',
-    },
-    {
-      q: 'Quanto tempo demora o serviço?',
-      a: 'Lavar e/ou engomar demora aproximadamente 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.',
-    },
-    {
-      q: 'Qual é o horário de recolhas e entregas?',
-      a: 'As recolhas e entregas são realizadas entre as 9h00 e as 15h00.',
-    },
-    {
-      q: 'Oferecem serviço expresso?',
-      a: 'Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.',
-    },
-    {
-      q: 'Qual é a forma mais rápida de contactar o suporte?',
-      a: 'Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.',
-    },
+    { q: 'Posso cancelar a minha subscrição?', a: 'Sim, claro. Não existe compromisso mínimo nos nossos planos mensais.' },
+    { q: 'Os preços variam consoante o tamanho ou peso?', a: 'Alguns artigos têm preço por dimensão, como tapetes (por m²) e cortinados (por m). A maioria das peças tem preço fixo.' },
+    { q: 'A entrega está sempre incluída?', a: 'A entrega está incluída em todos os planos mensais. Para pedidos pontuais sem subscrição, a recolha e entrega não está incluída. Consulte os preços de entrega na nossa página de Agendamento.' },
+    { q: 'Posso adicionar peças extra ao meu plano?', a: 'Sim. Os subscritores podem adicionar peças extra a preços reduzidos.' },
   ] : [
-    {
-      q: 'How does the pickup and delivery service work?',
-      a: 'Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.',
-    },
-    {
-      q: 'How far in advance should I book?',
-      a: 'We recommend booking at least 24 hours in advance to secure your preferred time slot.',
-    },
-    {
-      q: 'Can I reschedule or cancel my booking?',
-      a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.',
-    },
-    {
-      q: 'Is there a minimum commitment for plans?',
-      a: 'No, there is no minimum commitment.',
-    },
-    {
-      q: 'How long does the service take?',
-      a: 'Washing and/or ironing takes approximately 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.',
-    },
-    {
-      q: 'What are your pickup and delivery hours?',
-      a: 'Pickups and deliveries are made between 9:00 AM and 3:00 PM.',
-    },
-    {
-      q: 'Do you offer express service?',
-      a: 'Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.',
-    },
-    {
-      q: 'What is the fastest way to reach support?',
-      a: 'We recommend calling us or contacting us on WhatsApp for the quickest response.',
-    },
+    { q: 'Can I pause or cancel my subscription?', a: 'Yes, of course. There is no minimum commitment for our monthly subscriptions.' },
+    { q: 'Do prices vary by item size or weight?', a: 'Some items are priced by size or dimension, such as rugs (per m²) and curtains (per m). Most garments have fixed prices.' },
+    { q: 'Is delivery always included?', a: 'Delivery is included in all monthly plans. For one-off orders without a subscription, pickup and delivery is not included. Check the delivery prices on our Booking page.' },
+    { q: 'Can I add extra items outside my plan?', a: 'Yes. Subscribers can add extra items at reduced subscriber prices.' },
   ];
 
   return (

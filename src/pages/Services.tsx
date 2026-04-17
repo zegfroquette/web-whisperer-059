@@ -29,63 +29,17 @@ const Services = () => {
   ];
 
   const faqs = pt ? [
-    {
-      q: 'Como funciona o serviço de recolha e entrega?',
-      a: 'Agende a sua recolha online ou contacte-nos pelo WhatsApp. O nosso motorista recolhe a sua roupa na hora combinada e entrega-a no horário agendado.',
-    },
-    {
-      q: 'Com quanto tempo de antecedência devo fazer a reserva?',
-      a: 'Recomendamos que reserve com pelo menos 24 horas de antecedência para garantir o horário preferido.',
-    },
-    {
-      q: 'Posso reagendar ou cancelar a minha reserva?',
-      a: 'Sim. Contacte-nos pelo WhatsApp o mais rapidamente possível e iremos ajudá-lo com qualquer alteração.',
-    },
-    {
-      q: 'Quanto tempo demora o serviço?',
-      a: 'Lavar e/ou engomar demora aproximadamente 48 horas. A limpeza a seco demora aproximadamente 4 a 5 dias, dependendo do artigo.',
-    },
-    {
-      q: 'Qual é o horário de recolhas e entregas?',
-      a: 'As recolhas e entregas são realizadas entre as 9h00 e as 15h00.',
-    },
-    {
-      q: 'Oferecem serviço expresso?',
-      a: 'Sim. Para lavagem e engomadoria, oferecemos uma opção expresso em 24 horas mediante um custo adicional.',
-    },
-    {
-      q: 'Qual é a forma mais rápida de contactar o suporte?',
-      a: 'Recomendamos que nos ligue ou contacte pelo WhatsApp para uma resposta mais rápida.',
-    },
+    { q: 'Lavam sapatos?', a: 'Sim. Agende uma recolha ou traga-os à loja. Tratamos do resto.' },
+    { q: 'A roupa é devolvida em cabides ou dobrada?', a: 'As peças engomadas são devolvidas em cabides. As peças do serviço lavar e dobrar são devolvidas cuidadosamente dobradas.' },
+    { q: 'Fazem lavagem à mão para peças delicadas?', a: 'Sim, a lavagem à mão está disponível para peças delicadas.' },
+    { q: 'Posso engomar apenas algumas peças?', a: 'Sim, pode pedir o serviço de engomadoria sem subscrição. Peças individuais a partir de 2,50€ por peça.' },
+    { q: 'Como funciona a limpeza a seco?', a: 'Entregue as suas peças na loja ou agende uma recolha. Tratamos com processos especializados de limpeza a seco e devolvemos em 5 dias.' },
   ] : [
-    {
-      q: 'How does the pickup and delivery service work?',
-      a: 'Schedule your pickup online or contact us on WhatsApp. Our driver collects your laundry at the agreed time and returns it at the scheduled delivery time.',
-    },
-    {
-      q: 'How far in advance should I book?',
-      a: 'We recommend booking at least 24 hours in advance to secure your preferred time slot.',
-    },
-    {
-      q: 'Can I reschedule or cancel my booking?',
-      a: 'Yes. Please contact us on WhatsApp as soon as possible and we will assist you with any changes.',
-    },
-    {
-      q: 'How long does the service take?',
-      a: 'Washing and/or ironing takes approximately 48 hours. Dry cleaning takes approximately 4 to 5 days, depending on the item.',
-    },
-    {
-      q: 'What are your pickup and delivery hours?',
-      a: 'Pickups and deliveries are made between 9:00 AM and 3:00 PM.',
-    },
-    {
-      q: 'Do you offer express service?',
-      a: 'Yes. For washing and ironing, we offer a 24-hour express option for an additional fee.',
-    },
-    {
-      q: 'What is the fastest way to reach support?',
-      a: 'We recommend calling us or contacting us on WhatsApp for the quickest response.',
-    },
+    { q: 'Do you wash shoes?', a: 'Yes, absolutely. Schedule a pickup or bring them to the store. We handle the rest.' },
+    { q: 'Is clothing returned on hangers or folded?', a: 'Ironed items are returned on hangers. Wash & fold items are returned neatly folded.' },
+    { q: 'Do you hand wash delicate items?', a: 'Yes, hand washing is available for delicate items.' },
+    { q: 'Can you iron just a few items (shirts, pants, etc)?', a: 'Yes, you can order ironing without a subscription. Individual items start from €2.50 per piece.' },
+    { q: 'How does dry cleaning work?', a: 'Drop off your items or schedule a pickup. We treat them with specialist dry cleaning processes and return them within 5 days.' },
   ];
 
   return (
