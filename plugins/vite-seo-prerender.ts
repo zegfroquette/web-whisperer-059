@@ -219,7 +219,9 @@ function escapeAttr(value: string): string {
 }
 
 function injectSeoContent(template: string, route: RouteConfig): string {
-  let html = template;
+  // Defensive: explicitly create a fresh string copy per call so no caller
+  // can ever share or mutate this working buffer across routes.
+  let html = String(template);
   const title = escapeAttr(route.title);
   const description = escapeAttr(route.description);
   const canonical = escapeAttr(route.canonical);
