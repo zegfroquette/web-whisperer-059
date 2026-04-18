@@ -260,7 +260,7 @@ const routes: RouteConfig[] = [
     canonical: `${DOMAIN}/services`,
     hreflangPt: `${DOMAIN}/servicos`,
     hreflangEn: `${DOMAIN}/services`,
-    h1: 'Our Services',
+    h1: 'Our Laundry Services',
     content: `<p>We offer a full range of laundry, ironing and dry cleaning services for all needs.</p>${SERVICES_EN}`,
   },
   {
