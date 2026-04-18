@@ -193,7 +193,7 @@ const Contact = () => {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1">{t('contact', 'address')}</h3>
+                  <h2 className="font-semibold text-sm mb-1">{t('contact', 'address')}</h2>
                   <p className="text-sm text-muted-foreground">Rua Artilharia 1, Nº 1<br />1250-036 Lisboa, Portugal</p>
                 </div>
               </div>
@@ -203,7 +203,7 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1">{t('contact', 'phone')}</h3>
+                  <h2 className="font-semibold text-sm mb-1">{t('contact', 'phone')}</h2>
                   <p className="text-sm text-muted-foreground">(+351) 935 479 900</p>
                 </div>
               </div>
@@ -213,7 +213,7 @@ const Contact = () => {
                   <Clock className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1">{t('contact', 'hours')}</h3>
+                  <h2 className="font-semibold text-sm mb-1">{t('contact', 'hours')}</h2>
                   <p className="text-sm text-muted-foreground">{t('contact', 'hoursDetail')}</p>
                 </div>
               </div>
@@ -221,7 +221,7 @@ const Contact = () => {
 
             {/* Leaflet Map */}
             <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm">
-              <h3 className="font-semibold text-sm p-4 pb-0">{t('contact', 'findUs')}</h3>
+              <h2 className="font-semibold text-sm p-4 pb-0">{t('contact', 'findUs')}</h2>
               <ContactMap />
             </div>
           </motion.div>
