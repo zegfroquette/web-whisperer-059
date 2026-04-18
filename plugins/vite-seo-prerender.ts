@@ -444,16 +444,8 @@ function injectSeoContent(template: string, route: RouteConfig): string {
   };
 
   replaceOrInject(
-    /<meta\s+property=["']og:title["'][^>]*>/i,
-    `<meta property="og:title" content="${title}">`
-  );
-  replaceOrInject(
     /<meta\s+property=["']og:description["'][^>]*>/i,
     `<meta property="og:description" content="${description}">`
-  );
-  replaceOrInject(
-    /<meta\s+property=["']og:url["'][^>]*>/i,
-    `<meta property="og:url" content="${canonical}">`
   );
   replaceOrInject(
     /<meta\s+name=["']twitter:title["'][^>]*>/i,
