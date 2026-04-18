@@ -99,7 +99,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contacto | GLOAT Laundry Lisboa</title>
+        <title>Contacto GLOAT Lisboa — Morada, Telefone e Horários</title>
         <meta name="description" content="Contacte a GLOAT — lavandaria em Lisboa. Envie-nos uma mensagem, ligue ou visite-nos na Rua Artilharia 1." />
         <link rel="canonical" href="https://gloatlaundry.com/contacto" />
         <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/contacto" />
