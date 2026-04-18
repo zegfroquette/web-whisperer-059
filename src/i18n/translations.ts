@@ -172,7 +172,7 @@ export const translations = {
     },
   },
   contact: {
-    title: { pt: 'Contacto', en: 'Contact' },
+    title: { pt: 'Contacte a GLOAT', en: 'Contact GLOAT' },
     subtitle: {
       pt: 'Entre em contacto connosco. Estamos aqui para ajudar!',
       en: 'Get in touch with us. We\'re here to help!',

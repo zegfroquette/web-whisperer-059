@@ -300,7 +300,7 @@ const routes: RouteConfig[] = [
     canonical: `${DOMAIN}/contacto`,
     hreflangPt: `${DOMAIN}/contacto`,
     hreflangEn: `${DOMAIN}/contact`,
-    h1: 'Contacte-nos',
+    h1: 'Contacte a GLOAT',
     content: CONTACT_PT,
   },
   {
@@ -310,7 +310,7 @@ const routes: RouteConfig[] = [
     canonical: `${DOMAIN}/contact`,
     hreflangPt: `${DOMAIN}/contacto`,
     hreflangEn: `${DOMAIN}/contact`,
-    h1: 'Contact Us',
+    h1: 'Contact GLOAT',
     content: CONTACT_EN,
   },
   {
