@@ -186,7 +186,7 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-100 transition-opacity"
-                aria-label="Instagram"
+                aria-label="GLOAT no Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
