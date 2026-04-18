@@ -60,14 +60,10 @@ const Index = () => {
     <>
       <Helmet>
         <title>GLOAT — The Greatest Laundry | Lavandaria em Lisboa</title>
-        <meta name="description" content="GLOAT — Lavandaria profissional em Lisboa. Serviços de lavar, dobrar, engomar e limpeza a seco com recolha e entrega ao domicílio." />
-        <link rel="canonical" href="https://gloatlaundry.com/" />
-        <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/" />
-        <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/" />
-        <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/" />
+        <meta name="description" content="GLOAT — Lavandaria profissional em Lisboa. Lavar, dobrar, engomar e limpeza a seco. Recolha e entrega em casa em 48 horas. Planos mensais a partir de 60€." />
         <meta property="og:title" content="GLOAT — The Greatest Laundry | Lavandaria em Lisboa" />
-        <meta property="og:description" content="GLOAT — Lavandaria profissional em Lisboa. Serviços de lavar, dobrar, engomar e limpeza a seco com recolha e entrega ao domicílio." />
-        <meta property="og:url" content="https://gloatlaundry.com/" />
+        <meta property="og:description" content="GLOAT — Lavandaria profissional em Lisboa. Lavar, dobrar, engomar e limpeza a seco. Recolha e entrega em casa em 48 horas. Planos mensais a partir de 60€." />
+        <meta property="og:url" content="https://gloatlaundry.com" />
       </Helmet>
       {/* Hero */}
       <section className="relative overflow-hidden py-14 md:py-20 px-4">
