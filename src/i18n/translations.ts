@@ -29,7 +29,7 @@ export const translations = {
     },
     viewPlans: { pt: 'Ver Planos/Preços', en: 'View Plans/Pricing' },
     viewServices: { pt: 'Ver Serviços', en: 'View Services' },
-    howItWorks: { pt: 'Como Funciona a Nossa Lavandaria em Lisboa', en: 'How Our Laundry Service in Lisbon Works' },
+    howItWorks: { pt: 'Como Funciona a Nossa Lavandaria', en: 'How Our Laundry Service Works' },
     step1Title: { pt: 'Entrega a roupa', en: 'Drop off your laundry' },
     step1Desc: {
       pt: 'Traga a sua roupa à nossa loja ou agende uma recolha ao domicílio.',
