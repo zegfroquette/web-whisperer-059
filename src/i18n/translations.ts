@@ -45,7 +45,7 @@ export const translations = {
       pt: 'A sua roupa fica pronta, engomada ou só dobrada, conforme escolhido.',
       en: 'Your laundry is ready, ironed or just folded, as you choose.',
     },
-    whyChoose: { pt: 'Porquê a GLOAT?', en: 'Why Choose GLOAT?' },
+    whyChoose: { pt: 'Porquê escolher a GLOAT em Lisboa?', en: 'Why Choose GLOAT?' },
     speed: { pt: 'Rapidez', en: 'Speed' },
     speedDesc: {
       pt: 'Entrega rápida, normalmente em 48 horas. Serviço express (24 horas) disponível por Whatsaap ou na loja',
