@@ -176,7 +176,7 @@ const HOME_PT = `
 <p><strong>Entrega a roupa</strong> — Traga a sua roupa à nossa loja ou agende uma recolha ao domicílio.</p>
 <p><strong>Lavamos e tratamos</strong> — Tratamos a sua roupa com produtos profissionais e todo o cuidado.</p>
 <p><strong>Roupa impecável e pronta</strong> — A sua roupa fica pronta, engomada ou só dobrada, conforme escolhido.</p>
-<h2>Porquê a GLOAT?</h2>
+<h2>Porquê escolher a GLOAT em Lisboa?</h2>
 <p><strong>Rapidez</strong> — Entrega rápida, normalmente em 48 horas. Serviço express (24 horas) disponível por WhatsApp ou na loja.</p>
 <p><strong>Qualidade Profissional</strong> — Tratamento especializado com processos e produtos profissionais. Detergente antialérgico disponível.</p>
 <p><strong>Preços Claros</strong> — Sem surpresas. Sabe sempre quanto vai pagar.</p>
@@ -186,11 +186,11 @@ ${HOME_FAQ_PT}`;
 
 const HOME_EN = `
 <p>Save time and trust GLOAT. Professional laundry in Lisbon with pickup and delivery to your door in 48 hours.</p>
-<h2>How It Works</h2>
+<h2>How Our Laundry Service in Lisbon Works</h2>
 <p><strong>Drop off your laundry</strong> — Bring your laundry to our store or schedule a home pickup.</p>
 <p><strong>We wash &amp; care</strong> — We handle your clothes with professional products and the utmost care.</p>
 <p><strong>Flawless &amp; ready</strong> — Your laundry is ready, ironed or just folded, as you choose.</p>
-<h2>Why Choose GLOAT?</h2>
+<h2>Why Choose GLOAT in Lisbon?</h2>
 <p><strong>Speed</strong> — Fast turnaround, usually within 48 hours. Express service (24 hours) available via WhatsApp or in-store.</p>
 <p><strong>Professional Quality</strong> — Specialized garment care with professional processes and products. Antiallergic detergent available.</p>
 <p><strong>Clear Pricing</strong> — No surprises. You always know what you'll pay.</p>
