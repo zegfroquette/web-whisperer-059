@@ -272,7 +272,7 @@ const Pricing = () => {
   return (
     <>
       <Helmet>
-        <title>Preços e Planos | GLOAT Laundry Lisboa</title>
+        <title>Preços e Planos de Lavandaria em Lisboa | GLOAT</title>
         <meta name="description" content="Conheça os planos mensais e preços por peça da GLOAT. Lavandaria acessível em Lisboa com planos a partir de 65€ por 4 semanas." />
         <link rel="canonical" href="https://gloatlaundry.com/precos" />
         <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/precos" />
