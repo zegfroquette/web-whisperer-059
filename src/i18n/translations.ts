@@ -105,7 +105,7 @@ export const translations = {
     customerStories: { pt: 'O que os nossos Clientes dizem', en: 'What our plan holders say' },
   },
   services: {
-    title: { pt: 'Os Nossos Serviços', en: 'Our Services' },
+    title: { pt: 'Os nossos serviços de lavandaria', en: 'Our Laundry Services' },
     subtitle: {
       pt: 'Oferecemos uma gama completa de serviços de lavandaria, engomadoria e limpeza a seco para todas as necessidades.',
       en: 'We offer a full range of laundry, ironing and dry cleaning services for all needs.',

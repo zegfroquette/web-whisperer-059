@@ -250,7 +250,7 @@ const routes: RouteConfig[] = [
     canonical: `${DOMAIN}/servicos`,
     hreflangPt: `${DOMAIN}/servicos`,
     hreflangEn: `${DOMAIN}/services`,
-    h1: 'Os Nossos Serviços',
+    h1: 'Os nossos serviços de lavandaria',
     content: `<p>Oferecemos uma gama completa de serviços de lavandaria, engomadoria e limpeza a seco para todas as necessidades.</p>${SERVICES_PT}`,
   },
   {
