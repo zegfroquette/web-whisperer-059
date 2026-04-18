@@ -172,7 +172,7 @@ ${PRICING_FAQ_EN}`;
 
 const HOME_PT = `
 <p>Poupe tempo e confie na GLOAT. Lavandaria profissional em Lisboa com recolha e entrega em casa em 48 horas.</p>
-<h2>Como Funciona</h2>
+<h2>Como Funciona a Nossa Lavandaria em Lisboa</h2>
 <p><strong>Entrega a roupa</strong> — Traga a sua roupa à nossa loja ou agende uma recolha ao domicílio.</p>
 <p><strong>Lavamos e tratamos</strong> — Tratamos a sua roupa com produtos profissionais e todo o cuidado.</p>
 <p><strong>Roupa impecável e pronta</strong> — A sua roupa fica pronta, engomada ou só dobrada, conforme escolhido.</p>
