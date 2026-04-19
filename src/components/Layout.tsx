@@ -181,15 +181,37 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
           <div className="border-t border-background/10 mt-8 pt-8 flex flex-col items-center gap-4 text-sm opacity-50">
             <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4">
               <span>© {new Date().getFullYear()} GLOAT — The Greatest Laundry. {t('footer', 'rights')}</span>
-              <a
-                href="https://www.instagram.com/gloat.thegreatestlaundry/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-100 transition-opacity"
-                aria-label="GLOAT no Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/gloat.thegreatestlaundry/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-100 transition-opacity"
+                  aria-label="GLOAT no Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.trustpilot.com/review/gloatlaundry.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-100 transition-opacity"
+                  aria-label="GLOAT Lavandaria Lisboa - Avaliações no Trustpilot"
+                  title="Ver avaliações da GLOAT no Trustpilot"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    aria-hidden="true"
+                  >
+                    <polygon
+                      fill="#00B67A"
+                      points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
             <div className="flex items-center gap-4">
               <Link to={language === 'en' ? '/privacy-policy' : '/politica-de-privacidade'} className="hover:opacity-100 transition-opacity">
