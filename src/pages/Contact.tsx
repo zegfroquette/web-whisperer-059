@@ -100,13 +100,13 @@ const Contact = () => {
     <>
       <Helmet>
         <title>Contacto GLOAT Lisboa — Morada, Telefone e Horários</title>
-        <meta name="description" content="Contacte a GLOAT — lavandaria em Lisboa. Envie-nos uma mensagem, ligue ou visite-nos na Rua Artilharia 1." />
+        <meta name="description" content="Contacte a GLOAT em Lisboa. Rua Artilharia 1, Nº 1, 1250-036 Lisboa. Telefone (+351) 935 479 900. Seg-Sex 9h-18h, Sáb 10h-13h." />
         <link rel="canonical" href="https://gloatlaundry.com/contacto" />
         <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/contacto" />
         <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/contact" />
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/contacto" />
         <meta property="og:title" content="Contacto | GLOAT Laundry Lisboa" />
-        <meta property="og:description" content="Contacte a GLOAT — lavandaria em Lisboa. Envie-nos uma mensagem, ligue ou visite-nos." />
+        <meta property="og:description" content="Contacte a GLOAT em Lisboa. Rua Artilharia 1, Nº 1, 1250-036 Lisboa. Telefone (+351) 935 479 900. Seg-Sex 9h-18h, Sáb 10h-13h." />
         <meta property="og:url" content="https://gloatlaundry.com/contacto" />
       </Helmet>
       <section className="py-20 px-4">
