@@ -212,6 +212,9 @@ const Index = () => {
       {/* Google Reviews */}
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            {pt ? 'O que os nossos Clientes dizem' : "What our customers are saying"}
+          </h2>
           <div id="featurable-6be54eb1-348a-4aa6-a7a5-8e8a8f554ba3" data-featurable-async></div>
         </div>
       </section>
