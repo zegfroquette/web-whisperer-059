@@ -102,6 +102,7 @@ const Index = () => {
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight animate-[fadeSlideUp_0.6s_ease-out_both]">
 
             <span className="block" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine1')}</span>
+            <span className="block" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '-0.04em', wordSpacing: '0.1em' }}>{t('home', 'heroTitleLine2')}</span>
           </h1>
           <p
             className="text-lg md:text-xl text-muted-foreground mb-2 max-w-2xl mx-auto animate-[fadeSlideUp_0.6s_ease-out_0.2s_both]">
