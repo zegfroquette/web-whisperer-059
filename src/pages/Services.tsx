@@ -17,6 +17,7 @@ const fadeUp = {
 
 const Services = () => {
   const { t, language } = useLanguage();
+  const location = useLocation();
   const pt = language === 'pt';
 
   const services = [
