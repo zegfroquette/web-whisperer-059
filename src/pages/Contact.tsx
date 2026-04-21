@@ -166,10 +166,17 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Leaflet Map */}
+            {/* Google Maps */}
             <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm">
-              <h2 className="font-semibold text-sm p-4 pb-0">{t('contact', 'findUs')}</h2>
-              <ContactMap />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.7743418909113!2d-9.156994023885145!3d38.72298957176183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193366a73fe193%3A0xb1595037ca30056c!2sGLOAT%20-%20THE%20GREATEST%20LAUNDRY!5e0!3m2!1sen!2spt!4v1776787954618!5m2!1sen!2spt"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                title="GLOAT Lavandaria - Localização em Lisboa"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </motion.div>
         </div>
