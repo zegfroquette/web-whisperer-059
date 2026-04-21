@@ -48,7 +48,7 @@ const Services = () => {
       <Helmet>
         <title>Serviços de Lavandaria em Lisboa | GLOAT — Lavar, Engomar, Limpeza a Seco</title>
         <meta name="description" content="Serviços de lavandaria GLOAT em Lisboa: lavar e dobrar, engomar, limpeza a seco, serviço expresso 24h e recolha e entrega ao domicílio." />
-        <link rel="canonical" href="https://gloatlaundry.com/servicos" />
+        <link rel="canonical" href={`https://gloatlaundry.com${location.pathname}`} />
         <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/servicos" />
         <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/services" />
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/servicos" />
