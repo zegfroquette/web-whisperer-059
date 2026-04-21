@@ -260,6 +260,7 @@ function addBusinessDays(date: Date, days: number): Date {
 const Booking = () => {
   const { language, t } = useLanguage();
   const { toast } = useToast();
+  const location = useLocation();
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>({ ...initial });
   const [errors, setErrors] = useState<Record<string, string>>({});
