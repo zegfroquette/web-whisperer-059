@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -259,6 +260,7 @@ function addBusinessDays(date: Date, days: number): Date {
 const Booking = () => {
   const { language, t } = useLanguage();
   const { toast } = useToast();
+  const location = useLocation();
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>({ ...initial });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -979,13 +981,13 @@ const Booking = () => {
       <Helmet>
         <title>Agendar Recolha de Roupa em Lisboa | GLOAT</title>
         <meta name="description" content="Agende uma recolha de roupa ao domicílio em Lisboa com a GLOAT. Recolhemos, lavamos e entregamos em 48 horas. Cobertura em Lisboa e arredores." />
-        <link rel="canonical" href="https://gloatlaundry.com/reserva" />
+        <link rel="canonical" href={`https://gloatlaundry.com${location.pathname}`} />
         <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/reserva" />
         <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/booking" />
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/reserva" />
         <meta property="og:title" content="Agendar Recolha | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Agende uma recolha de roupa ao domicílio em Lisboa com a GLOAT. Recolhemos, lavamos e entregamos em 48 horas. Cobertura em Lisboa e arredores." />
-        <meta property="og:url" content="https://gloatlaundry.com/reserva" />
+        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
       </Helmet>
       <div className="max-w-xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
