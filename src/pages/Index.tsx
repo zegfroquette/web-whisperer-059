@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
@@ -7,7 +7,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-const TestimonialsCarousel = lazy(() => import('@/components/TestimonialsCarousel').then(m => ({ default: m.TestimonialsCarousel })));
+
 import { Zap, Award, Tag, ShieldCheck, Package, Sparkles, Truck } from 'lucide-react';
 
 const fadeUp = {
@@ -21,6 +21,17 @@ const fadeUp = {
 const Index = () => {
   const { t, language } = useLanguage();
   const pt = language === 'pt';
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://featurable.com/assets/v2/carousel_default.min.js';
+    script.defer = true;
+    script.charset = 'UTF-8';
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const faqs = pt ? [
     { q: 'Posso entregar sem agendar?', a: 'Sim, pode entregar diretamente na nossa loja na Rua de Artilharia 1 em Lisboa durante o horário de funcionamento. Não é necessário agendar para entregas na loja.' },
@@ -198,6 +209,13 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Google Reviews */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div id="featurable-6be54eb1-348a-4aa6-a7a5-8e8a8f554ba3" data-featurable-async></div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
@@ -215,10 +233,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Suspense fallback={<div className="py-20" />}>
-        <TestimonialsCarousel />
-      </Suspense>
     </>);
 
 };
