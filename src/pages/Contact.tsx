@@ -109,7 +109,7 @@ const Contact = () => {
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/contacto" />
         <meta property="og:title" content="Contacto | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Contacte a GLOAT em Lisboa. Rua Artilharia 1, Nº 1, 1250-036 Lisboa. Telefone (+351) 935 479 900. Seg-Sex 9h-18h, Sáb 10h-13h." />
-        <meta property="og:url" content="https://gloatlaundry.com/contacto" />
+        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
       </Helmet>
       <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
