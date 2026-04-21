@@ -66,7 +66,7 @@ export const translations = {
       pt: 'Mais de 170 reviews com 4.7/5 estrelas. Conte connosco semana após semana, sempre com a mesma qualidade.',
       en: 'Over 170 reviews, 4.7/5 stars. Count on us week after week, always with the same quality.',
     },
-    testimonials: { pt: 'O que os nossos Clientes dizem', en: 'What our customers say' },
+    testimonials: { pt: 'O que os nossos Clientes dizem', en: 'What our customers are saying' },
     ctaTitle: {
       pt: 'Pronto para experimentar a GLOAT?',
       en: 'Ready to try GLOAT?',
