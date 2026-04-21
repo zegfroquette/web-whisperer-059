@@ -54,7 +54,7 @@ const Services = () => {
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/servicos" />
         <meta property="og:title" content="Serviços de Lavandaria em Lisboa | GLOAT" />
         <meta property="og:description" content="Serviços de lavandaria GLOAT em Lisboa: lavar e dobrar, engomar, limpeza a seco, serviço expresso 24h e recolha e entrega ao domicílio." />
-        <meta property="og:url" content="https://gloatlaundry.com/servicos" />
+        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
