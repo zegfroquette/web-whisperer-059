@@ -68,6 +68,7 @@ const ContactMap = () => {
 
 const Contact = () => {
   const { t } = useLanguage();
+  const location = useLocation();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [loading, setLoading] = useState(false);
 
