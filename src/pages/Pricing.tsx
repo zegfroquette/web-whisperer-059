@@ -46,6 +46,7 @@ function PlanInfoIcon({ pt }: { pt: boolean }) {
 
 const Pricing = () => {
   const { t, language } = useLanguage();
+  const location = useLocation();
   const pt = language === 'pt';
 
   // ─── Subscription Plans ──────────────────────────────────────────────────────
