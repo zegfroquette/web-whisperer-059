@@ -281,7 +281,7 @@ const Pricing = () => {
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/precos" />
         <meta property="og:title" content="Preços e Planos | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Preços e planos mensais GLOAT em Lisboa. Planos a partir de 60€ por 4 semanas. Preços por peça para lavar, engomar e limpeza a seco." />
-        <meta property="og:url" content="https://gloatlaundry.com/precos" />
+        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
       </Helmet>
       {/* ── Section 1: Monthly Subscriptions ── */}
       <section className="py-20 px-4">
