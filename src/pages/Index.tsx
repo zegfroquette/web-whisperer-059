@@ -76,6 +76,28 @@ const Index = () => {
         <meta property="og:title" content="GLOAT — The Greatest Laundry | Lavandaria em Lisboa" />
         <meta property="og:description" content="GLOAT — Lavandaria profissional em Lisboa. Lavar, dobrar, engomar e limpeza a seco. Recolha e entrega em casa em 48 horas. Planos mensais a partir de 60€." />
         <meta property="og:url" content="https://gloatlaundry.com" />
+        <script type="application/ld+json">{`
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "GLOAT - The Greatest Laundry",
+  "url": "https://gloatlaundry.com",
+  "image": "https://gloatlaundry.com/gloat-logo-hd.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua de Artilharia 1",
+    "addressLocality": "Lisboa",
+    "addressCountry": "PT"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "170",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+`}</script>
       </Helmet>
       {/* Hero */}
       <section className="relative overflow-hidden py-14 md:py-20 px-4">
