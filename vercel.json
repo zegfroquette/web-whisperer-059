@@ -1,19 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://gloatlaundry.com/:path*",
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "www.gloatlaundry.com"
-        }
-      ]
-    }
-  ],
   "rewrites": [
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
