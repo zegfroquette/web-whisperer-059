@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import L from 'leaflet';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
@@ -11,60 +10,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Phone, Clock, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
-
-const GLOAT_COORDS: [number, number] = [38.722981, -9.154393];
-
-const ContactMap = () => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<L.Map | null>(null);
-
-  useEffect(() => {
-    if (!mapRef.current || mapInstanceRef.current) return;
-
-    const map = L.map(mapRef.current, {
-      scrollWheelZoom: false,
-      zoomControl: true,
-      attributionControl: false,
-    }).setView(GLOAT_COORDS, 15);
-
-    const el = mapRef.current;
-    const onClick = () => map.whenReady(() => map.scrollWheelZoom.enable());
-    const onClickOutside = (e: MouseEvent) => {
-      if (el && !el.contains(e.target as Node)) map.whenReady(() => map.scrollWheelZoom.disable());
-    };
-    el.addEventListener('click', onClick);
-    document.addEventListener('click', onClickOutside);
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-    }).addTo(map);
-
-    const pinIcon = L.divIcon({
-      className: '',
-      html: `<div style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#77C1DD;box-shadow:0 2px 8px rgba(0,0,0,.25);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>`,
-      iconSize: [36, 36],
-      iconAnchor: [18, 36],
-      popupAnchor: [0, -36],
-    });
-
-    L.marker(GLOAT_COORDS, { icon: pinIcon })
-      .addTo(map)
-      .bindPopup('<strong>GLOAT</strong><br/>The Greatest Laundry of All Time');
-
-    mapInstanceRef.current = map;
-
-    return () => {
-      el.removeEventListener('click', onClick);
-      document.removeEventListener('click', onClickOutside);
-      map.remove();
-      mapInstanceRef.current = null;
-    };
-  }, []);
-
-  return <div ref={mapRef} className="w-full h-[300px]" />;
-};
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -221,10 +166,17 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Leaflet Map */}
+            {/* Google Maps */}
             <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm">
-              <h2 className="font-semibold text-sm p-4 pb-0">{t('contact', 'findUs')}</h2>
-              <ContactMap />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.7743418909113!2d-9.156994023885145!3d38.72298957176183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193366a73fe193%3A0xb1595037ca30056c!2sGLOAT%20-%20THE%20GREATEST%20LAUNDRY!5e0!3m2!1sen!2spt!4v1776787954618!5m2!1sen!2spt"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                title="GLOAT Lavandaria - Localização em Lisboa"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </motion.div>
         </div>
