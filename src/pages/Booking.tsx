@@ -987,7 +987,7 @@ const Booking = () => {
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/reserva" />
         <meta property="og:title" content="Agendar Recolha | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Agende uma recolha de roupa ao domicílio em Lisboa com a GLOAT. Recolhemos, lavamos e entregamos em 48 horas. Cobertura em Lisboa e arredores." />
-        <meta property="og:url" content="https://gloatlaundry.com/reserva" />
+        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
       </Helmet>
       <div className="max-w-xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
