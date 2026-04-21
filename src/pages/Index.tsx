@@ -194,7 +194,7 @@ const Index = () => {
       {/* Map */}
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8">Onde nos encontrar</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Onde nos encontrar</h2>
           <div className="w-full rounded-2xl overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.7743418909113!2d-9.156994023885145!3d38.72298957176183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193366a73fe193%3A0xb1595037ca30056c!2sGLOAT%20-%20THE%20GREATEST%20LAUNDRY!5e0!3m2!1sen!2spt!4v1776787954618!5m2!1sen!2spt"
@@ -212,7 +212,7 @@ const Index = () => {
       {/* Google Reviews */}
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {pt ? 'O que os nossos Clientes dizem' : "What our customers are saying"}
           </h2>
           <div id="featurable-6be54eb1-348a-4aa6-a7a5-8e8a8f554ba3" data-featurable-async></div>
@@ -222,7 +222,7 @@ const Index = () => {
       {/* FAQ */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {pt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
           </h2>
           <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="space-y-3">
