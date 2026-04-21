@@ -455,6 +455,14 @@ function injectSeoContent(template: string, route: RouteConfig): string {
     /<meta\s+name=["']twitter:description["'][^>]*>/i,
     `<meta name="twitter:description" content="${description}">`
   );
+  replaceOrInject(
+    /<meta\s+property=["']og:title["'][^>]*>/i,
+    `<meta property="og:title" content="${escapeAttr(title)}">`
+  );
+  replaceOrInject(
+    /<meta\s+property=["']og:url["'][^>]*>/i,
+    `<meta property="og:url" content="${escapeAttr(route.canonical)}">`
+  );
 
   // hreflang tags before </head>
   const hreflangTags = `    <link rel="alternate" hreflang="pt" href="${escapeAttr(route.hreflangPt)}" />
