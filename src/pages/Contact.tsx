@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import L from 'leaflet';
 import { Helmet } from 'react-helmet-async';
@@ -67,6 +68,7 @@ const ContactMap = () => {
 
 const Contact = () => {
   const { t } = useLanguage();
+  const location = useLocation();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [loading, setLoading] = useState(false);
 
@@ -101,13 +103,13 @@ const Contact = () => {
       <Helmet>
         <title>Contacto GLOAT Lisboa — Morada, Telefone e Horários</title>
         <meta name="description" content="Contacte a GLOAT em Lisboa. Rua Artilharia 1, Nº 1, 1250-036 Lisboa. Telefone (+351) 935 479 900. Seg-Sex 9h-18h, Sáb 10h-13h." />
-        <link rel="canonical" href="https://gloatlaundry.com/contacto" />
+        <link rel="canonical" href={`https://gloatlaundry.com${location.pathname}`} />
         <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/contacto" />
         <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/contact" />
         <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/contacto" />
         <meta property="og:title" content="Contacto | GLOAT Laundry Lisboa" />
         <meta property="og:description" content="Contacte a GLOAT em Lisboa. Rua Artilharia 1, Nº 1, 1250-036 Lisboa. Telefone (+351) 935 479 900. Seg-Sex 9h-18h, Sáb 10h-13h." />
-        <meta property="og:url" content="https://gloatlaundry.com/contacto" />
+        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
       </Helmet>
       <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
