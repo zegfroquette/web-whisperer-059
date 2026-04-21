@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion, AnimatePresence } from 'framer-motion';
