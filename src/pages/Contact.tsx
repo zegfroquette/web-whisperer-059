@@ -11,60 +11,6 @@ import { MapPin, Phone, Clock, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 
-const GLOAT_COORDS: [number, number] = [38.722981, -9.154393];
-
-const ContactMap = () => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<L.Map | null>(null);
-
-  useEffect(() => {
-    if (!mapRef.current || mapInstanceRef.current) return;
-
-    const map = L.map(mapRef.current, {
-      scrollWheelZoom: false,
-      zoomControl: true,
-      attributionControl: false,
-    }).setView(GLOAT_COORDS, 15);
-
-    const el = mapRef.current;
-    const onClick = () => map.whenReady(() => map.scrollWheelZoom.enable());
-    const onClickOutside = (e: MouseEvent) => {
-      if (el && !el.contains(e.target as Node)) map.whenReady(() => map.scrollWheelZoom.disable());
-    };
-    el.addEventListener('click', onClick);
-    document.addEventListener('click', onClickOutside);
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-    }).addTo(map);
-
-    const pinIcon = L.divIcon({
-      className: '',
-      html: `<div style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#77C1DD;box-shadow:0 2px 8px rgba(0,0,0,.25);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>`,
-      iconSize: [36, 36],
-      iconAnchor: [18, 36],
-      popupAnchor: [0, -36],
-    });
-
-    L.marker(GLOAT_COORDS, { icon: pinIcon })
-      .addTo(map)
-      .bindPopup('<strong>GLOAT</strong><br/>The Greatest Laundry of All Time');
-
-    mapInstanceRef.current = map;
-
-    return () => {
-      el.removeEventListener('click', onClick);
-      document.removeEventListener('click', onClickOutside);
-      map.remove();
-      mapInstanceRef.current = null;
-    };
-  }, []);
-
-  return <div ref={mapRef} className="w-full h-[300px]" />;
-};
-
 const Contact = () => {
   const { t } = useLanguage();
   const location = useLocation();
