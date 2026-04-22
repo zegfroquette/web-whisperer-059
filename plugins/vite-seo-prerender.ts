@@ -10,6 +10,7 @@ interface RouteConfig {
   hreflangPt: string;
   hreflangEn: string;
   lang: 'pt' | 'en';
+  ogLocale: 'pt_PT' | 'en_GB';
   h1: string;
   content: string; // key visible text for crawlers
   jsonLd?: object;
@@ -507,6 +508,10 @@ function injectSeoContent(template: string, route: RouteConfig): string {
     /<meta\s+property=["']og:url["'][^>]*>/i,
     `<meta property="og:url" content="${escapeAttr(route.canonical)}">`
   );
+  replaceOrInject(/<meta\s+property=["']og:type["'][^>]*>/i, `<meta property="og:type" content="website">`);
+  replaceOrInject(/<meta\s+property=["']og:locale["'][^>]*>/i, `<meta property="og:locale" content="${route.ogLocale}">`);
+  replaceOrInject(/<meta\s+property=["']og:locale:alternate["'][^>]*>/i, `<meta property="og:locale:alternate" content="${route.ogLocale === 'pt_PT' ? 'en_GB' : 'pt_PT'}">`);
+  replaceOrInject(/<meta\s+property=["']og:site_name["'][^>]*>/i, `<meta property="og:site_name" content="GLOAT">`);
 
   // hreflang tags before </head>
   const hreflangTags = `    <link rel="alternate" hreflang="pt" href="${escapeAttr(route.hreflangPt)}" />
