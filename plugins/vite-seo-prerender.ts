@@ -9,6 +9,7 @@ interface RouteConfig {
   canonical: string;
   hreflangPt: string;
   hreflangEn: string;
+  lang: 'pt' | 'en';
   h1: string;
   content: string; // key visible text for crawlers
   jsonLd?: object;
@@ -232,14 +233,30 @@ const BOOKING_EN = `
 <p>Wash &amp; Fold, Wash &amp; Iron, Iron Only, Dry Cleaning and Household Items.</p>
 ${BOOKING_FAQ_EN}`;
 
+const HOME_PT_URL = `${DOMAIN}/`;
+const HOME_EN_URL = `${DOMAIN}/home`;
+const SERVICES_PT_URL = `${DOMAIN}/servicos`;
+const SERVICES_EN_URL = `${DOMAIN}/services`;
+const PRICING_PT_URL = `${DOMAIN}/precos`;
+const PRICING_EN_URL = `${DOMAIN}/pricing`;
+const CONTACT_PT_URL = `${DOMAIN}/contacto`;
+const CONTACT_EN_URL = `${DOMAIN}/contact`;
+const BOOKING_PT_URL = `${DOMAIN}/reserva`;
+const BOOKING_EN_URL = `${DOMAIN}/booking`;
+const PRIVACY_PT_URL = `${DOMAIN}/politica-de-privacidade`;
+const PRIVACY_EN_URL = `${DOMAIN}/privacy-policy`;
+const TERMS_PT_URL = `${DOMAIN}/termos-e-condicoes`;
+const TERMS_EN_URL = `${DOMAIN}/terms-and-conditions`;
+
 const routes: RouteConfig[] = [
   {
     path: '/',
     title: 'GLOAT — The Greatest Laundry | Lavandaria em Lisboa',
     description: 'GLOAT — Lavandaria profissional em Lisboa. Lavar, dobrar, engomar e limpeza a seco. Recolha e entrega em casa em 48 horas. Planos mensais a partir de 60€.',
-    canonical: DOMAIN,
-    hreflangPt: DOMAIN,
-    hreflangEn: `${DOMAIN}/home`,
+    canonical: HOME_PT_URL,
+    hreflangPt: HOME_PT_URL,
+    hreflangEn: HOME_EN_URL,
+    lang: 'pt',
     h1: 'TRATAMOS DE TODA A SUA ROUPA!',
     content: HOME_PT,
   },
@@ -247,9 +264,10 @@ const routes: RouteConfig[] = [
     path: '/home',
     title: 'GLOAT — The Greatest Laundry | Laundry Service in Lisbon',
     description: 'GLOAT — Professional laundry service in Lisbon. Wash, fold, iron and dry cleaning. Home pickup and delivery within 48 hours. Monthly plans from €60.',
-    canonical: `${DOMAIN}/home`,
-    hreflangPt: DOMAIN,
-    hreflangEn: `${DOMAIN}/home`,
+    canonical: HOME_EN_URL,
+    hreflangPt: HOME_PT_URL,
+    hreflangEn: HOME_EN_URL,
+    lang: 'en',
     h1: 'WE TAKE CARE OF ALL YOUR LAUNDRY!',
     content: HOME_EN,
   },
@@ -257,9 +275,10 @@ const routes: RouteConfig[] = [
     path: '/servicos',
     title: 'Serviços | GLOAT Laundry Lisboa',
     description: 'Serviços de lavandaria GLOAT em Lisboa: lavar e dobrar, engomar, limpeza a seco, serviço expresso 24h e recolha e entrega ao domicílio.',
-    canonical: `${DOMAIN}/servicos`,
-    hreflangPt: `${DOMAIN}/servicos`,
-    hreflangEn: `${DOMAIN}/services`,
+    canonical: SERVICES_PT_URL,
+    hreflangPt: SERVICES_PT_URL,
+    hreflangEn: SERVICES_EN_URL,
+    lang: 'pt',
     h1: 'Os nossos serviços de lavandaria',
     content: `<p>Oferecemos uma gama completa de serviços de lavandaria, engomadoria e limpeza a seco para todas as necessidades.</p>${SERVICES_PT}`,
   },
@@ -267,9 +286,10 @@ const routes: RouteConfig[] = [
     path: '/services',
     title: 'Services | GLOAT Laundry Lisbon',
     description: 'GLOAT laundry services in Lisbon: wash & fold, ironing, dry cleaning, 24h express service and home pickup & delivery.',
-    canonical: `${DOMAIN}/services`,
-    hreflangPt: `${DOMAIN}/servicos`,
-    hreflangEn: `${DOMAIN}/services`,
+    canonical: SERVICES_EN_URL,
+    hreflangPt: SERVICES_PT_URL,
+    hreflangEn: SERVICES_EN_URL,
+    lang: 'en',
     h1: 'Our Laundry Services',
     content: `<p>We offer a full range of laundry, ironing and dry cleaning services for all needs.</p>${SERVICES_EN}`,
   },
@@ -277,9 +297,10 @@ const routes: RouteConfig[] = [
     path: '/precos',
     title: 'Preços e Planos | GLOAT Laundry Lisboa',
     description: 'Preços e planos mensais GLOAT em Lisboa. Planos a partir de 60€ por 4 semanas. Preços por peça para lavar, engomar e limpeza a seco.',
-    canonical: `${DOMAIN}/precos`,
-    hreflangPt: `${DOMAIN}/precos`,
-    hreflangEn: `${DOMAIN}/pricing`,
+    canonical: PRICING_PT_URL,
+    hreflangPt: PRICING_PT_URL,
+    hreflangEn: PRICING_EN_URL,
+    lang: 'pt',
     h1: 'Preços e Planos',
     content: PRICING_PT,
   },
@@ -287,9 +308,10 @@ const routes: RouteConfig[] = [
     path: '/pricing',
     title: 'Pricing & Plans | GLOAT Laundry Lisbon',
     description: 'GLOAT pricing and monthly plans in Lisbon. Plans from €60 per 4 weeks. Per-item pricing for washing, ironing and dry cleaning.',
-    canonical: `${DOMAIN}/pricing`,
-    hreflangPt: `${DOMAIN}/precos`,
-    hreflangEn: `${DOMAIN}/pricing`,
+    canonical: PRICING_EN_URL,
+    hreflangPt: PRICING_PT_URL,
+    hreflangEn: PRICING_EN_URL,
+    lang: 'en',
     h1: 'Pricing & Plans',
     content: PRICING_EN,
   },
@@ -297,9 +319,10 @@ const routes: RouteConfig[] = [
     path: '/planos',
     title: 'Planos Mensais | GLOAT Laundry Lisboa',
     description: 'Planos mensais GLOAT com recolha e entrega em Lisboa. Lite 65€, Max 85€, Engomadoria 60€, Lavar e Engomar 80€ por 4 semanas.',
-    canonical: `${DOMAIN}/precos`,
-    hreflangPt: `${DOMAIN}/precos`,
-    hreflangEn: `${DOMAIN}/pricing`,
+    canonical: PRICING_PT_URL,
+    hreflangPt: PRICING_PT_URL,
+    hreflangEn: PRICING_EN_URL,
+    lang: 'pt',
     h1: 'Planos Mensais',
     content: PRICING_PT,
   },
@@ -307,9 +330,10 @@ const routes: RouteConfig[] = [
     path: '/contacto',
     title: 'Contacto | GLOAT Laundry Lisboa',
     description: 'Contacte a GLOAT em Lisboa. Rua Artilharia 1, Nº 1, 1250-036 Lisboa. Telefone (+351) 935 479 900. Seg-Sex 9h-18h, Sáb 10h-13h.',
-    canonical: `${DOMAIN}/contacto`,
-    hreflangPt: `${DOMAIN}/contacto`,
-    hreflangEn: `${DOMAIN}/contact`,
+    canonical: CONTACT_PT_URL,
+    hreflangPt: CONTACT_PT_URL,
+    hreflangEn: CONTACT_EN_URL,
+    lang: 'pt',
     h1: 'Contacte a GLOAT',
     content: CONTACT_PT,
   },
@@ -317,9 +341,10 @@ const routes: RouteConfig[] = [
     path: '/contact',
     title: 'Contact | GLOAT Laundry Lisbon',
     description: 'Contact GLOAT in Lisbon. Rua Artilharia 1, Nº 1, 1250-036 Lisbon. Phone (+351) 935 479 900. Mon-Fri 9am-6pm, Sat 10am-1pm.',
-    canonical: `${DOMAIN}/contact`,
-    hreflangPt: `${DOMAIN}/contacto`,
-    hreflangEn: `${DOMAIN}/contact`,
+    canonical: CONTACT_EN_URL,
+    hreflangPt: CONTACT_PT_URL,
+    hreflangEn: CONTACT_EN_URL,
+    lang: 'en',
     h1: 'Contact GLOAT',
     content: CONTACT_EN,
   },
@@ -327,9 +352,10 @@ const routes: RouteConfig[] = [
     path: '/reserva',
     title: 'Agendar Recolha | GLOAT Laundry Lisboa',
     description: 'Agende uma recolha de roupa ao domicílio em Lisboa com a GLOAT. Recolhemos, lavamos e entregamos em 48 horas. Cobertura em Lisboa e arredores.',
-    canonical: `${DOMAIN}/reserva`,
-    hreflangPt: `${DOMAIN}/reserva`,
-    hreflangEn: `${DOMAIN}/booking`,
+    canonical: BOOKING_PT_URL,
+    hreflangPt: BOOKING_PT_URL,
+    hreflangEn: BOOKING_EN_URL,
+    lang: 'pt',
     h1: 'Agendar Recolha',
     content: BOOKING_PT,
   },
@@ -337,9 +363,10 @@ const routes: RouteConfig[] = [
     path: '/booking',
     title: 'Book a Pickup | GLOAT Laundry Lisbon',
     description: 'Schedule a home laundry pickup in Lisbon with GLOAT. We collect, wash and deliver within 48 hours. Coverage in Lisbon and surrounding areas.',
-    canonical: `${DOMAIN}/booking`,
-    hreflangPt: `${DOMAIN}/reserva`,
-    hreflangEn: `${DOMAIN}/booking`,
+    canonical: BOOKING_EN_URL,
+    hreflangPt: BOOKING_PT_URL,
+    hreflangEn: BOOKING_EN_URL,
+    lang: 'en',
     h1: 'Book a Pickup',
     content: BOOKING_EN,
   },
@@ -347,9 +374,10 @@ const routes: RouteConfig[] = [
     path: '/politica-de-privacidade',
     title: 'Política de Privacidade | GLOAT Laundry',
     description: 'Política de privacidade da GLOAT Laundry. Como tratamos os seus dados pessoais em conformidade com o RGPD.',
-    canonical: `${DOMAIN}/politica-de-privacidade`,
-    hreflangPt: `${DOMAIN}/politica-de-privacidade`,
-    hreflangEn: `${DOMAIN}/privacy-policy`,
+    canonical: PRIVACY_PT_URL,
+    hreflangPt: PRIVACY_PT_URL,
+    hreflangEn: PRIVACY_EN_URL,
+    lang: 'pt',
     h1: 'Política de Privacidade',
     content: `<p>Como a GLOAT trata os seus dados pessoais em conformidade com o Regulamento Geral de Proteção de Dados (RGPD).</p>`,
   },
@@ -357,9 +385,10 @@ const routes: RouteConfig[] = [
     path: '/privacy-policy',
     title: 'Privacy Policy | GLOAT Laundry',
     description: 'GLOAT Laundry privacy policy. How we handle your personal data in compliance with GDPR.',
-    canonical: `${DOMAIN}/privacy-policy`,
-    hreflangPt: `${DOMAIN}/politica-de-privacidade`,
-    hreflangEn: `${DOMAIN}/privacy-policy`,
+    canonical: PRIVACY_EN_URL,
+    hreflangPt: PRIVACY_PT_URL,
+    hreflangEn: PRIVACY_EN_URL,
+    lang: 'en',
     h1: 'Privacy Policy',
     content: `<p>How GLOAT handles your personal data in compliance with the General Data Protection Regulation (GDPR).</p>`,
   },
@@ -367,9 +396,10 @@ const routes: RouteConfig[] = [
     path: '/termos-e-condicoes',
     title: 'Termos e Condições | GLOAT Laundry',
     description: 'Termos e condições de utilização dos serviços da GLOAT Laundry em Lisboa.',
-    canonical: `${DOMAIN}/termos-e-condicoes`,
-    hreflangPt: `${DOMAIN}/termos-e-condicoes`,
-    hreflangEn: `${DOMAIN}/terms-and-conditions`,
+    canonical: TERMS_PT_URL,
+    hreflangPt: TERMS_PT_URL,
+    hreflangEn: TERMS_EN_URL,
+    lang: 'pt',
     h1: 'Termos e Condições',
     content: `<p>Termos e condições de utilização dos serviços da GLOAT Laundry em Lisboa.</p>`,
   },
@@ -377,9 +407,10 @@ const routes: RouteConfig[] = [
     path: '/terms-and-conditions',
     title: 'Terms & Conditions | GLOAT Laundry',
     description: 'Terms and conditions for GLOAT Laundry services in Lisbon.',
-    canonical: `${DOMAIN}/terms-and-conditions`,
-    hreflangPt: `${DOMAIN}/termos-e-condicoes`,
-    hreflangEn: `${DOMAIN}/terms-and-conditions`,
+    canonical: TERMS_EN_URL,
+    hreflangPt: TERMS_PT_URL,
+    hreflangEn: TERMS_EN_URL,
+    lang: 'en',
     h1: 'Terms & Conditions',
     content: `<p>Terms and conditions for GLOAT Laundry services in Lisbon.</p>`,
   },
@@ -428,6 +459,9 @@ function injectSeoContent(template: string, route: RouteConfig): string {
   const title = escapeAttr(route.title);
   const description = escapeAttr(route.description);
   const canonical = escapeAttr(route.canonical);
+
+  // <html lang="..."> — must match the page's content language
+  html = html.replace(/<html\s+lang=["'][^"']*["']/i, `<html lang="${route.lang}"`);
 
   // <title>
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${route.title}</title>`);
