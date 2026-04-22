@@ -85,8 +85,9 @@ const Index = () => {
   "image": "https://gloatlaundry.com/gloat-logo-hd.png",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rua de Artilharia 1",
+    "streetAddress": "Rua de Artilharia 1, n.1",
     "addressLocality": "Lisboa",
+    "postalCode": "1250-036",
     "addressCountry": "PT"
   },
   "aggregateRating": {
