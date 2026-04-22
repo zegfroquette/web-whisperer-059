@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://gloatlaundry.com/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/home" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/home</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/home" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/servicos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/servicos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/servicos" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/servicos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/servicos" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/precos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/precos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/precos" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/precos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/precos" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/contacto" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/contacto" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/reserva</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/reserva" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/booking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/reserva" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/booking</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/reserva" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/booking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/reserva" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/politica-de-privacidade</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/politica-de-privacidade" />
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/politica-de-privacidade" />
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/termos-e-condicoes</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/termos-e-condicoes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/termos-e-condicoes" />
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://gloatlaundry.com/terms-and-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gloatlaundry.com/termos-e-condicoes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gloatlaundry.com/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gloatlaundry.com/termos-e-condicoes" />
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
