@@ -460,6 +460,9 @@ function injectSeoContent(template: string, route: RouteConfig): string {
   const description = escapeAttr(route.description);
   const canonical = escapeAttr(route.canonical);
 
+  // <html lang="..."> — must match the page's content language
+  html = html.replace(/<html\s+lang=["'][^"']*["']/i, `<html lang="${route.lang}"`);
+
   // <title>
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${route.title}</title>`);
 
