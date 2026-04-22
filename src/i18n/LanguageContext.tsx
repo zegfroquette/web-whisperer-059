@@ -11,8 +11,24 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const EN_ONLY_PATHS = new Set([
+  '/home',
+  '/services',
+  '/pricing',
+  '/contact',
+  '/booking',
+  '/privacy-policy',
+  '/terms-and-conditions',
+]);
+
+const detectInitialLanguage = (): Language => {
+  if (typeof window === 'undefined') return 'pt';
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  return EN_ONLY_PATHS.has(path) ? 'en' : 'pt';
+};
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('pt');
+  const [language, setLanguage] = useState<Language>(detectInitialLanguage);
 
   const t = useCallback((section: string, key: string): string => {
     const sectionData = (translations as Record<string, Record<string, Record<Language, string>>>)[section];

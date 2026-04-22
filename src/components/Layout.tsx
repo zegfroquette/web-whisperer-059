@@ -221,6 +221,15 @@ export const Layout = ({ children }: {children: React.ReactNode;}) => {
               <Link to={language === 'en' ? '/terms-and-conditions' : '/termos-e-condicoes'} className="hover:opacity-100 transition-opacity">
                 {t('footer', 'termsConditions')}
               </Link>
+              <span>·</span>
+              <a
+                href={language === 'en' ? '/' : '/home'}
+                hrefLang={language === 'en' ? 'pt' : 'en'}
+                className="hover:opacity-100 transition-opacity"
+                rel="alternate"
+              >
+                {language === 'en' ? 'Português' : 'English'}
+              </a>
             </div>
           </div>
         </div>
