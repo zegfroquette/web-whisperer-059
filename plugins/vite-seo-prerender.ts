@@ -10,6 +10,7 @@ interface RouteConfig {
   hreflangPt: string;
   hreflangEn: string;
   lang: 'pt' | 'en';
+  ogLocale: 'pt_PT' | 'en_GB';
   h1: string;
   content: string; // key visible text for crawlers
   jsonLd?: object;
@@ -257,6 +258,7 @@ const routes: RouteConfig[] = [
     hreflangPt: HOME_PT_URL,
     hreflangEn: HOME_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'TRATAMOS DE TODA A SUA ROUPA!',
     content: HOME_PT,
   },
@@ -268,6 +270,7 @@ const routes: RouteConfig[] = [
     hreflangPt: HOME_PT_URL,
     hreflangEn: HOME_EN_URL,
     lang: 'en',
+    ogLocale: 'en_GB',
     h1: 'WE TAKE CARE OF ALL YOUR LAUNDRY!',
     content: HOME_EN,
   },
@@ -279,6 +282,7 @@ const routes: RouteConfig[] = [
     hreflangPt: SERVICES_PT_URL,
     hreflangEn: SERVICES_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'Os nossos serviços de lavandaria',
     content: `<p>Oferecemos uma gama completa de serviços de lavandaria, engomadoria e limpeza a seco para todas as necessidades.</p>${SERVICES_PT}`,
   },
@@ -290,6 +294,7 @@ const routes: RouteConfig[] = [
     hreflangPt: SERVICES_PT_URL,
     hreflangEn: SERVICES_EN_URL,
     lang: 'en',
+    ogLocale: 'en_GB',
     h1: 'Our Laundry Services',
     content: `<p>We offer a full range of laundry, ironing and dry cleaning services for all needs.</p>${SERVICES_EN}`,
   },
@@ -301,6 +306,7 @@ const routes: RouteConfig[] = [
     hreflangPt: PRICING_PT_URL,
     hreflangEn: PRICING_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'Preços e Planos',
     content: PRICING_PT,
   },
@@ -312,6 +318,7 @@ const routes: RouteConfig[] = [
     hreflangPt: PRICING_PT_URL,
     hreflangEn: PRICING_EN_URL,
     lang: 'en',
+    ogLocale: 'en_GB',
     h1: 'Pricing & Plans',
     content: PRICING_EN,
   },
@@ -323,6 +330,7 @@ const routes: RouteConfig[] = [
     hreflangPt: PRICING_PT_URL,
     hreflangEn: PRICING_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'Planos Mensais',
     content: PRICING_PT,
   },
@@ -334,6 +342,7 @@ const routes: RouteConfig[] = [
     hreflangPt: CONTACT_PT_URL,
     hreflangEn: CONTACT_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'Contacte a GLOAT',
     content: CONTACT_PT,
   },
@@ -345,6 +354,7 @@ const routes: RouteConfig[] = [
     hreflangPt: CONTACT_PT_URL,
     hreflangEn: CONTACT_EN_URL,
     lang: 'en',
+    ogLocale: 'en_GB',
     h1: 'Contact GLOAT',
     content: CONTACT_EN,
   },
@@ -356,6 +366,7 @@ const routes: RouteConfig[] = [
     hreflangPt: BOOKING_PT_URL,
     hreflangEn: BOOKING_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'Agendar Recolha',
     content: BOOKING_PT,
   },
@@ -367,6 +378,7 @@ const routes: RouteConfig[] = [
     hreflangPt: BOOKING_PT_URL,
     hreflangEn: BOOKING_EN_URL,
     lang: 'en',
+    ogLocale: 'en_GB',
     h1: 'Book a Pickup',
     content: BOOKING_EN,
   },
@@ -378,6 +390,7 @@ const routes: RouteConfig[] = [
     hreflangPt: PRIVACY_PT_URL,
     hreflangEn: PRIVACY_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'Política de Privacidade',
     content: `<p>Como a GLOAT trata os seus dados pessoais em conformidade com o Regulamento Geral de Proteção de Dados (RGPD).</p>`,
   },
@@ -389,6 +402,7 @@ const routes: RouteConfig[] = [
     hreflangPt: PRIVACY_PT_URL,
     hreflangEn: PRIVACY_EN_URL,
     lang: 'en',
+    ogLocale: 'en_GB',
     h1: 'Privacy Policy',
     content: `<p>How GLOAT handles your personal data in compliance with the General Data Protection Regulation (GDPR).</p>`,
   },
@@ -400,6 +414,7 @@ const routes: RouteConfig[] = [
     hreflangPt: TERMS_PT_URL,
     hreflangEn: TERMS_EN_URL,
     lang: 'pt',
+    ogLocale: 'pt_PT',
     h1: 'Termos e Condições',
     content: `<p>Termos e condições de utilização dos serviços da GLOAT Laundry em Lisboa.</p>`,
   },
@@ -411,6 +426,7 @@ const routes: RouteConfig[] = [
     hreflangPt: TERMS_PT_URL,
     hreflangEn: TERMS_EN_URL,
     lang: 'en',
+    ogLocale: 'en_GB',
     h1: 'Terms & Conditions',
     content: `<p>Terms and conditions for GLOAT Laundry services in Lisbon.</p>`,
   },
@@ -507,6 +523,10 @@ function injectSeoContent(template: string, route: RouteConfig): string {
     /<meta\s+property=["']og:url["'][^>]*>/i,
     `<meta property="og:url" content="${escapeAttr(route.canonical)}">`
   );
+  replaceOrInject(/<meta\s+property=["']og:type["'][^>]*>/i, `<meta property="og:type" content="website">`);
+  replaceOrInject(/<meta\s+property=["']og:locale["'][^>]*>/i, `<meta property="og:locale" content="${route.ogLocale}">`);
+  replaceOrInject(/<meta\s+property=["']og:locale:alternate["'][^>]*>/i, `<meta property="og:locale:alternate" content="${route.ogLocale === 'pt_PT' ? 'en_GB' : 'pt_PT'}">`);
+  replaceOrInject(/<meta\s+property=["']og:site_name["'][^>]*>/i, `<meta property="og:site_name" content="GLOAT">`);
 
   // hreflang tags before </head>
   const hreflangTags = `    <link rel="alternate" hreflang="pt" href="${escapeAttr(route.hreflangPt)}" />
