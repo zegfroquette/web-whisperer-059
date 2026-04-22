@@ -9,6 +9,7 @@ interface RouteConfig {
   canonical: string;
   hreflangPt: string;
   hreflangEn: string;
+  lang: 'pt' | 'en';
   h1: string;
   content: string; // key visible text for crawlers
   jsonLd?: object;
