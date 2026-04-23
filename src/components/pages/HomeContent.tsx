@@ -142,15 +142,15 @@ const HomeContent = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Serviço de Lavandaria' : 'Laundry Service'}
             </h2>
-            <p className="text-muted-foreground mb-5">
+            <p className="text-muted-foreground text-lg text-center mb-5">
               {pt
                 ? 'Entregue ou agende uma recolha — nós tratamos do resto. Na GLOAT, cada peça é lavada e tratada profissionalmente, depois devolvida dobrada ou passada a ferro, exatamente como prefere. Entrega rápida, qualidade consistente, e uma equipa que realmente se preocupa com a sua roupa. Seja para a lavagem semanal ou para uma limpeza pontual, estamos aqui para si.'
                 : "Drop off or schedule a pickup — we handle the rest. At GLOAT, every item is washed and treated professionally, then returned folded or ironed, exactly how you like it. Fast turnaround, consistent quality, and a team that actually cares about your clothes. Whether it's your weekly wash or a one-off refresh, we've got you covered."}
             </p>
-            <Link href={`/${language}/laundry-service`} className="text-primary font-semibold hover:underline">
+            <Link href={`/${language}/laundry-service`} className="text-primary font-semibold hover:underline block text-center">
               {pt ? 'Saber mais →' : 'Learn more →'}
             </Link>
           </motion.div>
@@ -161,15 +161,15 @@ const HomeContent = () => {
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Lavagem a Seco' : 'Dry Cleaning'}
             </h2>
-            <p className="text-muted-foreground mb-5">
+            <p className="text-muted-foreground text-lg text-center mb-5">
               {pt
                 ? 'Algumas peças precisam de mais do que uma lavagem normal. Na GLOAT, fazemos lavagem a seco de fatos, vestidos, casacos e peças delicadas com o cuidado que merecem. Cada peça é inspecionada, tratada e devolvida impecável. Traga até nós ou agende uma recolha — nós tratamos do resto.'
                 : 'Some clothes need more than a regular wash. At GLOAT, we dry clean suits, dresses, coats and delicate pieces with the care they deserve. Each garment is inspected, treated and returned looking sharp and feeling fresh. Bring it in or schedule a pickup — we take it from there.'}
             </p>
-            <Link href={`/${language}/dry-cleaning`} className="text-primary font-semibold hover:underline">
+            <Link href={`/${language}/dry-cleaning`} className="text-primary font-semibold hover:underline block text-center">
               {pt ? 'Saber mais →' : 'Learn more →'}
             </Link>
           </motion.div>
@@ -180,15 +180,15 @@ const HomeContent = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Limpeza de Tapetes' : 'Carpet Cleaning'}
             </h2>
-            <p className="text-muted-foreground mb-5">
+            <p className="text-muted-foreground text-lg text-center mb-5">
               {pt
                 ? 'Os tapetes acumulam mais do que parece. Na GLOAT, fazemos limpeza profunda de tapetes e carpetes de todos os tamanhos, removendo sujidade e manchas que o aspirador não consegue eliminar. Traga até nós ou deixe-nos tratar da recolha — o seu tapete volta limpo e pronto a usar.'
                 : 'Carpets collect more than you think. At GLOAT, we deep clean rugs and carpets of all sizes, removing dirt and stains that regular vacuuming leaves behind. Drop it off or let us handle the pickup — your carpet comes back fresh, clean and ready to use.'}
             </p>
-            <Link href={`/${language}/carpet-cleaning`} className="text-primary font-semibold hover:underline">
+            <Link href={`/${language}/carpet-cleaning`} className="text-primary font-semibold hover:underline block text-center">
               {pt ? 'Saber mais →' : 'Learn more →'}
             </Link>
           </motion.div>
@@ -199,15 +199,15 @@ const HomeContent = () => {
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Limpeza de Cabedal' : 'Leather Cleaning'}
             </h2>
-            <p className="text-muted-foreground mb-5">
+            <p className="text-muted-foreground text-lg text-center mb-5">
               {pt
                 ? 'O cabedal precisa de cuidados especializados — o produto errado pode causar mais dano do que a própria mancha. Na GLOAT, limpamos e tratamos casacos, malas, sapatos e acessórios em cabedal com a atenção que merecem. Traga até nós ou agende uma recolha e nós tratamos do resto.'
                 : "Leather needs specialist care — the wrong product can do more damage than the stain itself. At GLOAT, we clean and treat leather jackets, bags, shoes and accessories with the attention they require. Drop it off or schedule a pickup and we'll take it from there."}
             </p>
-            <Link href={`/${language}/leather-cleaning`} className="text-primary font-semibold hover:underline">
+            <Link href={`/${language}/leather-cleaning`} className="text-primary font-semibold hover:underline block text-center">
               {pt ? 'Saber mais →' : 'Learn more →'}
             </Link>
           </motion.div>
@@ -218,15 +218,15 @@ const HomeContent = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Limpeza de Estofos' : 'Upholstery Cleaning'}
             </h2>
-            <p className="text-muted-foreground mb-5">
+            <p className="text-muted-foreground text-lg text-center mb-5">
               {pt
                 ? 'Sofás e cadeiras acumulam muito uso diário — e nota-se. Na GLOAT, limpamos estofos e tecidos a fundo, removendo sujidade e manchas que se acumulam com o tempo. Traga até nós ou agende uma recolha — nós tratamos do resto e damos uma limpeza a sério aos seus estofos.'
                 : "Sofas and chairs take a lot of daily use — and it shows. At GLOAT, we clean upholstered furniture and fabrics thoroughly, removing dirt and stains that build up over time. Bring it in or schedule a pickup — we'll handle the heavy lifting and give your furniture a proper refresh."}
             </p>
-            <Link href={`/${language}/upholstery-cleaning`} className="text-primary font-semibold hover:underline">
+            <Link href={`/${language}/upholstery-cleaning`} className="text-primary font-semibold hover:underline block text-center">
               {pt ? 'Saber mais →' : 'Learn more →'}
             </Link>
           </motion.div>
