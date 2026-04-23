@@ -12,12 +12,12 @@ export const translations = {
   },
   home: {
     heroTitleLine1: {
-      pt: 'TRATAMOS DE TODA',
-      en: 'WE TAKE CARE OF',
+      pt: 'TRATAMOS DE TODA A SUA',
+      en: 'WE TAKE CARE OF ALL YOUR',
     },
     heroTitleLine2: {
-      pt: 'A SUA ROUPA!',
-      en: 'ALL YOUR LAUNDRY!',
+      pt: 'ROUPA EM LISBOA!',
+      en: 'LAUNDRY IN LISBON!',
     },
     heroSubtitleLine1: {
       pt: 'Poupe tempo e confie na GLOAT. Lavandaria profissional em Lisboa com recolha e entrega em casa em 48 horas.',
