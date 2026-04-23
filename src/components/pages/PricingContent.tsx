@@ -1,6 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
@@ -8,14 +9,13 @@ import { Check, Info } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function PlanInfoIcon({ pt }: { pt: boolean }) {
   const [open, setOpen] = useState(false);
   const text = pt
     ? '"Com plano" aplica-se a clientes que pretendem lavar e dobrar bolsas E têm um plano mensal ativo. "Sem plano" aplica-se a clientes que não têm plano ativo.'
     : '"With plan" applies to clients who want wash & fold bags AND have an active monthly plan. "Without plan" applies to clients who don\'t have an active plan.';
-
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <TooltipProvider delayDuration={200}>
@@ -32,24 +32,18 @@ function PlanInfoIcon({ pt }: { pt: boolean }) {
               </button>
             </PopoverTrigger>
           </TooltipTrigger>
-          <TooltipContent side="top" className="max-w-[240px] text-xs">
-            {text}
-          </TooltipContent>
+          <TooltipContent side="top" className="max-w-[240px] text-xs">{text}</TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <PopoverContent side="top" className="max-w-[280px] text-xs text-muted-foreground p-3">
-        {text}
-      </PopoverContent>
+      <PopoverContent side="top" className="max-w-[280px] text-xs text-muted-foreground p-3">{text}</PopoverContent>
     </Popover>
   );
 }
 
-const Pricing = () => {
+const PricingContent = () => {
   const { t, language } = useLanguage();
-  const location = useLocation();
   const pt = language === 'pt';
 
-  // ─── Subscription Plans ──────────────────────────────────────────────────────
   const plans = [
     {
       name: pt ? 'Plano Lite' : 'Lite Plan',
@@ -93,167 +87,130 @@ const Pricing = () => {
     },
   ];
 
-  // ─── Individual / One-off Pricing ────────────────────────────────────────────
   const categories = pt ? [
     {
-      id: 'lavar-dobrar',
-      title: '🧺 Lavar & Dobrar',
+      id: 'lavar-dobrar', title: '🧺 Lavar & Dobrar',
       subtitle: 'Roupa lavada com produtos profissionais e cuidadosamente dobrada, pronta a guardar.',
       note: undefined,
-        items: [
-          { label: 'Bolsa STANDARD (aprox. 5kg) — com plano', price: '15,00€' },
-          { label: 'Bolsa STANDARD (aprox. 5kg) — sem plano', price: '19,00€' },
-          { label: 'Bolsa GRANDE (aprox. 10kg) — com plano', price: '20,00€' },
-          { label: 'Bolsa GRANDE (aprox. 10kg) — sem plano', price: '26,00€' },
-        ],
+      items: [
+        { label: 'Bolsa STANDARD (aprox. 5kg) — com plano', price: '15,00€' },
+        { label: 'Bolsa STANDARD (aprox. 5kg) — sem plano', price: '19,00€' },
+        { label: 'Bolsa GRANDE (aprox. 10kg) — com plano', price: '20,00€' },
+        { label: 'Bolsa GRANDE (aprox. 10kg) — sem plano', price: '26,00€' },
+      ],
     },
     {
-      id: 'lavar-engomar',
-      title: '👔 Lavar & Engomar',
+      id: 'lavar-engomar', title: '👔 Lavar & Engomar',
       subtitle: 'Peças lavadas e engomadas — prontas a vestir.',
       note: undefined,
-        items: [
-          { label: '1 peça — com plano', price: '2,90€' },
-          { label: '1 peça — sem plano', price: '3,90€' },
-          { label: '1 peça — lavagem à mão', price: '8,50€' },
-          { label: 'Pack 5 camisas (de uma vez)', price: '16,00€' },
-        ],
+      items: [
+        { label: '1 peça — com plano', price: '2,90€' },
+        { label: '1 peça — sem plano', price: '3,90€' },
+        { label: '1 peça — lavagem à mão', price: '8,50€' },
+        { label: 'Pack 5 camisas (de uma vez)', price: '16,00€' },
+      ],
     },
     {
-      id: 'engomar-apenas',
-      title: '🌬️ Engomar Apenas',
+      id: 'engomar-apenas', title: '🌬️ Engomar Apenas',
       subtitle: 'Já lavou em casa? Tratamos da engomadoria.',
       note: 'Packs válidos por 30 dias. Camisas/blusas contam como 2 peças; capas de edredon como 3 peças.',
       items: [
-          { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
-          { label: '5 camisas (de uma vez)', price: '10,50€' },
-          { label: '12 peças (de uma vez)', price: '28,00€' },
-          { label: '1 peça — com plano', price: '2,00€' },
-          { label: '1 peça — sem plano', price: '2,50€' },
+        { label: 'Pack 50 peças (1 mês)', price: '80,00€' },
+        { label: '5 camisas (de uma vez)', price: '10,50€' },
+        { label: '12 peças (de uma vez)', price: '28,00€' },
+        { label: '1 peça — com plano', price: '2,00€' },
+        { label: '1 peça — sem plano', price: '2,50€' },
         { label: 'Capa edredon casal', price: '5,90€' },
         { label: 'Capa edredon solteiro', price: '4,80€' },
       ],
     },
     {
-      id: 'limpeza-seco',
-      title: '✨ Limpeza a Seco',
+      id: 'limpeza-seco', title: '✨ Limpeza a Seco',
       subtitle: 'Tratamento especializado para peças delicadas, fatos e artigos especiais.',
       note: 'Os preços indicados podem sofrer acréscimo em casos especiais. O cliente será consultado antes de avançar.',
       items: [
-        { label: 'Camisa / Blusa', price: '7,90€' },
-        { label: 'Camisa / Blusa de Seda', price: '8,90€' },
-        { label: 'Gravata', price: '7,90€' },
-        { label: 'Calças / Saia', price: '11,00€' },
-        { label: 'Camisola / Pullover', price: '11,60€' },
-        { label: 'Blazer', price: '16,00€' },
-        { label: 'Blusão', price: '17,90€' },
-        { label: 'Casaco / Sobretudo', price: '21,90€' },
-        { label: 'Fato (2 peças)', price: '20,90€' },
-        { label: 'Vestido Simples', price: '14,40€' },
+        { label: 'Camisa / Blusa', price: '7,90€' }, { label: 'Camisa / Blusa de Seda', price: '8,90€' },
+        { label: 'Gravata', price: '7,90€' }, { label: 'Calças / Saia', price: '11,00€' },
+        { label: 'Camisola / Pullover', price: '11,60€' }, { label: 'Blazer', price: '16,00€' },
+        { label: 'Blusão', price: '17,90€' }, { label: 'Casaco / Sobretudo', price: '21,90€' },
+        { label: 'Fato (2 peças)', price: '20,90€' }, { label: 'Vestido Simples', price: '14,40€' },
         { label: 'Vestido Seda/Linho Curto', price: '20,30€' },
         { label: 'Vestido de Festa (Seda/Linho comprido)', price: '22,40€' },
         { label: 'Ténis de Tecido ou Sintético', price: '23,00€' },
       ],
     },
     {
-      id: 'casa',
-      title: '🛏️ Artigos de Casa',
+      id: 'casa', title: '🛏️ Artigos de Casa',
       subtitle: 'Edredons, cobertores, cortinas e artigos de grande dimensão.',
       note: 'Os preços indicados podem sofrer acréscimo em casos especiais. O cliente será consultado antes de avançar.',
       items: [
-        { label: 'Edredon Solteiro', price: '22,40€' },
-        { label: 'Edredon Solteiro de Penas/Acolchoado', price: '28,00€' },
-        { label: 'Edredon Casal', price: '28,60€' },
-        { label: 'Edredon Casal de Penas/Acolchoado', price: '33,60€' },
-        { label: 'Capa Edredon Solteiro', price: '11,40€' },
-        { label: 'Capa Edredon Casal', price: '12,60€' },
-        { label: 'Colcha Simples Solteiro', price: '15,90€' },
-        { label: 'Resguardo Simples Solteiro', price: '10,30€' },
+        { label: 'Edredon Solteiro', price: '22,40€' }, { label: 'Edredon Solteiro de Penas/Acolchoado', price: '28,00€' },
+        { label: 'Edredon Casal', price: '28,60€' }, { label: 'Edredon Casal de Penas/Acolchoado', price: '33,60€' },
+        { label: 'Capa Edredon Solteiro', price: '11,40€' }, { label: 'Capa Edredon Casal', price: '12,60€' },
+        { label: 'Colcha Simples Solteiro', price: '15,90€' }, { label: 'Resguardo Simples Solteiro', price: '10,30€' },
         { label: 'Almofada / Travesseiro Sintético', price: '12,90€' },
-        { label: 'Cortina', price: '17,90€/m' },
-        { label: 'Tapete', price: '17,90€/m²' },
+        { label: 'Cortina', price: '17,90€/m' }, { label: 'Tapete', price: '17,90€/m²' },
         { label: 'Toalha de Mesa', price: '13,90€/m²' },
       ],
     },
   ] : [
     {
-      id: 'wash-fold',
-      title: '🧺 Wash & Fold',
+      id: 'wash-fold', title: '🧺 Wash & Fold',
       subtitle: 'Clothes washed with professional products, neatly folded and ready to store.',
       note: undefined,
-        items: [
-          { label: 'STANDARD bag (approx. 5kg) — with plan', price: '€15.00' },
-          { label: 'STANDARD bag (approx. 5kg) — without plan', price: '€19.00' },
-          { label: 'MAX bag (approx. 10kg) — with plan', price: '€20.00' },
-          { label: 'MAX bag (approx. 10kg) — without plan', price: '€26.00' },
-        ],
+      items: [
+        { label: 'STANDARD bag (approx. 5kg) — with plan', price: '€15.00' },
+        { label: 'STANDARD bag (approx. 5kg) — without plan', price: '€19.00' },
+        { label: 'MAX bag (approx. 10kg) — with plan', price: '€20.00' },
+        { label: 'MAX bag (approx. 10kg) — without plan', price: '€26.00' },
+      ],
     },
     {
-      id: 'wash-iron',
-      title: '👔 Wash & Iron',
+      id: 'wash-iron', title: '👔 Wash & Iron',
       subtitle: 'Washed and ironed — ready to wear.',
       note: undefined,
-        items: [
-          { label: '1 item — with plan', price: '€2.90' },
-          { label: '1 item — without plan', price: '€3.90' },
-          { label: '1 item — hand wash', price: '€8.50' },
-          { label: 'Pack 5 shirts (at once)', price: '€16.00' },
-        ],
+      items: [
+        { label: '1 item — with plan', price: '€2.90' }, { label: '1 item — without plan', price: '€3.90' },
+        { label: '1 item — hand wash', price: '€8.50' }, { label: 'Pack 5 shirts (at once)', price: '€16.00' },
+      ],
     },
     {
-      id: 'iron-only',
-      title: '🌬️ Iron Only',
+      id: 'iron-only', title: '🌬️ Iron Only',
       subtitle: 'Already washed at home? We take care of the ironing.',
       note: 'Packs valid for 30 days. Shirts/blouses count as 2 items; duvet covers count as 3 items.',
-        items: [
-          { label: 'Pack 50 items (1 month)', price: '€80.00' },
-          { label: '5 shirts (at once)', price: '€10.50' },
-          { label: '12 items (at once)', price: '€28.00' },
-          { label: '1 item — with plan', price: '€2.00' },
-          { label: '1 item — without plan', price: '€2.50' },
-        { label: 'Double duvet cover', price: '€5.90' },
+      items: [
+        { label: 'Pack 50 items (1 month)', price: '€80.00' }, { label: '5 shirts (at once)', price: '€10.50' },
+        { label: '12 items (at once)', price: '€28.00' }, { label: '1 item — with plan', price: '€2.00' },
+        { label: '1 item — without plan', price: '€2.50' }, { label: 'Double duvet cover', price: '€5.90' },
         { label: 'Single duvet cover', price: '€4.80' },
       ],
     },
     {
-      id: 'dry-cleaning',
-      title: '✨ Dry Cleaning',
+      id: 'dry-cleaning', title: '✨ Dry Cleaning',
       subtitle: 'Specialized treatment for delicate fabrics, suits and special garments.',
       note: 'Prices shown may increase in special cases. The customer will be consulted before proceeding.',
       items: [
-        { label: 'Shirt / Blouse', price: '€7.90' },
-        { label: 'Silk Shirt / Blouse', price: '€8.90' },
-        { label: 'Tie', price: '€7.90' },
-        { label: 'Pants / Skirt', price: '€11.00' },
-        { label: 'Sweater / Pullover', price: '€11.60' },
-        { label: 'Blazer', price: '€16.00' },
-        { label: 'Jacket', price: '€17.90' },
-        { label: 'Coat / Overcoat', price: '€21.90' },
-        { label: 'Suit (2 pieces)', price: '€20.90' },
-        { label: 'Simple Dress', price: '€14.40' },
+        { label: 'Shirt / Blouse', price: '€7.90' }, { label: 'Silk Shirt / Blouse', price: '€8.90' },
+        { label: 'Tie', price: '€7.90' }, { label: 'Pants / Skirt', price: '€11.00' },
+        { label: 'Sweater / Pullover', price: '€11.60' }, { label: 'Blazer', price: '€16.00' },
+        { label: 'Jacket', price: '€17.90' }, { label: 'Coat / Overcoat', price: '€21.90' },
+        { label: 'Suit (2 pieces)', price: '€20.90' }, { label: 'Simple Dress', price: '€14.40' },
         { label: 'Short Silk / Linen Dress', price: '€20.30' },
         { label: 'Long Silk / Linen Evening Dress', price: '€22.40' },
         { label: 'Fabric or Synthetic Sneakers', price: '€23.00' },
       ],
     },
     {
-      id: 'household',
-      title: '🛏️ Household Items',
+      id: 'household', title: '🛏️ Household Items',
       subtitle: 'Duvets, blankets, curtains and large household items.',
       note: 'Prices shown may increase in special cases. The customer will be consulted before proceeding.',
       items: [
-        { label: 'Single Duvet', price: '€22.40' },
-        { label: 'Feather/Quilted Single Duvet', price: '€28.00' },
-        { label: 'Double Duvet', price: '€28.60' },
-        { label: 'Feather/Quilted Double Duvet', price: '€33.60' },
-        { label: 'Single Duvet Cover', price: '€11.40' },
-        { label: 'Double Duvet Cover', price: '€12.60' },
-        { label: 'Simple Single Bedspread', price: '€15.90' },
-        { label: 'Simple Single Mattress Protector', price: '€10.30' },
-        { label: 'Synthetic Pillow', price: '€12.90' },
-        { label: 'Curtain', price: '€17.90/m' },
-        { label: 'Rug', price: '€17.90/m²' },
-        { label: 'Tablecloth', price: '€13.90/m²' },
+        { label: 'Single Duvet', price: '€22.40' }, { label: 'Feather/Quilted Single Duvet', price: '€28.00' },
+        { label: 'Double Duvet', price: '€28.60' }, { label: 'Feather/Quilted Double Duvet', price: '€33.60' },
+        { label: 'Single Duvet Cover', price: '€11.40' }, { label: 'Double Duvet Cover', price: '€12.60' },
+        { label: 'Simple Single Bedspread', price: '€15.90' }, { label: 'Simple Single Mattress Protector', price: '€10.30' },
+        { label: 'Synthetic Pillow', price: '€12.90' }, { label: 'Curtain', price: '€17.90/m' },
+        { label: 'Rug', price: '€17.90/m²' }, { label: 'Tablecloth', price: '€13.90/m²' },
       ],
     },
   ];
@@ -272,18 +229,7 @@ const Pricing = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Preços e Planos de Lavandaria em Lisboa | GLOAT</title>
-        <meta name="description" content="Preços e planos mensais GLOAT em Lisboa. Planos a partir de 60€ por 4 semanas. Preços por peça para lavar, engomar e limpeza a seco." />
-        <link rel="canonical" href={`https://gloatlaundry.com${location.pathname}`} />
-        <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/precos" />
-        <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/pricing" />
-        <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/precos" />
-        <meta property="og:title" content="Preços e Planos | GLOAT Laundry Lisboa" />
-        <meta property="og:description" content="Preços e planos mensais GLOAT em Lisboa. Planos a partir de 60€ por 4 semanas. Preços por peça para lavar, engomar e limpeza a seco." />
-        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
-      </Helmet>
-      {/* ── Section 1: Monthly Subscriptions ── */}
+      {/* Monthly Plans */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
@@ -293,7 +239,6 @@ const Pricing = () => {
               ? 'Escolha o plano que melhor se adapta ao seu dia-a-dia e poupe todos os meses. Items adicionais ao plano a preços reduzidos. Delivery incluído.'
               : 'Choose the plan that best fits your routine and save every month. Additional items at reduced prices. Delivery included.'}
           />
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {plans.map((plan, i) => (
               <motion.div
@@ -303,21 +248,14 @@ const Pricing = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 whileHover={{ y: -4 }}
-                className={`relative flex flex-col rounded-2xl p-6 border transition-shadow ${
-                  plan.highlight
-                    ? 'border-primary shadow-lg shadow-primary/10 bg-card'
-                    : 'border-border/50 bg-card shadow-sm hover:shadow-md'
-                }`}
+                className="relative flex flex-col rounded-2xl p-6 border border-border/50 bg-card shadow-sm hover:shadow-md transition-shadow"
               >
-                {/* No highlight badge */}
-
                 <div className="mb-5">
                   <h2 className="text-base font-bold mb-3 text-foreground">{plan.name}</h2>
                   <div className="text-3xl font-extrabold text-gradient leading-none">{plan.price}</div>
                   <p className="text-xs text-muted-foreground mt-1">/ {plan.period}</p>
                   <p className="text-sm text-muted-foreground mt-3 leading-snug">{plan.desc}</p>
                 </div>
-
                 <ul className="space-y-2.5 mb-6 flex-1">
                   {plan.benefits.map((b, j) => (
                     <li key={j} className="flex items-start gap-2 text-sm">
@@ -326,15 +264,8 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-
-                <Button
-                  asChild
-                  className={`w-full rounded-full mt-auto ${
-                    plan.highlight ? 'gradient-primary border-0 text-white hover:opacity-90' : ''
-                  }`}
-                  variant={plan.highlight ? 'default' : 'outline'}
-                >
-                  <Link to="/contacto">{pt ? 'Escolher Plano' : 'Choose Plan'}</Link>
+                <Button asChild className="w-full rounded-full mt-auto" variant="outline">
+                  <Link href={`/${language}/contact`}>{pt ? 'Escolher Plano' : 'Choose Plan'}</Link>
                 </Button>
               </motion.div>
             ))}
@@ -342,12 +273,9 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* ── Divider ── */}
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="border-t border-border/50" />
-      </div>
+      <div className="max-w-6xl mx-auto px-4"><div className="border-t border-border/50" /></div>
 
-      {/* ── Section 2: Individual Pricing ── */}
+      {/* Individual Pricing */}
       <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto">
           <SectionHeader
@@ -356,41 +284,25 @@ const Pricing = () => {
               ? 'Preços unitários e packs para serviços pontuais. Expanda cada categoria para ver os detalhes.'
               : 'Per-item prices and packs for one-off services. Expand each category to see details.'}
           />
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Accordion type="multiple" defaultValue={categories.map((cat) => cat.id)} className="space-y-3">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Accordion type="multiple" defaultValue={categories.map((c) => c.id)} className="space-y-3">
               {categories.map((cat) => (
-                <AccordionItem
-                  key={cat.id}
-                  value={cat.id}
-                  className="bg-card rounded-2xl border border-border/50 px-6 shadow-sm"
-                >
+                <AccordionItem key={cat.id} value={cat.id} className="bg-card rounded-2xl border border-border/50 px-6 shadow-sm">
                   <AccordionTrigger className="text-left py-5 hover:no-underline">
                     <div>
                       <div className="font-semibold text-base text-foreground">{cat.title}</div>
-                      {cat.subtitle && (
-                        <div className="text-xs text-muted-foreground mt-0.5 font-normal">{cat.subtitle}</div>
-                      )}
+                      {cat.subtitle && <div className="text-xs text-muted-foreground mt-0.5 font-normal">{cat.subtitle}</div>}
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-5">
-                    {cat.note && (
-                      <p className="text-xs text-muted-foreground mb-4 italic bg-muted/40 rounded-lg px-3 py-2">{cat.note}</p>
-                    )}
+                    {cat.note && <p className="text-xs text-muted-foreground mb-4 italic bg-muted/40 rounded-lg px-3 py-2">{cat.note}</p>}
                     <div className="space-y-1">
                       {cat.items.map((item, idx) => {
                         const showPlanInfo = (cat.id === 'lavar-dobrar' || cat.id === 'wash-fold') &&
                           (item.label.includes('com plano') || item.label.includes('sem plano') ||
                            item.label.includes('with plan') || item.label.includes('without plan'));
                         return (
-                          <div
-                            key={idx}
-                            className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0"
-                          >
+                          <div key={idx} className="flex items-center justify-between gap-4 py-2.5 border-b border-border/30 last:border-0">
                             <span className="text-sm text-foreground/80 inline-flex items-center">
                               {item.label}
                               {showPlanInfo && <PlanInfoIcon pt={pt} />}
@@ -405,11 +317,10 @@ const Pricing = () => {
               ))}
             </Accordion>
           </motion.div>
-
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
@@ -422,29 +333,23 @@ const Pricing = () => {
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Pronto para experimentar a GLOAT?' : 'Ready to try GLOAT?'}
             </h2>
-            <p className="text-white/80 mb-8 text-lg">
-              {pt ? 'Agende uma recolha em 60 segundos.' : 'Book a pickup in 60 seconds.'}
-            </p>
+            <p className="text-white/80 mb-8 text-lg">{pt ? 'Agende uma recolha em 60 segundos.' : 'Book a pickup in 60 seconds.'}</p>
             <div className="flex justify-center">
               <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
-                <Link to={pt ? '/reserva' : '/booking'}>{pt ? 'Agendar Recolha' : 'Book a Pickup'}</Link>
+                <Link href={`/${language}/booking`}>{pt ? 'Agendar Recolha' : 'Book a Pickup'}</Link>
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Section 3: FAQs ── */}
+      {/* FAQ */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">{t('pricing', 'faq')}</h2>
           <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="space-y-3">
             {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="bg-card rounded-xl border border-border/50 px-6"
-              >
+              <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border/50 px-6">
                 <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
               </AccordionItem>
@@ -456,4 +361,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default PricingContent;

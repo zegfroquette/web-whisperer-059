@@ -1,3 +1,5 @@
+'use client';
+
 import { useLanguage } from '@/i18n/LanguageContext';
 import { motion } from 'framer-motion';
 

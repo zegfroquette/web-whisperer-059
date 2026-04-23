@@ -1,4 +1,7 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+'use client';
+
+import React, { createContext, useContext, useCallback } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { Language, translations } from './translations';
 
 type TranslationValue = string | Record<string, unknown>;
@@ -11,35 +14,34 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const EN_ONLY_PATHS = new Set([
-  '/home',
-  '/services',
-  '/pricing',
-  '/contact',
-  '/booking',
-  '/privacy-policy',
-  '/terms-and-conditions',
-]);
+export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLocale: Language }> = ({
+  children,
+  initialLocale,
+}) => {
+  const router = useRouter();
+  const pathname = usePathname();
 
-const detectInitialLanguage = (): Language => {
-  if (typeof window === 'undefined') return 'pt';
-  const path = window.location.pathname.replace(/\/$/, '') || '/';
-  return EN_ONLY_PATHS.has(path) ? 'en' : 'pt';
-};
+  const setLanguage = useCallback(
+    (lang: Language) => {
+      const newPath = pathname.replace(/^\/(pt|en)/, `/${lang}`);
+      router.push(newPath);
+    },
+    [pathname, router],
+  );
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(detectInitialLanguage);
-
-  const t = useCallback((section: string, key: string): string => {
-    const sectionData = (translations as Record<string, Record<string, Record<Language, string>>>)[section];
-    if (!sectionData) return key;
-    const entry = sectionData[key];
-    if (!entry) return key;
-    return entry[language] || key;
-  }, [language]);
+  const t = useCallback(
+    (section: string, key: string): string => {
+      const sectionData = (translations as Record<string, Record<string, Record<Language, string>>>)[section];
+      if (!sectionData) return key;
+      const entry = sectionData[key];
+      if (!entry) return key;
+      return entry[initialLocale] || key;
+    },
+    [initialLocale],
+  );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language: initialLocale, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -48,7 +50,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    // Return safe defaults during HMR transitions
     return {
       language: 'pt' as Language,
       setLanguage: (_lang: Language) => {},

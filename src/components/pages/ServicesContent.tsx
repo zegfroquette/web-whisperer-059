@@ -1,6 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
@@ -15,9 +16,8 @@ const fadeUp = {
   }),
 };
 
-const Services = () => {
+const ServicesContent = () => {
   const { t, language } = useLanguage();
-  const location = useLocation();
   const pt = language === 'pt';
 
   const services = [
@@ -45,44 +45,6 @@ const Services = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Serviços de Lavandaria em Lisboa | GLOAT — Lavar, Engomar, Limpeza a Seco</title>
-        <meta name="description" content="Serviços de lavandaria GLOAT em Lisboa: lavar e dobrar, engomar, limpeza a seco, serviço expresso 24h e recolha e entrega ao domicílio." />
-        <link rel="canonical" href={`https://gloatlaundry.com${location.pathname}`} />
-        <link rel="alternate" hrefLang="pt" href="https://gloatlaundry.com/servicos" />
-        <link rel="alternate" hrefLang="en" href="https://gloatlaundry.com/services" />
-        <link rel="alternate" hrefLang="x-default" href="https://gloatlaundry.com/servicos" />
-        <meta property="og:title" content="Serviços de Lavandaria em Lisboa | GLOAT" />
-        <meta property="og:description" content="Serviços de lavandaria GLOAT em Lisboa: lavar e dobrar, engomar, limpeza a seco, serviço expresso 24h e recolha e entrega ao domicílio." />
-        <meta property="og:url" content={`https://gloatlaundry.com${location.pathname}`} />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.q,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-          }))
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "itemListElement": services.map((s, i) => ({
-            "@type": "ListItem",
-            "position": i + 1,
-            "item": {
-              "@type": "Service",
-              "name": s.title,
-              "description": s.desc,
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "GLOAT — The Greatest Laundry",
-                "url": "https://gloatlaundry.com"
-              }
-            }
-          }))
-        })}</script>
-      </Helmet>
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <SectionHeader as="h1" title={t('services', 'title')} subtitle={t('services', 'subtitle')} />
@@ -117,24 +79,25 @@ const Services = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="gradient-primary rounded-3xl p-10 md:p-16">
+            className="gradient-primary rounded-3xl p-10 md:p-16"
+          >
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {t('home', 'ctaTitle')}
             </h2>
             <p className="text-white/80 mb-8 text-lg">{t('home', 'ctaSubtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
-                <Link to="/precos">{t('home', 'viewPlans')}</Link>
+                <Link href={`/${language}/pricing`}>{t('home', 'viewPlans')}</Link>
               </Button>
               <Button asChild size="lg" className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
-                <Link to="/reserva">{t('home', 'bookPickup')}</Link>
+                <Link href={`/${language}/booking`}>{t('home', 'bookPickup')}</Link>
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
@@ -142,11 +105,7 @@ const Services = () => {
           </h2>
           <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="space-y-3">
             {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="bg-card rounded-xl border border-border/50 px-6"
-              >
+              <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border/50 px-6">
                 <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
               </AccordionItem>
@@ -158,4 +117,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesContent;

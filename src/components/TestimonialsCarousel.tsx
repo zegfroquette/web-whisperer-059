@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
