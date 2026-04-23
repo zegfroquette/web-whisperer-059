@@ -7,6 +7,8 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Zap, Award, Tag, ShieldCheck, Package, Sparkles, Truck } from 'lucide-react';
+import { ReactGoogleReviews } from 'react-google-reviews';
+import 'react-google-reviews/dist/index.css';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -235,7 +237,7 @@ const HomeContent = () => {
           </h2>
           <div className="w-full rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25499847.398693528!2d-48.17785660000006!3d38.72298960000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193366a73fe193%3A0xb1595037ca30056c!2sGLOAT%20-%20THE%20GREATEST%20LAUNDRY!5e0!3m2!1sen!2sma!4v1776969069071!5m2!1sen!2sma"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12452.0!2d-9.1525!3d38.7230!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193366a73fe193%3A0xb1595037ca30056c!2sGLOAT%20-%20THE%20GREATEST%20LAUNDRY!5e0!3m2!1sen!2spt!4v1776969069071!5m2!1sen!2spt"
               width="100%"
               height="450"
               style={{ border: 0 }}
@@ -254,7 +256,7 @@ const HomeContent = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {pt ? 'O que os nossos Clientes dizem' : 'What our customers are saying'}
           </h2>
-          <div id="featurable-6be54eb1-348a-4aa6-a7a5-8e8a8f554ba3" data-featurable-async></div>
+          <ReactGoogleReviews layout="carousel" featurableId="6be54eb1-348a-4aa6-a7a5-8e8a8f554ba3" structuredData={true} />
         </div>
       </section>
 
