@@ -50,6 +50,44 @@ const HomeContent = () => {
     { icon: ShieldCheck, title: t('home', 'reliable'), desc: t('home', 'reliableDesc') },
   ];
 
+  const serviceCategories = [
+    {
+      slug: 'laundry-service',
+      title: pt ? 'Serviço de Lavandaria' : 'Laundry Service',
+      text: pt
+        ? 'Entregue ou agende uma recolha — nós tratamos do resto. Na GLOAT, cada peça é lavada e tratada profissionalmente, depois devolvida dobrada ou passada a ferro, exatamente como prefere. Entrega rápida, qualidade consistente, e uma equipa que realmente se preocupa com a sua roupa. Seja para a lavagem semanal ou para uma limpeza pontual, estamos aqui para si.'
+        : "Drop off or schedule a pickup — we handle the rest. At GLOAT, every item is washed and treated professionally, then returned folded or ironed, exactly how you like it. Fast turnaround, consistent quality, and a team that actually cares about your clothes. Whether it's your weekly wash or a one-off refresh, we've got you covered.",
+    },
+    {
+      slug: 'dry-cleaning',
+      title: pt ? 'Lavagem a Seco' : 'Dry Cleaning',
+      text: pt
+        ? 'Algumas peças precisam de mais do que uma lavagem normal. Na GLOAT, fazemos lavagem a seco de fatos, vestidos, casacos e peças delicadas com o cuidado que merecem. Cada peça é inspecionada, tratada e devolvida impecável. Traga até nós ou agende uma recolha — nós tratamos do resto.'
+        : 'Some clothes need more than a regular wash. At GLOAT, we dry clean suits, dresses, coats and delicate pieces with the care they deserve. Each garment is inspected, treated and returned looking sharp and feeling fresh. Bring it in or schedule a pickup — we take it from there.',
+    },
+    {
+      slug: 'carpet-cleaning',
+      title: pt ? 'Limpeza de Tapetes' : 'Carpet Cleaning',
+      text: pt
+        ? 'Os tapetes acumulam mais do que parece. Na GLOAT, fazemos limpeza profunda de tapetes e carpetes de todos os tamanhos, removendo sujidade e manchas que o aspirador não consegue eliminar. Traga até nós ou deixe-nos tratar da recolha — o seu tapete volta limpo e pronto a usar.'
+        : 'Carpets collect more than you think. At GLOAT, we deep clean rugs and carpets of all sizes, removing dirt and stains that regular vacuuming leaves behind. Drop it off or let us handle the pickup — your carpet comes back fresh, clean and ready to use.',
+    },
+    {
+      slug: 'leather-cleaning',
+      title: pt ? 'Limpeza de Cabedal' : 'Leather Cleaning',
+      text: pt
+        ? 'O cabedal precisa de cuidados especializados — o produto errado pode causar mais dano do que a própria mancha. Na GLOAT, limpamos e tratamos casacos, malas, sapatos e acessórios em cabedal com a atenção que merecem. Traga até nós ou agende uma recolha e nós tratamos do resto.'
+        : "Leather needs specialist care — the wrong product can do more damage than the stain itself. At GLOAT, we clean and treat leather jackets, bags, shoes and accessories with the attention they require. Drop it off or schedule a pickup and we'll take it from there.",
+    },
+    {
+      slug: 'upholstery-cleaning',
+      title: pt ? 'Limpeza de Estofos' : 'Upholstery Cleaning',
+      text: pt
+        ? 'Sofás e cadeiras acumulam muito uso diário — e nota-se. Na GLOAT, limpamos estofos e tecidos a fundo, removendo sujidade e manchas que se acumulam com o tempo. Traga até nós ou agende uma recolha — nós tratamos do resto e damos uma limpeza a sério aos seus estofos.'
+        : "Sofas and chairs take a lot of daily use — and it shows. At GLOAT, we clean upholstered furniture and fabrics thoroughly, removing dirt and stains that build up over time. Bring it in or schedule a pickup — we'll handle the heavy lifting and give your furniture a proper refresh.",
+    },
+  ];
+
   return (
     <>
       {/* Hero */}
@@ -138,98 +176,28 @@ const HomeContent = () => {
         </div>
       </section>
 
-      {/* Laundry Service */}
+      {/* Service Categories */}
       <section className="py-16 px-4 bg-muted/30">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              {pt ? 'Serviço de Lavandaria' : 'Laundry Service'}
-            </h2>
-            <p className="text-muted-foreground text-lg text-center mb-5">
-              {pt
-                ? 'Entregue ou agende uma recolha — nós tratamos do resto. Na GLOAT, cada peça é lavada e tratada profissionalmente, depois devolvida dobrada ou passada a ferro, exatamente como prefere. Entrega rápida, qualidade consistente, e uma equipa que realmente se preocupa com a sua roupa. Seja para a lavagem semanal ou para uma limpeza pontual, estamos aqui para si.'
-                : "Drop off or schedule a pickup — we handle the rest. At GLOAT, every item is washed and treated professionally, then returned folded or ironed, exactly how you like it. Fast turnaround, consistent quality, and a team that actually cares about your clothes. Whether it's your weekly wash or a one-off refresh, we've got you covered."}
-            </p>
-            <Link href={`/${language}/laundry-service`} className="text-primary font-semibold hover:underline block text-center">
-              {pt ? 'Saber mais →' : 'Learn more →'}
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Dry Cleaning */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              {pt ? 'Lavagem a Seco' : 'Dry Cleaning'}
-            </h2>
-            <p className="text-muted-foreground text-lg text-center mb-5">
-              {pt
-                ? 'Algumas peças precisam de mais do que uma lavagem normal. Na GLOAT, fazemos lavagem a seco de fatos, vestidos, casacos e peças delicadas com o cuidado que merecem. Cada peça é inspecionada, tratada e devolvida impecável. Traga até nós ou agende uma recolha — nós tratamos do resto.'
-                : 'Some clothes need more than a regular wash. At GLOAT, we dry clean suits, dresses, coats and delicate pieces with the care they deserve. Each garment is inspected, treated and returned looking sharp and feeling fresh. Bring it in or schedule a pickup — we take it from there.'}
-            </p>
-            <Link href={`/${language}/dry-cleaning`} className="text-primary font-semibold hover:underline block text-center">
-              {pt ? 'Saber mais →' : 'Learn more →'}
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Carpet Cleaning */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              {pt ? 'Limpeza de Tapetes' : 'Carpet Cleaning'}
-            </h2>
-            <p className="text-muted-foreground text-lg text-center mb-5">
-              {pt
-                ? 'Os tapetes acumulam mais do que parece. Na GLOAT, fazemos limpeza profunda de tapetes e carpetes de todos os tamanhos, removendo sujidade e manchas que o aspirador não consegue eliminar. Traga até nós ou deixe-nos tratar da recolha — o seu tapete volta limpo e pronto a usar.'
-                : 'Carpets collect more than you think. At GLOAT, we deep clean rugs and carpets of all sizes, removing dirt and stains that regular vacuuming leaves behind. Drop it off or let us handle the pickup — your carpet comes back fresh, clean and ready to use.'}
-            </p>
-            <Link href={`/${language}/carpet-cleaning`} className="text-primary font-semibold hover:underline block text-center">
-              {pt ? 'Saber mais →' : 'Learn more →'}
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Leather Cleaning */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              {pt ? 'Limpeza de Cabedal' : 'Leather Cleaning'}
-            </h2>
-            <p className="text-muted-foreground text-lg text-center mb-5">
-              {pt
-                ? 'O cabedal precisa de cuidados especializados — o produto errado pode causar mais dano do que a própria mancha. Na GLOAT, limpamos e tratamos casacos, malas, sapatos e acessórios em cabedal com a atenção que merecem. Traga até nós ou agende uma recolha e nós tratamos do resto.'
-                : "Leather needs specialist care — the wrong product can do more damage than the stain itself. At GLOAT, we clean and treat leather jackets, bags, shoes and accessories with the attention they require. Drop it off or schedule a pickup and we'll take it from there."}
-            </p>
-            <Link href={`/${language}/leather-cleaning`} className="text-primary font-semibold hover:underline block text-center">
-              {pt ? 'Saber mais →' : 'Learn more →'}
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Upholstery Cleaning */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              {pt ? 'Limpeza de Estofos' : 'Upholstery Cleaning'}
-            </h2>
-            <p className="text-muted-foreground text-lg text-center mb-5">
-              {pt
-                ? 'Sofás e cadeiras acumulam muito uso diário — e nota-se. Na GLOAT, limpamos estofos e tecidos a fundo, removendo sujidade e manchas que se acumulam com o tempo. Traga até nós ou agende uma recolha — nós tratamos do resto e damos uma limpeza a sério aos seus estofos.'
-                : "Sofas and chairs take a lot of daily use — and it shows. At GLOAT, we clean upholstered furniture and fabrics thoroughly, removing dirt and stains that build up over time. Bring it in or schedule a pickup — we'll handle the heavy lifting and give your furniture a proper refresh."}
-            </p>
-            <Link href={`/${language}/upholstery-cleaning`} className="text-primary font-semibold hover:underline block text-center">
-              {pt ? 'Saber mais →' : 'Learn more →'}
-            </Link>
-          </motion.div>
+        <div className="max-w-3xl mx-auto flex flex-col gap-4">
+          {serviceCategories.map((item, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="bg-card rounded-2xl p-8 border border-border/50 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h2 className="text-xl font-bold mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                {item.title}
+              </h2>
+              <p className="text-muted-foreground text-lg mb-4">{item.text}</p>
+              <Link href={`/${language}/${item.slug}`} className="text-primary font-semibold hover:underline">
+                {pt ? 'Saber mais →' : 'Learn more →'}
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </section>
 
@@ -263,17 +231,18 @@ const HomeContent = () => {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            Onde nos encontrar
+            {pt ? 'Onde nos Encontrar em Lisboa' : 'Where to Find Us in Lisbon'}
           </h2>
           <div className="w-full rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.7743418909113!2d-9.156994023885145!3d38.72298957176183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193366a73fe193%3A0xb1595037ca30056c!2sGLOAT%20-%20THE%20GREATEST%20LAUNDRY!5e0!3m2!1sen!2spt!4v1776787954618!5m2!1sen!2spt"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25499847.398693528!2d-48.17785660000006!3d38.72298960000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193366a73fe193%3A0xb1595037ca30056c!2sGLOAT%20-%20THE%20GREATEST%20LAUNDRY!5e0!3m2!1sen!2sma!4v1776969069071!5m2!1sen!2sma"
               width="100%"
               height="450"
               style={{ border: 0 }}
               allowFullScreen
-              title="GLOAT Lavandaria - Localização em Lisboa"
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title="GLOAT - The Greatest Laundry, Rua Artilharia 1, Lisboa"
             />
           </div>
         </div>
