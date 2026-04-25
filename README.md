@@ -1,73 +1,140 @@
-# Welcome to your Lovable project
+# GLOAT — The Greatest Laundry
 
-## Project info
+Bilingual (EN/PT) marketing website for GLOAT laundry service in Lisboa, built with **Next.js 14 App Router**, **Tailwind CSS**, **shadcn/ui**, and **Supabase**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech Stack
 
-## How can I edit this code?
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 14 (App Router, SSR) |
+| Styling | Tailwind CSS + shadcn/ui |
+| Animations | Framer Motion |
+| i18n | next-intl (EN + PT, locale-prefix routing) |
+| Forms / DB | Supabase (contact submissions, bookings) |
+| Map | Leaflet.js |
+| Deployment | Vercel |
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
+```
+app/
+  layout.tsx              # Root layout (fonts, analytics, scripts)
+  [locale]/
+    layout.tsx            # Locale layout wrapping nav + footer
+    page.tsx              # Home page
+    services/page.tsx
+    pricing/page.tsx
+    booking/page.tsx
+    contact/page.tsx
+    monthly-plans/page.tsx
+    planos-mensais/page.tsx
+    … (31 service sub-pages, EN + PT slugs)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+src/
+  components/
+    Layout.tsx            # Nav + footer
+    pages/                # Page content components (client)
+    ui/                   # shadcn/ui primitives
+  i18n/
+    translations.ts       # All EN + PT strings
+    LanguageContext.tsx
+  data/
+    serviceAreaGeoJson.ts # Leaflet delivery zone polygons
 
-Changes made via Lovable will be committed automatically to this repo.
+public/
+  images/
+    gloat-logo.png        # Nav logo
+    gloat-footer-logo.webp
+```
 
-**Use your preferred IDE**
+## Local Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+
+- npm 9+
+- A [Supabase](https://supabase.com) project (free tier is fine)
 
-Follow these steps:
+### 1. Clone and install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2. Configure environment
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+cp .env.example .env
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Edit `.env` and fill in your Supabase credentials (find them in your Supabase dashboard under **Settings → API**):
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+```
+
+### 3. Run the dev server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:3000](http://localhost:3000) — the site redirects to `/pt` by default.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server on port 3000 |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build locally |
+| `npm run lint` | Run ESLint |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Bilingual Routing
 
-## What technologies are used for this project?
+- Portuguese: `/pt/...` (default locale)
+- English: `/en/...`
 
-This project is built with:
+EN and PT service pages use **different slugs** (e.g. `/en/laundry-service` vs `/pt/servico-lavandaria`). Each slug has its own `page.tsx` that cross-redirects visitors who arrive at the wrong locale.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment on Vercel
 
-## How can I deploy this project?
+1. Push this repo to GitHub
+2. Go to [vercel.com](https://vercel.com) → **Add New Project** → import the repo
+3. Add environment variables in **Project Settings → Environment Variables**:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+4. Click **Deploy** — Vercel auto-detects Next.js, no extra config needed
+5. Every push to `main` triggers a production redeploy
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Supabase Tables
 
-## Can I connect a custom domain to my Lovable project?
+Create these two tables in your Supabase project (**SQL Editor → New query**):
 
-Yes, you can!
+```sql
+-- Contact form submissions
+create table contact_submissions (
+  id uuid primary key default gen_random_uuid(),
+  name text,
+  email text,
+  phone text,
+  message text,
+  created_at timestamptz default now()
+);
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+-- Booking requests
+create table bookings (
+  id uuid primary key default gen_random_uuid(),
+  name text,
+  email text,
+  phone text,
+  address text,
+  service text,
+  pickup_date text,
+  notes text,
+  created_at timestamptz default now()
+);
+```

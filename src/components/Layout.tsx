@@ -43,7 +43,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex items-center justify-between h-16">
             <Link href={`/${language}`} className="flex items-center" aria-label="GLOAT – The Greatest Laundry">
               <img
-                src="/lovable-uploads/17fd049a-12dc-4e25-ad35-6092e41666ce.png"
+                src="/images/gloat-logo.png"
                 alt="GLOAT"
                 className="h-10 w-auto object-contain"
               />
@@ -144,7 +144,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                   width={84}
                   height={56}
                   className="h-8 w-auto object-contain brightness-0 invert"
-                  src="/lovable-uploads/gloat-footer-logo.webp"
+                  src="/images/gloat-footer-logo.webp"
                   loading="lazy"
                 />
               </div>
