@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import Script from 'next/script';
 import '../src/index.css';
+import 'leaflet/dist/leaflet.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://gloatlaundry.com'),

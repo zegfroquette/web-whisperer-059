@@ -5,6 +5,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { MapPin } from 'lucide-react';
 import L from 'leaflet';
 import serviceAreaGeoJson from '@/data/serviceAreaGeoJson';
+import 'leaflet/dist/leaflet.css';
 
 const ServiceAreaMap = () => {
   const { language } = useLanguage();
