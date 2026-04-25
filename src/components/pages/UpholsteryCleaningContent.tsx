@@ -33,16 +33,6 @@ const services = [
     enSlug: 'chair-upholstery-cleaning-lisboa',
     ptSlug: 'limpeza-cadeiras-estofadas-lisboa',
   },
-  {
-    enTitle: 'Mattress Cleaning',
-    ptTitle: 'Limpeza de Colchões',
-    enText:
-      'A clean mattress matters more than most people think. We deep clean mattresses to remove dust, sweat, and stains, leaving them hygienic and fresh for better sleep.',
-    ptText:
-      'Um colchão limpo importa mais do que a maioria das pessoas pensa. Fazemos uma limpeza profunda de colchões para remover pó, suor e manchas, deixando-os higiénicos e frescos para um descanso melhor.',
-    enSlug: 'mattress-cleaning-lisboa',
-    ptSlug: 'limpeza-colchoes-lisboa',
-  },
 ];
 
 export default function UpholsteryCleaningContent() {
