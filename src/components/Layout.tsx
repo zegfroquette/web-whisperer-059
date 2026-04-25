@@ -12,6 +12,7 @@ import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 const navItems = [
   { key: 'home', slug: '' },
   { key: 'services', slug: 'services' },
+  { key: 'monthlyPlans', slug: '', slugs: { en: 'monthly-plans', pt: 'planos-mensais' } },
   { key: 'pricing', slug: 'pricing' },
   { key: 'contact', slug: 'contact' },
   { key: 'booking', slug: 'booking', highlight: true },
@@ -22,10 +23,16 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  const href = (slug: string) => (slug ? `/${language}/${slug}` : `/${language}`);
-  const isActive = (slug: string) => {
-    const target = href(slug);
-    return pathname === target || (slug === '' && (pathname === `/${language}` || pathname === `/${language}/`));
+  const getSlug = (item: typeof navItems[0]) =>
+    'slugs' in item && item.slugs ? item.slugs[language as 'en' | 'pt'] : item.slug;
+  const href = (item: typeof navItems[0]) => {
+    const slug = getSlug(item);
+    return slug ? `/${language}/${slug}` : `/${language}`;
+  };
+  const isActive = (item: typeof navItems[0]) => {
+    const slug = getSlug(item);
+    const target = slug ? `/${language}/${slug}` : `/${language}`;
+    return pathname === target || (!slug && !('slugs' in item) && (pathname === `/${language}` || pathname === `/${language}/`));
   };
 
   return (
@@ -50,11 +57,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
               {navItems.map((item) => (
                 <Link
                   key={item.key}
-                  href={href(item.slug)}
+                  href={href(item)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     item.highlight
                       ? 'bg-primary text-primary-foreground shadow-md'
-                      : isActive(item.slug)
+                      : isActive(item)
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   }`}
@@ -109,10 +116,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                 {navItems.map((item) => (
                   <Link
                     key={item.key}
-                    href={href(item.slug)}
+                    href={href(item)}
                     onClick={() => setMobileOpen(false)}
                     className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                      isActive(item.slug)
+                      isActive(item)
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }`}
@@ -152,7 +159,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                 {navItems.map((item) => (
                   <Link
                     key={item.key}
-                    href={href(item.slug)}
+                    href={href(item)}
                     className="text-sm opacity-70 hover:opacity-100 transition-opacity"
                   >
                     {t('nav', item.key)}

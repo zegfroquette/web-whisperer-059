@@ -5,6 +5,7 @@ export const translations = {
     home: { pt: 'Início', en: 'Home' },
     plans: { pt: 'Planos', en: 'Plans' },
     services: { pt: 'Serviços', en: 'Services' },
+    monthlyPlans: { pt: 'Planos Mensais', en: 'Monthly Plans' },
     pricing: { pt: 'Preços', en: 'Pricing' },
     contact: { pt: 'Contacto', en: 'Contact' },
     booking: { pt: 'Agendar Recolha', en: 'Book Pickup' },
