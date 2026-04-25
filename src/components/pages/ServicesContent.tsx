@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
+import { Button } from '@/components/ui/button';
 import { Shirt, Wind, Gem, Droplets, Zap, Truck } from 'lucide-react';
 
 const fadeUp = {
@@ -83,39 +84,77 @@ export default function ServicesContent() {
   const pt = language === 'pt';
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-5xl mx-auto">
-        <SectionHeader as="h1" title={pt ? 'Os Nossos Serviços' : 'Our Services'} />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              whileHover={{ y: -4 }}
-              className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-all"
-            >
-              <Link href={`/${language}/${pt ? s.ptSlug : s.enSlug}`} className="block h-full">
-                <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4`}>
-                  <s.icon className="w-6 h-6" />
-                </div>
-                <h2
-                  className="text-lg font-bold mb-2"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-                >
-                  {pt ? s.ptTitle : s.enTitle}
-                </h2>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {pt ? s.ptDesc : s.enDesc}
-                </p>
-              </Link>
-            </motion.div>
-          ))}
+    <>
+      <section className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader as="h1" title={pt ? 'Os Nossos Serviços' : 'Our Services'} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                whileHover={{ y: -4 }}
+                className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-all"
+              >
+                <Link href={`/${language}/${pt ? s.ptSlug : s.enSlug}`} className="block h-full">
+                  <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4`}>
+                    <s.icon className="w-6 h-6" />
+                  </div>
+                  <h2
+                    className="text-lg font-bold mb-2"
+                    style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                  >
+                    {pt ? s.ptTitle : s.enTitle}
+                  </h2>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {pt ? s.ptDesc : s.enDesc}
+                  </p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="py-20 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="gradient-primary rounded-3xl p-10 md:p-16"
+          >
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              {pt ? 'Pronto para experimentar a GLOAT?' : 'Ready to try GLOAT?'}
+            </h2>
+            <p className="text-white/80 mb-8 text-lg">
+              {pt ? 'Descubra os nossos planos mensais, preços ou agende uma recolha.' : 'Discover our monthly plans, pricing or book a pickup.'}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold shadow-lg">
+                <Link href={`/${language}/${pt ? 'planos-mensais' : 'monthly-plans'}`}>
+                  {pt ? 'Planos Mensais' : 'Monthly Plans'}
+                </Link>
+              </Button>
+              <Button asChild size="lg" className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
+                <Link href={`/${language}/pricing`}>
+                  {pt ? 'Preços' : 'Pricing'}
+                </Link>
+              </Button>
+              <Button asChild size="lg" className="rounded-full px-8 bg-foreground/20 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm">
+                <Link href={`/${language}/booking`}>
+                  {pt ? 'Agendar Recolha' : 'Book a Pickup'}
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

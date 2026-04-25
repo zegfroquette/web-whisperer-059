@@ -191,10 +191,10 @@ const PricingContent = () => {
         <div className="max-w-3xl mx-auto">
           <SectionHeader
             as="h1"
-            title={pt ? 'Serviços Individuais' : 'Individual Services'}
+            title={pt ? 'Preços' : 'Pricing'}
             subtitle={pt
-              ? 'Preços unitários e packs para serviços pontuais. Expanda cada categoria para ver os detalhes.'
-              : 'Per-item prices and packs for one-off services. Expand each category to see details.'}
+              ? 'Preços unitários e packs para serviços pontuais.'
+              : 'Per-item prices and packs for one-off services.'}
           />
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Accordion type="multiple" defaultValue={categories.map((c) => c.id)} className="space-y-3">

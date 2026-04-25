@@ -43,7 +43,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex items-center justify-between h-16">
             <Link href={`/${language}`} className="flex items-center">
               <img
-                src="/lovable-uploads/gloat-logo-new.webp"
+                src="/gloat-logo-hd.png"
                 alt="GLOAT – The Greatest Laundry"
                 width={149}
                 height={70}
