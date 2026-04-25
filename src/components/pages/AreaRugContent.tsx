@@ -12,22 +12,22 @@ const fadeUp = {
   transition: { duration: 0.5 },
 };
 
-export default function SilkCashmereContent() {
+export default function AreaRugContent() {
   const { language } = useLanguage();
   const pt = language === 'pt';
 
   const items = pt
     ? [
-        'Blusas, vestidos e lenços de seda',
-        'Camisolas e casacos de malha de cashmere',
-        'Casacos e xailes de cashmere',
-        'Peças mistas de seda e cashmere',
+        'Tapetes de lã',
+        'Tapetes sintéticos e de pelo raso',
+        'Tapetes tecidos à mão e kilim',
+        'Tapetes de área grandes e extra-grandes',
       ]
     : [
-        'Silk blouses, dresses, and scarves',
-        'Cashmere jumpers and cardigans',
-        'Cashmere coats and wraps',
-        'Mixed silk and cashmere garments',
+        'Wool rugs',
+        'Synthetic and flatweave rugs',
+        'Hand-woven and kilim rugs',
+        'Large and oversized area rugs',
       ];
 
   return (
@@ -38,19 +38,14 @@ export default function SilkCashmereContent() {
           className="text-4xl md:text-5xl font-bold mb-6"
           style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
         >
-          {pt ? 'Lavagem a Seco de Seda e Cashmere em Lisboa' : 'Silk & Cashmere Dry Cleaning in Lisboa'}
+          {pt ? 'Limpeza de Tapetes de Área em Lisboa' : 'Area Rug Cleaning in Lisboa'}
         </motion.h1>
 
         <motion.div {...fadeUp} className="mb-8 space-y-4">
           <p className="text-muted-foreground text-lg">
             {pt
-              ? 'A seda e o cashmere são dois dos tecidos mais agradáveis de usar — e dois dos mais implacáveis de limpar. A seda perde o brilho com a lavagem errada. O cashmere encolhe, forma borboto ou perde a suavidade com cuidados inadequados. Não são peças para experimentar.'
-              : "Silk and cashmere are two of the most rewarding fabrics to wear — and two of the most unforgiving to clean. Silk loses its sheen in the wrong wash. Cashmere shrinks, pills, or loses its softness with improper care. These aren't garments you can experiment with."}
-          </p>
-          <p className="text-muted-foreground text-lg">
-            {pt
-              ? 'Na GLOAT, fazemos lavagem a seco de peças de seda e cashmere com técnicas especializadas que protegem as suas propriedades naturais. Cada peça é avaliada e tratada individualmente. O prazo é de 5 a 7 dias.'
-              : 'At GLOAT, we dry clean silk and cashmere garments using specialist techniques that protect their natural properties. Every piece is assessed and handled individually. Turnaround is 5 to 7 days.'}
+              ? 'Os apartamentos de Lisboa são conhecidos pelos seus tapetes. De peças antigas tecidas à mão passadas de geração em geração a tapetes modernos trazidos de viagens, são uma das coisas mais pessoais de uma casa. São também uma das mais difíceis de limpar devidamente — demasiado grandes para a máquina de lavar, demasiado pesados para transportar quando molhados, e demasiado valiosos para arriscar com o método errado. Na GLOAT, fazemos limpeza profunda de tapetes de área de todos os tamanhos, materiais e estilos. Removemos sujidade acumulada, manchas e detritos, restaurando a cor e a textura do seu tapete.'
+              : "Lisboa apartments are known for their rugs. From antique hand-woven pieces passed down through families to modern rugs brought back from travels, they're one of the most personal things in a home. They're also one of the hardest to clean properly — too big for a washing machine, too heavy to carry when wet, and too valuable to risk with the wrong method. At GLOAT, we deep clean area rugs of all sizes, materials, and styles. We remove embedded dirt, stains, and built-up grime, restoring the colour and texture of your rug."}
           </p>
         </motion.div>
 
@@ -77,12 +72,12 @@ export default function SilkCashmereContent() {
             className="bg-card rounded-2xl p-8 border border-border/50 shadow-sm"
           >
             <h2 className="text-xl font-bold mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              {pt ? 'Recolha disponível por Lisboa' : 'Pickup available across Lisboa'}
+              {pt ? 'Recolha em casa' : 'Pickup from home'}
             </h2>
             <p className="text-muted-foreground text-lg">
               {pt
-                ? 'Traga à nossa loja junto às Amoreiras ou agende uma recolha em sua casa por toda a Lisboa.'
-                : 'Drop off at our store near Amoreiras or schedule a pickup from your home across Lisboa.'}
+                ? 'Os tapetes são pesados. Recolhemos em casas no Campo de Ourique, Estrela, Chiado, Lapa, Marquês de Pombal, Saldanha, Areeiro, Alvalade, Restelo, Bairro Alto, Baixa e mais.'
+                : 'Rugs are heavy. We collect from homes in Campo de Ourique, Estrela, Chiado, Lapa, Marquês de Pombal, Saldanha, Areeiro, Alvalade, Restelo, Bairro Alto, Baixa, and more.'}
             </p>
           </motion.div>
         </div>

@@ -1,14 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Script from 'next/script';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Zap, Award, Tag, ShieldCheck, Package, Sparkles, Truck } from 'lucide-react';
-import { ReactGoogleReviews } from 'react-google-reviews';
-import 'react-google-reviews/dist/index.css';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -253,7 +252,8 @@ const HomeContent = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {pt ? 'O que os nossos Clientes dizem' : 'What our customers are saying'}
           </h2>
-          <ReactGoogleReviews layout="carousel" featurableId="6be54eb1-348a-4aa6-a7a5-8e8a8f554ba3" structuredData={true} />
+          <div id="featurable-6be54eb1-348a-4aa6-a7a5-8e8a8f554ba3" data-featurable-async data-location-code="undefined" />
+          <Script src="https://featurable.com/assets/v2/undefined.min.js" strategy="lazyOnload" />
         </div>
       </section>
 

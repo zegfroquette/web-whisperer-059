@@ -62,7 +62,7 @@ export default function EveningWearContent() {
             <h2 className="text-xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'O que tratamos:' : 'What we handle:'}
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               {items.map((item, i) => (
                 <li key={i} className="text-muted-foreground text-lg flex items-start gap-2">
                   <span className="text-primary mt-1 shrink-0">•</span>

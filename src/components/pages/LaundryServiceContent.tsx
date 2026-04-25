@@ -84,26 +84,6 @@ const services = [
     ptSlug: 'tecidos-delicados-lisboa',
   },
   {
-    enTitle: 'Express Laundry Service',
-    ptTitle: 'Serviço de Lavandaria Expresso',
-    enText:
-      'Need it back fast? Our express service gets your laundry washed, dried, and ready within 24 hours. Available via WhatsApp or in-store.',
-    ptText:
-      'Precisa da roupa de volta a tempo? O nosso serviço expresso devolve-lhe a roupa lavada, seca e pronta em 24 horas. Disponível por WhatsApp ou na loja.',
-    enSlug: 'express-laundry-lisboa',
-    ptSlug: 'lavandaria-expresso-lisboa',
-  },
-  {
-    enTitle: 'Laundry Pickup & Delivery',
-    ptTitle: 'Recolha e Entrega de Roupa',
-    enText:
-      'We collect from your door across Lisboa — Campo de Ourique, Estrela, Chiado, Lapa, Marquês de Pombal, Saldanha, Areeiro, Alvalade, Restelo, Bairro Alto, Baixa, and more. Everything comes back clean and folded. No trips to the store needed.',
-    ptText:
-      'Recolhemos na sua porta em toda a Lisboa — Campo de Ourique, Estrela, Chiado, Lapa, Marquês de Pombal, Saldanha, Areeiro, Alvalade, Restelo, Bairro Alto, Baixa e mais. Tudo volta limpo e dobrado. Sem deslocações à loja.',
-    enSlug: 'laundry-pickup-delivery-lisboa',
-    ptSlug: 'recolha-entrega-lisboa',
-  },
-  {
     enTitle: 'Shirt Laundry Service',
     ptTitle: 'Lavagem de Camisas',
     enText:
@@ -130,7 +110,28 @@ const services = [
       'Lisboa apartments are full of beautiful rugs. From traditional hand-woven pieces to modern area rugs, they collect everything — dirt, dust, food, spills — and a regular vacuum only gets so far. We deep clean rugs of all sizes, materials, and styles, removing embedded dirt and stains and restoring the colour and texture of your rug. Drop it off at our store near Amoreiras or let us handle the pickup.',
     ptText:
       'Os apartamentos de Lisboa estão cheios de tapetes bonitos. De peças tradicionais tecidas à mão a tapetes modernos, acumulam tudo — pó, sujidade, comida, derrames — e um aspirador normal só chega até certo ponto. Fazemos limpeza profunda de tapetes de todos os tamanhos, materiais e estilos, removendo sujidade acumulada e manchas e restaurando a cor e a textura do seu tapete. Traga à nossa loja junto às Amoreiras ou deixe-nos tratar da recolha.',
-    noLink: true,
+    enSlug: 'area-rug-cleaning-lisboa',
+    ptSlug: 'limpeza-tapetes-area-lisboa',
+  },
+  {
+    enTitle: 'Express Laundry Service',
+    ptTitle: 'Serviço de Lavandaria Expresso',
+    enText:
+      'Need it back fast? Our express service gets your laundry washed, dried, and ready within 24 hours. Available via WhatsApp or in-store.',
+    ptText:
+      'Precisa da roupa de volta a tempo? O nosso serviço expresso devolve-lhe a roupa lavada, seca e pronta em 24 horas. Disponível por WhatsApp ou na loja.',
+    enSlug: 'express-laundry-lisboa',
+    ptSlug: 'lavandaria-expresso-lisboa',
+  },
+  {
+    enTitle: 'Laundry Pickup & Delivery',
+    ptTitle: 'Recolha e Entrega de Roupa',
+    enText:
+      'We collect from your door across Lisboa — Campo de Ourique, Estrela, Chiado, Lapa, Marquês de Pombal, Saldanha, Areeiro, Alvalade, Restelo, Bairro Alto, Baixa, and more. Everything comes back clean and folded. No trips to the store needed.',
+    ptText:
+      'Recolhemos na sua porta em toda a Lisboa — Campo de Ourique, Estrela, Chiado, Lapa, Marquês de Pombal, Saldanha, Areeiro, Alvalade, Restelo, Bairro Alto, Baixa e mais. Tudo volta limpo e dobrado. Sem deslocações à loja.',
+    enSlug: 'laundry-pickup-delivery-lisboa',
+    ptSlug: 'recolha-entrega-lisboa',
   },
 ];
 
@@ -176,14 +177,12 @@ export default function LaundryServiceContent() {
                 {pt ? s.ptTitle : s.enTitle}
               </h2>
               <p className="text-muted-foreground text-lg mb-4">{pt ? s.ptText : s.enText}</p>
-              {!s.noLink && (
-                <Link
-                  href={`/${language}/${pt ? s.ptSlug : s.enSlug}`}
-                  className="text-primary font-semibold hover:underline"
-                >
-                  {pt ? 'Saber mais →' : 'Learn more →'}
-                </Link>
-              )}
+              <Link
+                href={`/${language}/${pt ? s.ptSlug : s.enSlug}`}
+                className="text-primary font-semibold hover:underline"
+              >
+                {pt ? 'Saber mais →' : 'Learn more →'}
+              </Link>
             </motion.div>
           ))}
         </div>

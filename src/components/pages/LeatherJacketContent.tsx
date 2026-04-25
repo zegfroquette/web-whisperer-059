@@ -60,7 +60,7 @@ export default function LeatherJacketContent() {
             <h2 className="text-xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'O que está incluído:' : "What's included:"}
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               {included.map((item, i) => (
                 <li key={i} className="text-muted-foreground text-lg flex items-start gap-2">
                   <span className="text-primary mt-1 shrink-0">•</span>

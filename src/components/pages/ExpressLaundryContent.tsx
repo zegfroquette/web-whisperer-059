@@ -64,7 +64,7 @@ export default function ExpressLaundryContent() {
             <h2 className="text-xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Como funciona:' : 'How it works:'}
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               {howItWorks.map((item, i) => (
                 <li key={i} className="text-muted-foreground text-lg flex items-start gap-2">
                   <span className="text-primary mt-1 shrink-0">•</span>
@@ -81,7 +81,7 @@ export default function ExpressLaundryContent() {
             <h2 className="text-xl font-bold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {pt ? 'Disponível para:' : 'Available for:'}
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               {availableFor.map((item, i) => (
                 <li key={i} className="text-muted-foreground text-lg flex items-start gap-2">
                   <span className="text-primary mt-1 shrink-0">•</span>

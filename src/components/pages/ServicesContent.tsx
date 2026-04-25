@@ -1,65 +1,80 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { SectionHeader } from '@/components/SectionHeader';
+import { Shirt, Wind, Gem, Droplets, Zap, Truck } from 'lucide-react';
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 },
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' as const },
+  }),
 };
 
-const categories = [
+const services = [
   {
+    icon: Shirt,
+    color: 'bg-blue-500/10 text-blue-600',
     enTitle: 'Laundry Service',
     ptTitle: 'Serviço de Lavandaria',
-    enText:
-      'Your everyday washing, handled professionally. We offer wash & fold, shirt cleaning, ironing, express service, bedding, baby clothes, sports clothing, delicate fabrics, curtains, duvets, and door-to-door pickup and delivery across Lisboa.',
-    ptText:
-      'A sua lavagem do dia a dia, tratada profissionalmente. Oferecemos lavagem e dobra, lavagem de camisas, engomadoria, serviço expresso, roupa de cama, roupa de bebé, roupa desportiva, tecidos delicados, cortinas, edredões e recolha e entrega porta a porta por toda a Lisboa.',
-    enLinkText: 'See all laundry services →',
-    ptLinkText: 'Ver todos os serviços de lavandaria →',
+    enDesc: 'Wash & fold, shirts, ironing, bedding, and more. Everything washed, dried, and returned ready.',
+    ptDesc: 'Lavagem e dobra, camisas, engomadoria, roupa de cama e mais. Tudo lavado, seco e pronto.',
     enSlug: 'laundry-service',
     ptSlug: 'servico-lavandaria',
   },
   {
+    icon: Wind,
+    color: 'bg-purple-500/10 text-purple-600',
     enTitle: 'Dry Cleaning',
     ptTitle: 'Lavagem a Seco',
-    enText:
-      'For garments that need specialist care. Suits, wedding dresses, coats, silk, cashmere, down jackets, and formal wear — all cleaned properly and returned in the condition they deserve. Turnaround 5 to 7 days.',
-    ptText:
-      'Para peças que precisam de cuidados especializados. Fatos, vestidos de noiva, casacos, seda, cashmere, casacos de penas e roupa de cerimónia — tudo limpo devidamente e devolvido nas condições que merece. Prazo de 5 a 7 dias.',
-    enLinkText: 'See all dry cleaning services →',
-    ptLinkText: 'Ver todos os serviços de lavagem a seco →',
+    enDesc: 'Specialist care for suits, dresses, coats, silk, cashmere, and formal wear. Turnaround 5–7 days.',
+    ptDesc: 'Cuidados especializados para fatos, vestidos, casacos, seda, cashmere e roupa formal. Prazo 5–7 dias.',
     enSlug: 'dry-cleaning',
     ptSlug: 'lavagem-a-seco-lisboa',
   },
   {
+    icon: Gem,
+    color: 'bg-amber-500/10 text-amber-600',
     enTitle: 'Leather Cleaning',
     ptTitle: 'Limpeza de Cabedal',
-    enText:
-      'Jackets, handbags, sofas, and shoes — we clean and condition all types of leather items with specialist techniques. Turnaround up to 10 days.',
-    ptText:
-      'Casacos, malas, sofás e sapatos — limpamos e condicionamos todo o tipo de artigos de cabedal com técnicas especializadas. Prazo até 10 dias.',
-    enLinkText: 'See all leather cleaning services →',
-    ptLinkText: 'Ver todos os serviços de limpeza de cabedal →',
+    enDesc: 'Jackets, bags, sofas, and shoes cleaned and conditioned with specialist techniques. Up to 10 days.',
+    ptDesc: 'Casacos, malas, sofás e sapatos limpos e condicionados com técnicas especializadas. Até 10 dias.',
     enSlug: 'leather-cleaning',
     ptSlug: 'limpeza-cabedal-lisboa',
   },
   {
+    icon: Droplets,
+    color: 'bg-teal-500/10 text-teal-600',
     enTitle: 'Upholstery Cleaning',
     ptTitle: 'Limpeza de Estofos',
-    enText:
-      'Sofas, chairs, and mattresses cleaned thoroughly and carefully. We remove built-up dirt, stains, and odours from all types of upholstered furniture.',
-    ptText:
-      'Sofás, cadeiras e colchões limpos com cuidado e rigor. Removemos sujidade acumulada, manchas e odores de todo o tipo de móveis estofados.',
-    enLinkText: 'See all upholstery cleaning services →',
-    ptLinkText: 'Ver todos os serviços de limpeza de estofos →',
+    enDesc: 'Sofas and chairs deep cleaned, removing dirt, stains, and odours from all upholstered furniture.',
+    ptDesc: 'Sofás e cadeiras limpos em profundidade, removendo sujidade, manchas e odores de todos os estofos.',
     enSlug: 'upholstery-cleaning',
     ptSlug: 'limpeza-estofos-lisboa',
+  },
+  {
+    icon: Zap,
+    color: 'bg-red-500/10 text-red-600',
+    enTitle: 'Express Service',
+    ptTitle: 'Serviço Expresso',
+    enDesc: 'Need it back fast? Your laundry washed, dried, and ready within 24 hours.',
+    ptDesc: 'Precisa a tempo? A sua roupa lavada, seca e pronta em 24 horas.',
+    enSlug: 'express-laundry-lisboa',
+    ptSlug: 'lavandaria-expresso-lisboa',
+  },
+  {
+    icon: Truck,
+    color: 'bg-green-500/10 text-green-600',
+    enTitle: 'Pickup & Delivery',
+    ptTitle: 'Recolha e Entrega',
+    enDesc: 'We collect from your door across Lisboa and return everything clean, folded, and ready.',
+    ptDesc: 'Recolhemos na sua porta em toda a Lisboa e devolvemos tudo limpo, dobrado e pronto.',
+    enSlug: 'laundry-pickup-delivery-lisboa',
+    ptSlug: 'recolha-entrega-lisboa',
   },
 ];
 
@@ -68,63 +83,39 @@ export default function ServicesContent() {
   const pt = language === 'pt';
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        <motion.h1
-          {...fadeUp}
-          className="text-4xl md:text-5xl font-bold mb-6"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-        >
-          {pt ? 'Serviços de Lavandaria em Lisboa' : 'Laundry Services in Lisboa'}
-        </motion.h1>
-
-        <motion.div {...fadeUp} className="mb-10 space-y-4">
-          <p className="text-muted-foreground text-lg">
-            {pt
-              ? 'Viver em Lisboa significa gerir a roupa sem o luxo que a maioria das pessoas noutras cidades tem — a maioria das casas aqui não tem secador, os edifícios são verticais e a vida move-se a um ritmo acelerado. Na GLOAT, construímos uma lavandaria de serviço completo no coração da cidade para tratar de tudo.'
-              : "Living in Lisboa means managing laundry without the luxury most people in other cities take for granted — most homes here don't have a tumble dryer, buildings are vertical, and life moves fast. At GLOAT, we've built a full-service laundry in the heart of the city to take care of everything."}
-          </p>
-          <p className="text-muted-foreground text-lg">
-            {pt
-              ? 'Abaixo encontra todos os serviços que oferecemos, organizados por categoria. Clique para saber mais sobre qualquer serviço específico.'
-              : "Below you'll find every service we offer, organised by category. Click through to learn more about any specific service."}
-          </p>
-        </motion.div>
-
-        <div className="flex flex-col gap-4">
-          {categories.map((cat, i) => (
+    <section className="py-20 px-4">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeader as="h1" title={pt ? 'Os Nossos Serviços' : 'Our Services'} />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((s, i) => (
             <motion.div
               key={i}
-              {...fadeUp}
-              className="bg-card rounded-2xl p-8 border border-border/50 shadow-sm hover:shadow-md transition-shadow"
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              whileHover={{ y: -4 }}
+              className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-all"
             >
-              <h2
-                className="text-xl font-bold mb-3"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-              >
-                {pt ? cat.ptTitle : cat.enTitle}
-              </h2>
-              <p className="text-muted-foreground text-lg mb-4">
-                {pt ? cat.ptText : cat.enText}
-              </p>
-              <Link
-                href={`/${language}/${pt ? cat.ptSlug : cat.enSlug}`}
-                className="text-primary font-semibold hover:underline"
-              >
-                {pt ? cat.ptLinkText : cat.enLinkText}
+              <Link href={`/${language}/${pt ? s.ptSlug : s.enSlug}`} className="block h-full">
+                <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4`}>
+                  <s.icon className="w-6 h-6" />
+                </div>
+                <h2
+                  className="text-lg font-bold mb-2"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                >
+                  {pt ? s.ptTitle : s.enTitle}
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {pt ? s.ptDesc : s.enDesc}
+                </p>
               </Link>
             </motion.div>
           ))}
         </div>
-
-        <motion.div {...fadeUp} className="mt-12 text-center">
-          <Button asChild size="lg">
-            <Link href={`/${language}/booking`}>
-              {pt ? 'Reservar Recolha' : 'Book a Pickup'}
-            </Link>
-          </Button>
-        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
