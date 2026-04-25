@@ -43,7 +43,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex items-center justify-between h-16">
             <Link href={`/${language}`} className="flex items-center" aria-label="GLOAT – The Greatest Laundry">
               <img
-                src="/gloat-logo.png"
+                src="/lovable-uploads/17fd049a-12dc-4e25-ad35-6092e41666ce.png"
                 alt="GLOAT"
                 className="h-10 w-auto object-contain"
               />
