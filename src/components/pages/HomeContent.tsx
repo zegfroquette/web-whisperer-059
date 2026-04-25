@@ -176,7 +176,19 @@ const HomeContent = () => {
 
       {/* Service Categories */}
       <section className="py-16 px-4 bg-muted/30">
-        <div className="max-w-3xl mx-auto flex flex-col gap-4">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-2xl mx-auto mb-12"
+          >
+            <p className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              {pt ? 'O Que Fazemos' : 'What We Do'}
+            </p>
+          </motion.div>
+          <div className="flex flex-col gap-4">
           {serviceCategories.map((item, i) => (
             <motion.div
               key={i}
@@ -196,6 +208,7 @@ const HomeContent = () => {
               </Link>
             </motion.div>
           ))}
+          </div>
         </div>
       </section>
 
