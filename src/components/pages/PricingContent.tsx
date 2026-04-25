@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Button } from '@/components/ui/button';
-import { Info } from 'lucide-react';
+import { Info, ShieldCheck } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -196,6 +196,14 @@ const PricingContent = () => {
               ? 'Preços unitários e packs para serviços pontuais.'
               : 'Per-item prices and packs for one-off services.'}
           />
+          <div className="mb-8 flex items-start gap-2 rounded-lg bg-muted/60 border border-border/50 px-4 py-3 text-sm text-muted-foreground">
+            <ShieldCheck className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+            <span>
+              {pt
+                ? 'Nem todos os preços estão listados aqui. Se não encontrar o que procura, entre em contacto e teremos todo o gosto em ajudar.'
+                : "Not all prices are listed here. If you can't find what you're looking for, get in touch and we'll be happy to help."}
+            </span>
+          </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Accordion type="multiple" defaultValue={categories.map((c) => c.id)} className="space-y-3">
               {categories.map((cat) => (
