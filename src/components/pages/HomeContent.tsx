@@ -70,14 +70,6 @@ const HomeContent = () => {
         : 'Some clothes need more than a regular wash. At GLOAT, we dry clean suits, dresses, coats and delicate pieces with the care they deserve. Each garment is inspected, treated and returned looking sharp and feeling fresh. Bring it in or schedule a pickup — we take it from there.',
     },
     {
-      enSlug: 'carpet-cleaning',
-      ptSlug: 'limpeza-tapetes-lisboa',
-      title: pt ? 'Limpeza de Tapetes' : 'Carpet Cleaning',
-      text: pt
-        ? 'Os tapetes acumulam mais do que parece. Na GLOAT, fazemos limpeza profunda de tapetes e carpetes de todos os tamanhos, removendo sujidade e manchas que o aspirador não consegue eliminar. Traga até nós ou deixe-nos tratar da recolha — o seu tapete volta limpo e pronto a usar.'
-        : 'Carpets collect more than you think. At GLOAT, we deep clean rugs and carpets of all sizes, removing dirt and stains that regular vacuuming leaves behind. Drop it off or let us handle the pickup — your carpet comes back fresh, clean and ready to use.',
-    },
-    {
       enSlug: 'leather-cleaning',
       ptSlug: 'limpeza-cabedal-lisboa',
       title: pt ? 'Limpeza de Cabedal' : 'Leather Cleaning',

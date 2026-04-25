@@ -123,6 +123,15 @@ const services = [
     enSlug: 'ironing-service-lisboa',
     ptSlug: 'engomadoria-lisboa',
   },
+  {
+    enTitle: 'Area Rug Cleaning',
+    ptTitle: 'Limpeza de Tapetes de Área',
+    enText:
+      'Lisboa apartments are full of beautiful rugs. From traditional hand-woven pieces to modern area rugs, they collect everything — dirt, dust, food, spills — and a regular vacuum only gets so far. We deep clean rugs of all sizes, materials, and styles, removing embedded dirt and stains and restoring the colour and texture of your rug. Drop it off at our store near Amoreiras or let us handle the pickup.',
+    ptText:
+      'Os apartamentos de Lisboa estão cheios de tapetes bonitos. De peças tradicionais tecidas à mão a tapetes modernos, acumulam tudo — pó, sujidade, comida, derrames — e um aspirador normal só chega até certo ponto. Fazemos limpeza profunda de tapetes de todos os tamanhos, materiais e estilos, removendo sujidade acumulada e manchas e restaurando a cor e a textura do seu tapete. Traga à nossa loja junto às Amoreiras ou deixe-nos tratar da recolha.',
+    noLink: true,
+  },
 ];
 
 export default function LaundryServiceContent() {
@@ -167,12 +176,14 @@ export default function LaundryServiceContent() {
                 {pt ? s.ptTitle : s.enTitle}
               </h2>
               <p className="text-muted-foreground text-lg mb-4">{pt ? s.ptText : s.enText}</p>
-              <Link
-                href={`/${language}/${pt ? s.ptSlug : s.enSlug}`}
-                className="text-primary font-semibold hover:underline"
-              >
-                {pt ? 'Saber mais →' : 'Learn more →'}
-              </Link>
+              {!s.noLink && (
+                <Link
+                  href={`/${language}/${pt ? s.ptSlug : s.enSlug}`}
+                  className="text-primary font-semibold hover:underline"
+                >
+                  {pt ? 'Saber mais →' : 'Learn more →'}
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>

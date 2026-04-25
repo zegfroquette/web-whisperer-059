@@ -38,18 +38,6 @@ const categories = [
     ptSlug: 'lavagem-a-seco-lisboa',
   },
   {
-    enTitle: 'Carpet Cleaning',
-    ptTitle: 'Limpeza de Tapetes',
-    enText:
-      'Deep cleaning for area rugs of all sizes and materials. We collect from your home — no need to transport them yourself.',
-    ptText:
-      'Limpeza profunda de tapetes de área de todos os tamanhos e materiais. Recolhemos em sua casa — não precisa de os transportar.',
-    enLinkText: 'See all carpet cleaning services →',
-    ptLinkText: 'Ver todos os serviços de limpeza de tapetes →',
-    enSlug: 'carpet-cleaning',
-    ptSlug: 'limpeza-tapetes-lisboa',
-  },
-  {
     enTitle: 'Leather Cleaning',
     ptTitle: 'Limpeza de Cabedal',
     enText:
