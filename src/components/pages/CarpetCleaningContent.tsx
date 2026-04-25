@@ -23,16 +23,6 @@ const services = [
     enSlug: 'area-rug-cleaning-lisboa',
     ptSlug: 'limpeza-tapetes-area-lisboa',
   },
-  {
-    enTitle: 'Carpet Stain Removal',
-    ptTitle: 'Remoção de Manchas em Tapetes',
-    enText:
-      'Stains happen. Wine, coffee, grease, mud — we treat and remove all types of stubborn carpet stains with specialist products and techniques.',
-    ptText:
-      'As manchas acontecem. Vinho, café, gordura, lama — tratamos e removemos todo o tipo de manchas teimosas em tapetes com produtos e técnicas especializadas.',
-    enSlug: 'carpet-stain-removal-lisboa',
-    ptSlug: 'remocao-manchas-tapetes-lisboa',
-  },
 ];
 
 export default function CarpetCleaningContent() {
