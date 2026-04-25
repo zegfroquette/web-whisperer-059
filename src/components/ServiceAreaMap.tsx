@@ -45,8 +45,8 @@ const ServiceAreaMap = () => {
       maxZoom: 19,
     }).addTo(map);
 
-    const yellowFeature = serviceAreaGeoJson.features.find(f => f.properties.zone === 'yellow');
-    const greenFeature = serviceAreaGeoJson.features.find(f => f.properties.zone === 'green');
+    const yellowFeature = serviceAreaGeoJson.features.find(f => f.properties.fill === '#FFED00');
+    const greenFeature = serviceAreaGeoJson.features.find(f => f.properties.fill === '#31D431');
 
     if (yellowFeature) {
       L.geoJSON(yellowFeature as any, {

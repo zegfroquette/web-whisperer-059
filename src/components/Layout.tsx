@@ -41,15 +41,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href={`/${language}`} className="flex items-center">
-              <img
-                src="/gloat-logo-hd.png"
-                alt="GLOAT – The Greatest Laundry"
-                width={149}
-                height={70}
-                className="h-10 w-auto object-contain"
-                style={{ imageRendering: 'crisp-edges' }}
-              />
+            <Link href={`/${language}`} className="flex items-center" aria-label="GLOAT – The Greatest Laundry">
+              <svg viewBox="0 0 320 80" className="h-10 w-auto" aria-hidden="true">
+                <text x="2" y="72" fontFamily="'Barlow Condensed', sans-serif" fontWeight="800" fontSize="78" fill="#29ABE2">GLOAT</text>
+              </svg>
             </Link>
 
             {/* Desktop nav */}
